@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Djinn Fragancias · Catálogo</title>
+<meta name="description" content="Catálogo de fragancias Djinn: buscá, filtrá y hacé tu pedido por Instagram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="marca" href="#" aria-label="Djinn Fragancias, inicio">
+    <span class="marca-icono">
+      <!-- Poné tu logo en img/logo.png -->
+      <img src="img/logo.png" alt="Logo de Djinn Fragancias">
+    </span>
+    <span class="marca-texto">
+      <span class="marca-nombre">Djinn Fragancias</span>
+    </span>
+  </a>
+
+  <div class="buscador" id="buscador" role="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.500-3.500"/></svg>
+    <label class="sr" for="q">Buscar fragancias</label>
+    <input id="q" type="search" placeholder="Buscar nombre, nota o familia" autocomplete="off">
+    <kbd>/</kbd>
+    <button class="borrar" id="borrar" aria-label="Borrar búsqueda"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+
+  <div class="acciones">
+    <button class="icono solo-movil" id="abrir-filtros" aria-expanded="false" aria-controls="filtros" aria-label="Filtros">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+    </button>
+    <button class="icono icono-carrito" id="btn-carrito" aria-label="Abrir carrito">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+      <span class="n" id="n-carrito" data-n="0"></span>
+    </button>
+  </div>
+</header>
+
+<main class="cuerpo">
+  <aside class="filtros" id="filtros" aria-label="Filtros">
+    <div>
+      <h2>Para quién</h2>
+      <div class="pastillas" id="f-genero"></div>
+    </div>
+    <div>
+      <h2>Familia olfativa</h2>
+      <div class="pastillas" id="f-familia"></div>
+    </div>
+    <div>
+      <h2>Precio</h2>
+      <div class="precio-fila"><span>Hasta</span><b id="precio-max-txt"></b></div>
+      <input type="range" id="precio-max" aria-label="Precio máximo">
+    </div>
+    <button class="limpiar" id="limpiar">Limpiar filtros</button>
+  </aside>
+
+  <section aria-label="Resultados">
+    <div class="barra">
+      <p class="cuenta" id="cuenta" aria-live="polite"></p>
+      <div class="derecha">
+        <label class="sr" for="orden">Ordenar por</label>
+        <select id="orden">
+          <option value="destacados">Destacados</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="nombre">Nombre A–Z</option>
+        </select>
+        <div class="vista" role="group" aria-label="Tipo de vista">
+          <button id="v-grilla" aria-pressed="true" aria-label="Vista en cuadrícula"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="6.500" height="6.500" rx="1"/><rect x="13.500" y="4" width="6.500" height="6.500" rx="1"/><rect x="4" y="13.500" width="6.500" height="6.500" rx="1"/><rect x="13.500" y="13.500" width="6.500" height="6.500" rx="1"/></svg></button>
+          <button id="v-lista" aria-pressed="false" aria-label="Vista en lista"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="grilla" id="grilla"></div>
+  </section>
+</main>
+
+<footer class="pie">
+  Djinn Fragancias · Pedidos y consultas por Instagram
+  <a href="https://www.instagram.com/djinnfragancias/" target="_blank" rel="noopener">@djinnfragancias</a>
+  · Precios en pesos uruguayos (UYU)
+</footer>
+
+<!-- Botón flotante: abre el chat directo de Instagram -->
+<a class="ig-fab" id="ig-fab" target="_blank" rel="noopener" aria-label="Escribirnos por Instagram">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3.500" y="3.500" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".8" fill="currentColor"/></svg>
+  <span>Escribinos</span>
+</a>
+
+<!-- Ficha del perfume -->
+<dialog id="ficha" aria-label="Detalle de la fragancia">
+  <button class="cerrar" id="cerrar" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="ficha">
+    <div class="galeria">
+      <div class="principal" id="f-principal"></div>
+      <div class="tabs-foto" id="f-mini"></div>
+    </div>
+    <div class="datos">
+      <p class="tipo" id="f-tipo"></p>
+      <h2 id="f-nombre"></h2>
+      <p class="precio" id="f-precio"></p>
+      <p id="f-desc"></p>
+
+      <section aria-labelledby="t-acordes">
+        <h3 class="sub" id="t-acordes">Acordes principales</h3>
+        <div class="acordes" id="f-acordes"></div>
+      </section>
+
+      <div class="botones">
+        <div class="accion" id="f-accion"></div>
+        <a class="sec-btn" id="f-ig" target="_blank" rel="noopener">Consultar por Instagram</a>
+      </div>
+      <div class="navficha"><button id="f-prev">Anterior</button><button id="f-next">Siguiente</button></div>
+    </div>
+  </div>
+</dialog>
+
+<!-- Carrito (panel lateral) -->
+<dialog id="carrito" class="drawer" aria-label="Carrito">
+  <div class="dr-cab">
+    <h2>Tu carrito</h2>
+    <button class="cerrar-dr" id="cerrar-carrito" aria-label="Cerrar carrito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="dr-lista" id="dr-lista"></div>
+  <div class="dr-pie" id="dr-pie">
+    <div class="tot"><span>Total aproximado</span><b id="dr-total"></b></div>
+    <p class="nota">Coordinamos envío y forma de pago por mensaje.</p>
+    <a class="cta" id="pedir" target="_blank" rel="noopener">Enviar pedido por Instagram</a>
+    <p class="ayuda-ig">Al tocar, se copia tu pedido y se abre nuestro chat. Solo tenés que pegarlo y enviarlo.</p>
+    <details>
+      <summary>Ver el mensaje</summary>
+      <textarea id="dr-msg" readonly rows="7" aria-label="Mensaje del pedido"></textarea>
+    </details>
+    <button class="limpiar" id="vaciar">Vaciar carrito</button>
+  </div>
+</dialog>
+
+<!-- Aviso flotante (popover para que quede por encima de los paneles abiertos) -->
+<div id="toast" popover="manual" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
