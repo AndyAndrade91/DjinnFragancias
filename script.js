@@ -17,7 +17,10 @@ const TIPOS_FOTO = ["Perfume", "Notas", "Acordes"];
 
 /* Cada perfume es un bloque. Para agregar uno, copiá un bloque y cambiá los datos.
    acordes: lista [nombre, fuerza de 0 a 100]. La barra más larga es la principal (como en Fragantica).
-   etiqueta: "Nuevo", "Más vendido" o "" para ninguna. */
+   etiqueta: "Nuevo", "Más vendido" o "" para ninguna.
+   cuando: cuánto "se rellena" cada opción, de 0 a 100 (como las barras de Fragrantica).
+     Ejemplo: Verano: 50 = queda a la mitad. Con esto funcionan los filtros de
+     Estación y Momento del día, y la sección "Cuándo usarlo" de la ficha. */
 const PERFUMES = [
   {
     id: "alba-citrica",
@@ -27,6 +30,14 @@ const PERFUMES = [
     ml: 100,
     precio: 1550,
     etiqueta: "Nuevo",
+    cuando: {
+      Invierno: 8,
+      Primavera: 85,
+      Verano: 100,
+      Otoño: 30,
+      Día: 100,
+      Noche: 25,
+    },
     color: "#d8d66a",
     desc: "La primera luz de la mañana: lima recién cortada, hojas verdes y un fondo seco de ámbar.",
     acordes: [
@@ -50,6 +61,14 @@ const PERFUMES = [
     ml: 100,
     precio: 1550,
     etiqueta: "",
+    cuando: {
+      Invierno: 45,
+      Primavera: 90,
+      Verano: 40,
+      Otoño: 85,
+      Día: 65,
+      Noche: 75,
+    },
     color: "#a9a6d1",
     desc: "Un atardecer en calma: iris polvoso, violeta y una estela de vainilla ahumada.",
     acordes: [
@@ -73,6 +92,14 @@ const PERFUMES = [
     ml: 100,
     precio: 1550,
     etiqueta: "",
+    cuando: {
+      Invierno: 12,
+      Primavera: 70,
+      Verano: 100,
+      Otoño: 35,
+      Día: 90,
+      Noche: 40,
+    },
     color: "#7cc7c4",
     desc: "Brisa salada y resina cálida: un ámbar que se mueve como la marea.",
     acordes: [
@@ -96,6 +123,14 @@ const PERFUMES = [
     ml: 100,
     precio: 1790,
     etiqueta: "Más vendido",
+    cuando: {
+      Invierno: 35,
+      Primavera: 55,
+      Verano: 70,
+      Otoño: 90,
+      Día: 50,
+      Noche: 100,
+    },
     color: "#b9a83a",
     desc: "La misma lima, ahora al caer la noche: más profunda, con un corazón de té negro.",
     acordes: [
@@ -119,6 +154,14 @@ const PERFUMES = [
     ml: 100,
     precio: 1790,
     etiqueta: "",
+    cuando: {
+      Invierno: 90,
+      Primavera: 15,
+      Verano: 10,
+      Otoño: 100,
+      Día: 20,
+      Noche: 100,
+    },
     color: "#d18a1f",
     desc: "Arena todavía tibia y especias al último sol: un ámbar profundo para las noches largas.",
     acordes: [
@@ -142,6 +185,14 @@ const PERFUMES = [
     ml: 50,
     precio: 1290,
     etiqueta: "Nuevo",
+    cuando: {
+      Invierno: 20,
+      Primavera: 90,
+      Verano: 80,
+      Otoño: 40,
+      Día: 30,
+      Noche: 100,
+    },
     color: "#e58aa6",
     desc: "Flores blancas que se abren cuando baja el sol, con un toque dulce de frambuesa.",
     acordes: [
@@ -165,6 +216,14 @@ const PERFUMES = [
     ml: 100,
     precio: 1650,
     etiqueta: "",
+    cuando: {
+      Invierno: 25,
+      Primavera: 75,
+      Verano: 90,
+      Otoño: 80,
+      Día: 100,
+      Noche: 40,
+    },
     color: "#8a6a4a",
     desc: "Madera seca de playa: cedro limpio, sal y una pizca de pimienta.",
     acordes: [
@@ -188,6 +247,14 @@ const PERFUMES = [
     ml: 50,
     precio: 1190,
     etiqueta: "",
+    cuando: {
+      Invierno: 15,
+      Primavera: 90,
+      Verano: 100,
+      Otoño: 30,
+      Día: 100,
+      Noche: 20,
+    },
     color: "#c9d5e4",
     desc: "Sábanas al sol: limpio, suave y luminoso, para todos los días.",
     acordes: [
@@ -211,6 +278,14 @@ const PERFUMES = [
     ml: 100,
     precio: 2100,
     etiqueta: "Más vendido",
+    cuando: {
+      Invierno: 100,
+      Primavera: 15,
+      Verano: 8,
+      Otoño: 95,
+      Día: 15,
+      Noche: 100,
+    },
     color: "#c47a2c",
     desc: "Cálido y envolvente: ámbar dorado con miel, vainilla y un toque de rosa oscura.",
     acordes: [
@@ -234,6 +309,14 @@ const PERFUMES = [
     ml: 100,
     precio: 1890,
     etiqueta: "",
+    cuando: {
+      Invierno: 45,
+      Primavera: 80,
+      Verano: 35,
+      Otoño: 100,
+      Día: 85,
+      Noche: 45,
+    },
     color: "#5f8f5b",
     desc: "Tierra mojada, musgo y helechos después de la lluvia.",
     acordes: [
@@ -257,6 +340,14 @@ const PERFUMES = [
     ml: 50,
     precio: 1350,
     etiqueta: "",
+    cuando: {
+      Invierno: 50,
+      Primavera: 85,
+      Verano: 30,
+      Otoño: 90,
+      Día: 70,
+      Noche: 70,
+    },
     color: "#d7b5b0",
     desc: "Una rosa sin espinas: empolvada, suave y con un fondo levemente ahumado.",
     acordes: [
@@ -280,6 +371,14 @@ const PERFUMES = [
     ml: 100,
     precio: 2390,
     etiqueta: "",
+    cuando: {
+      Invierno: 90,
+      Primavera: 20,
+      Verano: 10,
+      Otoño: 100,
+      Día: 25,
+      Noche: 100,
+    },
     color: "#2f3a35",
     desc: "Oscuro y elegante: vetiver ahumado, cuero y una salida especiada.",
     acordes: [
@@ -461,6 +560,27 @@ document.addEventListener("click", async (e) => {
 $("#ig-fab").href = IG_DM;
 $("#ig-fab").dataset.ig = `Hola ${MARCA}! Quiero hacer una consulta.`;
 
+/* Íconos de estaciones y momento del día */
+const ICONOS = {
+  Invierno: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.500v19M3.800 7.250l16.400 9.500M3.800 16.750l16.400-9.500M9.500 4.500L12 6.800l2.500-2.300M9.500 19.500L12 17.200l2.500 2.300"/></svg>`,
+  Primavera: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4C10.500 4 5 9 5 15.500c0 1.700.4 3 1.200 4.200C7 20.400 8.500 21 10.500 21 17 21 20 14 20 4z"/><path d="M4 21C8 15 11.500 12 15 10"/></svg>`,
+  Verano: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.500a9 9 0 0118 0H3z"/><path d="M12 3.500V2M12 12.500V19a2.200 2.200 0 01-4.400 0"/></svg>`,
+  Otoño: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.500l2.300 4.300 2.700-1-.9 4.600 3.900.9-3.100 3.100.9 2.800-4.300-1V21h-1V15.200l-4.300 1 .9-2.800-3.100-3.100 3.900-.9-.9-4.600 2.700 1z"/></svg>`,
+  Día: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.500v2.200M12 19.300v2.200M2.500 12h2.200M19.300 12h2.200M5.300 5.300l1.600 1.600M17.100 17.100l1.600 1.600M5.300 18.700l1.600-1.600M17.100 6.900l1.600-1.600"/></svg>`,
+  Noche: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.500 14.500A8.500 8.500 0 019.500 3.500a8.500 8.500 0 1011 11z"/></svg>`,
+};
+const ESTACIONES = ["Invierno", "Primavera", "Verano", "Otoño"];
+const MOMENTOS = ["Día", "Noche"];
+const CUANDO = [...ESTACIONES, ...MOMENTOS];
+const COLOR_CUANDO = {
+  Invierno: "#4cc3e8",
+  Primavera: "#8fdc6a",
+  Verano: "#f27b7b",
+  Otoño: "#f5b25a",
+  Día: "#f4a62a",
+  Noche: "#7fa6c9",
+};
+
 /* =====================================================================
    ESTADO
    ===================================================================== */
@@ -468,8 +588,6 @@ const precios = PERFUMES.map((p) => p.precio);
 const PRECIO_MIN = Math.floor(Math.min(...precios) / 50) * 50;
 const PRECIO_MAX = Math.ceil(Math.max(...precios) / 50) * 50;
 const generos = [...new Set(PERFUMES.map((p) => p.genero))];
-const familias = [...new Set(PERFUMES.map((p) => p.familia))];
-
 let carrito = {};
 try {
   carrito = JSON.parse(leer("djinn:carrito") || "{}");
@@ -480,7 +598,9 @@ Object.keys(carrito).forEach((id) => {
 const estado = {
   q: "",
   genero: "Todos",
-  familias: new Set(),
+  estaciones: new Set(),
+  momentos: new Set(),
+  minCuando: 50,
   max: PRECIO_MAX,
   orden: "destacados",
   lista: false,
@@ -498,12 +618,37 @@ $("#f-genero").innerHTML = ["Todos", ...generos]
       `<label class="pastilla"><input type="radio" name="genero" value="${g}" ${i === 0 ? "checked" : ""}><span>${g}</span></label>`,
   )
   .join("");
-$("#f-familia").innerHTML = familias
-  .map(
-    (f) =>
-      `<label class="pastilla"><input type="checkbox" value="${f}"><span>${f}</span></label>`,
-  )
-  .join("");
+const pastillasIco = (lista) =>
+  lista
+    .map(
+      (v) =>
+        `<label class="pastilla"><input type="checkbox" value="${v}"><span>${ICONOS[v]}${v}</span></label>`,
+    )
+    .join("");
+$("#f-estacion").innerHTML = pastillasIco(ESTACIONES);
+$("#f-momento").innerHTML = pastillasIco(MOMENTOS);
+/* Al elegir una estación/momento se ordena por "Mejor coincidencia"; al quitarlas, vuelve a Destacados */
+function sincronizarOrden() {
+  const hay = estado.estaciones.size || estado.momentos.size;
+  if (hay && estado.orden === "destacados") estado.orden = "afinidad";
+  else if (!hay && estado.orden === "afinidad") estado.orden = "destacados";
+  $("#orden").value = estado.orden;
+}
+const alternar = (set) => (e) => {
+  e.target.checked ? set.add(e.target.value) : set.delete(e.target.value);
+  sincronizarOrden();
+  render();
+};
+$("#f-estacion").addEventListener("change", alternar(estado.estaciones));
+$("#f-momento").addEventListener("change", alternar(estado.momentos));
+const rangoMin = $("#cuando-min");
+const txtMin = () => ($("#cuando-min-txt").textContent = rangoMin.value + "%");
+txtMin();
+rangoMin.addEventListener("input", () => {
+  estado.minCuando = +rangoMin.value;
+  txtMin();
+  render();
+});
 const rango = $("#precio-max");
 rango.min = PRECIO_MIN;
 rango.max = PRECIO_MAX;
@@ -515,12 +660,6 @@ txtPrecio();
 
 $("#f-genero").addEventListener("change", (e) => {
   estado.genero = e.target.value;
-  render();
-});
-$("#f-familia").addEventListener("change", (e) => {
-  e.target.checked
-    ? estado.familias.add(e.target.value)
-    : estado.familias.delete(e.target.value);
   render();
 });
 rango.addEventListener("input", () => {
@@ -558,13 +697,18 @@ document.addEventListener("keydown", (e) => {
 
 function limpiar() {
   Object.assign(estado, { q: "", genero: "Todos", max: PRECIO_MAX });
-  estado.familias.clear();
+  estado.estaciones.clear();
+  estado.momentos.clear();
+  document
+    .querySelectorAll("#f-estacion input, #f-momento input")
+    .forEach((i) => (i.checked = false));
+  estado.minCuando = 50;
+  rangoMin.value = 50;
+  txtMin();
+  sincronizarOrden();
   q.value = "";
   buscador.classList.remove("con-texto");
   document.querySelector('input[name="genero"][value="Todos"]').checked = true;
-  document
-    .querySelectorAll("#f-familia input")
-    .forEach((i) => (i.checked = false));
   rango.value = PRECIO_MAX;
   txtPrecio();
   render();
@@ -583,15 +727,29 @@ $("#abrir-filtros").addEventListener("click", (e) => {
   const ab = $("#filtros").classList.toggle("abierto");
   e.currentTarget.setAttribute("aria-expanded", ab);
 });
+/* Cuánto rinde un perfume en lo que se eligió (0 a 100), o null si no se eligió nada.
+   Dentro de un grupo (ej. Verano + Primavera) vale la mejor de las opciones;
+   entre grupos (ej. Verano + Noche) vale la más floja, o sea que tiene que rendir en las dos. */
+const seleccion = () => [...estado.estaciones, ...estado.momentos];
+function afinidad(p) {
+  const grupos = [[...estado.estaciones], [...estado.momentos]].filter(
+    (g) => g.length,
+  );
+  if (!grupos.length) return null;
+  return Math.min(...grupos.map((g) => Math.max(...g.map((k) => p.cuando[k]))));
+}
+
 function filtrar() {
   const palabras = norm(estado.q).split(/\s+/).filter(Boolean);
   const r = PERFUMES.filter(
     (p) =>
       palabras.every((w) => p._texto.includes(w)) &&
       (estado.genero === "Todos" || p.genero === estado.genero) &&
-      (!estado.familias.size || estado.familias.has(p.familia)) &&
+      (afinidad(p) === null || afinidad(p) >= estado.minCuando) &&
       p.precio <= estado.max,
   );
+  if (estado.orden === "afinidad" && seleccion().length)
+    r.sort((a, b) => afinidad(b) - afinidad(a));
   if (estado.orden === "precio-asc") r.sort((a, b) => a.precio - b.precio);
   if (estado.orden === "precio-desc") r.sort((a, b) => b.precio - a.precio);
   if (estado.orden === "nombre")
@@ -720,6 +878,17 @@ drawer.addEventListener("click", (e) => {
 /* =====================================================================
    TARJETAS
    ===================================================================== */
+/* Mini barras de rellenado para lo que se está filtrando */
+function afinHTML(p) {
+  const sel = seleccion();
+  if (!sel.length) return "";
+  return `<span class="afin">${sel
+    .map(
+      (k) =>
+        `<span class="afin-i" style="--w:${p.cuando[k]}%;--col:${COLOR_CUANDO[k]}" title="${k}: ${p.cuando[k]}%">${ICONOS[k]}<i></i><em>${p.cuando[k]}%</em></span>`,
+    )
+    .join("")}</span>`;
+}
 function tarjeta(p) {
   return `<article class="card" data-id="${p.id}">
     <button class="media" data-abrir style="--c:${p.color}" aria-label="Ver ${esc(p.nombre)}">
@@ -731,11 +900,15 @@ function tarjeta(p) {
       <span class="tipo">${p.familia} · ${p.genero}</span>
       <h3>${esc(p.nombre)}</h3>
       <span class="fila"><span class="precio">${dinero(p.precio)}</span><span class="ml">${p.ml} ml</span></span>
+      ${afinHTML(p)}
     </button>
     <div class="accion">${accionHTML(p)}</div>
   </article>`;
 }
 function render() {
+  const hay = seleccion().length > 0;
+  $("#bloque-cuando-min").hidden = !hay;
+  $('#orden [value="afinidad"]').disabled = !hay;
   visibles = filtrar();
   $("#grilla").innerHTML = visibles.length
     ? visibles.map(tarjeta).join("")
@@ -744,6 +917,13 @@ function render() {
     <button id="vacio-limpiar">Limpiar filtros</button></div>`;
   $("#cuenta").innerHTML =
     `<b>${visibles.length}</b> de ${PERFUMES.length} fragancias`;
+  $("#limpiar").hidden = !(
+    estado.q ||
+    estado.genero !== "Todos" ||
+    estado.estaciones.size ||
+    estado.momentos.size ||
+    estado.max < PRECIO_MAX
+  );
 }
 $("#grilla").addEventListener("click", (e) => {
   if (e.target.closest("#vacio-limpiar")) return limpiar();
@@ -800,6 +980,10 @@ function abrir(id) {
   ).join("");
   mostrarFoto(0);
   barras(p);
+  $("#f-cuando").innerHTML = CUANDO.map(
+    (k) =>
+      `<div class="cu" style="--col:${COLOR_CUANDO[k]};--w:${p.cuando[k]}%"><span class="cu-ico">${ICONOS[k]}</span><span class="cu-nom">${k}</span><i></i><b>${p.cuando[k]}%</b></div>`,
+  ).join("");
   if (!dlg.open) {
     dlg.showModal();
     document.body.style.overflow = "hidden";

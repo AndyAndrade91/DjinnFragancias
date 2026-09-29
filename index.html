@@ -49,15 +49,24 @@
       <div class="pastillas" id="f-genero"></div>
     </div>
     <div>
-      <h2>Familia olfativa</h2>
-      <div class="pastillas" id="f-familia"></div>
+      <h2>Estación</h2>
+      <div class="pastillas pastillas-ico" id="f-estacion"></div>
+    </div>
+    <div>
+      <h2>Momento del día</h2>
+      <div class="pastillas pastillas-ico" id="f-momento"></div>
+    </div>
+    <div id="bloque-cuando-min" hidden>
+      <div class="precio-fila"><span>Relleno mínimo</span><b id="cuando-min-txt"></b></div>
+      <input type="range" id="cuando-min" min="10" max="90" step="5" value="50" aria-label="Relleno mínimo">
+      <p class="ayuda-notas">Mostramos los perfumes que rinden mejor en lo que elegiste, de más a menos lleno.</p>
     </div>
     <div>
       <h2>Precio</h2>
       <div class="precio-fila"><span>Hasta</span><b id="precio-max-txt"></b></div>
       <input type="range" id="precio-max" aria-label="Precio máximo">
     </div>
-    <button class="limpiar" id="limpiar">Limpiar filtros</button>
+    <button class="limpiar" id="limpiar" hidden>Limpiar filtros</button>
   </aside>
 
   <section aria-label="Resultados">
@@ -67,6 +76,7 @@
         <label class="sr" for="orden">Ordenar por</label>
         <select id="orden">
           <option value="destacados">Destacados</option>
+          <option value="afinidad">Mejor coincidencia</option>
           <option value="precio-asc">Precio: menor a mayor</option>
           <option value="precio-desc">Precio: mayor a menor</option>
           <option value="nombre">Nombre A–Z</option>
@@ -110,6 +120,11 @@
       <section aria-labelledby="t-acordes">
         <h3 class="sub" id="t-acordes">Acordes principales</h3>
         <div class="acordes" id="f-acordes"></div>
+      </section>
+
+      <section aria-labelledby="t-cuando">
+        <h3 class="sub" id="t-cuando">Cuándo usarlo</h3>
+        <div class="cuando" id="f-cuando"></div>
       </section>
 
       <div class="botones">
