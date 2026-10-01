@@ -28,7 +28,6 @@ const PERFUMES = [
     genero: "Unisex",
     familia: "Cítrico",
     ml: 100,
-    precio: 1550,
     etiqueta: "Nuevo",
     cuando: {
       Invierno: 8,
@@ -59,7 +58,6 @@ const PERFUMES = [
     genero: "Mujer",
     familia: "Floral",
     ml: 100,
-    precio: 1550,
     etiqueta: "",
     cuando: {
       Invierno: 45,
@@ -90,7 +88,6 @@ const PERFUMES = [
     genero: "Unisex",
     familia: "Fresco",
     ml: 100,
-    precio: 1550,
     etiqueta: "",
     cuando: {
       Invierno: 12,
@@ -121,7 +118,6 @@ const PERFUMES = [
     genero: "Hombre",
     familia: "Cítrico",
     ml: 100,
-    precio: 1790,
     etiqueta: "Más vendido",
     cuando: {
       Invierno: 35,
@@ -152,7 +148,6 @@ const PERFUMES = [
     genero: "Hombre",
     familia: "Ámbar",
     ml: 100,
-    precio: 1790,
     etiqueta: "",
     cuando: {
       Invierno: 90,
@@ -183,7 +178,6 @@ const PERFUMES = [
     genero: "Mujer",
     familia: "Floral",
     ml: 50,
-    precio: 1290,
     etiqueta: "Nuevo",
     cuando: {
       Invierno: 20,
@@ -214,7 +208,6 @@ const PERFUMES = [
     genero: "Hombre",
     familia: "Amaderado",
     ml: 100,
-    precio: 1650,
     etiqueta: "",
     cuando: {
       Invierno: 25,
@@ -245,7 +238,6 @@ const PERFUMES = [
     genero: "Unisex",
     familia: "Fresco",
     ml: 50,
-    precio: 1190,
     etiqueta: "",
     cuando: {
       Invierno: 15,
@@ -276,7 +268,6 @@ const PERFUMES = [
     genero: "Mujer",
     familia: "Ámbar",
     ml: 100,
-    precio: 2100,
     etiqueta: "Más vendido",
     cuando: {
       Invierno: 100,
@@ -307,7 +298,6 @@ const PERFUMES = [
     genero: "Unisex",
     familia: "Amaderado",
     ml: 100,
-    precio: 1890,
     etiqueta: "",
     cuando: {
       Invierno: 45,
@@ -338,7 +328,6 @@ const PERFUMES = [
     genero: "Mujer",
     familia: "Floral",
     ml: 50,
-    precio: 1350,
     etiqueta: "",
     cuando: {
       Invierno: 50,
@@ -369,7 +358,6 @@ const PERFUMES = [
     genero: "Hombre",
     familia: "Amaderado",
     ml: 100,
-    precio: 2390,
     etiqueta: "",
     cuando: {
       Invierno: 90,
@@ -429,8 +417,6 @@ const norm = (s) =>
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
-const dinero = (n) =>
-  "UYU " + n.toLocaleString("es-UY", { minimumFractionDigits: 0 });
 const esc = (s) =>
   String(s).replace(
     /[&<>"']/g,
@@ -584,9 +570,6 @@ const COLOR_CUANDO = {
 /* =====================================================================
    ESTADO
    ===================================================================== */
-const precios = PERFUMES.map((p) => p.precio);
-const PRECIO_MIN = Math.floor(Math.min(...precios) / 50) * 50;
-const PRECIO_MAX = Math.ceil(Math.max(...precios) / 50) * 50;
 const generos = [...new Set(PERFUMES.map((p) => p.genero))];
 let carrito = {};
 try {
@@ -601,7 +584,6 @@ const estado = {
   estaciones: new Set(),
   momentos: new Set(),
   minCuando: 50,
-  max: PRECIO_MAX,
   orden: "destacados",
   lista: false,
 };
@@ -649,22 +631,9 @@ rangoMin.addEventListener("input", () => {
   txtMin();
   render();
 });
-const rango = $("#precio-max");
-rango.min = PRECIO_MIN;
-rango.max = PRECIO_MAX;
-rango.step = 50;
-rango.value = PRECIO_MAX;
-const txtPrecio = () =>
-  ($("#precio-max-txt").textContent = dinero(+rango.value));
-txtPrecio();
 
 $("#f-genero").addEventListener("change", (e) => {
   estado.genero = e.target.value;
-  render();
-});
-rango.addEventListener("input", () => {
-  estado.max = +rango.value;
-  txtPrecio();
   render();
 });
 $("#orden").addEventListener("change", (e) => {
@@ -696,7 +665,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 function limpiar() {
-  Object.assign(estado, { q: "", genero: "Todos", max: PRECIO_MAX });
+  Object.assign(estado, { q: "", genero: "Todos" });
   estado.estaciones.clear();
   estado.momentos.clear();
   document
@@ -709,8 +678,6 @@ function limpiar() {
   q.value = "";
   buscador.classList.remove("con-texto");
   document.querySelector('input[name="genero"][value="Todos"]').checked = true;
-  rango.value = PRECIO_MAX;
-  txtPrecio();
   render();
 }
 $("#limpiar").addEventListener("click", limpiar);
@@ -745,13 +712,10 @@ function filtrar() {
     (p) =>
       palabras.every((w) => p._texto.includes(w)) &&
       (estado.genero === "Todos" || p.genero === estado.genero) &&
-      (afinidad(p) === null || afinidad(p) >= estado.minCuando) &&
-      p.precio <= estado.max,
+      (afinidad(p) === null || afinidad(p) >= estado.minCuando),
   );
   if (estado.orden === "afinidad" && seleccion().length)
     r.sort((a, b) => afinidad(b) - afinidad(a));
-  if (estado.orden === "precio-asc") r.sort((a, b) => a.precio - b.precio);
-  if (estado.orden === "precio-desc") r.sort((a, b) => b.precio - a.precio);
   if (estado.orden === "nombre")
     r.sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
   return r;
@@ -762,8 +726,6 @@ function filtrar() {
    ===================================================================== */
 const cant = (id) => carrito[id] || 0;
 const totalUnidades = () => Object.values(carrito).reduce((a, b) => a + b, 0);
-const totalPrecio = () =>
-  Object.entries(carrito).reduce((s, [id, n]) => s + porId(id).precio * n, 0);
 
 function cambiar(id, delta) {
   const n = Math.min(20, Math.max(0, cant(id) + delta));
@@ -801,10 +763,10 @@ function mensajePedido() {
   const lineas = Object.entries(carrito)
     .map(([id, n]) => {
       const p = porId(id);
-      return `• ${n} x ${p.nombre} (${p.ml} ml) — ${dinero(p.precio * n)}`;
+      return `• ${n} x ${p.nombre} (${p.ml} ml)`;
     })
     .join("\n");
-  return `Hola ${MARCA}! Quiero hacer este pedido:\n\n${lineas}\n\nTotal: ${dinero(totalPrecio())}\n\nGracias!`;
+  return `Hola ${MARCA}! Quiero hacer este pedido:\n\n${lineas}\n\nGracias!`;
 }
 
 function renderCarrito() {
@@ -819,14 +781,13 @@ function renderCarrito() {
             n = cant(id);
           return `<div class="fila-c" data-id="${id}">
         <span class="mini" style="--c:${p.color}">${imagen(p, 0)}</span>
-        <div><b>${esc(p.nombre)}</b><small>${p.ml} ml · ${dinero(p.precio)}</small>
+        <div><b>${esc(p.nombre)}</b><small>${p.ml} ml</small>
           <div class="stepper" role="group" aria-label="Cantidad de ${esc(p.nombre)}"><button data-menos aria-label="Quitar uno">−</button><span>${n}</span><button data-mas aria-label="Agregar uno">+</button></div></div>
-        <div class="der"><span>${dinero(p.precio * n)}</span><button class="quitar" data-quitar>Eliminar</button></div>
+        <div class="der"><button class="quitar" data-quitar>Eliminar</button></div>
       </div>`;
         })
         .join("");
   if (!vacio) {
-    $("#dr-total").textContent = dinero(totalPrecio());
     const msg = mensajePedido();
     $("#dr-msg").value = msg;
     const a = $("#pedir");
@@ -899,7 +860,7 @@ function tarjeta(p) {
     <button class="info" data-abrir>
       <span class="tipo">${p.familia} · ${p.genero}</span>
       <h3>${esc(p.nombre)}</h3>
-      <span class="fila"><span class="precio">${dinero(p.precio)}</span><span class="ml">${p.ml} ml</span></span>
+      <span class="fila"><span class="ml">${p.ml} ml</span></span>
       ${afinHTML(p)}
     </button>
     <div class="accion">${accionHTML(p)}</div>
@@ -921,8 +882,7 @@ function render() {
     estado.q ||
     estado.genero !== "Todos" ||
     estado.estaciones.size ||
-    estado.momentos.size ||
-    estado.max < PRECIO_MAX
+    estado.momentos.size
   );
 }
 $("#grilla").addEventListener("click", (e) => {
@@ -967,12 +927,11 @@ function abrir(id) {
   fotoActual = 0;
   $("#f-tipo").textContent = `${p.familia} · ${p.genero}`;
   $("#f-nombre").textContent = p.nombre;
-  $("#f-precio").innerHTML =
-    `${dinero(p.precio)} <small>· Eau de parfum ${p.ml} ml</small>`;
+  $("#f-formato").textContent = `Eau de parfum · ${p.ml} ml`;
   $("#f-desc").textContent = p.desc;
   const ig = $("#f-ig");
   ig.href = IG_DM;
-  ig.dataset.ig = `Hola ${MARCA}! Quiero consultar por ${p.nombre} (${p.ml} ml, ${dinero(p.precio)}).`;
+  ig.dataset.ig = `Hola ${MARCA}! Quiero consultar por ${p.nombre} (${p.ml} ml).`;
   $("#f-accion").innerHTML = accionHTML(p);
   $("#f-mini").innerHTML = TIPOS_FOTO.map(
     (t, i) =>

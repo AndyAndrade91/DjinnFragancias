@@ -1,6 +1,6 @@
 :root {
-  --bg: #ffffff; --card: #ffffff; --ink: #15201b; --mute: #5f6c66; --line: #e4e7e3;
-  --acc: #1d6a56; --acc-ink: #ffffff; --acc-suave: #dcece6; --oro: #e2b04a; --oro-ink: #3a2a05;
+  --bg: #fdfbf7; --card: #ffffff; --ink: #15201b; --mute: #5f6c66; --line: #e9e5dc;
+  --acc: #1d6a56; --acc-ink: #ffffff; --acc-suave: #dcece6; --oro: #e2b04a; --oro-ink: #3a2a05; --oro-logo: #b98d4b; --linea-oro: color-mix(in srgb, var(--oro-logo) 42%, transparent);
   --sombra: 0 14px 34px -14px rgba(21,32,27,.35);
   --display: "Fraunces", Georgia, "Times New Roman", serif;
   --texto: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -15,63 +15,61 @@ a { color: inherit; }
 :focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* ---------- Encabezado principal ---------- */
+/* ---------- Portada (banner) ----------
+   El banner ya incluye el logo. Se muestra entero (sin recortar al genio) y en
+   pantallas anchas los costados se funden con el color crema de la imagen. */
+.hero { --crema: #f8f4ef; background: linear-gradient(180deg, var(--crema) 55%, var(--bg)); }
+.hero picture { display: contents; }
+.hero img { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: min(64vh, 620px); -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent); mask-image: linear-gradient(180deg, #000 78%, transparent); }
+@media (min-width: 901px) {
+  .hero img {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, #000 78%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(180deg, #000 78%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+}
+
+/* ---------- Barra superior (monograma + buscador + carrito) ---------- */
 .top {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 20;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 1.5rem;
-  padding: 3rem clamp(1rem, 4vw, 2.5rem) 2rem;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
+  gap: 1rem 1.4rem;
+  padding: .7rem clamp(1rem, 3vw, 2.2rem);
+  background: color-mix(in srgb, var(--bg) 93%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--linea-oro);
 }
 
 .marca {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1.15rem;
+  gap: .7rem;
   color: inherit;
   text-decoration: none;
-  width: 100%;
 }
 
-.marca-icono {
-  width: min(300px, 55vw);
-  height: min(300px, 55vw);
-  min-height: 220px;
-  border-radius: 28px;
-  background: #f5f6f4;
-  border: 1px solid var(--line);
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
+.marca-icono { display: block; height: 46px; }
+.marca-icono img { height: 100%; width: auto; }
 
-.marca-icono img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.marca-texto {
-  display: block;
-  line-height: 1.05;
-  text-align: center;
-}
+.marca-texto { display: block; line-height: 1.05; }
 
 .marca-nombre {
   font-family: var(--display);
   font-weight: 600;
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: 1.3rem;
   letter-spacing: .01em;
 }
 
 .buscador {
   position: relative;
   width: min(560px, 100%);
+  justify-self: center;
 }
 
 .buscador svg {
@@ -132,9 +130,6 @@ a { color: inherit; }
 .buscador.con-texto kbd { display: none; }
 
 .acciones {
-  position: absolute;
-  right: clamp(1rem, 3vw, 2.2rem);
-  bottom: 1.9rem;
   display: flex;
   gap: .4rem;
   align-items: center;
@@ -179,9 +174,9 @@ a { color: inherit; }
   60% { transform: scale(.95); }
 }
 
-.icono-carrito { width: 52px; height: 52px; border-width: 1.5px; }
-.icono-carrito svg { width: 25px; height: 25px; }
-.icono-carrito .n { top: -6px; right: -6px; min-width: 22px; height: 22px; font-size: .78rem; }
+.icono-carrito { width: 46px; height: 46px; border-width: 1.5px; }
+.icono-carrito svg { width: 22px; height: 22px; }
+.icono-carrito .n { top: -6px; right: -6px; min-width: 21px; height: 21px; font-size: .75rem; }
 .solo-movil { display: none; }
 
 /* ---------- Encabezado ---------- */
@@ -200,7 +195,7 @@ a { color: inherit; }
 .pastilla:hover span { border-color: var(--acc); }
 .pastilla input:checked + span { background: var(--acc); border-color: var(--acc); color: var(--acc-ink); }
 .pastilla input:focus-visible + span { outline: 2px solid var(--acc); outline-offset: 2px; }
-.precio-fila { display: flex; justify-content: space-between; margin-bottom: .5rem; }
+.fila-rango { display: flex; justify-content: space-between; margin-bottom: .5rem; }
 input[type="range"] { width: 100%; accent-color: var(--acc); }
 .limpiar { justify-self: start; text-align: left; color: var(--acc); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
 
@@ -236,7 +231,6 @@ select { padding: .5rem 2rem .5rem .9rem; border-radius: 999px; border: 1px soli
 .info .tipo { color: var(--mute); font-size: .82rem; }
 .info h3 { font-family: var(--display); font-weight: 500; font-size: 1.18rem; line-height: 1.2; }
 .info .fila { display: flex; justify-content: space-between; align-items: baseline; margin-top: .35rem; }
-.info .precio { font-weight: 600; }
 .info .ml { color: var(--mute); font-size: .82rem; }
 .card .accion { padding: .4rem 1rem 1rem; margin-top: auto; }
 
@@ -279,8 +273,7 @@ dialog::backdrop { background: rgba(10,18,14,.55); backdrop-filter: blur(4px); }
 .datos { padding: 2rem 2rem 1.6rem 1rem; display: flex; flex-direction: column; gap: 1rem; }
 .datos .tipo { color: var(--mute); }
 .datos h2 { font-family: var(--display); font-weight: 500; font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.05; }
-.datos .precio { font-size: 1.5rem; font-weight: 600; }
-.datos .precio small { font-size: .9rem; font-weight: 400; color: var(--mute); }
+.datos .formato { font-size: 1rem; color: var(--mute); }
 .sub { font-size: .8rem; font-weight: 600; color: var(--mute); letter-spacing: .04em; margin-bottom: .55rem; }
 
 /* Barras de acordes (estilo Fragantica) */
@@ -324,8 +317,6 @@ dialog::backdrop { background: rgba(10,18,14,.55); backdrop-filter: blur(4px); }
 .vacio-c { text-align: center; padding: 4rem 1rem; color: var(--mute); }
 .vacio-c h3 { font-family: var(--display); font-weight: 500; font-size: 1.6rem; color: var(--ink); margin-bottom: .4rem; }
 .dr-pie { padding: 1.2rem 1.4rem 1.4rem; border-top: 1px solid var(--line); display: grid; gap: .7rem; background: var(--card); }
-.tot { display: flex; justify-content: space-between; align-items: baseline; font-size: 1.05rem; }
-.tot b { font-size: 1.5rem; }
 .dr-pie .nota, .dr-pie .ayuda-ig { color: var(--mute); font-size: .85rem; }
 .cta { display: block; padding: .9rem 1.4rem; border-radius: 999px; background: var(--acc); color: var(--acc-ink); font-weight: 600; text-decoration: none; text-align: center; transition: filter .2s; }
 .cta:hover { filter: brightness(1.1); }
@@ -338,8 +329,10 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
 
 .ig-fab { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 15; display: flex; align-items: center; gap: .55rem; padding: .75rem 1.15rem; border-radius: 999px; background: var(--acc); color: var(--acc-ink); text-decoration: none; font-weight: 500; box-shadow: var(--sombra); }
 .ig-fab svg { width: 20px; height: 20px; }
-.pie { text-align: center; padding: 2rem 1rem 5rem; color: var(--mute); border-top: 1px solid var(--line); }
+.pie { position: relative; text-align: center; padding: 2.4rem 1rem 5rem; color: var(--mute); }
+.pie::before { content: ""; position: absolute; top: 0; left: 50%; width: min(520px, 80%); height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, var(--oro-logo), transparent); opacity: .7; }
 .pie a { color: var(--acc); font-weight: 500; }
+.pie-logo { height: 92px; width: auto; margin: 0 auto 1rem; }
 
 
 /* ---------- Filtros con ícono (estación / momento del día) ---------- */
@@ -362,11 +355,13 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
 
 /* ---------- Móvil ---------- */
 @media (max-width: 900px) {
-  .top { padding: 2rem 1rem 1.5rem; gap: 1.2rem; }
-  .marca-icono { width: min(240px, 68vw); height: min(240px, 68vw); min-height: 180px; border-radius: 22px; }
-  .marca-nombre { font-size: clamp(2rem, 9vw, 3rem); }
+  .top { position: static; grid-template-columns: minmax(0, 1fr) auto; padding: .8rem 1rem; gap: .8rem; }
+  .marca { grid-column: 1; grid-row: 1; }
+  .acciones { grid-column: 2; grid-row: 1; }
+  .buscador { grid-column: 1 / -1; grid-row: 2; width: 100%; }
+  .marca-icono { height: 40px; }
+  .marca-nombre { font-size: 1.2rem; }
   .buscador kbd { display: none; }
-  .acciones { position: static; width: 100%; justify-content: flex-end; margin-top: -.5rem; }
   .solo-movil { display: grid; }
   .cuerpo { grid-template-columns: 1fr; }
   .filtros { position: static; max-height: none; overflow: visible; margin: 0; display: none; padding: 1.2rem; background: var(--card); border: 1px solid var(--line); border-radius: 20px; }

@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Djinn Fragancias · Catálogo</title>
 <meta name="description" content="Catálogo de fragancias Djinn: buscá, filtrá y hacé tu pedido por Instagram.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#f8f4ef">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
@@ -12,11 +15,20 @@
 </head>
 <body>
 
+<!-- Portada: el banner (img/banner.jpg) ya trae el logo y el nombre dentro -->
+<section class="hero" aria-label="Djinn Fragancias">
+  <h1 class="sr">Djinn Fragancias · Catálogo de fragancias</h1>
+  <picture>
+    <source srcset="img/banner.jpg" type="image/webp">
+    <img src="img/banner.jpg" width="1672" height="941" fetchpriority="high" alt="Djinn Fragancias: un genio de humo y oro ofreciendo una fragancia">
+  </picture>
+</section>
+
 <header class="top">
-  <a class="marca" href="#" aria-label="Djinn Fragancias, inicio">
+  <a class="marca" href="#" aria-label="Djinn Fragancias, volver al inicio">
     <span class="marca-icono">
-      <!-- Poné tu logo en img/logo.png -->
-      <img src="img/logo.png" alt="Logo de Djinn Fragancias">
+      <!-- Monograma: img/logo-icono.png -->
+      <img src="img/logo-icono.png" width="360" height="347" alt="">
     </span>
     <span class="marca-texto">
       <span class="marca-nombre">Djinn Fragancias</span>
@@ -57,14 +69,9 @@
       <div class="pastillas pastillas-ico" id="f-momento"></div>
     </div>
     <div id="bloque-cuando-min" hidden>
-      <div class="precio-fila"><span>Relleno mínimo</span><b id="cuando-min-txt"></b></div>
+      <div class="fila-rango"><span>Relleno mínimo</span><b id="cuando-min-txt"></b></div>
       <input type="range" id="cuando-min" min="10" max="90" step="5" value="50" aria-label="Relleno mínimo">
       <p class="ayuda-notas">Mostramos los perfumes que rinden mejor en lo que elegiste, de más a menos lleno.</p>
-    </div>
-    <div>
-      <h2>Precio</h2>
-      <div class="precio-fila"><span>Hasta</span><b id="precio-max-txt"></b></div>
-      <input type="range" id="precio-max" aria-label="Precio máximo">
     </div>
     <button class="limpiar" id="limpiar" hidden>Limpiar filtros</button>
   </aside>
@@ -77,8 +84,6 @@
         <select id="orden">
           <option value="destacados">Destacados</option>
           <option value="afinidad">Mejor coincidencia</option>
-          <option value="precio-asc">Precio: menor a mayor</option>
-          <option value="precio-desc">Precio: mayor a menor</option>
           <option value="nombre">Nombre A–Z</option>
         </select>
         <div class="vista" role="group" aria-label="Tipo de vista">
@@ -92,9 +97,10 @@
 </main>
 
 <footer class="pie">
+  <!-- Logo completo: img/logo.png -->
+  <img class="pie-logo" src="img/logo.png" width="694" height="775" alt="Djinn Fragancias">
   Djinn Fragancias · Pedidos y consultas por Instagram
   <a href="https://www.instagram.com/djinnfragancias/" target="_blank" rel="noopener">@djinnfragancias</a>
-  · Precios en pesos uruguayos (UYU)
 </footer>
 
 <!-- Botón flotante: abre el chat directo de Instagram -->
@@ -114,7 +120,7 @@
     <div class="datos">
       <p class="tipo" id="f-tipo"></p>
       <h2 id="f-nombre"></h2>
-      <p class="precio" id="f-precio"></p>
+      <p class="formato" id="f-formato"></p>
       <p id="f-desc"></p>
 
       <section aria-labelledby="t-acordes">
@@ -144,7 +150,6 @@
   </div>
   <div class="dr-lista" id="dr-lista"></div>
   <div class="dr-pie" id="dr-pie">
-    <div class="tot"><span>Total aproximado</span><b id="dr-total"></b></div>
     <p class="nota">Coordinamos envío y forma de pago por mensaje.</p>
     <a class="cta" id="pedir" target="_blank" rel="noopener">Enviar pedido por Instagram</a>
     <p class="ayuda-ig">Al tocar, se copia tu pedido y se abre nuestro chat. Solo tenés que pegarlo y enviarlo.</p>
