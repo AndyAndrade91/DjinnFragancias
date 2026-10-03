@@ -1391,20 +1391,24 @@ $("#abrir-filtros").addEventListener("click", (e) => {
 });
 
 /* Cuánto rinde un perfume en lo que se eligió.
-   Dentro de un grupo vale la mejor opción;
-   entre grupos vale la más floja. */
+   Vale la opción MÁS FLOJA de todas las que se marcaron: así, el "relleno mínimo"
+   se le exige a cada estación / momento elegido (con las 4 estaciones marcadas,
+   quedan solo los perfumes que sirven en todas). */
 const seleccion = () => [...estado.estaciones, ...estado.momentos];
 
 function afinidad(p) {
-  const grupos = [[...estado.estaciones], [...estado.momentos]].filter(
-    (g) => g.length,
-  );
+  const sel = seleccion();
 
-  if (!grupos.length) return null;
+  if (!sel.length) return null;
 
-  return Math.min(
-    ...grupos.map((g) => Math.max(...g.map((k) => porcentajeCuando(p, k)))),
-  );
+  return Math.min(...sel.map((k) => porcentajeCuando(p, k)));
+}
+
+/* Promedio de lo elegido: sirve para desempatar el orden */
+function promedioElegido(p) {
+  const sel = seleccion();
+
+  return sel.reduce((a, k) => a + porcentajeCuando(p, k), 0) / sel.length;
 }
 
 function filtrar() {
@@ -1418,7 +1422,10 @@ function filtrar() {
   );
 
   if (estado.orden === "afinidad" && seleccion().length) {
-    r.sort((a, b) => afinidad(b) - afinidad(a));
+    r.sort(
+      (a, b) =>
+        afinidad(b) - afinidad(a) || promedioElegido(b) - promedioElegido(a),
+    );
   }
 
   if (estado.orden === "nombre") {
@@ -1633,7 +1640,7 @@ function render() {
   $("#grilla").innerHTML = visibles.length
     ? visibles.map(tarjeta).join("")
     : `
-    <div class="vacio"><h3>No encontramos resultados</h3><p>Probá con otra palabra o quitá algún filtro.</p>
+    <div class="vacio"><h3>No encontramos resultados</h3><p>${hay ? "Probá bajando el relleno mínimo o quitando alguna opción." : "Probá con otra palabra o quitá algún filtro."}</p>
     <button id="vacio-limpiar">Limpiar filtros</button></div>`;
 
   $("#cuenta").innerHTML =
