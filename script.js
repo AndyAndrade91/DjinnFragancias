@@ -5,15 +5,14 @@ const MARCA = "Djinn";
 const INSTAGRAM = "djinnfragancias"; // usuario de Instagram, sin @
 const IG_DM = `https://ig.me/m/${INSTAGRAM}`; // abre directo el chat con la cuenta
 
-/* FOTOS: cada perfume usa 3 fotos dentro de la carpeta img/
-     img/<id>-1.jpg  →  foto linda del perfume
-     img/<id>-2.jpg  →  foto de las notas
-     img/<id>-3.jpg  →  foto de los acordes
-   Ejemplo para "alba-citrica": img/alba-citrica-1.jpg, img/alba-citrica-2.jpg, img/alba-citrica-3.jpg
+/* FOTOS: cada perfume usa 2 fotos dentro de la carpeta img/
+     img/<id>-1.jpg  →  foto del perfume
+     img/<id>-2.jpg  →  foto de las notas (salida, corazón y fondo)
+   Ejemplo para "alba-citrica": img/alba-citrica-1.jpg y img/alba-citrica-2.jpg
    Si tus fotos son png o webp, cambiá FOTO_EXT. Si querés otros nombres,
-   agregá al perfume:  fotos: ["img/a.jpg", "img/b.jpg", "img/c.jpg"] */
+   agregá al perfume:  fotos: ["img/a.jpg", "img/b.jpg"] */
 const FOTO_EXT = "jpg";
-const TIPOS_FOTO = ["Perfume", "Notas", "Acordes"];
+const TIPOS_FOTO = ["Perfume", "Notas"];
 
 /* Cada perfume es un bloque. Para agregar uno, copiá un bloque y cambiá los datos.
    acordes: lista [nombre, fuerza de 0 a 100]. La barra más larga es la principal (como en Fragantica).
@@ -440,228 +439,462 @@ const PERFUMES = [
     ],
   },
   {
-  id: "odyssey-spectra-blue-edition",
-  nombre: "Odyssey Spectra Blue Edition - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+    id: "odyssey-spectra-blue-edition",
+    nombre: "Odyssey Spectra Blue Edition - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 23,
+      Primavera: 17,
+      Verano: 5,
+      Otoño: 21,
+      Día: 10,
+      Noche: 19,
+    },
+    color: "#3f6fa3",
+    desc: "Una noche eléctrica y especiada: canela, manzana y bergamota abren paso a una lavanda aromática, mientras el tabaco, la vainilla y el ámbar dejan una estela cálida y profunda.",
+    acordes: [
+      ["Cálido especiado", 100],
+      ["Canela", 97],
+      ["Lavanda", 85],
+      ["Afrutados", 70],
+      ["Dulce", 69],
+      ["Ámbar", 68],
+      ["Avainillado", 64],
+      ["Aromático", 64],
+      ["Floral blanco", 63],
+      ["Tabaco", 63],
+    ],
   },
-  color: "#3f6fa3",
-  desc: "Una noche eléctrica y especiada: canela, manzana y bergamota abren paso a una lavanda aromática, mientras el tabaco, la vainilla y el ámbar dejan una estela cálida y profunda.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-artisto",
-  nombre: "Odyssey Artisto - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-artisto",
+    nombre: "Odyssey Artisto - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 93,
+      Primavera: 192,
+      Verano: 242,
+      Otoño: 169,
+      Día: 216,
+      Noche: 166,
+    },
+    color: "#d28a42",
+    desc: "Una mezcla vibrante y tropical: bergamota y notas de nuez se encuentran con coco, frutas tropicales y canela, sobre un fondo cremoso de vainilla, haba tonka y ámbar.",
+    acordes: [
+      ["Avainillado", 100],
+      ["Coco", 82],
+      ["Dulce", 74],
+      ["Tropical", 73],
+      ["Ámbar", 68],
+      ["Cítrico", 64],
+      ["Nueces", 59],
+      ["Aromático", 59],
+      ["Cálido especiado", 52],
+      ["Afrutados", 52],
+    ],
   },
-  color: "#d28a42",
-  desc: "Una mezcla vibrante y tropical: bergamota y notas de nuez se encuentran con coco, frutas tropicales y canela, sobre un fondo cremoso de vainilla, haba tonka y ámbar.",
-  acordes: [
-  ],
-},
+  {
+    id: "odyssey-go-mango",
+    nombre: "Odyssey Go Mango - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 41,
+      Primavera: 291,
+      Verano: 397,
+      Otoño: 79,
+      Día: 359,
+      Noche: 93,
+    },
+    color: "#e5a52e",
+    desc: "Una explosión tropical de mango jugoso y luminoso, con un corazón frutal y un fondo suave de vainilla y maderas que prolonga su dulzura.",
+    acordes: [
+      ["Tropical", 100],
+      ["Afrutados", 88],
+      ["Dulce", 86],
+      ["Amaderado", 65],
+      ["Cítrico", 57],
+      ["Avainillado", 54],
+      ["Ámbar", 53],
+      ["Terpénico", 51],
+      ["Almizclado", 48],
+      ["Especiado suave", 46],
+    ],
+  },
 
-{
-  id: "odyssey-go-mango",
-  nombre: "Odyssey Go Mango - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-marshmallow",
+    nombre: "Odyssey Marshmallow - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 87,
+      Primavera: 90,
+      Verano: 69,
+      Otoño: 87,
+      Día: 104,
+      Noche: 60,
+    },
+    color: "#f0c5c7",
+    desc: "Un dulce abrazo de algodón: coco, manzana y limón abren una composición de fresa, frambuesa y durazno, sobre una base cremosa de malvavisco, vainilla, praliné y ámbar.",
+    acordes: [
+      ["Dulce", 100],
+      ["Afrutados", 71],
+      ["Atalcado", 56],
+      ["Avainillado", 53],
+      ["Lactónico", 41],
+    ],
   },
-  color: "#e5a52e",
-  desc: "Una explosión tropical de mango jugoso y luminoso, con un corazón frutal y un fondo suave de vainilla y maderas que prolonga su dulzura.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-marshmallow",
-  nombre: "Odyssey Marshmallow - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-toffee-coffee",
+    nombre: "Odyssey Toffee Coffee - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 129,
+      Primavera: 32,
+      Verano: 8,
+      Otoño: 108,
+      Día: 62,
+      Noche: 105,
+    },
+    color: "#76503b",
+    desc: "Una taza de café convertida en perfume: café intenso y toffee se mezclan con flores suaves, vainilla y azúcar, dejando un fondo cálido de ámbar, madera y almizcle.",
+    acordes: [
+      ["Dulce", 100],
+      ["Café", 58],
+      ["Avainillado", 55],
+      ["Cálido especiado", 54],
+      ["Caramelo", 47],
+      ["Lactónico", 44],
+    ],
   },
-  color: "#f0c5c7",
-  desc: "Un dulce abrazo de algodón: coco, manzana y limón abren una composición de fresa, frambuesa y durazno, sobre una base cremosa de malvavisco, vainilla, praliné y ámbar.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-toffee-coffee",
-  nombre: "Odyssey Toffee Coffee - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-soda-pop",
+    nombre: "Odyssey Soda Pop - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 47,
+      Primavera: 51,
+      Verano: 19,
+      Otoño: 56,
+      Día: 54,
+      Noche: 46,
+    },
+    color: "#9a5c58",
+    desc: "Una gaseosa helada con un giro especiado: cola, cítricos, menta y jengibre se mezclan con té negro y canela, sobre un fondo de vainilla, tonka, maderas y almizcle.",
+    acordes: [
+      ["Fresco especiado", 100],
+      ["Amaderado", 88],
+      ["Ámbar", 86],
+      ["Cálido especiado", 85],
+      ["Avainillado", 78],
+      ["Almizclado", 78],
+      ["Atalcado", 75],
+      ["Fresco", 72],
+      ["Verde", 70],
+      ["Cítrico", 69],
+    ],
   },
-  color: "#76503b",
-  desc: "Una taza de café convertida en perfume: café intenso y toffee se mezclan con flores suaves, vainilla y azúcar, dejando un fondo cálido de ámbar, madera y almizcle.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-soda-pop",
-  nombre: "Odyssey Soda Pop - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-aoud",
+    nombre: "Odyssey Aoud - Armaf",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 179,
+      Primavera: 86,
+      Verano: 28,
+      Otoño: 158,
+      Día: 70,
+      Noche: 164,
+    },
+    color: "#4f392d",
+    desc: "Una composición oscura y elegante: azafrán, nuez moscada y lavanda abren paso al oud y las maderas, sobre un fondo profundo de almizcle, ámbar y pachulí.",
+    acordes: [
+      ["Amaderado", 100],
+      ["Oud", 97],
+      ["Almizclado", 90],
+      ["Fresco especiado", 89],
+      ["Cálido especiado", 89],
+      ["Ámbar", 66],
+      ["Lavanda", 64],
+      ["Pachulí", 60],
+      ["Metálico", 55],
+      ["Atalcado", 52],
+    ],
   },
-  color: "#9a5c58",
-  desc: "Una gaseosa helada con un giro especiado: cola, cítricos, menta y jengibre se mezclan con té negro y canela, sobre un fondo de vainilla, tonka, maderas y almizcle.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-aoud",
-  nombre: "Odyssey Aoud - Armaf",
-  genero: "Hombre",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-wild-one-gold-edition",
+    nombre: "Odyssey Wild One Gold Edition - Armaf",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 114,
+      Primavera: 142,
+      Verano: 129,
+      Otoño: 140,
+      Día: 137,
+      Noche: 126,
+    },
+    color: "#b58a38",
+    desc: "Una energía fresca y especiada: bergamota, limón, pimienta y menta se mezclan con lavanda y jengibre, sobre un fondo de pachulí, cedro, sándalo y almizcle.",
+    acordes: [
+      ["Fresco especiado", 100],
+      ["Aromático", 79],
+      ["Cítrico", 72],
+      ["Amaderado", 68],
+      ["Verde", 51],
+      ["Cálido especiado", 51],
+      ["Lavanda", 49],
+      ["Almizclado", 48],
+      ["Especiado suave", 47],
+      ["Atalcado", 45],
+    ],
   },
-  color: "#4f392d",
-  desc: "Una composición oscura y elegante: azafrán, nuez moscada y lavanda abren paso al oud y las maderas, sobre un fondo profundo de almizcle, ámbar y pachulí.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-wild-one-gold-edition",
-  nombre: "Odyssey Wild One Gold Edition - Armaf",
-  genero: "Hombre",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-black-forest",
+    nombre: "Odyssey Black Forest - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 109,
+      Primavera: 33,
+      Verano: 4,
+      Otoño: 92,
+      Día: 50,
+      Noche: 83,
+    },
+    color: "#59352f",
+    desc: "Un postre oscuro y tentador: cereza, caramelo y canela se funden con dátiles y miel, sobre una base de praliné, vainilla, haba tonka, madera y almizcle.",
+    acordes: [
+      ["Dulce", 100],
+      ["Avainillado", 53],
+      ["Caramelo", 51],
+      ["Cereza", 50],
+      ["Amielado", 45],
+    ],
   },
-  color: "#b58a38",
-  desc: "Una energía fresca y especiada: bergamota, limón, pimienta y menta se mezclan con lavanda y jengibre, sobre un fondo de pachulí, cedro, sándalo y almizcle.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-black-forest",
-  nombre: "Odyssey Black Forest - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-eau-de-montagne",
+    nombre: "Odyssey Eau de Montagne - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 87,
+      Primavera: 69,
+      Verano: 27,
+      Otoño: 91,
+      Día: 62,
+      Noche: 74,
+    },
+    color: "#d4c4a2",
+    desc: "Una escapada a la montaña: almendra cremosa, acordes láctonicos y especias abren paso a flores blancas, sobre un fondo suave de vainilla, sándalo, almizcle y cacao.",
+    acordes: [
+      ["Almendra", 100],
+      ["Atalcado", 80],
+      ["Avainillado", 79],
+      ["Nueces", 72],
+      ["Cálido especiado", 71],
+      ["Amaderado", 70],
+      ["Dulce", 70],
+      ["Afrutados", 65],
+      ["Almizclado", 60],
+      ["Floral blanco", 55],
+    ],
   },
-  color: "#59352f",
-  desc: "Un postre oscuro y tentador: cereza, caramelo y canela se funden con dátiles y miel, sobre una base de praliné, vainilla, haba tonka, madera y almizcle.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-eau-de-montagne",
-  nombre: "Odyssey Eau de Montagne - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-revolution",
+    nombre: "Odyssey Revolution - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 81,
+      Primavera: 91,
+      Verano: 74,
+      Otoño: 84,
+      Día: 90,
+      Noche: 82,
+    },
+    color: "#7e4b61",
+    desc: "Una revolución dulce y frutal: piña, grosella negra y naranja sanguina se mezclan con ciruela, praliné, vainilla y cardamomo, sobre un fondo de pachulí y haba tonka.",
+    acordes: [
+      ["Afrutados", 100],
+      ["Dulce", 98],
+      ["Avainillado", 55],
+      ["Aromático", 52],
+      ["Cálido especiado", 51],
+      ["Tropical", 48],
+      ["Pachulí", 47],
+      ["Amaderado", 46],
+      ["Especiado suave", 45],
+    ],
   },
-  color: "#d4c4a2",
-  desc: "Una escapada a la montaña: almendra cremosa, acordes láctonicos y especias abren paso a flores blancas, sobre un fondo suave de vainilla, sándalo, almizcle y cacao.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-revolution",
-  nombre: "Odyssey Revolution - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-ba-ha-mas",
+    nombre: "Odyssey BA HA MAS - Armaf",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 29,
+      Primavera: 351,
+      Verano: 439,
+      Otoño: 62,
+      Día: 397,
+      Noche: 87,
+    },
+    color: "#4fa9b5",
+    desc: "Una escapada tropical junto al mar: melón fresco, manzana, pera y ciruela se mezclan con notas acuáticas y saladas, sobre un fondo limpio de almizcle, ámbar y cedro.",
+    acordes: [
+      ["Marino", 100],
+      ["Acuático", 95],
+      ["Afrutados", 81],
+      ["Salado", 67],
+      ["Dulce", 65],
+      ["Fresco", 65],
+      ["Ozónico", 57],
+      ["Aromático", 56],
+      ["Ámbar", 48],
+      ["Almizclado", 47],
+    ],
   },
-  color: "#7e4b61",
-  desc: "Una revolución dulce y frutal: piña, grosella negra y naranja sanguina se mezclan con ciruela, praliné, vainilla y cardamomo, sobre un fondo de pachulí y haba tonka.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-ba-ha-mas",
-  nombre: "Odyssey BA HA MAS - Armaf",
-  genero: "Unisex",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-li-chi-lush",
+    nombre: "Odyssey Li'chi Lush - Armaf",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 6,
+      Primavera: 25,
+      Verano: 23,
+      Otoño: 10,
+      Día: 24,
+      Noche: 6,
+    },
+    color: "#e49a9f",
+    desc: "Un jardín frutal en plena floración: lichi, mandarina, durazno y frambuesa se encuentran con peonía, rosa, jazmín y magnolia, sobre un fondo cremoso de vainilla, caramelo, sándalo y ámbar.",
+    acordes: [
+      ["Afrutados", 100],
+      ["Floral", 74],
+      ["Cítrico", 70],
+      ["Floral blanco", 68],
+      ["Fresco", 66],
+      ["Dulce", 61],
+      ["Atalcado", 55],
+      ["Tropical", 55],
+      ["Rosas", 54],
+      ["Amaderado", 52],
+    ],
   },
-  color: "#4fa9b5",
-  desc: "Una escapada tropical junto al mar: melón fresco, manzana, pera y ciruela se mezclan con notas acuáticas y saladas, sobre un fondo limpio de almizcle, ámbar y cedro.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-li-chi-lush",
-  nombre: "Odyssey Li'chi Lush - Armaf",
-  genero: "Mujer",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-pink-pop",
+    nombre: "Odyssey Pink Pop - Armaf",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 5,
+      Primavera: 14,
+      Verano: 16,
+      Otoño: 7,
+      Día: 19,
+      Noche: 6,
+    },
+    color: "#e889a8",
+    desc: "Una explosión floral y frutal: mandarina, durazno, frambuesa, fresa y piña abren paso a flores blancas y rosa, sobre un fondo cremoso de coco, vainilla, almizcle y ámbar.",
+    acordes: [
+      ["Floral blanco", 100],
+      ["Cítrico", 79],
+      ["Floral", 65],
+      ["Afrutados", 63],
+      ["Dulce", 54],
+      ["Rosas", 52],
+      ["Almizclado", 45],
+      ["Atalcado", 45],
+      ["Animálico", 44],
+    ],
   },
-  color: "#e49a9f",
-  desc: "Un jardín frutal en plena floración: lichi, mandarina, durazno y frambuesa se encuentran con peonía, rosa, jazmín y magnolia, sobre un fondo cremoso de vainilla, caramelo, sándalo y ámbar.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-pink-pop",
-  nombre: "Odyssey Pink Pop - Armaf",
-  genero: "Mujer",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-french-kiss",
+    nombre: "Odyssey French Kiss - Armaf",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 5,
+      Primavera: 9,
+      Verano: 9,
+      Otoño: 9,
+      Día: 11,
+      Noche: 9,
+    },
+    color: "#c77c9d",
+    desc: "Un beso dulce y romántico: frutas jugosas y flores delicadas se funden en una composición femenina, suave y luminosa, con un fondo cálido y envolvente.",
+    acordes: [
+      ["Dulce", 100],
+      ["Ámbar", 72],
+      ["Floral blanco", 66],
+      ["Avainillado", 63],
+      ["Rosas", 62],
+      ["Cítrico", 55],
+      ["Coco", 51],
+      ["Afrutados", 47],
+      ["Lactónico", 46],
+      ["Floral", 44],
+    ],
   },
-  color: "#e889a8",
-  desc: "Una explosión floral y frutal: mandarina, durazno, frambuesa, fresa y piña abren paso a flores blancas y rosa, sobre un fondo cremoso de coco, vainilla, almizcle y ámbar.",
-  acordes: [
-  ],
-},
 
-{
-  id: "odyssey-french-kiss",
-  nombre: "Odyssey French Kiss - Armaf",
-  genero: "Mujer",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
+  {
+    id: "odyssey-femme-white-edition",
+    nombre: "Odyssey Femme White Edition - Armaf",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    cuando: {
+      Invierno: 3,
+      Primavera: 14,
+      Verano: 15,
+      Otoño: 7,
+      Día: 15,
+      Noche: 4,
+    },
+    color: "#e7e1d5",
+    desc: "Una elegancia luminosa y femenina: naranja y notas verdes abren paso a madreselva, nardos y jazmín, sobre un fondo delicado de vainilla, iris y sándalo.",
+    acordes: [
+      ["Floral blanco", 100],
+      ["Nardos", 56],
+      ["Verde", 49],
+      ["Afrutados", 44],
+      ["Atalcado", 43],
+    ],
   },
-  color: "#c77c9d",
-  desc: "Un beso dulce y romántico: frutas jugosas y flores delicadas se funden en una composición femenina, suave y luminosa, con un fondo cálido y envolvente.",
-  acordes: [
-  ],
-},
-
-{
-  id: "odyssey-femme-white-edition",
-  nombre: "Odyssey Femme White Edition - Armaf",
-  genero: "Mujer",
-  ml: 100,
-  etiqueta: "",
-  cuando: {
-  },
-  color: "#e7e1d5",
-  desc: "Una elegancia luminosa y femenina: naranja y notas verdes abren paso a madreselva, nardos y jazmín, sobre un fondo delicado de vainilla, iris y sándalo.",
-  acordes: [
-  ],
-},
 ];
 
 /* Colores de las barras de acordes (los que no estén acá usan un gris) */
@@ -704,6 +937,7 @@ const COLOR_ACORDE = {
   "Floral blanco": "#eee5cf",
   Amaderado: "#8f6a45",
   "Floral amarillo": "#e7cf68",
+  Nardos: "#e8e0c8",
 
   // ESPECÍFICOS
   Almendra: "#c99b72",
@@ -712,7 +946,6 @@ const COLOR_ACORDE = {
   Amargo: "#665b42",
   Cacao: "#75452d",
   Alcanforado: "#91a89b",
-  Cannabis: "#5c8b55",
   Caramelo: "#b8783a",
   Cereza: "#b52f45",
   Chocolate: "#6b3e26",
@@ -821,7 +1054,7 @@ const porId = (id) => PERFUMES.find((p) => p.id === id);
 const BOLSA = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>`;
 
 PERFUMES.forEach((p) => {
-  p._fotos = p.fotos || [1, 2, 3].map((n) => `img/${p.id}-${n}.${FOTO_EXT}`);
+  p._fotos = p.fotos || [1, 2].map((n) => `img/${p.id}-${n}.${FOTO_EXT}`);
 
   p._texto = norm(
     [p.nombre, p.genero, ...p.acordes.map((a) => a[0])].join(" "),
@@ -1503,7 +1736,7 @@ function abrir(id) {
   $("#f-cuando").innerHTML = CUANDO.map((k) => {
     const porcentaje = porcentajeCuando(p, k);
 
-    const votos = p.cuando[k];
+    const votos = p.cuando[k] || 0;
 
     return `<div class="cu" style="--col:${COLOR_CUANDO[k]};--w:${porcentaje}%" title="${votos.toLocaleString("es-UY")} votos"><span class="cu-ico">${ICONOS[k]}</span><span class="cu-nom">${k}</span><i></i><b>${porcentaje}%</b></div>`;
   }).join("");
