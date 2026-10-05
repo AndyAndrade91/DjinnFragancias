@@ -1630,7 +1630,6 @@ const COLOR_ACORDE = {
   Ámbar: "#e58a1b",
   Canela: "#a95732",
   Amaderado: "#8f6a45",
-  "Fresco especiado": "#72a89a",
   Afrutados: "#ff8d4d",
   Animálico: "#765348",
   "Floral blanco": "#eee5cf",
