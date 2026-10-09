@@ -15,10 +15,13 @@ const FOTO_EXT = "jpg";
 const TIPOS_FOTO = ["Perfume", "Notas"];
 
 /* Cada perfume es un bloque. Para agregar uno, copiá un bloque y cambiá los datos.
-   acordes: lista [nombre, fuerza de 0 a 100]. La barra más larga es la principal (como en Fragantica).
-   etiqueta: "Nuevo", "Más vendido" o "" para ninguna.
-   cuando: cantidad de votos de cada opción, como en Fragantica.
-   El mayor valor se toma como 100% y los demás se calculan proporcionalmente. */
+   El orden es: id, nombre, genero, ml, etiqueta, color, desc  y al final
+   indicadores + acordes PEGADOS (tal cual los scrapeás de Fragantica).
+   indicadores: [["invierno","8"], ...] → votos de cada estación / momento.
+     El mayor valor se toma como 100% y los demás se calculan proporcionalmente.
+     Acepta mayúsculas/minúsculas y strings o números.
+   acordes: lista [nombre, fuerza de 0 a 100]. La barra más larga es la principal.
+   etiqueta: "Nuevo", "Más vendido" o "" para ninguna. */
 const PERFUMES = [
   {
     id: "mandarin-sky-100ml",
@@ -26,16 +29,16 @@ const PERFUMES = [
     genero: "Hombre",
     ml: 100,
     etiqueta: "Más vendido",
-    cuando: {
-      Invierno: 2700,
-      Primavera: 2400,
-      Verano: 1600,
-      Otoño: 2600,
-      Día: 2400,
-      Noche: 2600,
-    },
     color: "#d8d66a",
     desc: "Una explosión fresca y dulce de mandarina, cítricos brillantes y caramelo, con un fondo amaderado que aporta elegancia y duración.",
+    indicadores: [
+      ["Invierno", "2700"],
+      ["Primavera", "2400"],
+      ["Verano", "1600"],
+      ["Otoño", "2600"],
+      ["Día", "2400"],
+      ["Noche", "2600"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Caramelo", 74],
@@ -52,16 +55,16 @@ const PERFUMES = [
     genero: "Hombre",
     ml: 200,
     etiqueta: "",
-    cuando: {
-      Invierno: 2700,
-      Primavera: 2400,
-      Verano: 1600,
-      Otoño: 2600,
-      Día: 2400,
-      Noche: 2600,
-    },
     color: "#d8d66a",
     desc: "Una explosión fresca y dulce de mandarina, cítricos brillantes y caramelo, con un fondo amaderado que aporta elegancia y duración.",
+    indicadores: [
+      ["Invierno", "2700"],
+      ["Primavera", "2400"],
+      ["Verano", "1600"],
+      ["Otoño", "2600"],
+      ["Día", "2400"],
+      ["Noche", "2600"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Caramelo", 74],
@@ -78,16 +81,16 @@ const PERFUMES = [
     genero: "Unisex",
     ml: 100,
     etiqueta: "Más vendido",
-    cuando: {
-      Invierno: 21900,
-      Primavera: 4000,
-      Verano: 2500,
-      Otoño: 17400,
-      Día: 7600,
-      Noche: 17300,
-    },
     color: "#d19d0d",
     desc: "Una fragancia intensa y dulce con canela, dátiles y vainilla, acompañada de notas ambaradas y especiadas que crean una presencia cálida y sofisticada.",
+    indicadores: [
+      ["Invierno", "21900"],
+      ["Primavera", "4000"],
+      ["Verano", "2500"],
+      ["Otoño", "17400"],
+      ["Día", "7600"],
+      ["Noche", "17300"],
+    ],
     acordes: [
       ["Dulce", 100],
       ["Cálido especiado", 82],
@@ -105,16 +108,16 @@ const PERFUMES = [
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 12100,
-      Primavera: 1900,
-      Verano: 758,
-      Otoño: 9600,
-      Día: 3900,
-      Noche: 10000,
-    },
     color: "#5a3928",
     desc: "Una fragancia dulce y especiada que combina canela, cardamomo y jengibre en la salida, con praliné, frutas confitadas y flores blancas en el corazón, sobre una base de café, vainilla, haba tonka, benjuí y almizcle.",
+    indicadores: [
+      ["Invierno", "12100"],
+      ["Primavera", "1900"],
+      ["Verano", "758"],
+      ["Otoño", "9600"],
+      ["Día", "3900"],
+      ["Noche", "10000"],
+    ],
     acordes: [
       ["Cálido especiado", 100],
       ["Dulce", 87],
@@ -125,23 +128,22 @@ const PERFUMES = [
       ["Atalcado", 45],
     ],
   },
-
   {
     id: "khamrah-dukhan",
     nombre: "Khamrah Dukhan - Lattafa",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 1900,
-      Primavera: 387,
-      Verano: 147,
-      Otoño: 1600,
-      Día: 608,
-      Noche: 1600,
-    },
     color: "#4a3027",
     desc: "Una fragancia intensa, cálida y ahumada que abre con mandarina, pimienta de Jamaica y especias ahumadas, continúa con ládano, flor de azahar, incienso y pachulí, y termina con tabaco, ámbar, haba tonka, benjuí y praliné.",
+    indicadores: [
+      ["Invierno", "1900"],
+      ["Primavera", "387"],
+      ["Verano", "147"],
+      ["Otoño", "1600"],
+      ["Día", "608"],
+      ["Noche", "1600"],
+    ],
     acordes: [
       ["Ámbar", 100],
       ["Cálido especiado", 92],
@@ -152,23 +154,22 @@ const PERFUMES = [
       ["Ahumado", 46],
     ],
   },
-
   {
     id: "khamrah-waha",
     nombre: "Khamrah Waha - Lattafa",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 159,
-      Primavera: 763,
-      Verano: 965,
-      Otoño: 335,
-      Día: 768,
-      Noche: 325,
-    },
     color: "#4a3027",
     desc: "Una fragancia intensa, cálida y ahumada que abre con mandarina, pimienta de Jamaica y especias ahumadas, continúa con ládano, flor de azahar, incienso y pachulí, y termina con tabaco, ámbar, haba tonka, benjuí y praliné.",
+    indicadores: [
+      ["Invierno", "159"],
+      ["Primavera", "763"],
+      ["Verano", "965"],
+      ["Otoño", "335"],
+      ["Día", "768"],
+      ["Noche", "325"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Fresco especiado", 90],
@@ -188,16 +189,16 @@ const PERFUMES = [
     genero: "Hombre",
     ml: 100,
     etiqueta: "Más vendido",
-    cuando: {
-      Invierno: 1500,
-      Primavera: 7200,
-      Verano: 8500,
-      Otoño: 3100,
-      Día: 7500,
-      Noche: 3500,
-    },
     color: "#7549ad",
     desc: "Una brisa fresca y vibrante: cítricos jugosos, notas acuáticas y un toque dulce de ciruela sobre un fondo amaderado y almizclado.",
+    indicadores: [
+      ["Invierno", "1500"],
+      ["Primavera", "7200"],
+      ["Verano", "8500"],
+      ["Otoño", "3100"],
+      ["Día", "7500"],
+      ["Noche", "3500"],
+    ],
     acordes: [
       ["Afrutados", 100],
       ["Cítrico", 96],
@@ -217,16 +218,16 @@ const PERFUMES = [
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 1700,
-      Primavera: 780,
-      Verano: 248,
-      Otoño: 1500,
-      Día: 737,
-      Noche: 1500,
-    },
     color: "#000000",
     desc: "Una noche intensa y elegante: cítricos brillantes y especias se mezclan con caramelo, ámbar y madera oscura para una estela cálida y envolvente.",
+    indicadores: [
+      ["Invierno", "1700"],
+      ["Primavera", "780"],
+      ["Verano", "248"],
+      ["Otoño", "1500"],
+      ["Día", "737"],
+      ["Noche", "1500"],
+    ],
     acordes: [
       ["Amaderado", 100],
       ["Cálido especiado", 75],
@@ -246,16 +247,16 @@ const PERFUMES = [
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 1100,
-      Primavera: 822,
-      Verano: 403,
-      Otoño: 1000,
-      Día: 861,
-      Noche: 978,
-    },
     color: "#ffffff",
     desc: "Una frescura luminosa y sofisticada: cítricos y notas aromáticas se unen a un corazón especiado y un fondo amaderado, limpio y ligeramente dulce.",
+    indicadores: [
+      ["Invierno", "1100"],
+      ["Primavera", "822"],
+      ["Verano", "403"],
+      ["Otoño", "1000"],
+      ["Día", "861"],
+      ["Noche", "978"],
+    ],
     acordes: [
       ["Amaderado", 100],
       ["Aromático", 81],
@@ -274,16 +275,16 @@ const PERFUMES = [
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 133,
-      Primavera: 1200,
-      Verano: 1300,
-      Otoño: 448,
-      Día: 1200,
-      Noche: 342,
-    },
     color: "#5f9913",
     desc: "Una ráfaga de frescura: cítricos jugosos y notas acuáticas se combinan con acordes aromáticos y un fondo amaderado limpio y elegante.",
+    indicadores: [
+      ["Invierno", "133"],
+      ["Primavera", "1200"],
+      ["Verano", "1300"],
+      ["Otoño", "448"],
+      ["Día", "1200"],
+      ["Noche", "342"],
+    ],
     acordes: [
       ["Aromático", 100],
       ["Fresco especiado", 87],
@@ -303,16 +304,16 @@ const PERFUMES = [
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 344,
-      Primavera: 251,
-      Verano: 101,
-      Otoño: 320,
-      Día: 233,
-      Noche: 338,
-    },
     color: "#8d6fb3",
     desc: "Una noche especiada y envolvente: canela y manzana abren paso a una lavanda aromática, mientras la vainilla, el ámbar y el tabaco dejan una estela cálida y elegante.",
+    indicadores: [
+      ["Invierno", "344"],
+      ["Primavera", "251"],
+      ["Verano", "101"],
+      ["Otoño", "320"],
+      ["Día", "233"],
+      ["Noche", "338"],
+    ],
     acordes: [
       ["Avainillado", 100],
       ["Lavanda", 87],
@@ -326,23 +327,22 @@ const PERFUMES = [
       ["Tabaco", 47],
     ],
   },
-
   {
     id: "odyssey-dubai-chocolat",
     nombre: "Odyssey Dubai Chocolat - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 507,
-      Primavera: 139,
-      Verano: 52,
-      Otoño: 419,
-      Día: 210,
-      Noche: 415,
-    },
     color: "#6b4030",
     desc: "Un postre oriental hecho perfume: café tostado, pistacho y praliné se funden con chocolate y vainilla, sobre un fondo de caramelo, haba tonka y madera ambarada.",
+    indicadores: [
+      ["Invierno", "507"],
+      ["Primavera", "139"],
+      ["Verano", "52"],
+      ["Otoño", "419"],
+      ["Día", "210"],
+      ["Noche", "415"],
+    ],
     acordes: [
       ["Cálido especiado", 100],
       ["Dulce", 87],
@@ -361,16 +361,16 @@ const PERFUMES = [
     genero: "Mujer",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 109,
-      Primavera: 119,
-      Verano: 99,
-      Otoño: 102,
-      Día: 127,
-      Noche: 87,
-    },
     color: "#e78a9e",
     desc: "Una explosión dulce y frutal: fresa, frambuesa y durazno se mezclan con caramelo y maracuyá, dejando un fondo cálido de pachulí, almizcle y ámbar.",
+    indicadores: [
+      ["Invierno", "109"],
+      ["Primavera", "119"],
+      ["Verano", "99"],
+      ["Otoño", "102"],
+      ["Día", "127"],
+      ["Noche", "87"],
+    ],
     acordes: [
       ["Afrutados", 100],
       ["Dulce", 87],
@@ -382,23 +382,22 @@ const PERFUMES = [
       ["Fresco especiado", 45],
     ],
   },
-
   {
     id: "odyssey-mega",
     nombre: "Odyssey Mega - Armaf",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 353,
-      Primavera: 1400,
-      Verano: 1500,
-      Otoño: 780,
-      Día: 1400,
-      Noche: 568,
-    },
     color: "#6fae91",
     desc: "Una salida fresca y energética: limón, naranja, bergamota, jengibre y menta se unen a una piña jugosa y un corazón aromático sobre un fondo de cedro, vetiver y haba tonka.",
+    indicadores: [
+      ["Invierno", "353"],
+      ["Primavera", "1400"],
+      ["Verano", "1500"],
+      ["Otoño", "780"],
+      ["Día", "1400"],
+      ["Noche", "568"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Aromático", 87],
@@ -411,23 +410,22 @@ const PERFUMES = [
       ["Afrutados", 45],
     ],
   },
-
   {
     id: "odyssey-limoni-fresh",
     nombre: "Odyssey Limoni Fresh - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 42,
-      Primavera: 953,
-      Verano: 1300,
-      Otoño: 125,
-      Día: 1200,
-      Noche: 107,
-    },
     color: "#d6d85a",
     desc: "Una ráfaga luminosa de verano: limón, naranja dulce, bergamota y mandarina se mezclan con jengibre y notas marinas, sobre un fondo limpio de ámbar, almizcle y té azul.",
+    indicadores: [
+      ["Invierno", "42"],
+      ["Primavera", "953"],
+      ["Verano", "1300"],
+      ["Otoño", "125"],
+      ["Día", "1200"],
+      ["Noche", "107"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Fresco especiado", 46],
@@ -436,23 +434,22 @@ const PERFUMES = [
       ["Verde", 41],
     ],
   },
-
   {
     id: "odyssey-tyrant",
     nombre: "Odyssey Tyrant - Armaf",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 70,
-      Primavera: 294,
-      Verano: 298,
-      Otoño: 213,
-      Día: 297,
-      Noche: 165,
-    },
     color: "#526b78",
     desc: "Una presencia fresca y elegante: pomelo y cítricos abren la fragancia, seguidos por pimienta, lavanda y geranio, sobre un fondo profundo de vetiver, cedro y maderas ambaradas.",
+    indicadores: [
+      ["Invierno", "70"],
+      ["Primavera", "294"],
+      ["Verano", "298"],
+      ["Otoño", "213"],
+      ["Día", "297"],
+      ["Noche", "165"],
+    ],
     acordes: [
       ["Fresco especiado", 100],
       ["Cítrico", 96],
@@ -465,23 +462,22 @@ const PERFUMES = [
       ["Cálido especiado", 44],
     ],
   },
-
   {
     id: "odyssey-mandarin-sky-elixir",
     nombre: "Odyssey Mandarin Sky Elixir - Armaf",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 521,
-      Primavera: 460,
-      Verano: 275,
-      Otoño: 508,
-      Día: 449,
-      Noche: 503,
-    },
     color: "#c88b38",
     desc: "Una versión más intensa y magnética: mandarina y naranja se encuentran con azafrán y especias, mientras el caramelo y el haba tonka descansan sobre un fondo de vetiver, cedro y ambroxán.",
+    indicadores: [
+      ["Invierno", "521"],
+      ["Primavera", "460"],
+      ["Verano", "275"],
+      ["Otoño", "508"],
+      ["Día", "449"],
+      ["Noche", "503"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Avainillado", 86],
@@ -495,23 +491,22 @@ const PERFUMES = [
       ["Lavanda", 49],
     ],
   },
-
   {
     id: "odyssey-mandarin-sky-vintage-edition",
     nombre: "Odyssey Mandarin Sky Vintage Edition - Armaf",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 57,
-      Primavera: 52,
-      Verano: 26,
-      Otoño: 62,
-      Día: 49,
-      Noche: 50,
-    },
     color: "#b8873e",
     desc: "Una interpretación elegante y atemporal: mandarina y cítricos abren paso a especias y delicadas notas florales, sobre un fondo cálido de ámbar y maderas suaves.",
+    indicadores: [
+      ["Invierno", "57"],
+      ["Primavera", "52"],
+      ["Verano", "26"],
+      ["Otoño", "62"],
+      ["Día", "49"],
+      ["Noche", "50"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Amaderado", 67],
@@ -527,16 +522,16 @@ const PERFUMES = [
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 23,
-      Primavera: 17,
-      Verano: 5,
-      Otoño: 21,
-      Día: 10,
-      Noche: 19,
-    },
     color: "#3f6fa3",
     desc: "Una noche eléctrica y especiada: canela, manzana y bergamota abren paso a una lavanda aromática, mientras el tabaco, la vainilla y el ámbar dejan una estela cálida y profunda.",
+    indicadores: [
+      ["Invierno", "23"],
+      ["Primavera", "17"],
+      ["Verano", "5"],
+      ["Otoño", "21"],
+      ["Día", "10"],
+      ["Noche", "19"],
+    ],
     acordes: [
       ["Cálido especiado", 100],
       ["Canela", 97],
@@ -550,23 +545,22 @@ const PERFUMES = [
       ["Tabaco", 63],
     ],
   },
-
   {
     id: "odyssey-artisto",
     nombre: "Odyssey Artisto - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 93,
-      Primavera: 192,
-      Verano: 242,
-      Otoño: 169,
-      Día: 216,
-      Noche: 166,
-    },
     color: "#d28a42",
     desc: "Una mezcla vibrante y tropical: bergamota y notas de nuez se encuentran con coco, frutas tropicales y canela, sobre un fondo cremoso de vainilla, haba tonka y ámbar.",
+    indicadores: [
+      ["Invierno", "93"],
+      ["Primavera", "192"],
+      ["Verano", "242"],
+      ["Otoño", "169"],
+      ["Día", "216"],
+      ["Noche", "166"],
+    ],
     acordes: [
       ["Avainillado", 100],
       ["Coco", 82],
@@ -586,16 +580,16 @@ const PERFUMES = [
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 41,
-      Primavera: 291,
-      Verano: 397,
-      Otoño: 79,
-      Día: 359,
-      Noche: 93,
-    },
     color: "#e5a52e",
     desc: "Una explosión tropical de mango jugoso y luminoso, con un corazón frutal y un fondo suave de vainilla y maderas que prolonga su dulzura.",
+    indicadores: [
+      ["Invierno", "41"],
+      ["Primavera", "291"],
+      ["Verano", "397"],
+      ["Otoño", "79"],
+      ["Día", "359"],
+      ["Noche", "93"],
+    ],
     acordes: [
       ["Tropical", 100],
       ["Afrutados", 88],
@@ -609,23 +603,22 @@ const PERFUMES = [
       ["Especiado suave", 46],
     ],
   },
-
   {
     id: "odyssey-marshmallow",
     nombre: "Odyssey Marshmallow - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 87,
-      Primavera: 90,
-      Verano: 69,
-      Otoño: 87,
-      Día: 104,
-      Noche: 60,
-    },
     color: "#f0c5c7",
     desc: "Un dulce abrazo de algodón: coco, manzana y limón abren una composición de fresa, frambuesa y durazno, sobre una base cremosa de malvavisco, vainilla, praliné y ámbar.",
+    indicadores: [
+      ["Invierno", "87"],
+      ["Primavera", "90"],
+      ["Verano", "69"],
+      ["Otoño", "87"],
+      ["Día", "104"],
+      ["Noche", "60"],
+    ],
     acordes: [
       ["Dulce", 100],
       ["Afrutados", 71],
@@ -634,23 +627,22 @@ const PERFUMES = [
       ["Lactónico", 41],
     ],
   },
-
   {
     id: "odyssey-toffee-coffee",
     nombre: "Odyssey Toffee Coffee - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 129,
-      Primavera: 32,
-      Verano: 8,
-      Otoño: 108,
-      Día: 62,
-      Noche: 105,
-    },
     color: "#76503b",
     desc: "Una taza de café convertida en perfume: café intenso y toffee se mezclan con flores suaves, vainilla y azúcar, dejando un fondo cálido de ámbar, madera y almizcle.",
+    indicadores: [
+      ["Invierno", "129"],
+      ["Primavera", "32"],
+      ["Verano", "8"],
+      ["Otoño", "108"],
+      ["Día", "62"],
+      ["Noche", "105"],
+    ],
     acordes: [
       ["Dulce", 100],
       ["Café", 58],
@@ -660,23 +652,22 @@ const PERFUMES = [
       ["Lactónico", 44],
     ],
   },
-
   {
     id: "odyssey-soda-pop",
     nombre: "Odyssey Soda Pop - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 47,
-      Primavera: 51,
-      Verano: 19,
-      Otoño: 56,
-      Día: 54,
-      Noche: 46,
-    },
     color: "#9a5c58",
     desc: "Una gaseosa helada con un giro especiado: cola, cítricos, menta y jengibre se mezclan con té negro y canela, sobre un fondo de vainilla, tonka, maderas y almizcle.",
+    indicadores: [
+      ["Invierno", "47"],
+      ["Primavera", "51"],
+      ["Verano", "19"],
+      ["Otoño", "56"],
+      ["Día", "54"],
+      ["Noche", "46"],
+    ],
     acordes: [
       ["Fresco especiado", 100],
       ["Amaderado", 88],
@@ -690,23 +681,22 @@ const PERFUMES = [
       ["Cítrico", 69],
     ],
   },
-
   {
     id: "odyssey-aoud",
     nombre: "Odyssey Aoud - Armaf",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 179,
-      Primavera: 86,
-      Verano: 28,
-      Otoño: 158,
-      Día: 70,
-      Noche: 164,
-    },
     color: "#4f392d",
     desc: "Una composición oscura y elegante: azafrán, nuez moscada y lavanda abren paso al oud y las maderas, sobre un fondo profundo de almizcle, ámbar y pachulí.",
+    indicadores: [
+      ["Invierno", "179"],
+      ["Primavera", "86"],
+      ["Verano", "28"],
+      ["Otoño", "158"],
+      ["Día", "70"],
+      ["Noche", "164"],
+    ],
     acordes: [
       ["Amaderado", 100],
       ["Oud", 97],
@@ -720,23 +710,22 @@ const PERFUMES = [
       ["Atalcado", 52],
     ],
   },
-
   {
     id: "odyssey-wild-one-gold-edition",
     nombre: "Odyssey Wild One Gold Edition - Armaf",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 114,
-      Primavera: 142,
-      Verano: 129,
-      Otoño: 140,
-      Día: 137,
-      Noche: 126,
-    },
     color: "#b58a38",
     desc: "Una energía fresca y especiada: bergamota, limón, pimienta y menta se mezclan con lavanda y jengibre, sobre un fondo de pachulí, cedro, sándalo y almizcle.",
+    indicadores: [
+      ["Invierno", "114"],
+      ["Primavera", "142"],
+      ["Verano", "129"],
+      ["Otoño", "140"],
+      ["Día", "137"],
+      ["Noche", "126"],
+    ],
     acordes: [
       ["Fresco especiado", 100],
       ["Aromático", 79],
@@ -750,23 +739,22 @@ const PERFUMES = [
       ["Atalcado", 45],
     ],
   },
-
   {
     id: "odyssey-black-forest",
     nombre: "Odyssey Black Forest - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 109,
-      Primavera: 33,
-      Verano: 4,
-      Otoño: 92,
-      Día: 50,
-      Noche: 83,
-    },
     color: "#59352f",
     desc: "Un postre oscuro y tentador: cereza, caramelo y canela se funden con dátiles y miel, sobre una base de praliné, vainilla, haba tonka, madera y almizcle.",
+    indicadores: [
+      ["Invierno", "109"],
+      ["Primavera", "33"],
+      ["Verano", "4"],
+      ["Otoño", "92"],
+      ["Día", "50"],
+      ["Noche", "83"],
+    ],
     acordes: [
       ["Dulce", 100],
       ["Avainillado", 53],
@@ -775,23 +763,22 @@ const PERFUMES = [
       ["Amielado", 45],
     ],
   },
-
   {
     id: "odyssey-eau-de-montagne",
     nombre: "Odyssey Eau de Montagne - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 87,
-      Primavera: 69,
-      Verano: 27,
-      Otoño: 91,
-      Día: 62,
-      Noche: 74,
-    },
     color: "#d4c4a2",
-    desc: "Una escapada a la montaña: almendra cremosa, acordes láctonicos y especias abren paso a flores blancas, sobre un fondo suave de vainilla, sándalo, almizcle y cacao.",
+    desc: "Una escapada a la montaña: almendra cremosa, acordes lactónicos y especias abren paso a flores blancas, sobre un fondo suave de vainilla, sándalo, almizcle y cacao.",
+    indicadores: [
+      ["Invierno", "87"],
+      ["Primavera", "69"],
+      ["Verano", "27"],
+      ["Otoño", "91"],
+      ["Día", "62"],
+      ["Noche", "74"],
+    ],
     acordes: [
       ["Almendra", 100],
       ["Atalcado", 80],
@@ -805,23 +792,22 @@ const PERFUMES = [
       ["Floral blanco", 55],
     ],
   },
-
   {
     id: "odyssey-revolution",
     nombre: "Odyssey Revolution - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 81,
-      Primavera: 91,
-      Verano: 74,
-      Otoño: 84,
-      Día: 90,
-      Noche: 82,
-    },
     color: "#7e4b61",
     desc: "Una revolución dulce y frutal: piña, grosella negra y naranja sanguina se mezclan con ciruela, praliné, vainilla y cardamomo, sobre un fondo de pachulí y haba tonka.",
+    indicadores: [
+      ["Invierno", "81"],
+      ["Primavera", "91"],
+      ["Verano", "74"],
+      ["Otoño", "84"],
+      ["Día", "90"],
+      ["Noche", "82"],
+    ],
     acordes: [
       ["Afrutados", 100],
       ["Dulce", 98],
@@ -834,23 +820,22 @@ const PERFUMES = [
       ["Especiado suave", 45],
     ],
   },
-
   {
     id: "odyssey-ba-ha-mas",
     nombre: "Odyssey BA HA MAS - Armaf",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 29,
-      Primavera: 351,
-      Verano: 439,
-      Otoño: 62,
-      Día: 397,
-      Noche: 87,
-    },
     color: "#4fa9b5",
     desc: "Una escapada tropical junto al mar: melón fresco, manzana, pera y ciruela se mezclan con notas acuáticas y saladas, sobre un fondo limpio de almizcle, ámbar y cedro.",
+    indicadores: [
+      ["Invierno", "29"],
+      ["Primavera", "351"],
+      ["Verano", "439"],
+      ["Otoño", "62"],
+      ["Día", "397"],
+      ["Noche", "87"],
+    ],
     acordes: [
       ["Marino", 100],
       ["Acuático", 95],
@@ -864,23 +849,22 @@ const PERFUMES = [
       ["Almizclado", 47],
     ],
   },
-
   {
     id: "odyssey-li-chi-lush",
     nombre: "Odyssey Li'chi Lush - Armaf",
     genero: "Mujer",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 6,
-      Primavera: 25,
-      Verano: 23,
-      Otoño: 10,
-      Día: 24,
-      Noche: 6,
-    },
     color: "#e49a9f",
     desc: "Un jardín frutal en plena floración: lichi, mandarina, durazno y frambuesa se encuentran con peonía, rosa, jazmín y magnolia, sobre un fondo cremoso de vainilla, caramelo, sándalo y ámbar.",
+    indicadores: [
+      ["Invierno", "6"],
+      ["Primavera", "25"],
+      ["Verano", "23"],
+      ["Otoño", "10"],
+      ["Día", "24"],
+      ["Noche", "6"],
+    ],
     acordes: [
       ["Afrutados", 100],
       ["Floral", 74],
@@ -894,23 +878,22 @@ const PERFUMES = [
       ["Amaderado", 52],
     ],
   },
-
   {
     id: "odyssey-pink-pop",
     nombre: "Odyssey Pink Pop - Armaf",
     genero: "Mujer",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 5,
-      Primavera: 14,
-      Verano: 16,
-      Otoño: 7,
-      Día: 19,
-      Noche: 6,
-    },
     color: "#e889a8",
     desc: "Una explosión floral y frutal: mandarina, durazno, frambuesa, fresa y piña abren paso a flores blancas y rosa, sobre un fondo cremoso de coco, vainilla, almizcle y ámbar.",
+    indicadores: [
+      ["Invierno", "5"],
+      ["Primavera", "14"],
+      ["Verano", "16"],
+      ["Otoño", "7"],
+      ["Día", "19"],
+      ["Noche", "6"],
+    ],
     acordes: [
       ["Floral blanco", 100],
       ["Cítrico", 79],
@@ -923,23 +906,22 @@ const PERFUMES = [
       ["Animálico", 44],
     ],
   },
-
   {
     id: "odyssey-french-kiss",
     nombre: "Odyssey French Kiss - Armaf",
     genero: "Mujer",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 5,
-      Primavera: 9,
-      Verano: 9,
-      Otoño: 9,
-      Día: 11,
-      Noche: 9,
-    },
     color: "#c77c9d",
     desc: "Un beso dulce y romántico: frutas jugosas y flores delicadas se funden en una composición femenina, suave y luminosa, con un fondo cálido y envolvente.",
+    indicadores: [
+      ["Invierno", "5"],
+      ["Primavera", "9"],
+      ["Verano", "9"],
+      ["Otoño", "9"],
+      ["Día", "11"],
+      ["Noche", "9"],
+    ],
     acordes: [
       ["Dulce", 100],
       ["Ámbar", 72],
@@ -953,23 +935,22 @@ const PERFUMES = [
       ["Floral", 44],
     ],
   },
-
   {
     id: "odyssey-femme-white-edition",
     nombre: "Odyssey Femme White Edition - Armaf",
     genero: "Mujer",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 3,
-      Primavera: 14,
-      Verano: 15,
-      Otoño: 7,
-      Día: 15,
-      Noche: 4,
-    },
     color: "#e7e1d5",
     desc: "Una elegancia luminosa y femenina: naranja y notas verdes abren paso a madreselva, nardos y jazmín, sobre un fondo delicado de vainilla, iris y sándalo.",
+    indicadores: [
+      ["Invierno", "3"],
+      ["Primavera", "14"],
+      ["Verano", "15"],
+      ["Otoño", "7"],
+      ["Día", "15"],
+      ["Noche", "4"],
+    ],
     acordes: [
       ["Floral blanco", 100],
       ["Nardos", 56],
@@ -984,16 +965,16 @@ const PERFUMES = [
     genero: "Unisex",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 8,
-      Primavera: 10,
-      Verano: 1,
-      Otoño: 7,
-      Día: 9,
-      Noche: 10,
-    },
     color: "#5a2520",
     desc: "Una fragancia intensa y exótica que combina maracuyá, cítricos, mango, pimienta negra y azafrán en la salida, con flores, rosa y especias en el corazón, sobre un fondo de cuero, oud, ámbar, vainilla y maderas.",
+    indicadores: [
+      ["Invierno", "8"],
+      ["Primavera", "10"],
+      ["Verano", "1"],
+      ["Otoño", "7"],
+      ["Día", "9"],
+      ["Noche", "10"],
+    ],
     acordes: [
       ["Tropical", 100],
       ["Afrutados", 88],
@@ -1007,23 +988,22 @@ const PERFUMES = [
       ["Oud", 54],
     ],
   },
-
   {
     id: "club-de-nuit-woman",
     nombre: "Club de Nuit Woman - Armaf",
     genero: "Mujer",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 835,
-      Primavera: 1400,
-      Verano: 1100,
-      Otoño: 1200,
-      Día: 1400,
-      Noche: 941,
-    },
     color: "#d8a0a7",
     desc: "Una fragancia floral y frutal femenina que combina naranja, bergamota, pomelo y durazno en la salida, con rosa, jazmín, geranio y lichi en el corazón, sobre un fondo de pachulí, almizcle, vainilla y vetiver.",
+    indicadores: [
+      ["Invierno", "835"],
+      ["Primavera", "1400"],
+      ["Verano", "1100"],
+      ["Otoño", "1200"],
+      ["Día", "1400"],
+      ["Noche", "941"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Pachulí", 65],
@@ -1037,23 +1017,22 @@ const PERFUMES = [
       ["Cálido especiado", 50],
     ],
   },
-
   {
     id: "club-de-nuit-untold",
     nombre: "Club de Nuit Untold - Armaf",
     genero: "Unisex",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 2000,
-      Primavera: 1500,
-      Verano: 747,
-      Otoño: 1900,
-      Día: 1400,
-      Noche: 1900,
-    },
     color: "#8b1238",
     desc: "Una fragancia profunda y envolvente que abre con azafrán y jazmín, evoluciona hacia un corazón de amberwood y ámbar gris, y termina sobre un fondo de resina de abeto y cedro.",
+    indicadores: [
+      ["Invierno", "2000"],
+      ["Primavera", "1500"],
+      ["Verano", "747"],
+      ["Otoño", "1900"],
+      ["Día", "1400"],
+      ["Noche", "1900"],
+    ],
     acordes: [
       ["Amaderado", 100],
       ["Ámbar", 98],
@@ -1066,23 +1045,22 @@ const PERFUMES = [
       ["Aromático", 45],
     ],
   },
-
   {
     id: "club-de-nuit-sillage",
     nombre: "Club de Nuit Sillage - Armaf",
     genero: "Unisex",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 708,
-      Primavera: 3700,
-      Verano: 3900,
-      Otoño: 2000,
-      Día: 3700,
-      Noche: 1300,
-    },
     color: "#c7cbd0",
     desc: "Una fragancia fresca y elegante que combina bergamota, limón, lima, jengibre, grosella negra y hojas de violeta, con un corazón floral de jazmín, iris y rosa, sobre un fondo de sándalo, cedro, almizcle y ambroxan.",
+    indicadores: [
+      ["Invierno", "708"],
+      ["Primavera", "3700"],
+      ["Verano", "3900"],
+      ["Otoño", "2000"],
+      ["Día", "3700"],
+      ["Noche", "1300"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Almizclado", 60],
@@ -1096,23 +1074,22 @@ const PERFUMES = [
       ["Rosas", 44],
     ],
   },
-
   {
     id: "club-de-nuit-milestone",
     nombre: "Club de Nuit Milestone - Armaf",
     genero: "Unisex",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 407,
-      Primavera: 2800,
-      Verano: 3200,
-      Otoño: 1100,
-      Día: 3000,
-      Noche: 992,
-    },
     color: "#b9b0a0",
     desc: "Una fragancia fresca de inspiración marina que combina bergamota, frutos rojos y acordes marinos, con violeta, sándalo y madera blanca en el corazón, sobre una base de vetiver, almizcle y ambroxan.",
+    indicadores: [
+      ["Invierno", "407"],
+      ["Primavera", "2800"],
+      ["Verano", "3200"],
+      ["Otoño", "1100"],
+      ["Día", "3000"],
+      ["Noche", "992"],
+    ],
     acordes: [
       ["Marino", 100],
       ["Aromático", 93],
@@ -1126,23 +1103,22 @@ const PERFUMES = [
       ["Salado", 57],
     ],
   },
-
   {
     id: "club-de-nuit-intense-man",
     nombre: "Club de Nuit Intense Man - Armaf",
     genero: "Hombre",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 9600,
-      Primavera: 16400,
-      Verano: 16000,
-      Otoño: 14300,
-      Día: 16200,
-      Noche: 14300,
-    },
     color: "#171717",
     desc: "Una interpretación intensa y sofisticada con limón, piña, bergamota, grosella negra y manzana en la salida, seguida de abedul, jazmín y rosa, sobre un fondo de ámbar gris, almizcle, pachulí y vainilla.",
+    indicadores: [
+      ["Invierno", "9600"],
+      ["Primavera", "16400"],
+      ["Verano", "16000"],
+      ["Otoño", "14300"],
+      ["Día", "16200"],
+      ["Noche", "14300"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Afrutados", 79],
@@ -1155,23 +1131,22 @@ const PERFUMES = [
       ["Almizclado", 47],
     ],
   },
-
   {
     id: "club-de-nuit-blue-iconic",
     nombre: "Club de Nuit Blue Iconic - Armaf",
     genero: "Hombre",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 1200,
-      Primavera: 3300,
-      Verano: 3400,
-      Otoño: 2500,
-      Día: 3300,
-      Noche: 2200,
-    },
     color: "#173b72",
     desc: "Una fragancia masculina fresca y especiada con pomelo, limón, menta, pimienta rosa y cilantro en la salida, jengibre, melón, jazmín y nuez moscada en el corazón, y un fondo de sándalo, ámbar, incienso, maderas, cedro, pachulí y ládano.",
+    indicadores: [
+      ["Invierno", "1200"],
+      ["Primavera", "3300"],
+      ["Verano", "3400"],
+      ["Otoño", "2500"],
+      ["Día", "3300"],
+      ["Noche", "2200"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Amaderado", 93],
@@ -1185,23 +1160,22 @@ const PERFUMES = [
       ["Verde", 46],
     ],
   },
-
   {
     id: "club-de-nuit-urban-elixir",
     nombre: "Club de Nuit Urban Elixir - Armaf",
     genero: "Hombre",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 2300,
-      Primavera: 2900,
-      Verano: 2800,
-      Otoño: 2800,
-      Día: 2900,
-      Noche: 2800,
-    },
     color: "#25252b",
     desc: "Una fragancia masculina intensa y sofisticada que combina bergamota, pimienta rosa, flor de azahar y jazmín, con lavanda, tagetes, geranio, vetiver, elemí y azafrán, sobre un fondo de ambroxan, ámbar, pachulí, cedro y ládano.",
+    indicadores: [
+      ["Invierno", "2300"],
+      ["Primavera", "2900"],
+      ["Verano", "2800"],
+      ["Otoño", "2800"],
+      ["Día", "2900"],
+      ["Noche", "2800"],
+    ],
     acordes: [
       ["Ámbar", 100],
       ["Aromático", 82],
@@ -1215,23 +1189,22 @@ const PERFUMES = [
       ["Herbal", 45],
     ],
   },
-
   {
     id: "club-de-nuit-intense-man-extrait",
     nombre: "Club de Nuit Intense Man Extrait - Armaf",
     genero: "Hombre",
     ml: 70,
     etiqueta: "",
-    cuando: {
-      Invierno: 416,
-      Primavera: 451,
-      Verano: 417,
-      Otoño: 443,
-      Día: 425,
-      Noche: 439,
-    },
     color: "#181818",
     desc: "Una versión concentrada y potente del clásico Club de Nuit Intense Man, con piña, limón, bergamota, grosella negra y manzana en la salida, abedul, rosa y jazmín en el corazón, y pachulí, vainilla, ámbar gris y almizcle en el fondo.",
+    indicadores: [
+      ["Invierno", "416"],
+      ["Primavera", "451"],
+      ["Verano", "417"],
+      ["Otoño", "443"],
+      ["Día", "425"],
+      ["Noche", "439"],
+    ],
     acordes: [
       ["Afrutados", 100],
       ["Cítrico", 96],
@@ -1245,23 +1218,22 @@ const PERFUMES = [
       ["Aromático", 54],
     ],
   },
-
   {
     id: "club-de-nuit-intense-overdose",
     nombre: "Club de Nuit Intense Overdose - Armaf",
     genero: "Hombre",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 170,
-      Primavera: 193,
-      Verano: 178,
-      Otoño: 180,
-      Día: 186,
-      Noche: 182,
-    },
     color: "#252525",
     desc: "Una interpretación más intensa del ADN de Club de Nuit Intense Man, con bergamota, mandarina, piña y cristales azules en la salida, vainilla, musgo de roble y ciruela en el corazón, sobre un fondo de pachulí, haba tonka y notas blancas empolvadas.",
+    indicadores: [
+      ["Invierno", "170"],
+      ["Primavera", "193"],
+      ["Verano", "178"],
+      ["Otoño", "180"],
+      ["Día", "186"],
+      ["Noche", "182"],
+    ],
     acordes: [
       ["Afrutados", 100],
       ["Dulce", 96],
@@ -1275,23 +1247,22 @@ const PERFUMES = [
       ["Tropical", 55],
     ],
   },
-
   {
     id: "club-de-nuit-iconic-extrait-de-parfum",
     nombre: "Club de Nuit Iconic Extrait de Parfum - Armaf",
     genero: "Hombre",
     ml: 70,
     etiqueta: "",
-    cuando: {
-      Invierno: 52,
-      Primavera: 91,
-      Verano: 88,
-      Otoño: 86,
-      Día: 89,
-      Noche: 72,
-    },
     color: "#172d63",
     desc: "Una versión concentrada de Iconic con pomelo, limón, menta, pimienta rosa y cilantro en la salida, seguida de jengibre, melón, nuez moscada y jazmín, sobre un fondo de incienso, maderas, sándalo, ámbar, cedro, pachulí y ládano.",
+    indicadores: [
+      ["Invierno", "52"],
+      ["Primavera", "91"],
+      ["Verano", "88"],
+      ["Otoño", "86"],
+      ["Día", "89"],
+      ["Noche", "72"],
+    ],
     acordes: [
       ["Amaderado", 100],
       ["Ámbar", 84],
@@ -1305,23 +1276,22 @@ const PERFUMES = [
       ["Fresco", 50],
     ],
   },
-
   {
     id: "club-de-nuit-precieux-iv",
     nombre: "Club de Nuit Precieux IV - Armaf",
     genero: "Mujer",
     ml: 55,
     etiqueta: "",
-    cuando: {
-      Invierno: 54,
-      Primavera: 55,
-      Verano: 50,
-      Otoño: 51,
-      Día: 49,
-      Noche: 54,
-    },
     color: "#d4af75",
     desc: "Una fragancia floral y gourmand que abre con bergamota, manzana y sal marina, continúa con ylang-ylang, jazmín, azucena blanca y frutos rojos, y termina con crema batida, vainilla, haba tonka, almizcle y pachulí.",
+    indicadores: [
+      ["Invierno", "54"],
+      ["Primavera", "55"],
+      ["Verano", "50"],
+      ["Otoño", "51"],
+      ["Día", "49"],
+      ["Noche", "54"],
+    ],
     acordes: [
       ["Dulce", 100],
       ["Avainillado", 84],
@@ -1335,23 +1305,22 @@ const PERFUMES = [
       ["Amaderado", 50],
     ],
   },
-
   {
     id: "club-de-nuit-maleka",
     nombre: "Club de Nuit Maleka - Armaf",
     genero: "Mujer",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 244,
-      Primavera: 551,
-      Verano: 486,
-      Otoño: 381,
-      Día: 519,
-      Noche: 306,
-    },
     color: "#c7a5b5",
     desc: "Una fragancia floral y frutal luminosa que combina lichi, bergamota y pimienta rosa en la salida, con iris en el corazón, sobre un fondo de praliné, sándalo y ambroxan.",
+    indicadores: [
+      ["Invierno", "244"],
+      ["Primavera", "551"],
+      ["Verano", "486"],
+      ["Otoño", "381"],
+      ["Día", "519"],
+      ["Noche", "306"],
+    ],
     acordes: [
       ["Iris", 100],
       ["Atalcado", 94],
@@ -1365,53 +1334,51 @@ const PERFUMES = [
       ["Almizclado", 60],
     ],
   },
-
   {
     id: "club-de-nuit-urban-man",
     nombre: "Club de Nuit Urban Man - Armaf",
     genero: "Hombre",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 64,
-      Primavera: 208,
-      Verano: 192,
-      Otoño: 153,
-      Día: 189,
-      Noche: 112,
-    },
     color: "#303a32",
     desc: "Una fragancia masculina amaderada y especiada con bergamota, menta, pomelo y cardamomo en la salida, jengibre, lavanda, cedro y nuez moscada en el corazón, y vetiver, pachulí, sándalo y musgo de roble en el fondo.",
+    indicadores: [
+      ["Invierno", "64"],
+      ["Primavera", "208"],
+      ["Verano", "192"],
+      ["Otoño", "153"],
+      ["Día", "189"],
+      ["Noche", "112"],
+    ],
     acordes: [
       ["Amaderado", 100],
       ["Fresco especiado", 97],
       ["Aromático", 92],
       ["Cítrico", 81],
       ["Cálido especiado", 63],
-      ["Terroso", 61],
+      ["Terrosos", 61],
       ["Verde", 60],
       ["Pachulí", 51],
       ["Lavanda", 48],
       ["Atalcado", 46],
     ],
   },
-
   {
     id: "club-de-nuit-lionheart-man",
     nombre: "Club de Nuit Lionheart Man - Armaf",
     genero: "Hombre",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 576,
-      Primavera: 344,
-      Verano: 116,
-      Otoño: 508,
-      Día: 252,
-      Noche: 540,
-    },
     color: "#5b3924",
     desc: "Una fragancia oriental fougère que combina lavanda y menta en la salida, benjuí y vainilla en el corazón, y un fondo cálido y gourmand de miel, haba tonka y tabaco.",
+    indicadores: [
+      ["Invierno", "576"],
+      ["Primavera", "344"],
+      ["Verano", "116"],
+      ["Otoño", "508"],
+      ["Día", "252"],
+      ["Noche", "540"],
+    ],
     acordes: [
       ["Avainillado", 100],
       ["Aromático", 80],
@@ -1425,23 +1392,22 @@ const PERFUMES = [
       ["Cálido especiado", 47],
     ],
   },
-
   {
     id: "club-de-nuit-woman-extrait",
     nombre: "Club de Nuit Woman Extrait - Armaf",
     genero: "Mujer",
     ml: 70,
     etiqueta: "",
-    cuando: {
-      Invierno: 51,
-      Primavera: 52,
-      Verano: 47,
-      Otoño: 50,
-      Día: 58,
-      Noche: 44,
-    },
     color: "#c99ba2",
     desc: "Una versión más concentrada de Club de Nuit Woman que abre con naranja, durazno, pomelo y bergamota, continúa con rosa, geranio, jazmín y lichi, y termina con pachulí, vetiver, almizcle y vainilla.",
+    indicadores: [
+      ["Invierno", "51"],
+      ["Primavera", "52"],
+      ["Verano", "47"],
+      ["Otoño", "50"],
+      ["Día", "58"],
+      ["Noche", "44"],
+    ],
     acordes: [
       ["Amaderado", 100],
       ["Rosas", 89],
@@ -1453,23 +1419,22 @@ const PERFUMES = [
       ["Balsámico", 46],
     ],
   },
-
   {
     id: "club-de-nuit-oud",
     nombre: "Club de Nuit Oud - Armaf",
     genero: "Unisex",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 291,
-      Primavera: 267,
-      Verano: 178,
-      Otoño: 280,
-      Día: 234,
-      Noche: 278,
-    },
     color: "#35251f",
     desc: "Una fragancia oriental profunda y lujosa que combina bergamota, piña, durazno, maracuyá, pera y ciruela en la salida, con jazmín, fresia, hojas de violeta y madera de cachemira en el corazón, sobre una base intensa de oud.",
+    indicadores: [
+      ["Invierno", "291"],
+      ["Primavera", "267"],
+      ["Verano", "178"],
+      ["Otoño", "280"],
+      ["Día", "234"],
+      ["Noche", "278"],
+    ],
     acordes: [
       ["Afrutados", 100],
       ["Dulce", 81],
@@ -1483,23 +1448,22 @@ const PERFUMES = [
       ["Fresco", 49],
     ],
   },
-
   {
     id: "club-de-nuit-bling",
     nombre: "Club de Nuit Bling - Armaf",
     genero: "Unisex",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 96,
-      Primavera: 245,
-      Verano: 252,
-      Otoño: 149,
-      Día: 242,
-      Noche: 173,
-    },
     color: "#c9c9c9",
     desc: "Una fragancia moderna y luminosa que abre con cítricos, evoluciona hacia un corazón de Flower Prism y Stardust, y termina con vainilla y Velvet Wood, aportando un carácter elegante y brillante.",
+    indicadores: [
+      ["Invierno", "96"],
+      ["Primavera", "245"],
+      ["Verano", "252"],
+      ["Otoño", "149"],
+      ["Día", "242"],
+      ["Noche", "173"],
+    ],
     acordes: [
       ["Cítrico", 100],
       ["Fresco", 64],
@@ -1508,23 +1472,22 @@ const PERFUMES = [
       ["Atalcado", 37],
     ],
   },
-
   {
     id: "club-de-nuit-lionheart-woman",
     nombre: "Club de Nuit Lionheart Woman - Armaf",
     genero: "Mujer",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 95,
-      Primavera: 88,
-      Verano: 51,
-      Otoño: 104,
-      Día: 86,
-      Noche: 87,
-    },
     color: "#c9a9b8",
     desc: "Una fragancia oriental avainillada que combina vainilla y lavanda en la salida, cacao y jengibre en el corazón, y un fondo cremoso de absoluto de vainilla.",
+    indicadores: [
+      ["Invierno", "95"],
+      ["Primavera", "88"],
+      ["Verano", "51"],
+      ["Otoño", "104"],
+      ["Día", "86"],
+      ["Noche", "87"],
+    ],
     acordes: [
       ["Avainillado", 100],
       ["Fresco especiado", 94],
@@ -1538,23 +1501,22 @@ const PERFUMES = [
       ["Herbal", 46],
     ],
   },
-
   {
     id: "club-de-nuit-elite",
     nombre: "Club de Nuit Elite - Armaf",
     genero: "Unisex",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 20,
-      Primavera: 109,
-      Verano: 106,
-      Otoño: 74,
-      Día: 96,
-      Noche: 37,
-    },
     color: "#70816d",
     desc: "Una fragancia cítrica y aromática que abre con té verde, bergamota, manzana y pimientas, continúa con rosa centifolia, geranio y grosella negra, y termina con vetiver, ámbar, cedro, almizcle y cashmeran.",
+    indicadores: [
+      ["Invierno", "20"],
+      ["Primavera", "109"],
+      ["Verano", "106"],
+      ["Otoño", "74"],
+      ["Día", "96"],
+      ["Noche", "37"],
+    ],
     acordes: [
       ["Amaderado", 100],
       ["Fresco especiado", 94],
@@ -1568,23 +1530,22 @@ const PERFUMES = [
       ["Atalcado", 62],
     ],
   },
-
   {
     id: "club-de-nuit-precieux-i",
     nombre: "Club de Nuit Précieux I - Armaf",
     genero: "Unisex",
     ml: 55,
     etiqueta: "",
-    cuando: {
-      Invierno: 1800,
-      Primavera: 1900,
-      Verano: 1600,
-      Otoño: 1900,
-      Día: 1800,
-      Noche: 1900,
-    },
     color: "#d1b06a",
     desc: "Una fragancia oriental amaderada que combina piña, limón, bergamota, caramelo, pera y pimientas en la salida, con musgo de roble, madera blanca, jazmín, lirio de los valles y anís en el corazón, sobre una base de ambroxan, almizcle blanco, cedro, pachulí, cuero, ámbar y vainilla.",
+    indicadores: [
+      ["Invierno", "1800"],
+      ["Primavera", "1900"],
+      ["Verano", "1600"],
+      ["Otoño", "1900"],
+      ["Día", "1800"],
+      ["Noche", "1900"],
+    ],
     acordes: [
       ["Dulce", 100],
       ["Amaderado", 96],
@@ -1604,16 +1565,16 @@ const PERFUMES = [
     genero: "Mujer",
     ml: 105,
     etiqueta: "",
-    cuando: {
-      Invierno: 1600,
-      Primavera: 632,
-      Verano: 276,
-      Otoño: 1500,
-      Día: 763,
-      Noche: 1600,
-    },
     color: "#a85c68",
     desc: "Una fragancia chipre floral intensa que abre con rosa, azafrán y geranio, continúa con nuez moscada, pimienta, violeta y alcaravea, y termina con pachulí, oud, vainilla y ámbar.",
+    indicadores: [
+      ["Invierno", "1600"],
+      ["Primavera", "632"],
+      ["Verano", "276"],
+      ["Otoño", "1500"],
+      ["Día", "763"],
+      ["Noche", "1600"],
+    ],
     acordes: [
       ["Rosas", 100],
       ["Fresco especiado", 93],
@@ -1633,16 +1594,16 @@ const PERFUMES = [
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 10000,
-      Primavera: 4600,
-      Verano: 1800,
-      Otoño: 8700,
-      Día: 4800,
-      Noche: 9000,
-    },
     color: "#171717",
     desc: "Una fragancia intensa y especiada que combina pimienta negra, piña y tabaco en la salida, con café, iris y pachulí en el corazón, sobre un fondo cálido de ámbar, vainilla, maderas secas, benjuí y ládano.",
+    indicadores: [
+      ["Invierno", "10000"],
+      ["Primavera", "4600"],
+      ["Verano", "1800"],
+      ["Otoño", "8700"],
+      ["Día", "4800"],
+      ["Noche", "9000"],
+    ],
     acordes: [
       ["Ámbar", 100],
       ["Fresco especiado", 91],
@@ -1656,23 +1617,22 @@ const PERFUMES = [
       ["Balsámico", 49],
     ],
   },
-
   {
     id: "asad-zanzibar",
     nombre: "Asad Zanzibar - Lattafa",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 708,
-      Primavera: 1800,
-      Verano: 1800,
-      Otoño: 1200,
-      Día: 1800,
-      Noche: 1200,
-    },
     color: "#183b5d",
     desc: "Una interpretación fresca y tropical de la familia Asad, con pimienta negra y lavanda marina en la salida, agua de coco salada e iris en el corazón, y un fondo suave de vainilla e incienso.",
+    indicadores: [
+      ["Invierno", "708"],
+      ["Primavera", "1800"],
+      ["Verano", "1800"],
+      ["Otoño", "1200"],
+      ["Día", "1800"],
+      ["Noche", "1200"],
+    ],
     acordes: [
       ["Avainillado", 100],
       ["Iris", 85],
@@ -1686,23 +1646,22 @@ const PERFUMES = [
       ["Balsámico", 54],
     ],
   },
-
   {
     id: "asad-bourbon",
     nombre: "Asad Bourbon - Lattafa",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 4900,
-      Primavera: 1600,
-      Verano: 507,
-      Otoño: 4100,
-      Día: 2000,
-      Noche: 4200,
-    },
     color: "#5a3827",
     desc: "Una fragancia cálida y gourmand que combina pimienta rosa, lavanda y ciruela mirabel en la salida, con cacao, davana y nuez moscada en el corazón, sobre un fondo de vainilla Bourbon, vetiver y ámbar.",
+    indicadores: [
+      ["Invierno", "4900"],
+      ["Primavera", "1600"],
+      ["Verano", "507"],
+      ["Otoño", "4100"],
+      ["Día", "2000"],
+      ["Noche", "4200"],
+    ],
     acordes: [
       ["Avainillado", 100],
       ["Cacao", 91],
@@ -1716,23 +1675,22 @@ const PERFUMES = [
       ["Especiado suave", 56],
     ],
   },
-
   {
     id: "asad-elixir",
     nombre: "Asad Elixir - Lattafa",
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 1900,
-      Primavera: 643,
-      Verano: 186,
-      Otoño: 1600,
-      Día: 693,
-      Noche: 1700,
-    },
     color: "#25211f",
     desc: "Una fragancia intensa y sofisticada que abre con pimienta rosa, azafrán y pomelo, continúa con tabaco, madera de cedro y vainilla, y termina sobre un fondo de pachulí, olíbano, cashmeran y ámbar seco.",
+    indicadores: [
+      ["Invierno", "1900"],
+      ["Primavera", "643"],
+      ["Verano", "186"],
+      ["Otoño", "1600"],
+      ["Día", "693"],
+      ["Noche", "1700"],
+    ],
     acordes: [
       ["Ámbar", 100],
       ["Amaderado", 89],
@@ -1752,16 +1710,16 @@ const PERFUMES = [
     genero: "Hombre",
     ml: 100,
     etiqueta: "",
-    cuando: {
-      Invierno: 48,
-      Primavera: 273,
-      Verano: 292,
-      Otoño: 111,
-      Día: 274,
-      Noche: 96,
-    },
     color: "#183b5d",
     desc: "Una fragancia fresca, marina y especiada que combina notas marinas, lavanda y pimienta rosa en la salida, con jabón, cachemira y canela en el corazón, sobre un fondo cálido de ámbar, sándalo, cedro y haba tonka.",
+    indicadores: [
+      ["Invierno", "48"],
+      ["Primavera", "273"],
+      ["Verano", "292"],
+      ["Otoño", "111"],
+      ["Día", "274"],
+      ["Noche", "96"],
+    ],
     acordes: [
       ["Aromático", 100],
       ["Marino", 94],
@@ -1774,6 +1732,46 @@ const PERFUMES = [
       ["Almizclado", 55],
       ["Especiado suave", 53],
     ],
+  },
+  {
+    id: "tag-donna-di-terra",
+    nombre: "Tag Donna Di Terra - Armaf",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    color: "#b69b7a",
+    desc: "Una fragancia femenina elegante y envolvente, con una combinación cálida y sofisticada de notas florales, frutales y amaderadas.",
+    indicadores: [
+      ["invierno", "8"],
+      ["Primavera", "12"],
+      ["verano", "8"],
+      ["Otoño", "15"],
+      ["Día", "15"],
+      ["Noche", "9"],
+    ],
+    acordes: [
+      ["Cálido especiado", 100],
+      ["Pachulí", 88],
+      ["Cítrico", 82],
+      ["Rosas", 76],
+      ["Amaderado", 65],
+      ["Especiado suave", 65],
+      ["Fresco", 54],
+      ["Terrosos", 53],
+      ["Balsámico", 47],
+      ["Almizclado", 44],
+    ],
+  },
+  {
+    id: "tag-donna-colorata",
+    nombre: "Tag Donna Colorata - Armaf",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    color: "#d98caa",
+    desc: "Una fragancia femenina luminosa y moderna, con un perfil floral y frutal que combina dulzura y frescura.",
+    indicadores: [],
+    acordes: [],
   },
 ];
 
@@ -1804,11 +1802,9 @@ const COLOR_ACORDE = {
   Oud: "#4f392d",
   Ozónico: "#82d7e8",
   Pachulí: "#66533d",
-  Atalcado: "#ebc9c3",
   Rosas: "#e8709c",
-  Salado: "#c0e1e9",
+  Salado: "#a8b9bd",
   Ahumado: "#7c7d84",
-  "Especiado suave": "#a8785c",
   Dulce: "#f08fa6",
   Tabaco: "#7b5236",
   Tropical: "#e5b83c",
@@ -1856,7 +1852,6 @@ const COLOR_ACORDE = {
   Aceitoso: "#8d8361",
   Papel: "#ddd5c4",
   Sake: "#e5e0d1",
-  Salado: "#a8b9bd",
   Vodka: "#dce7e8",
   Vino: "#713d50",
 
@@ -1883,15 +1878,6 @@ const COLOR_ACORDE = {
   Especia: "#a94d32",
   Terpénico: "#71875b",
   Barniz: "#9b8062",
-  Dulce: "#f08fa6",
-  "Cálido especiado": "#c8432b",
-  Avainillado: "#f2d79a",
-  Ámbar: "#e58a1b",
-  Canela: "#a95732",
-  Amaderado: "#8f6a45",
-  Afrutados: "#ff8d4d",
-  Animálico: "#765348",
-  "Floral blanco": "#eee5cf",
 };
 
 /* =====================================================================
@@ -1900,7 +1886,7 @@ const COLOR_ACORDE = {
 const $ = (s) => document.querySelector(s);
 
 const norm = (s) =>
-  s
+  String(s)
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
@@ -1932,8 +1918,39 @@ const porId = (id) => PERFUMES.find((p) => p.id === id);
 
 const BOLSA = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>`;
 
+/* Nombres que Fragantica escribe distinto a las claves de COLOR_ACORDE */
+const ALIAS_ACORDE = {
+  Terrosos: "Terroso",
+  Florales: "Floral",
+};
+
+/* Acepta "invierno", "Invierno", "otono", "Otoño", "dia", "Día", etc. */
+const CLAVE_CUANDO = {
+  invierno: "Invierno",
+  primavera: "Primavera",
+  verano: "Verano",
+  otono: "Otoño",
+  dia: "Día",
+  noche: "Noche",
+};
+
 PERFUMES.forEach((p) => {
   p._fotos = p.fotos || [1, 2].map((n) => `img/${p.id}-${n}.${FOTO_EXT}`);
+
+  /* indicadores: [["invierno","8"], ...]  →  { Invierno: 8, ... } */
+  p._cuando = {};
+
+  (p.indicadores || []).forEach(([k, v]) => {
+    const clave = CLAVE_CUANDO[norm(k)];
+
+    if (clave) p._cuando[clave] = Number(v) || 0;
+  });
+
+  /* corrige nombres de acordes (Terrosos → Terroso, Florales → Floral) y pasa a número */
+  p.acordes = (p.acordes || []).map(([n, v]) => [
+    ALIAS_ACORDE[n] || n,
+    Number(v),
+  ]);
 
   p._texto = norm(
     [p.nombre, p.genero, ...p.acordes.map((a) => a[0])].join(" "),
@@ -1947,12 +1964,11 @@ PERFUMES.forEach((p) => {
 /* El mayor número de votos del perfume equivale a 100%.
    Los demás valores se calculan proporcionalmente. */
 function porcentajeCuando(p, tipo) {
-  const votos = Object.values(p.cuando);
-  const max = Math.max(...votos);
+  const max = Math.max(0, ...Object.values(p._cuando));
 
   if (!max) return 0;
 
-  return Math.round((p.cuando[tipo] / max) * 100);
+  return Math.round(((p._cuando[tipo] || 0) / max) * 100);
 }
 
 /* Frasco de ejemplo: se muestra si todavía no cargaste la foto principal */
@@ -2485,7 +2501,7 @@ function afinHTML(p) {
     .map((k) => {
       const porcentaje = porcentajeCuando(p, k);
 
-      return `<span class="afin-i" style="--w:${porcentaje}%;--col:${COLOR_CUANDO[k]}" title="${k}: ${p.cuando[k].toLocaleString("es-UY")} votos">${ICONOS[k]}<i></i><em>${porcentaje}%</em></span>`;
+      return `<span class="afin-i" style="--w:${porcentaje}%;--col:${COLOR_CUANDO[k]}" title="${k}: ${(p._cuando[k] || 0).toLocaleString("es-UY")} votos">${ICONOS[k]}<i></i><em>${porcentaje}%</em></span>`;
     })
     .join("")}</span>`;
 }
@@ -2622,7 +2638,7 @@ function abrir(id) {
   $("#f-cuando").innerHTML = CUANDO.map((k) => {
     const porcentaje = porcentajeCuando(p, k);
 
-    const votos = p.cuando[k] || 0;
+    const votos = p._cuando[k] || 0;
 
     return `<div class="cu" style="--col:${COLOR_CUANDO[k]};--w:${porcentaje}%" title="${votos.toLocaleString("es-UY")} votos"><span class="cu-ico">${ICONOS[k]}</span><span class="cu-nom">${k}</span><i></i><b>${porcentaje}%</b></div>`;
   }).join("");
