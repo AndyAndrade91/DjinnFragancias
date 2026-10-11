@@ -1770,8 +1770,26 @@ const PERFUMES = [
     etiqueta: "",
     color: "#d98caa",
     desc: "Una fragancia femenina luminosa y moderna, con un perfil floral y frutal que combina dulzura y frescura.",
-    indicadores: [],
-    acordes: [],
+    indicadores: [
+      ["invierno", "15"],
+      ["Primavera", "18"],
+      ["verano", "16"],
+      ["Otoño", "17"],
+      ["Día", "20"],
+      ["Noche", "16"],
+    ],
+    acordes: [
+      ["Floral blanco", 100],
+      ["Cítrico", 86],
+      ["Afrutados", 62],
+      ["Avainillado", 58],
+      ["Animálico", 57],
+      ["Aromático", 53],
+      ["Ámbar", 51],
+      ["Amaderado", 50],
+      ["Verde", 50],
+      ["Dulce", 49],
+    ],
   },
 ];
 
