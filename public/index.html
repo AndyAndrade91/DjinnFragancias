@@ -49,17 +49,15 @@
   <div class="buscador" id="buscador" role="search">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.500-3.500"/></svg>
     <label class="sr" for="q">Buscar fragancias</label>
-    <input id="q" type="search" placeholder="Buscar nombre, nota o familia" autocomplete="off">
+    <input id="q" type="search" placeholder="Buscar perfume, marca o nota" autocomplete="off">
     <kbd>/</kbd>
     <button class="borrar" id="borrar" aria-label="Borrar búsqueda"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
 
   <div class="acciones">
-    <button class="icono solo-movil" id="abrir-filtros" aria-expanded="false" aria-controls="filtros" aria-label="Filtros">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
-    </button>
-    <button class="icono icono-carrito" id="btn-carrito" aria-label="Abrir carrito">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+    <button class="pill-btn" id="btn-carrito" aria-label="Abrir carrito">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+      <span>Carrito</span>
       <span class="n" id="n-carrito" data-n="0"></span>
     </button>
   </div>
@@ -67,6 +65,14 @@
 
 <main class="cuerpo">
   <aside class="filtros" id="filtros" aria-label="Filtros">
+    <div class="filtros-cab">
+      <h2>Filtros</h2>
+      <button class="cerrar-dr" id="cerrar-filtros" aria-label="Cerrar filtros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div>
+      <h2>Marca</h2>
+      <div class="pastillas" id="f-marca"></div>
+    </div>
     <div>
       <h2>Para quién</h2>
       <div class="pastillas" id="f-genero"></div>
@@ -84,11 +90,19 @@
       <input type="range" id="cuando-min" min="10" max="90" step="5" value="50" aria-label="Relleno mínimo">
       <p class="ayuda-notas">Cada opción que elegiste tiene que estar rellena al menos este porcentaje. Se ordenan de más a menos lleno.</p>
     </div>
-    <button class="limpiar" id="limpiar" hidden>Limpiar filtros</button>
+    <div class="filtros-pie">
+      <button class="limpiar" id="limpiar" hidden>Limpiar filtros</button>
+      <button class="cta" id="ver-resultados">Ver resultados</button>
+    </div>
   </aside>
 
   <section aria-label="Resultados">
     <div class="barra">
+      <button class="pill-btn solo-movil" id="abrir-filtros" aria-expanded="false" aria-controls="filtros">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+        <span>Filtros</span>
+        <span class="n" id="n-filtros" data-n="0"></span>
+      </button>
       <p class="cuenta" id="cuenta" aria-live="polite"></p>
       <div class="derecha">
         <label class="sr" for="orden">Ordenar por</label>
@@ -104,8 +118,14 @@
       </div>
     </div>
     <div class="grilla" id="grilla"></div>
+    <div class="mas" id="mas" hidden>
+      <p id="mas-txt" aria-live="polite"></p>
+      <button id="mas-btn">Mostrar más fragancias</button>
+    </div>
   </section>
 </main>
+
+<div class="velo" id="velo" hidden></div>
 
 <footer class="pie">
   <!-- Logo completo: img/logo.png -->

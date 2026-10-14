@@ -591,8 +591,26 @@ const PERFUMES = [
     etiqueta: "",
     color: "#ce7da3",
     desc: "Una fragancia femenina de estilo moderno, ideal para distintas ocasiones.",
-    indicadores: [],
-    acordes: [],
+    indicadores: [
+      ["Invierno", "120"],
+      ["Primavera", "103"],
+      ["Verano", "75"],
+      ["Otoño", "121"],
+      ["Día", "112"],
+      ["Noche", "107"],
+    ],
+    acordes: [
+      ["Amaderado", 100],
+      ["Dulce", 87],
+      ["Afrutados", 70],
+      ["Terroso", 67],
+      ["Pachulí", 65],
+      ["Cítrico", 65],
+      ["Iris", 59],
+      ["Fresco especiado", 57],
+      ["Fresco", 55],
+      ["Floral blanco", 53],
+    ],
   },
   {
     id: "hawas-for-her-eclat",
@@ -602,8 +620,26 @@ const PERFUMES = [
     etiqueta: "",
     color: "#e8b7cb",
     desc: "Una propuesta femenina y luminosa, con una imagen elegante para el día y ocasiones especiales.",
-    indicadores: [],
-    acordes: [],
+    indicadores: [
+      ["Invierno", "78"],
+      ["Primavera", "79"],
+      ["Verano", "55"],
+      ["Otoño", "64"],
+      ["Día", "65"],
+      ["Noche", "68"],
+    ],
+    acordes: [
+      ["Afrutados", 100],
+      ["Rosas", 95],
+      ["Ámbar", 87],
+      ["Avainillado", 75],
+      ["Atalcado", 71],
+      ["Almizclado", 69],
+      ["Amaderado", 66],
+      ["Dulce", 64],
+      ["Fresco", 64],
+      ["Tropical", 62],
+    ],
   },
   {
     id: "hawas-thunder",
@@ -613,8 +649,25 @@ const PERFUMES = [
     etiqueta: "",
     color: "#596575",
     desc: "Una fragancia de imagen intensa y enérgica, ideal para quienes buscan proyectar seguridad y personalidad.",
-    indicadores: [],
-    acordes: [],
+    indicadores: [
+      ["Invierno", "77"],
+      ["Primavera", "170"],
+      ["Verano", "179"],
+      ["Otoño", "127"],
+      ["Día", "181"],
+      ["Noche", "134"],
+    ],
+    acordes: [
+      ["Cítrico", 100],
+      ["Fresco especiado", 99],
+      ["Amaderado", 74],
+      ["Fresco", 71],
+      ["Afrutados", 69],
+      ["Cálido especiado", 54],
+      ["Verde", 52],
+      ["Aromático", 48],
+      ["Ámbar", 47],
+    ],
   },
   {
     id: "hawas-highness",
@@ -624,8 +677,26 @@ const PERFUMES = [
     etiqueta: "",
     color: "#b59a65",
     desc: "Una propuesta de estilo distinguido, pensada para quienes prefieren una imagen sofisticada y exclusiva.",
-    indicadores: [],
-    acordes: [],
+    indicadores: [
+      ["Invierno", "45"],
+      ["Primavera", "206"],
+      ["Verano", "208"],
+      ["Otoño", "100"],
+      ["Día", "194"],
+      ["Noche", "92"],
+    ],
+    acordes: [
+      ["Cítrico", 100],
+      ["Amaderado", 97],
+      ["Fresco", 72],
+      ["Floral blanco", 67],
+      ["Cálido especiado", 62],
+      ["Atalcado", 56],
+      ["Aromático", 55],
+      ["Ámbar", 53],
+      ["Violeta", 52],
+      ["Terroso", 52],
+    ],
   },
   {
     id: "hawas-london",
@@ -2536,6 +2607,13 @@ const CLAVE_CUANDO = {
 PERFUMES.forEach((p) => {
   p._fotos = p.fotos || [1, 2].map((n) => `img/${p.id}-${n}.${FOTO_EXT}`);
 
+  /* La marca es lo que va después del último " - " del nombre:
+     "Khamrah - Lattafa" → marca "Lattafa", nombre corto "Khamrah" */
+  const partes = p.nombre.split(" - ");
+
+  p.marca = partes.length > 1 ? partes.pop().trim() : "";
+  p.corto = partes.join(" - ");
+
   /* indicadores: [["invierno","8"], ...]  →  { Invierno: 8, ... } */
   p._cuando = {};
 
@@ -2718,6 +2796,10 @@ const COLOR_CUANDO = {
 
 const generos = [...new Set(PERFUMES.map((p) => p.genero))];
 
+const marcas = [...new Set(PERFUMES.map((p) => p.marca).filter(Boolean))].sort(
+  (a, b) => a.localeCompare(b, "es"),
+);
+
 let carrito = {};
 
 try {
@@ -2731,6 +2813,7 @@ Object.keys(carrito).forEach((id) => {
 const estado = {
   q: "",
   genero: "Todos",
+  marcas: new Set(),
   estaciones: new Set(),
   momentos: new Set(),
   minCuando: 50,
@@ -2740,7 +2823,13 @@ const estado = {
 
 let visibles = [],
   actual = null,
-  fotoActual = 0;
+  fotoActual = 0,
+  mostrar = 0;
+
+/* En el celular se muestran de a poco (botón "Mostrar más") para no tener
+   que hacer scroll por todo el catálogo. En pantallas grandes se ve todo. */
+const movil = window.matchMedia("(max-width: 900px)");
+const PAGINA = () => (movil.matches ? 12 : Infinity);
 
 /* =====================================================================
    FILTROS
@@ -2752,6 +2841,23 @@ $("#f-genero").innerHTML = ["Todos", ...generos]
       `<label class="pastilla"><input type="radio" name="genero" value="${g}" ${i === 0 ? "checked" : ""}><span>${g}</span></label>`,
   )
   .join("");
+
+const cuentaMarca = (m) => PERFUMES.filter((p) => p.marca === m).length;
+
+$("#f-marca").innerHTML = marcas
+  .map(
+    (m) =>
+      `<label class="pastilla"><input type="checkbox" value="${esc(m)}"><span>${esc(m)} <small>${cuentaMarca(m)}</small></span></label>`,
+  )
+  .join("");
+
+$("#f-marca").addEventListener("change", (e) => {
+  e.target.checked
+    ? estado.marcas.add(e.target.value)
+    : estado.marcas.delete(e.target.value);
+
+  render();
+});
 
 const pastillasIco = (lista) =>
   lista
@@ -2842,11 +2948,12 @@ function limpiar() {
     genero: "Todos",
   });
 
+  estado.marcas.clear();
   estado.estaciones.clear();
   estado.momentos.clear();
 
   document
-    .querySelectorAll("#f-estacion input, #f-momento input")
+    .querySelectorAll("#f-marca input, #f-estacion input, #f-momento input")
     .forEach((i) => (i.checked = false));
 
   estado.minCuando = 50;
@@ -2878,10 +2985,45 @@ function cambiarVista(lista) {
   $("#grilla").classList.toggle("lista", lista);
 }
 
-$("#abrir-filtros").addEventListener("click", (e) => {
-  const ab = $("#filtros").classList.toggle("abierto");
+/* Filtros en el celular: panel que sube desde abajo, sobre un velo oscuro */
+const panel = $("#filtros"),
+  velo = $("#velo"),
+  btnFiltros = $("#abrir-filtros");
 
-  e.currentTarget.setAttribute("aria-expanded", ab);
+const filtrosAbiertos = () => panel.classList.contains("abierto");
+
+function abrirFiltros() {
+  panel.classList.add("abierto");
+  velo.hidden = false;
+  document.body.style.overflow = "hidden";
+  btnFiltros.setAttribute("aria-expanded", "true");
+  $("#cerrar-filtros").focus();
+}
+
+function cerrarFiltros() {
+  if (!filtrosAbiertos()) return;
+
+  panel.classList.remove("abierto");
+  velo.hidden = true;
+  document.body.style.overflow = "";
+  btnFiltros.setAttribute("aria-expanded", "false");
+  btnFiltros.focus();
+}
+
+btnFiltros.addEventListener("click", () =>
+  filtrosAbiertos() ? cerrarFiltros() : abrirFiltros(),
+);
+
+$("#cerrar-filtros").addEventListener("click", cerrarFiltros);
+velo.addEventListener("click", cerrarFiltros);
+
+$("#ver-resultados").addEventListener("click", () => {
+  cerrarFiltros();
+  document.querySelector(".barra").scrollIntoView({ block: "start" });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") cerrarFiltros();
 });
 
 /* Cuánto rinde un perfume en lo que se eligió.
@@ -2911,6 +3053,7 @@ function filtrar() {
   const r = PERFUMES.filter(
     (p) =>
       palabras.every((w) => p._texto.includes(w)) &&
+      (!estado.marcas.size || estado.marcas.has(p.marca)) &&
       (estado.genero === "Todos" || p.genero === estado.genero) &&
       (afinidad(p) === null || afinidad(p) >= estado.minCuando),
   );
@@ -2960,8 +3103,8 @@ function accionHTML(p) {
   const n = cant(p.id);
 
   return n
-    ? `<div class="stepper" role="group" aria-label="Cantidad de ${esc(p.nombre)}"><button data-menos aria-label="Quitar uno">−</button><span>${n} en el carrito</span><button data-mas aria-label="Agregar uno">+</button></div>`
-    : `<button class="btn-add" data-add>${BOLSA}<span>Añadir al carrito</span></button>`;
+    ? `<div class="stepper" role="group" aria-label="Cantidad de ${esc(p.nombre)}"><button data-menos aria-label="Quitar uno">−</button><span>${n}<span class="en-carrito"> en el carrito</span></span><button data-mas aria-label="Agregar uno">+</button></div>`
+    : `<button class="btn-add" data-add>${BOLSA}<span class="largo">Añadir al carrito</span><span class="corto">Añadir</span></button>`;
 }
 
 function manejarAccion(e, id) {
@@ -3105,6 +3248,12 @@ function afinHTML(p) {
     .join("")}</span>`;
 }
 
+/* "Armaf | Hombre" */
+const tipoInterno = (p) =>
+  `${p.marca ? `<b>${esc(p.marca)}</b>` : ""}<span>${esc(p.genero)}</span>`;
+
+const tipoHTML = (p) => `<span class="tipo">${tipoInterno(p)}</span>`;
+
 function tarjeta(p) {
   return `<article class="card" data-id="${p.id}">
     <button class="media" data-abrir style="--c:${p.color}" aria-label="Ver ${esc(p.nombre)}">
@@ -3113,8 +3262,8 @@ function tarjeta(p) {
       <span class="vista-rapida">Ver detalle</span>
     </button>
     <button class="info" data-abrir>
-      <span class="tipo">${p.genero}</span>
-      <h3>${esc(p.nombre)}</h3>
+      ${tipoHTML(p)}
+      <h3>${esc(p.corto)}</h3>
       <span class="fila"><span class="ml">${p.ml} ML</span></span>
       ${afinHTML(p)}
     </button>
@@ -3122,8 +3271,21 @@ function tarjeta(p) {
   </article>`;
 }
 
+function actualizarMas() {
+  const resto = visibles.length - mostrar;
+
+  $("#mas").hidden = resto <= 0;
+
+  if (resto > 0) {
+    $("#mas-txt").textContent =
+      `Estás viendo ${mostrar} de ${visibles.length} fragancias`;
+  }
+}
+
 function render() {
   const hay = seleccion().length > 0;
+
+  mostrar = PAGINA();
 
   $("#bloque-cuando-min").hidden = !hay;
 
@@ -3132,21 +3294,59 @@ function render() {
   visibles = filtrar();
 
   $("#grilla").innerHTML = visibles.length
-    ? visibles.map(tarjeta).join("")
+    ? visibles.slice(0, mostrar).map(tarjeta).join("")
     : `
     <div class="vacio"><h3>No encontramos resultados</h3><p>${hay ? "Probá bajando el relleno mínimo o quitando alguna opción." : "Probá con otra palabra o quitá algún filtro."}</p>
     <button id="vacio-limpiar">Limpiar filtros</button></div>`;
+
+  actualizarMas();
 
   $("#cuenta").innerHTML =
     `<b>${visibles.length}</b> de ${PERFUMES.length} fragancias`;
 
   $("#limpiar").hidden = !(
     estado.q ||
+    estado.marcas.size ||
     estado.genero !== "Todos" ||
     estado.estaciones.size ||
     estado.momentos.size
   );
+
+  /* Cantidad de filtros activos (en el botón "Filtros") y texto del botón del panel */
+  const nf =
+    estado.marcas.size +
+    (estado.genero !== "Todos" ? 1 : 0) +
+    estado.estaciones.size +
+    estado.momentos.size;
+
+  $("#n-filtros").textContent = nf;
+  $("#n-filtros").dataset.n = nf;
+  btnFiltros.classList.toggle("activo", nf > 0);
+
+  $("#ver-resultados").textContent = visibles.length
+    ? `Ver ${visibles.length} ${visibles.length === 1 ? "fragancia" : "fragancias"}`
+    : "Sin resultados";
 }
+
+$("#mas-btn").addEventListener("click", () => {
+  const desde = Math.min(mostrar, visibles.length);
+
+  mostrar += PAGINA();
+
+  $("#grilla").insertAdjacentHTML(
+    "beforeend",
+    visibles.slice(desde, mostrar).map(tarjeta).join(""),
+  );
+
+  actualizarMas();
+});
+
+/* Al cruzar entre celular y pantalla grande, se rearma la lista */
+movil.addEventListener("change", (e) => {
+  if (!e.matches) cerrarFiltros();
+
+  render();
+});
 
 $("#grilla").addEventListener("click", (e) => {
   if (e.target.closest("#vacio-limpiar")) {
@@ -3209,9 +3409,9 @@ function abrir(id) {
   actual = p;
   fotoActual = 0;
 
-  $("#f-tipo").textContent = p.genero;
+  $("#f-tipo").innerHTML = tipoInterno(p);
 
-  $("#f-nombre").textContent = p.nombre;
+  $("#f-nombre").textContent = p.corto;
 
   $("#f-formato").textContent = `Eau de parfum · ${p.ml} ml`;
 
