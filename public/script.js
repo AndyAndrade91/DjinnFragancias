@@ -4566,6 +4566,343 @@ const PERFUMES = [
       ["Verde", 70],
     ],
   },
+  {
+    id: "supremacy-collectors-edition",
+    nombre: "Supremacy Collector's Edition Pour Homme - Afnan",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    color: "#b89b52",
+    desc: "Una fragancia frutal, ambarada y amaderada, con cítricos vibrantes, matices especiados y un fondo elegante e intenso.",
+    indicadores: [
+      ["Invierno", "5800"],
+      ["Primavera", "6900"],
+      ["Verano", "6700"],
+      ["Otoño", "6500"],
+      ["Día", "6800"],
+      ["Noche", "6200"],
+    ],
+    acordes: [
+      ["Afrutados", 100],
+      ["Dulce", 92],
+      ["Floral blanco", 86],
+      ["Cítrico", 83],
+      ["Ámbar", 71],
+      ["Musgoso", 66],
+      ["Animálico", 61],
+      ["Tropical", 61],
+      ["Fresco", 57],
+      ["Almizclado", 56],
+    ],
+  },
+  {
+    id: "supremacy-gala",
+    nombre: "Supremacy Gala - Afnan",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    color: "#d5a4a8",
+    desc: "Una fragancia femenina de perfil floral y dulce, con una personalidad elegante, luminosa y sofisticada.",
+    indicadores: [
+      ["Invierno", "15"],
+      ["Primavera", "55"],
+      ["Verano", "37"],
+      ["Otoño", "32"],
+      ["Día", "53"],
+      ["Noche", "14"],
+    ],
+    acordes: [
+      ["Dulce", 100],
+      ["Floral blanco", 94],
+      ["Florales", 81],
+      ["Caramelo", 77],
+      ["Lactónico", 72],
+      ["Afrutados", 66],
+      ["Pachulí", 63],
+      ["Tropical", 60],
+      ["Cítrico", 58],
+      ["Avainillado", 51],
+    ],
+  },
+  {
+    id: "supremacy-gold",
+    nombre: "Supremacy Gold - Afnan",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    color: "#c9a13c",
+    desc: "Una composición floral, amaderada y almizclada, con un carácter cálido y refinado.",
+    indicadores: [
+      ["Invierno", "114"],
+      ["Primavera", "105"],
+      ["Verano", "52"],
+      ["Otoño", "130"],
+      ["Día", "89"],
+      ["Noche", "107"],
+    ],
+    acordes: [
+      ["Ámbar", 100],
+      ["Atalcado", 95],
+      ["Fresco especiado", 91],
+      ["Florales", 81],
+      ["Violeta", 80],
+      ["Avainillado", 78],
+      ["Oud", 64],
+      ["Iris", 64],
+      ["Cálido especiado", 54],
+      ["Amaderado", 54],
+    ],
+  },
+  {
+    id: "supremacy-in-heaven",
+    nombre: "Supremacy In Heaven - Afnan",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    color: "#83b9c9",
+    desc: "Una fragancia fresca y limpia, con cítricos, notas verdes y matices almizclados y amaderados.",
+    indicadores: [
+      ["Invierno", "149"],
+      ["Primavera", "1100"],
+      ["Verano", "1100"],
+      ["Otoño", "429"],
+      ["Día", "1000"],
+      ["Noche", "295"],
+    ],
+    acordes: [
+      ["Cítrico", 100],
+      ["Amaderado", 93],
+      ["Afrutados", 76],
+      ["Verde", 71],
+      ["Almizclado", 64],
+      ["Atalcado", 62],
+      ["Fresco especiado", 60],
+      ["Aromático", 53],
+      ["Florales", 47],
+      ["Especiado suave", 44],
+    ],
+  },
+  {
+    id: "supremacy-in-oud",
+    nombre: "Supremacy In Oud - Afnan",
+    genero: "Unisex",
+    ml: 100,
+    etiqueta: "",
+    color: "#49382f",
+    desc: "Una fragancia intensa de inspiración oriental, con oud, especias y notas cálidas que aportan profundidad.",
+    indicadores: [
+      ["Invierno", "990"],
+      ["Primavera", "419"],
+      ["Verano", "167"],
+      ["Otoño", "910"],
+      ["Día", "481"],
+      ["Noche", "888"],
+    ],
+    acordes: [
+      ["Oud", 100],
+      ["Cálido especiado", 98],
+      ["Fresco especiado", 96],
+      ["Dulce", 90],
+      ["Pachulí", 64],
+      ["Metálico", 60],
+      ["Lavanda", 57],
+      ["Almizclado", 56],
+      ["Cuero", 54],
+      ["Amaderado", 51],
+    ],
+  },
+  {
+    id: "supremacy-incense",
+    nombre: "Supremacy Incense - Afnan",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    color: "#393b40",
+    desc: "Una fragancia oscura y especiada, con un perfil ahumado e incienso que transmite un carácter profundo y envolvente.",
+    indicadores: [
+      ["Invierno", "847"],
+      ["Primavera", "299"],
+      ["Verano", "116"],
+      ["Otoño", "706"],
+      ["Día", "317"],
+      ["Noche", "739"],
+    ],
+    acordes: [
+      ["Ámbar", 100],
+      ["Ahumado", 90],
+      ["Fresco especiado", 69],
+      ["Amaderado", 64],
+      ["Cálido especiado", 62],
+      ["Oud", 59],
+      ["Balsámico", 57],
+      ["Aromático", 54],
+      ["Cuero", 52],
+      ["Pachulí", 48],
+    ],
+  },
+  {
+    id: "supremacy-noir",
+    nombre: "Supremacy Noir - Afnan",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    color: "#25282c",
+    desc: "Una composición amaderada y especiada, con matices de cuero y almizcle que le dan un perfil sobrio e intenso.",
+    indicadores: [
+      ["Invierno", "292"],
+      ["Primavera", "267"],
+      ["Verano", "137"],
+      ["Otoño", "307"],
+      ["Día", "252"],
+      ["Noche", "276"],
+    ],
+    acordes: [
+      ["Amaderado", 100],
+      ["Aromático", 79],
+      ["Verde", 54],
+      ["Cuero", 47],
+      ["Conífera", 45],
+    ],
+  },
+  {
+    id: "supremacy-not-only-intense",
+    nombre: "Supremacy Not Only Intense - Afnan",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    color: "#34483b",
+    desc: "Una fragancia frutal y ambarada que combina piña y cítricos con notas aromáticas, musgo y un fondo amaderado.",
+    indicadores: [
+      ["Invierno", "2400"],
+      ["Primavera", "3300"],
+      ["Verano", "3000"],
+      ["Otoño", "3100"],
+      ["Día", "3200"],
+      ["Noche", "2900"],
+    ],
+    acordes: [
+      ["Afrutados", 100],
+      ["Musgoso", 87],
+      ["Amaderado", 81],
+      ["Terrosos", 80],
+      ["Cítrico", 72],
+      ["Fresco especiado", 63],
+      ["Ámbar", 60],
+      ["Animálico", 59],
+      ["Aromático", 59],
+      ["Cálido especiado", 54],
+    ],
+  },
+  {
+    id: "supremacy-pink",
+    nombre: "Supremacy Pink - Afnan",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    color: "#e5a6bd",
+    desc: "Una fragancia femenina floral y almizclada, de perfil delicado, dulce y elegante.",
+    indicadores: [
+      ["Invierno", "31"],
+      ["Primavera", "104"],
+      ["Verano", "84"],
+      ["Otoño", "55"],
+      ["Día", "103"],
+      ["Noche", "29"],
+    ],
+    acordes: [
+      ["Rosas", 100],
+      ["Florales", 93],
+      ["Fresco", 79],
+      ["Almizclado", 67],
+      ["Atalcado", 56],
+      ["Floral blanco", 52],
+    ],
+  },
+  {
+    id: "supremacy-purple",
+    nombre: "Supremacy Purple - Afnan",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    color: "#79528e",
+    desc: "Una composición dulce y frutal, con un carácter intenso y moderno y matices florales y almizclados.",
+    indicadores: [
+      ["Invierno", "81"],
+      ["Primavera", "90"],
+      ["Verano", "81"],
+      ["Otoño", "86"],
+      ["Día", "89"],
+      ["Noche", "90"],
+    ],
+    acordes: [
+      ["Afrutados", 100],
+      ["Almizclado", 92],
+      ["Dulce", 78],
+      ["Atalcado", 76],
+      ["Ámbar", 68],
+      ["Cítrico", 66],
+      ["Avainillado", 62],
+      ["Fresco", 48],
+      ["Animálico", 47],
+    ],
+  },
+  {
+    id: "supremacy-silver",
+    nombre: "Supremacy Silver - Afnan",
+    genero: "Hombre",
+    ml: 100,
+    etiqueta: "",
+    color: "#a9afb7",
+    desc: "Una fragancia frutal y amaderada con piña, bergamota, grosella negra y manzana, acompañadas de notas ahumadas y musgosas.",
+    indicadores: [
+      ["Invierno", "499"],
+      ["Primavera", "1300"],
+      ["Verano", "1300"],
+      ["Otoño", "1100"],
+      ["Día", "1400"],
+      ["Noche", "826"],
+    ],
+    acordes: [
+      ["Afrutados", 100],
+      ["Cuero", 69],
+      ["Amaderado", 68],
+      ["Dulce", 65],
+      ["Ahumado", 61],
+      ["Cítrico", 55],
+      ["Almizclado", 53],
+      ["Musgoso", 52],
+      ["Tropical", 50],
+      ["Terrosos", 50],
+    ],
+  },
+  {
+    id: "supremacy-tapis-rouge",
+    nombre: "Supremacy Tapis Rouge - Afnan",
+    genero: "Mujer",
+    ml: 100,
+    etiqueta: "",
+    color: "#8e243d",
+    desc: "Una fragancia elegante de perfil dulce y frutal, con matices florales y un carácter sofisticado para ocasiones especiales.",
+    indicadores: [
+      ["Invierno", "52"],
+      ["Primavera", "54"],
+      ["Verano", "43"],
+      ["Otoño", "57"],
+      ["Día", "45"],
+      ["Noche", "53"],
+    ],
+    acordes: [
+      ["Afrutados", 100],
+      ["Acerezado", 71],
+      ["Fresco", 58],
+      ["Rosas", 58],
+      ["Florales", 57],
+      ["Dulce", 51],
+      ["Cálido especiado", 50],
+      ["Tropical", 49],
+      ["Floral blanco", 45],
+    ],
+  },
 ];
 
 /* Colores de las barras de acordes (los que no estén acá usan un gris) */
@@ -4947,13 +5284,9 @@ const estado = {
 
 let visibles = [],
   actual = null,
-  fotoActual = 0,
-  mostrar = 0;
+  fotoActual = 0;
 
-/* En el celular se muestran de a poco (botón "Mostrar más") para no tener
-   que hacer scroll por todo el catálogo. En pantallas grandes se ve todo. */
 const movil = window.matchMedia("(max-width: 900px)");
-const PAGINA = () => (movil.matches ? 12 : Infinity);
 
 /* =====================================================================
    FILTROS
@@ -4966,19 +5299,129 @@ $("#f-genero").innerHTML = ["Todos", ...generos]
   )
   .join("");
 
+/* Vitrina de marcas: una tarjeta por marca (la que más fragancias tiene va primero).
+   "Todas" es la tarjeta inicial; elegir marcas se puede combinar. */
 const cuentaMarca = (m) => PERFUMES.filter((p) => p.marca === m).length;
 
-$("#f-marca").innerHTML = marcas
-  .map(
-    (m) =>
-      `<label class="pastilla"><input type="checkbox" value="${esc(m)}"><span>${esc(m)} <small>${cuentaMarca(m)}</small></span></label>`,
-  )
-  .join("");
+const marcasOrden = [...marcas].sort(
+  (a, b) => cuentaMarca(b) - cuentaMarca(a) || a.localeCompare(b, "es"),
+);
 
-$("#f-marca").addEventListener("change", (e) => {
-  e.target.checked
-    ? estado.marcas.add(e.target.value)
-    : estado.marcas.delete(e.target.value);
+const fraganciasTxt = (n) => `${n} ${n === 1 ? "fragancia" : "fragancias"}`;
+
+/* Hasta 5 colores de frascos de la marca (sin blancos, que no se ven), bien repartidos */
+function muestrario(lista, n = 5) {
+  const colores = [];
+
+  lista.forEach((p) => {
+    if (luz(p.color) < 0.93 && !colores.includes(p.color))
+      colores.push(p.color);
+  });
+
+  if (colores.length <= n) return colores;
+
+  return Array.from(
+    { length: n },
+    (_, i) => colores[Math.round((i * (colores.length - 1)) / (n - 1))],
+  );
+}
+
+function marcaTile(nombre, valor, n, colores) {
+  return `<button type="button" class="mt" data-marca="${esc(valor)}" aria-pressed="false"><span class="mt-nombre">${esc(nombre)}</span><span class="mt-cuenta">${fraganciasTxt(n)}</span><span class="mt-dots" aria-hidden="true">${colores.map((c) => `<i style="--c:${c}"></i>`).join("")}</span></button>`;
+}
+
+function armarMarcas() {
+  /* "Todas": un color de cada marca, para que se vea la variedad */
+  const mezcla = marcasOrden
+    .map((m) => PERFUMES.find((p) => p.marca === m && luz(p.color) < 0.93))
+    .filter(Boolean)
+    .map((p) => p.color);
+
+  $("#f-marca").innerHTML =
+    marcaTile("Todas", "", PERFUMES.length, mezcla.slice(0, 5)) +
+    marcasOrden
+      .map((m) =>
+        marcaTile(
+          m,
+          m,
+          cuentaMarca(m),
+          muestrario(PERFUMES.filter((p) => p.marca === m)),
+        ),
+      )
+      .join("");
+}
+
+function pintarMarcas() {
+  document.querySelectorAll("#f-marca .mt").forEach((b) => {
+    const v = b.dataset.marca;
+
+    b.setAttribute(
+      "aria-pressed",
+      v === "" ? estado.marcas.size === 0 : estado.marcas.has(v),
+    );
+  });
+}
+
+/* Avisos de que hay más marcas para deslizar: degradé en el borde y flechita.
+   Solo aparecen cuando la fila realmente se desborda (en celular). */
+function marcasScroll() {
+  const f = $("#f-marca"),
+    c = $("#marcas-cinta"),
+    max = f.scrollWidth - f.clientWidth;
+
+  c.classList.toggle("hay-der", max > 4 && f.scrollLeft < max - 4);
+  c.classList.toggle("hay-izq", f.scrollLeft > 4);
+}
+
+$("#f-marca").addEventListener("scroll", marcasScroll, { passive: true });
+window.addEventListener("resize", marcasScroll);
+
+$("#marcas-sig").addEventListener("click", () =>
+  $("#f-marca").scrollBy({
+    left: $("#f-marca").clientWidth * 0.7,
+    behavior: "smooth",
+  }),
+);
+
+/* Al entrar, la fila se mueve un poquito y vuelve, para que se note que desliza */
+function empujoncito() {
+  const f = $("#f-marca");
+
+  if (
+    f.scrollWidth <= f.clientWidth ||
+    f.scrollLeft !== 0 ||
+    matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+    return;
+
+  let tocada = false;
+
+  f.addEventListener("touchstart", () => (tocada = true), { once: true });
+
+  f.style.scrollSnapType = "none";
+  f.scrollTo({ left: 80, behavior: "smooth" });
+
+  setTimeout(() => {
+    if (!tocada) f.scrollTo({ left: 0, behavior: "smooth" });
+
+    setTimeout(() => (f.style.scrollSnapType = ""), 500);
+  }, 700);
+}
+
+$("#f-marca").addEventListener("click", (e) => {
+  const b = e.target.closest(".mt");
+
+  if (!b) return;
+
+  const v = b.dataset.marca;
+
+  if (!v) {
+    estado.marcas.clear();
+  } else if (estado.marcas.has(v)) {
+    estado.marcas.delete(v);
+  } else {
+    estado.marcas.add(v);
+  }
 
   render();
 });
@@ -5077,7 +5520,7 @@ function limpiar() {
   estado.momentos.clear();
 
   document
-    .querySelectorAll("#f-marca input, #f-estacion input, #f-momento input")
+    .querySelectorAll("#f-estacion input, #f-momento input")
     .forEach((i) => (i.checked = false));
 
   estado.minCuando = 50;
@@ -5395,21 +5838,8 @@ function tarjeta(p) {
   </article>`;
 }
 
-function actualizarMas() {
-  const resto = visibles.length - mostrar;
-
-  $("#mas").hidden = resto <= 0;
-
-  if (resto > 0) {
-    $("#mas-txt").textContent =
-      `Estás viendo ${mostrar} de ${visibles.length} fragancias`;
-  }
-}
-
 function render() {
   const hay = seleccion().length > 0;
-
-  mostrar = PAGINA();
 
   $("#bloque-cuando-min").hidden = !hay;
 
@@ -5418,12 +5848,12 @@ function render() {
   visibles = filtrar();
 
   $("#grilla").innerHTML = visibles.length
-    ? visibles.slice(0, mostrar).map(tarjeta).join("")
+    ? visibles.map(tarjeta).join("")
     : `
     <div class="vacio"><h3>No encontramos resultados</h3><p>${hay ? "Probá bajando el relleno mínimo o quitando alguna opción." : "Probá con otra palabra o quitá algún filtro."}</p>
     <button id="vacio-limpiar">Limpiar filtros</button></div>`;
 
-  actualizarMas();
+  pintarMarcas();
 
   $("#cuenta").innerHTML =
     `<b>${visibles.length}</b> de ${PERFUMES.length} fragancias`;
@@ -5452,24 +5882,9 @@ function render() {
     : "Sin resultados";
 }
 
-$("#mas-btn").addEventListener("click", () => {
-  const desde = Math.min(mostrar, visibles.length);
-
-  mostrar += PAGINA();
-
-  $("#grilla").insertAdjacentHTML(
-    "beforeend",
-    visibles.slice(desde, mostrar).map(tarjeta).join(""),
-  );
-
-  actualizarMas();
-});
-
-/* Al cruzar entre celular y pantalla grande, se rearma la lista */
+/* Al pasar de celular a pantalla grande, se cierra el panel de filtros */
 movil.addEventListener("change", (e) => {
   if (!e.matches) cerrarFiltros();
-
-  render();
 });
 
 $("#grilla").addEventListener("click", (e) => {
@@ -5525,6 +5940,109 @@ function barras(p) {
   );
 }
 
+/* =====================================================================
+   FRAGANCIAS PARECIDAS
+   Se comparan los acordes (peso 80%) y las estaciones / momentos en que
+   rinde cada perfume (20%). Un mismo perfume en otro tamaño no cuenta.
+   ===================================================================== */
+
+const sinTamano = (s) =>
+  norm(s)
+    .replace(/\d+\s*ml/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+function coseno(a, b) {
+  let punto = 0,
+    na = 0,
+    nb = 0;
+
+  for (const k in a) {
+    na += a[k] * a[k];
+
+    if (k in b) punto += a[k] * b[k];
+  }
+
+  for (const k in b) nb += b[k] * b[k];
+
+  return na && nb ? punto / Math.sqrt(na * nb) : 0;
+}
+
+function vectores(p) {
+  if (!p._v) {
+    p._v = {
+      acordes: Object.fromEntries(p.acordes.map(([n, v]) => [n, v / 100])),
+      cuando: Object.fromEntries(
+        CUANDO.map((k) => [k, porcentajeCuando(p, k) / 100]),
+      ),
+    };
+  }
+
+  return p._v;
+}
+
+function similitud(p, q) {
+  const a = vectores(p),
+    b = vectores(q),
+    ac = coseno(a.acordes, b.acordes),
+    cu = coseno(a.cuando, b.cuando);
+
+  /* si a alguno le faltan los votos de estación / momento, se usan solo los acordes */
+  const base = cu ? ac * 0.8 + cu * 0.2 : ac;
+
+  /* mismo género suma; Mujer con Hombre resta (Unisex va bien con todos) */
+  const cruzado =
+    (p.genero === "Mujer" && q.genero === "Hombre") ||
+    (p.genero === "Hombre" && q.genero === "Mujer");
+
+  return base + (p.genero === q.genero ? 0.03 : 0) - (cruzado ? 0.2 : 0);
+}
+
+function parecidos(p, n = 4) {
+  const propio = sinTamano(p.corto);
+
+  return PERFUMES.filter((q) => q.id !== p.id && sinTamano(q.corto) !== propio)
+    .map((q) => ({ q, s: similitud(p, q) }))
+    .sort((x, y) => y.s - x.s)
+    .slice(0, n)
+    .map((x) => x.q);
+}
+
+/* Los acordes más fuertes que comparten los dos perfumes */
+function enComun(p, q) {
+  const fuerza = new Map(q.acordes);
+
+  return p.acordes
+    .filter(([n]) => fuerza.has(n))
+    .sort((x, y) => y[1] + fuerza.get(y[0]) - (x[1] + fuerza.get(x[0])))
+    .slice(0, 3)
+    .map(([n]) => n.toLowerCase());
+}
+
+function renderParecidos(p) {
+  $("#f-parecidos").innerHTML = parecidos(p)
+    .map((q) => {
+      const c = enComun(p, q);
+
+      return `<button type="button" class="par" data-id="${q.id}"><span class="par-img" style="--c:${q.color}">${imagen(q, 0)}</span><span class="par-txt"><span class="par-marca">${esc(q.marca)}</span><span class="par-nombre">${esc(q.corto)}</span>${c.length ? `<span class="par-comp">Comparten ${esc(c.join(", "))}</span>` : ""}</span></button>`;
+    })
+    .join("");
+}
+
+$("#f-parecidos").addEventListener("click", (e) => {
+  const b = e.target.closest(".par");
+
+  if (!b) return;
+
+  abrir(b.dataset.id);
+
+  /* el botón que se tocó ya no existe: el foco pasa al título de la ficha nueva */
+  const t = $("#f-nombre");
+
+  t.tabIndex = -1;
+  t.focus({ preventScroll: true });
+});
+
 function abrir(id) {
   const p = porId(id);
 
@@ -5565,6 +6083,8 @@ function abrir(id) {
 
     return `<div class="cu" style="--col:${COLOR_CUANDO[k]};--w:${porcentaje}%" title="${votos.toLocaleString("es-UY")} votos"><span class="cu-ico">${ICONOS[k]}</span><span class="cu-nom">${k}</span><i></i><b>${porcentaje}%</b></div>`;
   }).join("");
+
+  renderParecidos(p);
 
   if (!dlg.open) {
     dlg.showModal();
@@ -5623,5 +6143,8 @@ dlg.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") vecino(1);
 });
 
+armarMarcas();
 render();
 actualizar();
+marcasScroll();
+setTimeout(empujoncito, 900);

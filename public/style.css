@@ -266,10 +266,32 @@ select { padding: .5rem 2rem .5rem .9rem; border-radius: 999px; border: 1px soli
 .lista .card .accion { padding: 1rem 1.2rem; margin: 0; }
 .lista .vista-rapida { display: none; }
 
-.mas { display: grid; justify-items: center; gap: .7rem; margin-top: 1.5rem; }
-.mas p { color: var(--mute); font-size: .9rem; }
-.mas button { padding: .75rem 1.8rem; border-radius: 999px; border: 1.5px solid var(--acc); background: var(--card); color: var(--acc); font-weight: 600; transition: background-color .2s; }
-.mas button:hover { background: var(--acc-suave); }
+/* ---------- Vitrina de marcas ----------
+   Cada marca es una tarjeta con su nombre, cuántas fragancias tiene y una
+   muestra de los colores de sus frascos. Se pueden elegir varias a la vez. */
+.marcas { margin-bottom: 1.6rem; }
+.marcas-tit { font-family: var(--display); font-weight: 500; font-size: 1.45rem; line-height: 1.2; margin-bottom: .85rem; }
+.marcas-cinta { position: relative; }
+.marcas-cinta::before, .marcas-cinta::after { content: ""; position: absolute; top: 0; bottom: .7rem; width: 64px; z-index: 2; pointer-events: none; opacity: 0; transition: opacity .25s; }
+.marcas-cinta::before { left: var(--mn, 0px); background: linear-gradient(90deg, var(--bg), transparent); }
+.marcas-cinta::after { right: var(--mn, 0px); background: linear-gradient(270deg, var(--bg), transparent); }
+.marcas-cinta.hay-izq::before, .marcas-cinta.hay-der::after { opacity: 1; }
+.marcas-sig { position: absolute; z-index: 3; top: calc(50% - .35rem); right: calc(var(--mn, 0px) + .45rem); width: 38px; height: 38px; margin-top: -19px; border-radius: 50%; background: var(--card); border: 1px solid var(--line); box-shadow: 0 6px 16px -6px rgba(21,32,27,.45); display: none; place-items: center; color: var(--acc); }
+.marcas-sig svg { width: 18px; height: 18px; }
+.marcas-cinta.hay-der .marcas-sig { display: grid; animation: empuja 1.6s ease-in-out 1.2s 3; }
+@keyframes empuja { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+.marcas-fila { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .7rem; }
+.mt { position: relative; display: grid; gap: .15rem; align-content: start; text-align: left; padding: .9rem 1rem .95rem; border-radius: 16px; border: 1px solid var(--line); background: var(--card); transition: transform .25s cubic-bezier(.2,.7,.2,1), border-color .2s, background-color .2s, box-shadow .25s; }
+.mt:hover { transform: translateY(-3px); border-color: var(--oro-logo); box-shadow: var(--sombra); }
+.mt-nombre { font-family: var(--display); font-weight: 500; font-size: 1.18rem; line-height: 1.15; }
+.mt-cuenta { color: var(--mute); font-size: .8rem; }
+.mt-dots { display: flex; margin-top: .7rem; padding-left: 7px; }
+.mt-dots i { width: 21px; height: 21px; margin-left: -7px; border-radius: 50%; background: var(--c); border: 2px solid var(--card); box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent); transition: border-color .2s; }
+.mt[aria-pressed="true"] { background: var(--acc); border-color: var(--acc); color: var(--acc-ink); }
+.mt[aria-pressed="true"]:hover { border-color: var(--oro); }
+.mt[aria-pressed="true"] .mt-cuenta { color: color-mix(in srgb, var(--acc-ink) 78%, transparent); }
+.mt[aria-pressed="true"] .mt-dots i { border-color: var(--acc); }
+.mt[aria-pressed="true"]::after { content: "✓"; position: absolute; top: .6rem; right: .6rem; width: 20px; height: 20px; border-radius: 50%; background: var(--oro); color: var(--oro-ink); font-size: .72rem; font-weight: 700; display: grid; place-items: center; }
 
 .filtros-cab, #ver-resultados { display: none; }
 .filtros-pie { display: flex; align-items: center; gap: 1rem; }
@@ -326,6 +348,17 @@ dialog::backdrop { background: rgba(10,18,14,.55); backdrop-filter: blur(4px); }
 .botones .accion { flex: 1 1 210px; }
 .sec-btn { padding: .7rem 1.3rem; border-radius: 999px; border: 1px solid var(--line); text-decoration: none; font-weight: 500; text-align: center; transition: border-color .2s; }
 .sec-btn:hover { border-color: var(--acc); color: var(--acc); }
+/* Fragancias parecidas (al pie de la ficha) */
+.datos > .parecidos { grid-column: 1 / -1; margin-top: .4rem; }
+.parecidos-fila { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .7rem; }
+.par { display: grid; align-content: start; text-align: left; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--card); transition: border-color .2s, transform .25s cubic-bezier(.2,.7,.2,1); }
+.par:hover { border-color: var(--oro-logo); transform: translateY(-2px); }
+.par-img { position: relative; display: block; aspect-ratio: 3 / 2; background: color-mix(in srgb, var(--c, #ccc) 24%, var(--card)); }
+.par-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.par-txt { display: grid; gap: .1rem; padding: .55rem .7rem .75rem; }
+.par-marca { font-size: .75rem; color: var(--mute); }
+.par-nombre { font-family: var(--display); font-weight: 500; font-size: 1rem; line-height: 1.2; }
+.par-comp { margin-top: .25rem; font-size: .75rem; color: var(--mute); }
 .navficha { display: flex; gap: 1.2rem; color: var(--mute); margin-top: auto; }
 .navficha button { text-decoration: underline; text-underline-offset: 3px; }
 .cerrar { position: absolute; top: .8rem; right: .8rem; z-index: 5; width: 40px; height: 40px; border-radius: 50%; background: var(--card); border: 1px solid var(--line); display: grid; place-items: center; }
@@ -404,7 +437,15 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
   .buscador kbd { display: none; }
   .buscador input { padding-right: 2.8rem; }
 
-  .cuerpo { grid-template-columns: 1fr; padding-top: .9rem; }
+  .cuerpo { grid-template-columns: minmax(0, 1fr); padding-top: .9rem; }
+
+  /* Marcas: carrusel horizontal que llega hasta los bordes de la pantalla */
+  .marcas-tit { font-size: 1.3rem; }
+  .marcas { --m: clamp(1rem, 3vw, 2.2rem); --mn: calc(var(--m) * -1); }
+  .marcas-fila { display: flex; gap: .6rem; overflow-x: auto; margin-inline: calc(var(--m) * -1); padding: .2rem var(--m) .7rem; scroll-snap-type: x proximity; scroll-padding-inline: var(--m); scrollbar-width: none; overscroll-behavior-x: contain; }
+  .marcas-fila::-webkit-scrollbar { display: none; }
+  .mt { flex: 0 0 140px; scroll-snap-align: start; }
+  .mt:hover { transform: none; box-shadow: none; }
 
   /* Barra de resultados: [Filtros]  [Ordenar][Vista] y debajo la cuenta */
   .pill-btn.solo-movil { display: inline-flex; }
@@ -455,6 +496,7 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
   .card .stepper button { width: 30px; height: 30px; }
   .card .stepper span { font-size: .85rem; }
   .pie { padding-bottom: 6rem; }
+  .parecidos-fila { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 480px) {

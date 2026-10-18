@@ -70,10 +70,6 @@
       <button class="cerrar-dr" id="cerrar-filtros" aria-label="Cerrar filtros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
     <div>
-      <h2>Marca</h2>
-      <div class="pastillas" id="f-marca"></div>
-    </div>
-    <div>
       <h2>Para quién</h2>
       <div class="pastillas" id="f-genero"></div>
     </div>
@@ -97,6 +93,13 @@
   </aside>
 
   <section aria-label="Resultados">
+    <div class="marcas">
+      <h2 class="marcas-tit">Explorá por marca</h2>
+      <div class="marcas-cinta" id="marcas-cinta">
+        <div class="marcas-fila" id="f-marca" role="group" aria-label="Marcas"></div>
+        <button type="button" class="marcas-sig" id="marcas-sig" aria-label="Ver más marcas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
     <div class="barra">
       <button class="pill-btn solo-movil" id="abrir-filtros" aria-expanded="false" aria-controls="filtros">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
@@ -118,10 +121,6 @@
       </div>
     </div>
     <div class="grilla" id="grilla"></div>
-    <div class="mas" id="mas" hidden>
-      <p id="mas-txt" aria-live="polite"></p>
-      <button id="mas-btn">Mostrar más fragancias</button>
-    </div>
   </section>
 </main>
 
@@ -168,6 +167,10 @@
         <div class="accion" id="f-accion"></div>
         <a class="sec-btn" id="f-ig" target="_blank" rel="noopener">Consultar por Instagram</a>
       </div>
+      <section class="parecidos" aria-labelledby="t-parecidos">
+        <h3 class="sub" id="t-parecidos">Fragancias parecidas</h3>
+        <div class="parecidos-fila" id="f-parecidos"></div>
+      </section>
       <div class="navficha"><button id="f-prev">Anterior</button><button id="f-next">Siguiente</button></div>
     </div>
   </div>
