@@ -398,8 +398,11 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
 #toast { position: fixed; inset: auto auto 1.4rem 50%; transform: translateX(-50%); margin: 0; border: 0; max-width: min(92vw, 460px); padding: .85rem 1.3rem; border-radius: 16px; background: var(--ink); color: var(--bg); box-shadow: var(--sombra); text-align: center; font-weight: 500; }
 #toast:not(.on):not(:popover-open) { display: none; }
 
-.ig-fab { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 15; display: flex; align-items: center; gap: .55rem; padding: .75rem 1.15rem; border-radius: 999px; background: var(--acc); color: var(--acc-ink); text-decoration: none; font-weight: 500; box-shadow: var(--sombra); }
-.ig-fab svg { width: 20px; height: 20px; }
+.fabs { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 15; display: flex; flex-direction: column; align-items: flex-end; gap: .6rem; }
+.fab { display: flex; align-items: center; justify-content: center; gap: .55rem; height: 48px; padding: 0 1.15rem; border-radius: 999px; background: var(--acc); color: var(--acc-ink); text-decoration: none; font-weight: 500; box-shadow: var(--sombra); transition: filter .2s; }
+.fab:hover { filter: brightness(1.1); }
+.fab svg { width: 22px; height: 22px; flex: none; }
+.fab-wa { background: #25d366; color: #fff; }
 .pie { position: relative; text-align: center; padding: 2.4rem 1rem 5rem; color: var(--mute); }
 .pie::before { content: ""; position: absolute; top: 0; left: 50%; width: min(520px, 80%); height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, var(--oro-logo), transparent); opacity: .7; }
 .pie a { color: var(--acc); font-weight: 500; }
@@ -470,8 +473,8 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
   .lista .card { grid-template-columns: 150px minmax(0, 1fr); }
   .lista .media { grid-row: 1 / 3; }
   .lista .card .accion { grid-column: 2; padding: 0 1rem 1rem; }
-  .ig-fab span { display: none; }
-  .ig-fab { padding: .85rem; }
+  .fab span { display: none; }
+  .fab { width: 48px; padding: 0; }
   .drawer { border-radius: 0; }
 }
 

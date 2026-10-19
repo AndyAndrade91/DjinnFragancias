@@ -4,6 +4,9 @@
 const MARCA = "Djinn";
 const INSTAGRAM = "djinnfragancias"; // usuario de Instagram, sin @
 const IG_DM = `https://ig.me/m/${INSTAGRAM}`; // abre directo el chat con la cuenta
+const WHATSAPP = "59895033403"; // +598 95 033 403 (código de país + número, sin + ni espacios)
+const waLink = (msg) =>
+  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`; // abre WhatsApp con el mensaje ya escrito
 
 /* FOTOS: cada perfume usa 2 fotos dentro de la carpeta img/
      img/<id>-1.jpg  →  foto del perfume
@@ -5910,6 +5913,7 @@ document.addEventListener("click", async (e) => {
   );
 });
 
+$("#wa-fab").href = waLink(`Hola ${MARCA}! Quiero hacer una consulta.`);
 $("#ig-fab").href = IG_DM;
 $("#ig-fab").dataset.ig = `Hola ${MARCA}! Quiero hacer una consulta.`;
 
@@ -6400,7 +6404,7 @@ function renderCarrito() {
   $("#dr-pie").hidden = vacio;
 
   $("#dr-lista").innerHTML = vacio
-    ? `<div class="vacio-c"><h3>Tu carrito está vacío</h3><p>Añadí fragancias y armamos tu pedido por Instagram.</p></div>`
+    ? `<div class="vacio-c"><h3>Tu carrito está vacío</h3><p>Añadí fragancias y armamos tu pedido por WhatsApp.</p></div>`
     : ids
         .map((id) => {
           const p = porId(id),
@@ -6418,12 +6422,9 @@ function renderCarrito() {
   if (!vacio) {
     const msg = mensajePedido();
 
-    $("#dr-msg").value = msg;
-
     const a = $("#pedir");
 
-    a.href = IG_DM;
-    a.dataset.ig = msg;
+    a.href = waLink(msg);
   }
 }
 
@@ -6752,11 +6753,9 @@ function abrir(id) {
 
   $("#f-desc").textContent = p.desc;
 
-  const ig = $("#f-ig");
-
-  ig.href = IG_DM;
-
-  ig.dataset.ig = `Hola ${MARCA}! Quiero consultar por ${p.nombre} (${p.ml} ml).`;
+  $("#f-wa").href = waLink(
+    `Hola ${MARCA}! Quiero consultar por ${p.nombre} (${p.ml} ml).`,
+  );
 
   $("#f-accion").innerHTML = accionHTML(p);
 
