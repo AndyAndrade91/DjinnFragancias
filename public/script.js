@@ -3217,7 +3217,7 @@ const PERFUMES = [
   },
   {
     id: "momento",
-    nombre: "Momento - Armaf",
+    nombre: "Momento - Riiffs",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
@@ -3246,7 +3246,7 @@ const PERFUMES = [
   },
   {
     id: "island",
-    nombre: "Island - Armaf",
+    nombre: "Island - Khadlaj",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
