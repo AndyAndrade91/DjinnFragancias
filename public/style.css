@@ -414,9 +414,39 @@ dialog::backdrop { background: rgba(10,18,14,.55); backdrop-filter: blur(4px); }
 details summary { cursor: pointer; color: var(--mute); font-size: .85rem; }
 details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); resize: vertical; font-size: .85rem; }
 
-/* ---------- Aviso ---------- */
-#toast { position: fixed; inset: auto auto 1.4rem 50%; transform: translateX(-50%); margin: 0; border: 0; max-width: min(92vw, 460px); padding: .85rem 1.3rem; border-radius: 16px; background: var(--ink); color: var(--bg); box-shadow: var(--sombra); text-align: center; font-weight: 500; }
-#toast:not(.on):not(:popover-open) { display: none; }
+/* ---------- Avisos discretos de Djinn, clicables y sin bloquear el contenido ---------- */
+#toast {
+  position: fixed;
+  z-index: 300;
+  inset: calc(1rem + env(safe-area-inset-top, 0px)) 1rem auto auto;
+  transform: none;
+  margin: 0;
+  padding: .72rem .72rem .72rem .9rem;
+  width: max-content;
+  max-width: min(370px, calc(100vw - 2rem));
+  border: 1px solid var(--linea-oro);
+  border-left: 4px solid var(--acc);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 10px 35px rgba(21,32,27,.14);
+  font-size: .84rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  align-items: center;
+  gap: .65rem;
+  cursor: pointer;
+}
+#toast.on { display: flex; }
+#toast:not(.on) { display: none; }
+.toast-icono { display: grid; flex: none; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: var(--acc-suave); color: var(--acc); font-weight: 700; }
+.toast-mensaje { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.toast-cerrar { display: grid; flex: none; place-items: center; width: 31px; height: 31px; border-radius: 50%; font-size: 1.28rem; line-height: 1; color: var(--mute); cursor: pointer; }
+.toast-cerrar:hover, .toast-cerrar:focus-visible { background: var(--acc-suave); color: var(--acc); }
+@media (max-width: 600px) {
+  #toast { inset: calc(.6rem + env(safe-area-inset-top,0px)) .65rem auto auto; max-width: calc(100vw - 1.3rem); padding: .6rem .45rem .6rem .7rem; }
+}
 
 .fabs { position: fixed; right: 1.1rem; bottom: 1.1rem; z-index: 15; display: flex; flex-direction: column; align-items: flex-end; gap: .6rem; }
 .fab { display: flex; align-items: center; justify-content: center; gap: .55rem; height: 48px; padding: 0 1.15rem; border-radius: 999px; background: var(--acc); color: var(--acc-ink); text-decoration: none; font-weight: 500; box-shadow: var(--sombra); transition: filter .2s; }
@@ -633,6 +663,7 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
 .comp-consulta { width:100%; border:0; cursor:pointer; font-size:.83rem; margin-top:1.2rem; padding:.75rem; }
 .comp-ver { display:block; margin:.7rem auto 0; color:var(--acc); font-weight:700; font-size:.83rem; }
 .comparacion-comun { font-size:.88rem; border-left:3px solid var(--oro-logo); background:var(--bg); padding:.75rem 1rem; border-radius:9px; margin-top:1.2rem; }
+.comp-whatsapp { margin-top: 1rem; font-size: .88rem; }
 @media(max-width:1180px) { .colecciones-grilla { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:720px) {
   .descubrir-promo { min-height:unset; }
@@ -709,3 +740,281 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
   .confirmar-contenido { padding: 1.3rem 1rem; }
   .confirmar-contenido h2 { font-size: 1.48rem; }
 }
+
+
+/* ---------- Enlaces individuales para compartir perfumes ---------- */
+.ficha-compartir {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .55rem;
+  padding: .1rem 0 .25rem;
+}
+.ficha-compartir-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-height: 42px;
+  padding: .62rem 1.1rem;
+  border-radius: 999px;
+  background: var(--acc-suave);
+  color: var(--acc);
+  border: 1px solid color-mix(in srgb, var(--acc) 24%, var(--line));
+  font-weight: 600;
+  font-size: .88rem;
+  transition: background-color .2s, transform .2s, border-color .2s;
+}
+.ficha-compartir-btn svg { flex-shrink: 0; }
+.ficha-compartir-btn:hover {
+  background: color-mix(in srgb, var(--acc-suave) 70%, var(--card));
+  border-color: var(--acc);
+  transform: translateY(-1px);
+}
+.ficha-compartir-nativa { background: var(--card); color: var(--ink); border-color: var(--linea-oro); }
+.ficha-compartir-nota { color: var(--mute); font-size: .8rem; flex-basis: 100%; }
+#f-enlace-manual { flex-basis: 100%; width: 100%; min-width: 0; border: 1px solid var(--acc); border-radius: 10px; padding: .5rem .7rem; }
+@media (max-width: 420px) {
+  .ficha-compartir-btn { flex: 1 1 auto; padding-inline: .65rem; }
+  .ficha-compartir-nota { font-size: .75rem; }
+}
+
+/* =======================================================================
+   DJINN · CÓMO COMPRAR Y EXPLORACIÓN POR FAMILIAS AROMÁTICAS
+   ======================================================================= */
+.consulta-como-link { display:inline-flex; gap:.35rem; align-items:center; margin-top:.55rem; color:var(--acc); font-size:.87rem; font-weight:700; text-decoration:none; border-bottom:1px solid var(--oro-logo); }
+.consulta-como-link:hover { color:var(--ink); }
+.aromas-explorar { margin:1.45rem 0 1.3rem; padding:1.18rem 1.25rem .95rem; border:1px solid var(--linea-oro); background:color-mix(in srgb,var(--card) 79%,var(--acc-suave)); border-radius:22px; }
+.aromas-cab { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.4rem .8rem; }
+.aromas-cab h2 { font:500 clamp(1.3rem,2.1vw,1.65rem)/1.16 var(--display); }
+.aromas-cab p { font-size:.85rem; color:var(--mute); margin:.25rem 0 .8rem; }
+.aromas-cab .colecciones-eyebrow { margin-bottom:.23rem; }
+.aromas-limpiar { color:var(--acc); font-size:.81rem; font-weight:700; padding:.35rem .6rem; border-radius:999px; border:1px solid var(--linea-oro); background:var(--card); }
+.aromas-limpiar:hover { border-color:var(--acc); }
+.aromas-scroll { display:flex; flex-wrap:wrap; gap:.46rem; }
+.aroma-chip { flex:none; display:inline-flex; gap:.44rem; justify-content:center; align-items:center; border:1px solid var(--line); background:var(--card); border-radius:999px; padding:.53rem .88rem; font-size:.87rem; font-weight:600; white-space:nowrap; transition:background-color .2s,border-color .2s,color .2s,transform .2s; }
+.aroma-chip:hover { transform:translateY(-1px); border-color:var(--acc); }
+.aroma-chip[aria-pressed="true"] { background:var(--acc); border-color:var(--acc); color:var(--acc-ink); }
+.aroma-chip span { font-size:1rem; }
+.aromas-estado { min-height:1.25rem; margin-top:.7rem; font-size:.77rem; color:var(--mute); }
+#resultados-catalogo, #como-comprar { scroll-margin-top:88px; }
+.como-comprar { margin-top:clamp(3rem,6vw,5rem); padding:clamp(1.2rem,3vw,2rem); border:1px solid var(--linea-oro); border-radius:24px; background:linear-gradient(135deg,color-mix(in srgb,var(--acc-suave) 28%,var(--card)),var(--card) 72%); }
+.como-comprar-intro { display:flex; justify-content:space-between; gap:1rem; align-items:center; }
+.como-comprar-intro h2 { font:500 clamp(1.6rem,3vw,2.2rem)/1.12 var(--display); }
+.como-comprar-intro p { color:var(--mute); font-size:.9rem; margin:.55rem 0 1.6rem; }
+.como-comprar-estampa { font:400 3.8rem/1 var(--display); color:var(--oro-logo); opacity:.65; padding-right:1rem; }
+.como-pasos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.85rem; }
+.como-paso { min-width:0; position:relative; border:1px solid var(--line); background:var(--card); border-radius:17px; padding:1.25rem 1.12rem 1.35rem; }
+.como-num { position:absolute; top:1.12rem; right:1.14rem; color:var(--oro-logo); font:500 1.2rem/1 var(--display); }
+.como-paso-icono { display:grid; place-items:center; width:43px; height:43px; border-radius:12px; background:var(--acc-suave); color:var(--acc); font:400 1.6rem/1 var(--display); margin-bottom:1rem; }
+.como-paso h3 { font:500 1.2rem/1.16 var(--display); margin-bottom:.55rem; }
+.como-paso p { font-size:.875rem; line-height:1.55; color:var(--mute); }
+.como-paso strong { color:var(--ink); }
+.como-comprar-final { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:1.3rem; }
+.como-comprar-final p { max-width:46ch; font-size:.81rem; color:var(--mute); }
+.como-comprar-final strong { color:var(--ink); }
+.como-comprar-acciones { display:flex; align-items:center; gap:.65rem; flex-wrap:wrap; }
+.como-volver, .como-abrir { border:1px solid var(--acc); border-radius:999px; padding:.65rem .95rem; font-size:.87rem; font-weight:700; text-decoration:none; white-space:nowrap; }
+.como-volver { color:var(--acc); background:transparent; }
+.como-abrir { background:var(--acc); color:var(--acc-ink); }
+.como-volver:hover { background:var(--acc-suave); }
+.como-abrir:hover { filter:brightness(1.08); }
+@media(max-width:800px) { .como-pasos { grid-template-columns:1fr; } .como-paso { padding:1rem 1.1rem; } .como-paso-icono { margin-bottom:.65rem; } }
+@media(max-width:600px) {
+  .aromas-explorar { padding:1rem 0 .88rem; overflow:hidden; }
+  .aromas-cab,.aromas-estado { padding-inline:1rem; }
+  .aromas-scroll { flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:none; scroll-snap-type:x proximity; padding:.15rem 1rem .6rem; scroll-padding-left:1rem; }
+  .aromas-scroll::-webkit-scrollbar { display:none; }
+  .aroma-chip { scroll-snap-align:start; }
+  .aromas-estado { margin-top:.25rem; }
+  .como-comprar { padding:1.15rem 1rem; }
+  .como-comprar-estampa { display:none; }
+  .como-comprar-final { align-items:stretch; }
+  .como-comprar-acciones { width:100%; }
+  .como-volver,.como-abrir { text-align:center; flex:1 1 auto; }
+}
+@media(prefers-reduced-motion:reduce) { .aroma-chip { transition:none; } }
+
+.aromas-pie { display:flex; justify-content:space-between; align-items:center; gap:.5rem .9rem; flex-wrap:wrap; }
+.aromas-ver { margin-top:.45rem; font-size:.81rem; font-weight:700; color:var(--acc); border-bottom:1px solid var(--oro-logo); white-space:nowrap; }
+@media(max-width:600px) { .aromas-pie { padding-inline:1rem; } .aromas-estado { padding-inline:0; flex:1 1 auto; } }
+
+
+/* =========================================================
+   DJINN — CATÁLOGO PRIMERO (versión alternativa)
+   La portada es más corta y las herramientas se expanden
+   solamente cuando el visitante las necesita.
+   ========================================================= */
+.hero img { max-height: min(46vh, 420px); }
+.consulta-aviso { margin-bottom: .85rem; padding: .68rem .85rem; align-items: center; }
+.consulta-aviso h2 { font: 600 .91rem/1.2 var(--texto); }
+.consulta-aviso p { margin-top: .2rem; font-size: .8rem; line-height: 1.35; }
+.consulta-como-link { font-size: .82rem; }
+.explora-rapida { margin-bottom: 1.2rem; }
+.explora-rapida-cab { display: flex; justify-content: space-between; align-items: end; gap: .8rem; margin-bottom: .7rem; }
+.explora-rapida-cab h2 { font: 500 clamp(1.3rem,2.4vw,1.75rem)/1.18 var(--display); }
+.explora-rapida-cab .colecciones-eyebrow { margin-bottom: .2rem; }
+.explora-ver-todos { font-size: .82rem; color: var(--acc); font-weight: 700; white-space: nowrap; text-underline-offset: 4px; }
+.explora-atajos { display: flex; flex-wrap: wrap; gap: .5rem; }
+.explora-atajo { display: inline-flex; align-items: center; justify-content: center; gap: .4rem; padding: .68rem .9rem; border: 1px solid var(--linea-oro); border-radius: 999px; font-size: .87rem; font-weight: 600; line-height: 1.2; white-space: nowrap; background: var(--card); color: var(--ink); transition: border-color .18s, background .18s, color .18s, transform .18s; }
+.explora-atajo:hover { border-color: var(--acc); transform: translateY(-1px); }
+.explora-atajo-destacado { background: var(--acc); color: var(--acc-ink); border-color: var(--acc); }
+.explora-atajo-destacado:hover { background: #245844; color: white; }
+.explora-atajo[aria-expanded="true"] { background: var(--acc-suave); border-color: var(--acc); color: var(--acc); }
+.atajo-flecha { display: inline-block; font-size: 1rem; opacity: .65; transition: transform .18s; }
+.explora-atajo[aria-expanded="true"] .atajo-flecha { transform: rotate(180deg); }
+.explora-panel { margin-top: .85rem; padding: 1.1rem; border: 1px solid var(--linea-oro); border-radius: 18px; background: var(--card); }
+.explora-panel .colecciones, .explora-panel .marcas, .explora-panel .aromas-explorar { margin: 0; }
+.explora-panel .aromas-explorar { padding: .7rem; border: none; background: none; }
+.explora-panel .colecciones-grilla { margin-top: .8rem; }
+.explora-panel .marcas-fila { display: flex; overflow-x: auto; gap: .6rem; padding: .2rem .2rem .75rem; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.explora-panel .mt { flex: 0 0 148px; scroll-snap-align: start; }
+.catalogo-entrada { display: flex; align-items: end; justify-content: space-between; margin: .8rem 0 .7rem; }
+.catalogo-entrada h2 { font: 500 clamp(1.4rem,2.4vw,1.8rem)/1.18 var(--display); }
+.catalogo-entrada p { color: var(--mute); font-size: .84rem; margin-top: .22rem; }
+#resultados-catalogo { scroll-margin-top: 85px; }
+@media (max-width: 900px) {
+  .hero img { max-height: 235px; }
+  #resultados-catalogo { scroll-margin-top: 15px; }
+}
+@media (max-width: 650px) {
+  .explora-rapida-cab h2 { font-size: 1.32rem; }
+  .explora-ver-todos { font-size: .75rem; }
+  .explora-atajos { flex-wrap: nowrap; gap: .45rem; overflow-x: auto; margin-inline: -1rem; padding: .1rem 1rem .7rem; scroll-snap-type: x proximity; scrollbar-width: none; overscroll-behavior-x: contain; }
+  .explora-atajos::-webkit-scrollbar { display: none; }
+  .explora-atajo { flex: 0 0 auto; scroll-snap-align: start; font-size: .82rem; padding: .65rem .8rem; }
+  .explora-panel { padding: .65rem; }
+  .consulta-aviso { padding: .7rem .75rem; }
+  .consulta-aviso p { font-size: .76rem; }
+  .consulta-aviso h2 { font-size: .85rem; }
+  .catalogo-entrada h2 { font-size: 1.36rem; }
+  .catalogo-entrada p { font-size: .8rem; }
+  .explora-rapida { margin-bottom: .85rem; }
+}
+
+/* Aviso informativo condensado: no compite con el catálogo */
+.consulta-aviso { flex-wrap: wrap; column-gap:.65rem; row-gap:.25rem; }
+.consulta-aviso-icono { width: 26px; height: 26px; font-size:1.2rem; }
+.consulta-aviso-textos { flex:1 1 auto; }
+.consulta-aviso p { margin-top:.15rem; }
+.consulta-aviso .consulta-como-link { margin:0; white-space:nowrap; }
+@media(max-width: 650px) {
+  .consulta-aviso { gap:.4rem; padding:.56rem .65rem; border-radius:12px; }
+  .consulta-aviso-textos { flex:1 1 calc(100% - 42px); }
+  .consulta-aviso h2 { font-size:.79rem; }
+  .consulta-aviso p { font-size:.73rem; }
+  .consulta-aviso .consulta-como-link { margin-left:calc(26px + .4rem); font-size:.75rem; }
+}
+
+
+/* ==============================================================
+   DJINN — Buscador inteligente: desplegable liviano y accesible
+   ============================================================== */
+.buscador { z-index: 25; }
+.sugerencias {
+  position: absolute;
+  top: calc(100% + .45rem);
+  left: 0; right: 0;
+  z-index: 30;
+  max-height: min(370px, 52vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--card);
+  border: 1px solid var(--linea-oro);
+  border-radius: 18px;
+  box-shadow: 0 18px 50px -20px rgba(21,32,27,.38);
+  padding: .45rem;
+}
+.sugerencias[hidden] { display: none !important; }
+.sugerencias-titulo { padding: .45rem .7rem .3rem; font-size: .7rem; font-weight: 700; color: var(--mute); letter-spacing: .07em; text-transform: uppercase; }
+.sugerencia { display: flex; align-items: center; gap: .7rem; text-align: left; width: 100%; padding: .47rem .6rem; border-radius: 12px; }
+.sugerencia:hover, .sugerencia[aria-selected="true"] { background: var(--acc-suave); }
+.sugerencia-foto { flex: none; width: 48px; height: 46px; display: block; overflow: hidden; border-radius: 9px; background: color-mix(in srgb, var(--c, #ddd) 19%, var(--card)); }
+.sugerencia-foto img { position: static; transform: none; display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.sugerencia-datos { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .05rem; }
+.sugerencia-datos strong { font-size: .88rem; font-weight: 600; line-height: 1.25; }
+.sugerencia-datos small { color: var(--mute); font-size: .76rem; }
+.sugerencia-flecha { margin-left: auto; color: var(--mute); font-size: 1rem; }
+@media(max-width:900px) {
+  .sugerencias { max-height: min(310px, 40vh); border-radius: 15px; }
+  .sugerencia-foto { width: 43px; height: 43px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .card, .media img { transition-duration: .01ms !important; }
+}
+
+/* El botón de borrar lo dibuja Djinn: evitamos la segunda cruz del navegador. */
+#q::-webkit-search-cancel-button,
+#q::-webkit-search-decoration,
+#q::-webkit-search-results-button,
+#q::-webkit-search-results-decoration { -webkit-appearance: none; appearance: none; display: none; }
+
+
+/* =====================================================================
+   DJINN — FILTROS PREMIUM · estética boutique y controles intuitivos
+   ===================================================================== */
+.filtros-kicker { display:block; color:#9a7742; font-weight:700; font-size:.63rem; letter-spacing:.13em; margin-bottom:.35rem; }
+.filtros-nombre { display:flex; align-items:center; gap:.55rem; }
+.filtros-estrella { display:grid; place-items:center; width:29px; height:29px; flex:none; border-radius:10px; color:#956c31; background:#f3e7d1; font-size:1.05rem; }
+.filtros .filtros-nombre h2 { font-family:var(--display); font-weight:600; font-size:1.19rem; letter-spacing:-.025em; line-height:1.17; color:var(--ink); margin:0; }
+.filtros-identidad p { font-size:.8rem; line-height:1.5; color:var(--mute); margin-top:.65rem; }
+.filtros-total,.filtro-grupo-n { display:grid; flex:none; place-items:center; min-width:21px; height:21px; padding-inline:5px; border-radius:99px; background:#e5eee9; color:#27654f; font-size:.72rem; font-weight:700; }
+.filtros-total[hidden], .filtro-grupo-n[hidden] { display:none !important; }
+.filtros-resumen { padding:1rem 1.08rem 1.05rem; border-bottom:1px solid #e8e1d7; background:#fbf9f3; }
+.filtros-resumen-cab { display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.65rem; }
+.filtros-resumen-cab > span { font-size:.76rem; color:#5a645b; font-weight:650; }
+.filtros-limpiar-superior { font-size:.75rem; color:#1d6a56; font-weight:700; text-underline-offset:3px; }
+.filtros-limpiar-superior:hover { text-decoration:underline; }
+.filtros-chips { display:flex; flex-wrap:wrap; gap:.42rem; }
+.filtro-chip-activo { max-width:100%; display:inline-flex; align-items:center; gap:.5rem; padding:.32rem .5rem .32rem .75rem; border-radius:100px; background:white; border:1px solid #c9dfd5; color:#23614f; font-size:.77rem; text-align:left; line-height:1.25; transition:border-color .15s,background .15s; }
+.filtro-chip-activo:hover { border-color:#1d6a56; background:#f0f8f3; }
+.filtro-chip-activo > span:first-child { overflow-wrap:anywhere; }
+.filtro-chip-quitar { display:grid; place-items:center; width:18px; height:18px; border-radius:100%; background:#e7f1ea; font-weight:800; font-size:1rem; line-height:1; flex:none; }
+.filtro-grupo { min-width:0; border-bottom:1px solid #eee9e0; }
+.filtro-grupo > summary { display:flex; align-items:center; gap:.65rem; padding:1rem 1.05rem; cursor:pointer; list-style:none; user-select:none; transition:background .18s; }
+.filtro-grupo > summary::-webkit-details-marker { display:none; }
+.filtro-grupo > summary::marker { content:''; }
+.filtro-grupo > summary:hover { background:#faf8f2; }
+.filtro-grupo > summary:focus-visible { outline:2px solid #1d6a56; outline-offset:-2px; border-radius:8px; }
+.filtro-grupo-icono { width:33px; height:33px; display:grid; place-items:center; border-radius:11px; background:#f5f1e8; color:#78603f; flex:none; }
+.filtro-grupo-icono svg { width:18px; height:18px; }
+.filtro-grupo[open] .filtro-grupo-icono { background:#e8f2ec; color:#276b57; }
+.filtro-grupo-txt { display:grid; flex:1; min-width:0; gap:2px; }
+.filtro-grupo-txt strong { font-size:.87rem; font-weight:700; letter-spacing:-.015em; }
+.filtro-grupo-txt small { color:#788279; font-size:.73rem; }
+.filtro-flecha { width:17px; height:17px; flex:none; color:#718077; transition:transform .2s; }
+.filtro-grupo[open] .filtro-flecha { transform:rotate(180deg); }
+.filtro-grupo-body { padding:0 1.05rem 1.08rem; }
+.filtro-grupo .pastillas { gap:.42rem; }
+.filtro-grupo .pastilla span { font-size:.81rem; padding:.45rem .72rem; color:#4a574f; border:1px solid #e2e4dc; background:#fcfcfa; font-weight:550; }
+.filtro-grupo .pastilla input:checked + span { color:#fff; background:#276b57; border-color:#276b57; box-shadow:0 3px 8px rgba(29,106,86,.14); }
+.filtro-grupo .pastilla:hover span { border-color:#7aa28a; }
+.filtro-grupo .pastilla input:focus-visible + span { outline:2px solid #276b57; outline-offset:2px; }
+.filtro-grupo .pastillas-ico .pastilla span { gap:.38rem; }
+.filtro-afinidad { background:#fafbf8; padding:1.1rem 1.15rem 1.15rem; border-bottom:1px solid #ece9e1; }
+.filtro-afinidad .fila-rango { font-size:.8rem; color:#4c5f53; }
+.filtro-afinidad .fila-rango b { color:#1d6a56; }
+.filtro-afinidad .ayuda-notas { line-height:1.5; font-size:.74rem; }
+@media (min-width:901px) {
+  .cuerpo { grid-template-columns:284px minmax(0,1fr); gap:clamp(1.3rem,2.4vw,2.5rem); }
+  .filtros { display:flex; flex-direction:column; gap:0; position:sticky; top:82px; align-self:start; max-height:calc(100vh - 98px); max-height:calc(100dvh - 98px); overflow-y:auto; overscroll-behavior:contain; padding:0; margin:0; background:#fff; border:1px solid #e7e1d7; border-radius:23px; box-shadow:0 15px 45px -33px rgba(23,42,30,.35); scrollbar-width:thin; scrollbar-color:#d6dbd2 transparent; }
+  .filtros-cab { display:flex; padding:1.12rem 1.15rem 1.15rem; background:linear-gradient(130deg,#fffefa 0%,#f9f4e9 100%); border-bottom:1px solid #ece5d8; }
+  .filtros #cerrar-filtros { display:none; }
+  .filtros-pie { position:sticky; bottom:0; z-index:2; display:flex; justify-content:flex-start; border-top:1px solid #eee8de; padding:.8rem 1.12rem; background:#fffefa; }
+  .filtros-pie #limpiar { font-size:.8rem; padding:.28rem 0; }
+}
+@media (max-width:900px) {
+  .filtros { gap:0; }
+  .filtros-cab { gap:.5rem; border-bottom:1px solid #ede9e1; }
+  .filtros .filtros-identidad h2 { font-size:1.33rem; }
+  .filtros-identidad p { margin-top:.25rem; font-size:.77rem; }
+  .filtros-kicker { font-size:.6rem; }
+  .filtros-resumen { padding-block:.85rem; }
+  .filtro-grupo { margin-inline:0; }
+  .filtro-grupo > summary { padding:1rem 0; }
+  .filtro-grupo-body { padding:0 0 1.1rem; }
+  .filtros > .filtros-pie { gap:.65rem; }
+  .filtros-pie #limpiar { font-size:.8rem; flex:none; }
+  .filtro-afinidad { padding-block:.95rem; }
+}
+@media (prefers-reduced-motion:reduce) { .filtro-flecha,.filtro-chip-activo { transition:none; } }

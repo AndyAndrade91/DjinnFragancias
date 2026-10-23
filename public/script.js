@@ -5847,8 +5847,10 @@ document.addEventListener(
   true,
 );
 
-const imagen = (p, i, mini) =>
-  `<img src="${esc(p._fotos[i] || "")}" alt="${mini ? "" : esc(p.nombre + " · " + TIPOS_FOTO[i])}" loading="lazy" data-color="${p.color}" data-i="${i}" ${mini ? "data-mini" : ""}>`;
+/* La imagen principal visible primero tiene prioridad cuando entra en pantalla.
+   Las restantes se cargan solo al acercarse; tamaño declarado y decodificación asíncrona. */
+const imagen = (p, i, mini = false, prioritaria = false) =>
+  `<img src="${esc(p._fotos[i] || "")}" alt="${mini ? "" : esc(p.nombre + " · " + TIPOS_FOTO[i])}" width="600" height="400" loading="lazy" decoding="async" fetchpriority="${prioritaria ? "high" : "low"}" data-color="${p.color}" data-i="${i}" ${mini ? "data-mini" : ""}>`;
 
 /* =====================================================================
    INSTAGRAM: copiar el mensaje y abrir el chat directo
@@ -5874,29 +5876,39 @@ async function copiar(texto) {
   }
 }
 
+// Avisos discretos. Si hay un <dialog> modal abierto, viven DENTRO de él.
+// Esto evita que el fondo modal impida tocar el aviso o la X.
 let temporizador;
+const toastDjinn = $("#toast");
+
+function ocultarAviso() {
+  clearTimeout(temporizador);
+  temporizador = undefined;
+  toastDjinn.classList.remove("on");
+}
 
 function aviso(msg) {
-  const t = $("#toast");
+  const dialogos = document.querySelectorAll('dialog[open]');
+  const dialogoActual = dialogos[dialogos.length - 1];
+  const destino = dialogoActual || document.body;
+  if (toastDjinn.parentElement !== destino) destino.appendChild(toastDjinn);
 
-  t.textContent = msg;
-
-  try {
-    if (!t.matches(":popover-open")) t.showPopover();
-  } catch (e) {
-    t.classList.add("on");
-  }
-
+  $("#toast-mensaje").textContent = msg;
   clearTimeout(temporizador);
-
-  temporizador = setTimeout(() => {
-    try {
-      t.hidePopover();
-    } catch (e) {
-      t.classList.remove("on");
-    }
-  }, 5200);
+  toastDjinn.classList.add("on");
+  // Mucho menos tiempo que el aviso negro anterior (5,2 segundos).
+  temporizador = setTimeout(ocultarAviso, 2600);
 }
+
+// Un toque sobre cualquier parte del aviso, o sobre la X, lo cierra al instante.
+toastDjinn.addEventListener("click", ocultarAviso);
+// Si se cierra el diálogo contenedor, devolvemos el aviso al body.
+document.addEventListener("close", (e) => {
+  if (e.target.tagName === "DIALOG" && e.target.contains(toastDjinn)) {
+    ocultarAviso();
+    document.body.appendChild(toastDjinn);
+  }
+}, true);
 
 /* Cualquier link con data-ig copia su mensaje y deja que el link abra Instagram */
 document.addEventListener("click", async (e) => {
@@ -5974,6 +5986,7 @@ const estado = {
   marcas: new Set(),
   estaciones: new Set(),
   momentos: new Set(),
+  familiaAroma: null,
   minCuando: 50,
   orden: "destacados",
   lista: false,
@@ -6183,15 +6196,165 @@ $("#orden").addEventListener("change", (e) => {
 const buscador = $("#buscador"),
   q = $("#q");
 
+/* =====================================================================
+   BUSCADOR INTELIGENTE
+   Sugiere fragancias del catálogo, tolera errores leves y no exige servidor.
+   Un pequeño retraso evita reconstruir 198 tarjetas por cada pulsación.
+   ===================================================================== */
+const sugerencias = $("#sugerencias");
+let resultadosSugeridos = [];
+let indiceSugerido = -1;
+let esperaBusqueda;
+let busquedaCerrada = false;
+
+/* Distancia de edición rápida. El límite evita comparaciones caras o irrelevantes. */
+function distanciaAcotada(a, b, limite) {
+  if (Math.abs(a.length - b.length) > limite) return limite + 1;
+  let anterior = Array.from({length: b.length + 1}, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    const fila = [i];
+    let minimo = i;
+    for (let j = 1; j <= b.length; j++) {
+      const costo = a[i - 1] === b[j - 1] ? 0 : 1;
+      const v = Math.min(fila[j - 1] + 1, anterior[j] + 1, anterior[j - 1] + costo);
+      fila.push(v);
+      minimo = Math.min(minimo, v);
+    }
+    if (minimo > limite) return limite + 1;
+    anterior = fila;
+  }
+  return anterior[b.length];
+}
+
+const indiceBusqueda = PERFUMES.map(p => ({
+  p,
+  nombre: norm(p.corto),
+  marca: norm(p.marca),
+  texto: p._texto,
+  palabras: [...new Set(norm([p.corto, p.marca].join(" ")).split(/[^a-z0-9]+/).filter(Boolean))]
+}));
+
+function sugerirPerfumes(consulta) {
+  const texto = norm(consulta.trim()).replace(/\s+/g, " ");
+  if (texto.length < 2) return [];
+  const partes = texto.split(" ");
+  return indiceBusqueda.map(item => {
+    const {nombre, marca, palabras, p} = item;
+    let puntos;
+    if (nombre === texto) puntos = 0;
+    else if (nombre.startsWith(texto)) puntos = 3;
+    else if (nombre.split(" ").some(w => w.startsWith(texto))) puntos = 12;
+    else if (nombre.includes(texto)) puntos = 18;
+    else if (marca.startsWith(texto)) puntos = 24;
+    else if (partes.every(w => item.texto.includes(w))) puntos = 32;
+    else if (texto.length >= 4 && partes.length === 1) {
+      const max = texto.length > 5 ? 2 : 1;
+      const cercano = palabras.some(w => distanciaAcotada(texto, w, max) <= max);
+      if (!cercano) return null;
+      puntos = 70;
+    } else return null;
+    return {p, puntos};
+  }).filter(Boolean)
+    .sort((a, b) => a.puntos - b.puntos || a.p.corto.localeCompare(b.p.corto, "es"))
+    .slice(0, 6).map(v => v.p);
+}
+
+function cerrarSugerencias() {
+  sugerencias.hidden = true;
+  q.setAttribute("aria-expanded", "false");
+  q.removeAttribute("aria-activedescendant");
+  indiceSugerido = -1;
+}
+
+function marcarSugerencia(indice) {
+  indiceSugerido = indice;
+  [...sugerencias.querySelectorAll('[role="option"]')].forEach((el, i) => {
+    el.setAttribute("aria-selected", String(i === indice));
+  });
+  const activo = indice >= 0 ? $("#sug-" + indice) : null;
+  if (activo) {
+    q.setAttribute("aria-activedescendant", activo.id);
+    activo.scrollIntoView({block: "nearest"});
+  } else q.removeAttribute("aria-activedescendant");
+}
+
+function mostrarSugerencias() {
+  if (busquedaCerrada || document.querySelector('dialog[open]')) return cerrarSugerencias();
+  resultadosSugeridos = sugerirPerfumes(q.value);
+  if (!resultadosSugeridos.length) return cerrarSugerencias();
+  sugerencias.innerHTML = `<div class="sugerencias-titulo">${resultadosSugeridos[0] && !norm(resultadosSugeridos[0].corto).includes(norm(q.value.trim())) && !resultadosSugeridos.some(p => norm(p.corto).includes(norm(q.value.trim()))) ? '¿Quizás buscabas...?' : 'Fragancias relacionadas'}</div>` +
+    resultadosSugeridos.map((p, i) => `<button type="button" role="option" aria-selected="false" id="sug-${i}" class="sugerencia" data-sug-id="${esc(p.id)}"><span class="sugerencia-foto" style="--c:${esc(p.color)}">${imagen(p, 0, true)}</span><span class="sugerencia-datos"><strong>${esc(p.corto)}</strong><small>${esc(p.marca)} · ${p.ml} ml</small></span><span class="sugerencia-flecha" aria-hidden="true">↗</span></button>`).join("");
+  sugerencias.hidden = false;
+  q.setAttribute("aria-expanded", "true");
+  indiceSugerido = -1;
+  q.removeAttribute("aria-activedescendant");
+}
+
+function elegirSugerencia(id) {
+  const perfume = porId(id);
+  if (!perfume) return;
+  clearTimeout(esperaBusqueda);
+  q.value = perfume.corto;
+  estado.q = q.value;
+  buscador.classList.add("con-texto");
+  busquedaCerrada = true;
+  cerrarSugerencias();
+  render();
+  abrir(id);
+}
+
 q.addEventListener("input", () => {
   estado.q = q.value;
   buscador.classList.toggle("con-texto", !!q.value);
-  render();
+  busquedaCerrada = false;
+  mostrarSugerencias();
+  clearTimeout(esperaBusqueda);
+  esperaBusqueda = setTimeout(render, 140);
+});
+
+q.addEventListener("focus", () => {
+  busquedaCerrada = false;
+  mostrarSugerencias();
+});
+
+q.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !sugerencias.hidden) {
+    e.preventDefault();
+    busquedaCerrada = true;
+    cerrarSugerencias();
+  } else if ((e.key === "ArrowDown" || e.key === "ArrowUp") && !sugerencias.hidden) {
+    e.preventDefault();
+    const cambio = e.key === "ArrowDown" ? 1 : -1;
+    marcarSugerencia((indiceSugerido + cambio + resultadosSugeridos.length) % resultadosSugeridos.length);
+  } else if (e.key === "Enter" && !sugerencias.hidden && resultadosSugeridos.length) {
+    e.preventDefault();
+    elegirSugerencia(resultadosSugeridos[Math.max(0, indiceSugerido)].id);
+  }
+});
+
+sugerencias.addEventListener("click", e => {
+  const boton = e.target.closest("[data-sug-id]");
+  if (boton) elegirSugerencia(boton.dataset.sugId);
+});
+
+/* Cierra al tocar fuera, pero no interfiere con el botón de borrar ni con la ficha. */
+document.addEventListener("pointerdown", e => {
+  if (!buscador.contains(e.target)) {
+    busquedaCerrada = true;
+    cerrarSugerencias();
+  }
+});
+
+q.addEventListener("blur", () => {
+  setTimeout(() => {
+    if (!buscador.contains(document.activeElement)) cerrarSugerencias();
+  }, 100);
 });
 
 $("#borrar").addEventListener("click", () => {
   q.value = "";
   q.dispatchEvent(new Event("input"));
+  cerrarSugerencias();
   q.focus();
 });
 
@@ -6216,6 +6379,7 @@ function limpiar() {
   estado.marcas.clear();
   estado.estaciones.clear();
   estado.momentos.clear();
+  estado.familiaAroma = null;
 
   document
     .querySelectorAll("#f-estacion input, #f-momento input")
@@ -6228,6 +6392,8 @@ function limpiar() {
   sincronizarOrden();
 
   q.value = "";
+  clearTimeout(esperaBusqueda);
+  cerrarSugerencias();
   buscador.classList.remove("con-texto");
 
   document.querySelector('input[name="genero"][value="Todos"]').checked = true;
@@ -6321,6 +6487,7 @@ function filtrar() {
       (!estado.marcas.size || estado.marcas.has(p.marca)) &&
       (!coleccionActiva || (coleccionesIndex[coleccionActiva] || []).includes(p.id)) &&
       (estado.genero === "Todos" || p.genero === estado.genero) &&
+      (!estado.familiaAroma || puntajeFiltroAroma(p, estado.familiaAroma) >= 55) &&
       (afinidad(p) === null || afinidad(p) >= estado.minCuando),
   );
 
@@ -6333,6 +6500,9 @@ function filtrar() {
 
   if (estado.orden === "nombre") {
     r.sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
+  } else if (estado.familiaAroma && estado.orden === "destacados") {
+    // Primero los perfumes cuyo acorde coincide más con la familia elegida.
+    r.sort((a,b) => puntajeFiltroAroma(b, estado.familiaAroma) - puntajeFiltroAroma(a, estado.familiaAroma));
   }
 
   return r;
@@ -6387,23 +6557,15 @@ function manejarAccion(e, id) {
   return false;
 }
 
-/* Evita repetir el tamaño cuando ya está en el nombre, ej. "100ml". */
-function nombreParaConsulta(p) {
-  return new RegExp(`\\b${p.ml}\\s*ml\\b`, "i").test(p.nombre)
-    ? p.nombre
-    : `${p.nombre} (${p.ml} ml)`;
-}
-
 function mensajeConsulta() {
   const lineas = Object.entries(carrito)
     .map(([id, n]) => {
       const p = porId(id);
-
-      return `• ${n} x ${nombreParaConsulta(p)}`;
+      return `• ${n} x ${p.nombre}`;
     })
     .join("\n");
 
-  return `¡Hola ${MARCA}! Me gustaría consultar el precio y la disponibilidad de estas fragancias:\n\n${lineas}\n\n¿Me pueden confirmar los precios, si las pueden conseguir y los plazos aproximados? ¡Gracias!`;
+  return `¡Hola ${MARCA}! ¿Me decís el precio de estas fragancias?\n\n${lineas}\n\n¡Gracias!`;
 }
 
 function renderCarrito() {
@@ -6532,10 +6694,10 @@ const tipoInterno = (p) =>
 
 const tipoHTML = (p) => `<span class="tipo">${tipoInterno(p)}</span>`;
 
-function tarjeta(p) {
+function tarjeta(p, posicion = 99) {
   return `<article class="card" data-id="${p.id}">
     <button class="media" data-abrir style="--c:${p.color}" aria-label="Ver ${esc(p.nombre)}">
-      ${imagen(p, 0)}
+      ${imagen(p, 0, false, posicion < 4)}
       ${p.etiqueta ? `<span class="etiqueta">${esc(p.etiqueta)}</span>` : ""}
       <span class="vista-rapida">Ver detalle</span>
     </button>
@@ -6560,13 +6722,14 @@ function render() {
   visibles = filtrar();
 
   $("#grilla").innerHTML = visibles.length
-    ? visibles.map(tarjeta).join("")
+    ? visibles.map((p, i) => tarjeta(p, i)).join("")
     : `
     <div class="vacio"><h3>No encontramos resultados</h3><p>${hay ? "Probá bajando el relleno mínimo o quitando alguna opción." : "Probá con otra palabra o quitá algún filtro."}</p>
     <button id="vacio-limpiar">Limpiar filtros</button></div>`;
 
   pintarMarcas();
   pintarColeccionActiva();
+  pintarFiltroAroma();
 
   $("#cuenta").innerHTML =
     `<b>${visibles.length}</b> de ${PERFUMES.length} fragancias`;
@@ -6577,6 +6740,7 @@ function render() {
     estado.genero !== "Todos" ||
     estado.estaciones.size ||
     estado.momentos.size ||
+    estado.familiaAroma ||
     coleccionActiva
   );
 
@@ -6585,7 +6749,10 @@ function render() {
     estado.marcas.size +
     (estado.genero !== "Todos" ? 1 : 0) +
     estado.estaciones.size +
-    estado.momentos.size;
+    estado.momentos.size +
+    (estado.familiaAroma ? 1 : 0);
+
+  pintarFiltrosPremium(nf);
 
   $("#n-filtros").textContent = nf;
   $("#n-filtros").dataset.n = nf;
@@ -6762,13 +6929,91 @@ $("#f-parecidos").addEventListener("click", (e) => {
   t.focus({ preventScroll: true });
 });
 
-function abrir(id) {
+/* =====================================================================
+   ENLACES COMPARTIBLES: cada ficha usa el ID que ya tiene PERFUMES.
+   Ejemplo: https://djinnfragancias.com/#perfume=khamrah-base
+   No hay archivos HTML adicionales ni configuración manual por producto.
+   ===================================================================== */
+const PREFIJO_PERFUME = "perfume=";
+
+function idDeLaUrl() {
+  const fragmento = window.location.hash.slice(1);
+  if (!fragmento.startsWith(PREFIJO_PERFUME)) return null;
+  try {
+    return decodeURIComponent(fragmento.slice(PREFIJO_PERFUME.length));
+  } catch (_) {
+    return null;
+  }
+}
+
+function urlDePerfume(id) {
+  const url = new URL(window.location.href);
+  url.hash = PREFIJO_PERFUME + encodeURIComponent(id);
+  return url.href;
+}
+
+function actualizarUrlDePerfume(id) {
+  if (idDeLaUrl() !== id) {
+    // Permite que el botón «Atrás» vuelva a la ficha anterior o al catálogo.
+    window.history.pushState({ djinnPerfume: id }, "", urlDePerfume(id));
+  }
+}
+
+function sincronizarFichaConUrl() {
+  const id = idDeLaUrl();
+  const p = id ? porId(id) : null;
+  if (p) {
+    if (!dlg.open || actual?.id !== id) abrir(id, true);
+  } else if (dlg.open) {
+    dlg.close();
+  }
+}
+
+window.addEventListener("popstate", sincronizarFichaConUrl);
+window.addEventListener("hashchange", sincronizarFichaConUrl);
+
+async function copiarEnlaceActual() {
+  if (!actual) return;
+  const enlace = urlDePerfume(actual.id);
+  if (await copiar(enlace)) {
+    $("#f-enlace-manual").hidden = true;
+    aviso("¡Enlace copiado! Ya podés compartir esta fragancia.");
+  } else {
+    const campo = $("#f-enlace-manual");
+    campo.value = enlace;
+    campo.hidden = false;
+    campo.focus();
+    campo.select();
+    aviso("Seleccioná el enlace y copialo manualmente.");
+  }
+}
+
+$("#f-copiar-link").addEventListener("click", copiarEnlaceActual);
+$("#f-compartir-link").hidden = typeof navigator.share !== "function";
+$("#f-compartir-link").addEventListener("click", async () => {
+  if (!actual) return;
+  const datos = {
+    title: `${actual.corto} | Djinn Fragancias`,
+    text: `Mirá ${actual.corto} en Djinn Fragancias`,
+    url: urlDePerfume(actual.id),
+  };
+  try {
+    if (typeof navigator.share !== "function") return copiarEnlaceActual();
+    await navigator.share(datos);
+  } catch (error) {
+    if (error?.name !== "AbortError") await copiarEnlaceActual();
+  }
+});
+
+function abrir(id, desdeEnlace = false) {
   const p = porId(id);
 
   if (!p) return;
 
   actual = p;
   fotoActual = 0;
+  if (!desdeEnlace) actualizarUrlDePerfume(p.id);
+  $("#f-enlace-manual").hidden = true;
 
   $("#f-tipo").innerHTML = tipoInterno(p);
 
@@ -6778,8 +7023,9 @@ function abrir(id) {
 
   $("#f-desc").textContent = p.desc;
 
+  // Consulta sencilla: solamente el nombre del perfume y su precio.
   $("#f-wa").href = waLink(
-    `¡Hola ${MARCA}! Me gustaría saber el precio y la disponibilidad de ${nombreParaConsulta(p)}. ¿Me pueden confirmar si lo pueden conseguir y el plazo aproximado? ¡Gracias!`,
+    `¡Hola ${MARCA}! ¿Me decís el precio de ${p.nombre}? ¡Gracias!`,
   );
 
   $("#f-accion").innerHTML = accionHTML(p);
@@ -6850,7 +7096,16 @@ $("#f-next").addEventListener("click", () => vecino(1));
 
 $("#cerrar").addEventListener("click", () => dlg.close());
 
-dlg.addEventListener("close", () => (document.body.style.overflow = ""));
+dlg.addEventListener("close", () => {
+  document.body.style.overflow = "";
+  // Al cerrar por botón, Escape o fondo, limpiamos la URL sin recargar.
+  // Si el usuario pulsó «Atrás», el fragmento ya cambió y no se modifica.
+  if (idDeLaUrl()) {
+    const url = new URL(window.location.href);
+    url.hash = "";
+    window.history.replaceState(window.history.state, "", url.href);
+  }
+});
 
 dlg.addEventListener("click", (e) => {
   if (e.target === dlg) dlg.close();
@@ -6877,6 +7132,54 @@ const FAMILIAS_DJINN = {
   especias: { "Cálido especiado": 1, "Ámbar": 0.9, "Canela": 1, "Especiado suave": 0.87, "Fresco especiado": 0.64, "Balsámico": 0.77, "Tabaco": 0.77, "Ahumado": 0.7, "Anís": 0.72 },
   frutal: { "Afrutados": 1, "Afrutado": 1, "Tropical": 1, "Coco": 0.72, "Cereza": 0.94, "Acerezado": 0.9, "Pera": 0.89, "Cítrico": 0.54 }
 };
+
+/* Ocho familias simples para explorar el catálogo. El Genio y las colecciones
+   siguen utilizando su propia clasificación; este filtro es independiente.
+   Los nombres de acordes salen de los perfumes, no de botones agregados a mano. */
+const GRUPOS_AROMA_FILTRO = [
+  { id:'dulce', nombre:'Dulces', simbolo:'🍦', mapa:FAMILIAS_DJINN.dulce },
+  { id:'fresco', nombre:'Frescos', simbolo:'🌊', mapa:{ Fresco:1, Acuático:1, Marino:1, Ozónico:.95, Verde:.8, Jabonoso:.83, Aromático:.68, Herbal:.74, 'Fresco especiado':.66, Cítrico:.32 } },
+  { id:'citrico', nombre:'Cítricos', simbolo:'🍋', mapa:{ Cítrico:1, Fresco:.28, Agrio:.72, Aromático:.21 } },
+  { id:'maderas', nombre:'Amaderados', simbolo:'🌲', mapa:FAMILIAS_DJINN.maderas },
+  { id:'floral', nombre:'Florales', simbolo:'🌸', mapa:FAMILIAS_DJINN.floral },
+  { id:'especiado', nombre:'Especiados', simbolo:'🌶️', mapa:{ 'Cálido especiado':1, 'Fresco especiado':.9, Canela:1, 'Especiado suave':.95, Especia:1, Anís:.75, Balsámico:.53, Ahumado:.34 } },
+  { id:'frutal', nombre:'Afrutados', simbolo:'🍑', mapa:FAMILIAS_DJINN.frutal },
+  { id:'ambar', nombre:'Ambarados', simbolo:'✨', mapa:{ Ámbar:1, Balsámico:.8, Oud:.55, 'Cálido especiado':.42, Avainillado:.34, Amaderado:.28 } }
+];
+const GRUPOS_AROMA_INDEX = Object.fromEntries(GRUPOS_AROMA_FILTRO.map(g => [g.id, g]));
+function puntajeFiltroAroma(p, id) {
+  const grupo = GRUPOS_AROMA_INDEX[id];
+  if (!grupo) return 0;
+  const coincidencias = p.acordes.map(([nombre, fuerza]) => (grupo.mapa[nombre] || 0) * fuerza)
+    .filter(v => v > 0).sort((a,b) => b-a);
+  if (!coincidencias.length) return 0;
+  return Math.min(100, coincidencias[0] * .78 + (coincidencias[1] || 0) * .18 + (coincidencias[2] || 0) * .09);
+}
+function pintarFiltroAroma() {
+  $('#f-aromas').querySelectorAll('[data-aroma]').forEach(b => {
+    b.setAttribute('aria-pressed', String(estado.familiaAroma === b.dataset.aroma));
+  });
+  $('#aromas-limpiar').hidden = !estado.familiaAroma;
+  $('#aromas-ver-resultados').hidden = !estado.familiaAroma;
+  const elegida = GRUPOS_AROMA_INDEX[estado.familiaAroma];
+  $('#aromas-estado').textContent = elegida
+    ? `${visibles.length} ${visibles.length===1?'fragancia':'fragancias'} con perfil ${elegida.nombre.toLowerCase()} según sus acordes. Para ver todas, tocá de nuevo el aroma.`
+    : 'Elegí una familia aromática para explorar sus fragancias.';
+}
+$('#f-aromas').innerHTML = GRUPOS_AROMA_FILTRO.map(g =>
+  `<button type="button" class="aroma-chip" data-aroma="${g.id}" aria-pressed="false"><span aria-hidden="true">${g.simbolo}</span>${g.nombre}</button>`
+).join('');
+$('#f-aromas').addEventListener('click', e => {
+  const b = e.target.closest('[data-aroma]');
+  if (!b) return;
+  // Elegir un aroma permite salir de una colección sin borrar otros filtros.
+  coleccionActiva = null;
+  estado.familiaAroma = estado.familiaAroma === b.dataset.aroma ? null : b.dataset.aroma;
+  render();
+});
+$('#aromas-limpiar').addEventListener('click', () => { estado.familiaAroma=null; render(); });
+$('#aromas-ver-resultados').addEventListener('click', () => $('#resultados-catalogo').scrollIntoView({behavior:'smooth',block:'start'}));
+$('#como-abrir-seleccion').addEventListener('click', () => $('#btn-carrito').click());
 
 /* Puntaje 0..100: acorde principal y aportes de los siguientes. */
 function puntajeFamilia(p, familia) {
@@ -7044,7 +7347,8 @@ function mostrarComparacion() {
     <h4>Cuándo usarlo</h4>${CUANDO.map(k=>`<div class="comp-dato"><span>${k} <small>${porcentajeCuando(p,k)}%</small></span>${barraComparativa(porcentajeCuando(p,k), COLOR_CUANDO[k])}</div>`).join('')}
     <button class="cta comp-consulta" type="button" data-comp-agregar="${esc(p.id)}">${cant(p.id)?'✓ En Mi selección':'Añadir a Mi selección'}</button><button class="comp-ver" type="button" data-comp-ver="${esc(p.id)}">Ver ficha →</button>
     </article>`).join('')}</div>
-    <p class="comparacion-comun">${comun.length?`<strong>En común:</strong> ${esc(comun.join(', '))}.`:'Tienen perfiles aromáticos distintos, según los acordes principales.'}</p>`;
+    <p class="comparacion-comun">${comun.length?`<strong>En común:</strong> ${esc(comun.join(', '))}.`:'Tienen perfiles aromáticos distintos, según los acordes principales.'}</p>
+    <a class="cta comp-whatsapp" href="${esc(waLink(`¡Hola ${MARCA}! ¿Me decís el precio de estas dos fragancias?\n\n• ${a.nombre}\n• ${b.nombre}\n\n¡Gracias!`))}" target="_blank" rel="noopener">Consultar ambos por WhatsApp →</a>`;
   mostrarDialog(compararDialog);
 }
 $('#comparar-cuerpo').addEventListener('click',e => {
@@ -7055,8 +7359,128 @@ $('#comparar-cuerpo').addEventListener('click',e => {
 });
 prepararColecciones();
 
+/* ===============================================================
+   DJINN — FILTROS PREMIUM
+   Etiquetas activas, grupos plegables y limpieza individual accesible.
+   Conserva las mismas reglas de filtrado y todos los resultados.
+   =============================================================== */
+function pintarFiltrosPremium(cuentaFiltros) {
+  const total = document.querySelector('#filtros-total');
+  total.hidden = cuentaFiltros === 0;
+  total.textContent = String(cuentaFiltros);
+
+  const grupos = [
+    ['num-genero', estado.genero === 'Todos' ? 0 : 1],
+    ['num-estacion', estado.estaciones.size],
+    ['num-momento', estado.momentos.size]
+  ];
+  for (const [id, cantidad] of grupos) {
+    const el = document.getElementById(id);
+    el.hidden = cantidad === 0;
+    el.textContent = String(cantidad);
+  }
+
+  const activos = [];
+  if (estado.q.trim()) activos.push(['busqueda', '', `Buscar: ${estado.q.trim()}`]);
+  if (estado.genero !== 'Todos') activos.push(['genero', '', estado.genero]);
+  for (const m of estado.marcas) activos.push(['marca', m, m]);
+  for (const s of estado.estaciones) activos.push(['estacion', s, s]);
+  for (const m of estado.momentos) activos.push(['momento', m, m]);
+  const aroma = GRUPOS_AROMA_INDEX[estado.familiaAroma];
+  if (aroma) activos.push(['aroma', '', aroma.nombre]);
+  if (coleccionActiva) {
+    const c = COLECCIONES_DJINN.find(x => x.id === coleccionActiva);
+    if (c) activos.push(['coleccion', '', c.nombre]);
+  }
+
+  const resumen = document.getElementById('filtros-resumen');
+  resumen.hidden = !activos.length;
+  const zona = document.getElementById('filtros-chips');
+  zona.replaceChildren();
+  for (const [tipo, valor, etiqueta] of activos) {
+    const boton = document.createElement('button');
+    boton.type = 'button';
+    boton.className = 'filtro-chip-activo';
+    boton.dataset.tipo = tipo;
+    boton.dataset.valor = valor;
+    boton.setAttribute('aria-label', `Quitar filtro ${etiqueta}`);
+    const titulo = document.createElement('span');
+    titulo.textContent = etiqueta;
+    const equis = document.createElement('span');
+    equis.className = 'filtro-chip-quitar';
+    equis.setAttribute('aria-hidden', 'true');
+    equis.textContent = '×';
+    boton.append(titulo, equis);
+    zona.appendChild(boton);
+  }
+}
+
+document.getElementById('limpiar-superior').addEventListener('click', limpiar);
+document.getElementById('filtros-chips').addEventListener('click', e => {
+  const boton = e.target.closest('[data-tipo]');
+  if (!boton) return;
+  const { tipo, valor } = boton.dataset;
+  if (tipo === 'busqueda') {
+    estado.q = '';
+    q.value = '';
+    clearTimeout(esperaBusqueda);
+    cerrarSugerencias();
+    buscador.classList.remove('con-texto');
+  } else if (tipo === 'genero') {
+    estado.genero = 'Todos';
+    document.querySelector('input[name="genero"][value="Todos"]').checked = true;
+  } else if (tipo === 'marca') {
+    estado.marcas.delete(valor);
+  } else if (tipo === 'estacion' || tipo === 'momento') {
+    const conjunto = tipo === 'estacion' ? estado.estaciones : estado.momentos;
+    conjunto.delete(valor);
+    const contenedor = document.getElementById(tipo === 'estacion' ? 'f-estacion' : 'f-momento');
+    const input = [...contenedor.querySelectorAll('input')].find(i => i.value === valor);
+    if (input) input.checked = false;
+  } else if (tipo === 'aroma') {
+    estado.familiaAroma = null;
+  } else if (tipo === 'coleccion') {
+    coleccionActiva = null;
+  }
+  sincronizarOrden();
+  render();
+});
+
+/* En móvil abrimos los grupos al desplegar los filtros para ahorrar toques. */
+document.getElementById('abrir-filtros').addEventListener('click', () => {
+  if (movil.matches) {
+    for (const grupo of document.querySelectorAll('.filtro-grupo')) grupo.open = true;
+  }
+});
+
 armarMarcas();
 render();
 actualizar();
 marcasScroll();
+// Abrir directamente la ficha si llegaron desde un enlace compartido.
+sincronizarFichaConUrl();
 setTimeout(empujoncito, 900);
+
+
+/* DJINN — Paneles de descubrimiento desplegables: acceso directo al catálogo. */
+(function iniciarExploracionCompacta() {
+  const opciones = [
+    ['atajo-aromas', 'panel-aromas'],
+    ['atajo-marcas', 'panel-marcas'],
+    ['atajo-colecciones', 'panel-colecciones']
+  ];
+  for (const [botonId, panelId] of opciones) {
+    const boton = document.getElementById(botonId);
+    const panel = document.getElementById(panelId);
+    boton.addEventListener('click', () => {
+      const abrir = panel.hidden;
+      for (const [otroBoton, otroPanel] of opciones) {
+        document.getElementById(otroPanel).hidden = true;
+        document.getElementById(otroBoton).setAttribute('aria-expanded', 'false');
+      }
+      panel.hidden = !abrir;
+      boton.setAttribute('aria-expanded', String(abrir));
+      if (abrir && panelId === 'panel-marcas') requestAnimationFrame(marcasScroll);
+    });
+  }
+})();
