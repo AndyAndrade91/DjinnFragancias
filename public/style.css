@@ -651,8 +651,8 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
 .comparando-activo .fabs { bottom:6rem; }
 .comparacion-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
 .comparacion-item { min-width:0; padding:1rem; border:1px solid var(--line); border-radius:15px; }
-.comp-foto { height:145px; width:100%; margin-bottom:.75rem; }
-.comp-foto img { object-fit:contain; }
+.comp-foto { position:relative; width:100%; aspect-ratio:3 / 2; margin-bottom:.75rem; }
+.comp-foto img { position:absolute; inset:0; }
 .comparacion-item h3 { font:500 1.28rem/1.18 var(--display); margin:.2rem 0; }
 .comparacion-item h4 { margin:1rem 0 .45rem; font-size:.81rem; }
 .comp-dato { margin:.35rem 0; }
@@ -687,10 +687,12 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
   .comparando-activo .fabs { bottom:9rem; }
   .comparacion-grid { gap:.55rem; }
   .comparacion-item { padding:.65rem; }
-  .comp-foto { height:100px; }
   .comparacion-item h3 { font-size:1.03rem; }
   .comp-dato>span:first-child { font-size:.72rem; }
   .comp-consulta { font-size:.74rem; line-height:1.2; }
+}
+@media(max-width:600px) {
+  .comp-foto { aspect-ratio:4 / 3; }
 }
 @media(max-width:350px) {
   .colecciones-grilla { grid-template-columns:1fr; }
