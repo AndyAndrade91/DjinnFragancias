@@ -7823,6 +7823,9 @@ $("#salir-coleccion").addEventListener("click", () => {
 });
 
 /* Comparador de exactamente dos perfumes, no se confunde con Mi selección. */
+const nombreComparacion = (p) =>
+  p.corto.replace(/\d+\s*ml\b/gi, "").replace(/\s+/g, " ").trim();
+
 let comparando = [];
 function alternarComparacion(id) {
   if (comparando.includes(id)) comparando = comparando.filter((x) => x !== id);
@@ -7864,7 +7867,7 @@ function pintarComparador() {
     <div class="comparar-elegidos">${comparando
       .map((id) => {
         const p = porId(id);
-        return `<span>${esc(p.corto)} <button type="button" data-quitar-comparar="${esc(id)}" aria-label="Quitar ${esc(p.corto)}">×</button></span>`;
+        return `<span>${esc(nombreComparacion(p))} <button type="button" data-quitar-comparar="${esc(id)}" aria-label="Quitar ${esc(nombreComparacion(p))}">×</button></span>`;
       })
       .join("")}</div>
     <button type="button" class="comparar-ahora" id="comparar-ahora" ${comparando.length < 2 ? "disabled" : ""}>${comparando.length < 2 ? "Elegí otra fragancia" : "Comparar ahora →"}</button>`;
@@ -7907,7 +7910,7 @@ function mostrarComparacion() {
       .map(
         (
           p,
-        ) => `<article class="comparacion-item"><span class="comp-foto" style="--c:${p.color}">${imagen(p, 0, true)}</span><span class="genio-marca">${esc(p.marca)} · ${esc(p.genero)}</span><h3>${esc(p.corto)}</h3><p class="comp-formato">${p.ml} ml</p>
+        ) => `<article class="comparacion-item"><span class="comp-foto" style="--c:${p.color}">${imagen(p, 0, true)}</span><span class="genio-marca">${esc(p.marca)} · ${esc(p.genero)}</span><h3>${esc(nombreComparacion(p))}</h3>
     <h4>Acordes principales</h4>${[...p.acordes]
       .sort((x, y) => y[1] - x[1])
       .slice(0, 5)
