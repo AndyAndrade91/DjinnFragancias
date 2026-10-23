@@ -6207,6 +6207,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 function limpiar() {
+  coleccionActiva = null;
   Object.assign(estado, {
     q: "",
     genero: "Todos",
@@ -6318,6 +6319,7 @@ function filtrar() {
     (p) =>
       palabras.every((w) => p._texto.includes(w)) &&
       (!estado.marcas.size || estado.marcas.has(p.marca)) &&
+      (!coleccionActiva || (coleccionesIndex[coleccionActiva] || []).includes(p.id)) &&
       (estado.genero === "Todos" || p.genero === estado.genero) &&
       (afinidad(p) === null || afinidad(p) >= estado.minCuando),
   );
@@ -6337,7 +6339,7 @@ function filtrar() {
 }
 
 /* =====================================================================
-   CARRITO
+   MI SELECCIÓN (mantiene la misma clave de almacenamiento del carrito anterior)
    ===================================================================== */
 
 const cant = (id) => carrito[id] || 0;
@@ -6362,13 +6364,13 @@ function cambiar(id, delta) {
   actualizar();
 }
 
-/* Botón "Añadir al carrito" o selector de cantidad, según si ya está en el carrito */
+/* Botón para sumar perfumes a la consulta, o selector de cantidad */
 function accionHTML(p) {
   const n = cant(p.id);
 
   return n
-    ? `<div class="stepper" role="group" aria-label="Cantidad de ${esc(p.nombre)}"><button data-menos aria-label="Quitar uno">−</button><span>${n}<span class="en-carrito"> en el carrito</span></span><button data-mas aria-label="Agregar uno">+</button></div>`
-    : `<button class="btn-add" data-add>${BOLSA}<span class="largo">Añadir al carrito</span><span class="corto">Añadir</span></button>`;
+    ? `<div class="stepper" role="group" aria-label="Cantidad de ${esc(p.nombre)}"><button data-menos aria-label="Quitar uno">−</button><span>${n}<span class="en-carrito"> en mi selección</span></span><button data-mas aria-label="Agregar uno">+</button></div>`
+    : `<button class="btn-add" data-add aria-label="Agregar ${esc(p.nombre)} a mi selección">${BOLSA}<span class="largo">Agregar a mi selección</span><span class="corto">Seleccionar</span></button>`;
 }
 
 function manejarAccion(e, id) {
@@ -6385,16 +6387,23 @@ function manejarAccion(e, id) {
   return false;
 }
 
-function mensajePedido() {
+/* Evita repetir el tamaño cuando ya está en el nombre, ej. "100ml". */
+function nombreParaConsulta(p) {
+  return new RegExp(`\\b${p.ml}\\s*ml\\b`, "i").test(p.nombre)
+    ? p.nombre
+    : `${p.nombre} (${p.ml} ml)`;
+}
+
+function mensajeConsulta() {
   const lineas = Object.entries(carrito)
     .map(([id, n]) => {
       const p = porId(id);
 
-      return `• ${n} x ${p.nombre} (${p.ml} ML)`;
+      return `• ${n} x ${nombreParaConsulta(p)}`;
     })
     .join("\n");
 
-  return `Hola ${MARCA}! Quiero hacer este pedido:\n\n${lineas}\n\nGracias!`;
+  return `¡Hola ${MARCA}! Me gustaría consultar el precio y la disponibilidad de estas fragancias:\n\n${lineas}\n\n¿Me pueden confirmar los precios, si las pueden conseguir y los plazos aproximados? ¡Gracias!`;
 }
 
 function renderCarrito() {
@@ -6404,7 +6413,7 @@ function renderCarrito() {
   $("#dr-pie").hidden = vacio;
 
   $("#dr-lista").innerHTML = vacio
-    ? `<div class="vacio-c"><h3>Tu carrito está vacío</h3><p>Añadí fragancias y armamos tu pedido por WhatsApp.</p></div>`
+    ? `<div class="vacio-c"><h3>Tu selección está vacía</h3><p>Explorá el catálogo y agregá los perfumes que quieras consultar. Te confirmamos precio y disponibilidad por WhatsApp.</p></div>`
     : ids
         .map((id) => {
           const p = porId(id),
@@ -6420,7 +6429,7 @@ function renderCarrito() {
         .join("");
 
   if (!vacio) {
-    const msg = mensajePedido();
+    const msg = mensajeConsulta();
 
     const a = $("#pedir");
 
@@ -6444,14 +6453,22 @@ $("#dr-lista").addEventListener("click", (e) => {
   manejarAccion(e, fila.dataset.id);
 });
 
-$("#vaciar").addEventListener("click", () => {
-  if (!confirm("¿Vaciar el carrito?")) return;
+// Diálogo propio de Djinn: no usa el confirm() nativo del navegador.
+const confirmarVaciado = $("#confirmar-vaciado");
 
+$("#vaciar").addEventListener("click", () => confirmarVaciado.showModal());
+$("#cancelar-vaciado").addEventListener("click", () => confirmarVaciado.close());
+
+$("#aceptar-vaciado").addEventListener("click", () => {
   carrito = {};
-
   guardar("djinn:carrito", "{}");
-
+  confirmarVaciado.close();
   actualizar();
+});
+
+// Cerrar tocando el fondo oscuro; Escape también funciona automáticamente.
+confirmarVaciado.addEventListener("click", (e) => {
+  if (e.target === confirmarVaciado) confirmarVaciado.close();
 });
 
 /* Actualiza todo lo que depende del carrito sin redibujar las fotos */
@@ -6529,6 +6546,7 @@ function tarjeta(p) {
       ${afinHTML(p)}
     </button>
     <div class="accion">${accionHTML(p)}</div>
+    <button type="button" class="card-comparar" data-comparar aria-pressed="${comparando.includes(p.id)}">⚖ ${comparando.includes(p.id) ? "Seleccionado para comparar" : "Comparar"}</button>
   </article>`;
 }
 
@@ -6548,6 +6566,7 @@ function render() {
     <button id="vacio-limpiar">Limpiar filtros</button></div>`;
 
   pintarMarcas();
+  pintarColeccionActiva();
 
   $("#cuenta").innerHTML =
     `<b>${visibles.length}</b> de ${PERFUMES.length} fragancias`;
@@ -6557,7 +6576,8 @@ function render() {
     estado.marcas.size ||
     estado.genero !== "Todos" ||
     estado.estaciones.size ||
-    estado.momentos.size
+    estado.momentos.size ||
+    coleccionActiva
   );
 
   /* Cantidad de filtros activos (en el botón "Filtros") y texto del botón del panel */
@@ -6589,6 +6609,11 @@ $("#grilla").addEventListener("click", (e) => {
   const card = e.target.closest(".card");
 
   if (!card) return;
+
+  if (e.target.closest("[data-comparar]")) {
+    alternarComparacion(card.dataset.id);
+    return;
+  }
 
   if (manejarAccion(e, card.dataset.id)) {
     return;
@@ -6754,10 +6779,12 @@ function abrir(id) {
   $("#f-desc").textContent = p.desc;
 
   $("#f-wa").href = waLink(
-    `Hola ${MARCA}! Quiero consultar por ${p.nombre} (${p.ml} ml).`,
+    `¡Hola ${MARCA}! Me gustaría saber el precio y la disponibilidad de ${nombreParaConsulta(p)}. ¿Me pueden confirmar si lo pueden conseguir y el plazo aproximado? ¡Gracias!`,
   );
 
   $("#f-accion").innerHTML = accionHTML(p);
+  $("#f-comparar").setAttribute("aria-pressed", comparando.includes(p.id));
+  $("#f-comparar").textContent = comparando.includes(p.id) ? "✓ En comparación" : "⚖ Comparar";
 
   $("#f-mini").innerHTML = TIPOS_FOTO.map(
     (t, i) =>
@@ -6834,6 +6861,199 @@ dlg.addEventListener("keydown", (e) => {
 
   if (e.key === "ArrowRight") vecino(1);
 });
+
+/* =====================================================================
+   DESCUBRIMIENTO DJINN: RECOMENDADOR, COLECCIONES, COMPARADOR
+   No usa precios ni inventario. Los resultados se basan en acordes y votos
+   de estaciones / momento del día: son orientativos, no promesas.
+   ===================================================================== */
+
+/* Familias resumidas a partir de los acordes reales del catálogo. */
+const FAMILIAS_DJINN = {
+  dulce: { "Dulce": 1, "Avainillado": 0.98, "Caramelo": 0.96, "Chocolate": 0.94, "Cacao": 0.9, "Amielado": 0.9, "Almendrado": 0.74, "Lactónico": 0.7, "Coco": 0.57, "Café": 0.48 },
+  fresco: { "Fresco": 1, "Cítrico": 1, "Acuático": 0.94, "Marino": 0.92, "Ozónico": 0.85, "Verde": 0.75, "Fresco especiado": 0.68, "Aromático": 0.62, "Jabonoso": 0.7 },
+  maderas: { "Amaderado": 1, "Oud": 1, "Pachulí": 0.83, "Cuero": 0.79, "Musgoso": 0.75, "Terroso": 0.7, "Terrosos": 0.7, "Conífero": 0.7, "Boscoso": 0.8 },
+  floral: { "Floral blanco": 1, "Floral": 1, "Florales": 1, "Floral amarillo": 1, "Rosas": 0.98, "Nardos": 0.94, "Iris": 0.89, "Violeta": 0.82, "Lavanda": 0.66 },
+  especias: { "Cálido especiado": 1, "Ámbar": 0.9, "Canela": 1, "Especiado suave": 0.87, "Fresco especiado": 0.64, "Balsámico": 0.77, "Tabaco": 0.77, "Ahumado": 0.7, "Anís": 0.72 },
+  frutal: { "Afrutados": 1, "Afrutado": 1, "Tropical": 1, "Coco": 0.72, "Cereza": 0.94, "Acerezado": 0.9, "Pera": 0.89, "Cítrico": 0.54 }
+};
+
+/* Puntaje 0..100: acorde principal y aportes de los siguientes. */
+function puntajeFamilia(p, familia) {
+  const pesos = FAMILIAS_DJINN[familia] || {};
+  const matches = p.acordes.map(([nombre, fuerza]) => (pesos[nombre] || 0) * fuerza).filter(v => v > 0).sort((a,b) => b-a);
+  if (!matches.length) return 0;
+  return Math.min(100, matches[0] * .78 + (matches[1] || 0) * .18 + (matches[2] || 0) * .09);
+}
+function usoGenio(p, momento) {
+  if (momento === 'Ambos') return (porcentajeCuando(p, 'Día') + porcentajeCuando(p, 'Noche')) / 2;
+  return porcentajeCuando(p, momento);
+}
+function estacionGenio(p, estacion) {
+  if (estacion === 'Todas') return ESTACIONES.reduce((s, v) => s + porcentajeCuando(p, v), 0) / ESTACIONES.length;
+  return porcentajeCuando(p, estacion);
+}
+function puntuacionGenio(p, o) {
+  return puntajeFamilia(p, o.aroma) * .62 + usoGenio(p, o.momento) * .22 + estacionGenio(p, o.estacion) * .16;
+}
+function generoGenio(p, g) {
+  return g === 'Todos' || p.genero === g || (g !== 'Unisex' && p.genero === 'Unisex');
+}
+function diferentesFrascos(lista, limite) {
+  const unicos = new Set();
+  return lista.filter(p => {
+    const base = sinTamano(p.corto);
+    if (unicos.has(base)) return false;
+    unicos.add(base);
+    return true;
+  }).slice(0, limite);
+}
+function acordesDeFamilia(p, familia) {
+  const mapa = FAMILIAS_DJINN[familia];
+  return p.acordes.filter(([nombre]) => nombre in mapa).sort((a,b) => b[1]*mapa[b[0]] - a[1]*mapa[a[0]]).slice(0, 2).map(([nombre]) => nombre.toLowerCase());
+}
+const genioDialog = $('#genio-dialog');
+const compararDialog = $('#comparar-dialog');
+function mostrarDialog(dialog) { if (!dialog.open) dialog.showModal(); document.body.style.overflow = 'hidden'; }
+function cerrarDialog(dialog) { if (dialog.open) dialog.close(); }
+function restaurarScrollDialogs() {
+  if (![genioDialog, compararDialog, dlg, drawer].some(d => d.open)) document.body.style.overflow = '';
+}
+[genioDialog, compararDialog].forEach(d => {
+  d.addEventListener('close', restaurarScrollDialogs);
+  d.addEventListener('click', e => { if (e.target === d) d.close(); });
+});
+$('#abrir-genio').addEventListener('click', () => mostrarDialog(genioDialog));
+genioDialog.querySelector('[data-cerrar-genio]').addEventListener('click', () => cerrarDialog(genioDialog));
+$('#genio-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const datos = Object.fromEntries(new FormData(e.currentTarget));
+  const lista = diferentesFrascos(PERFUMES.filter(p => generoGenio(p, datos.genero) && puntajeFamilia(p, datos.aroma) > 10)
+    .sort((a,b) => puntuacionGenio(b, datos)-puntuacionGenio(a, datos)), 5);
+  const salida = $('#genio-resultados');
+  salida.hidden = false;
+  salida.innerHTML = `<div class="genio-res-cab"><div><span class="colecciones-eyebrow">TU SELECCIÓN PERSONALIZADA</span><h3>El Genio eligió estas fragancias</h3></div><button type="button" class="genio-rehacer" id="genio-rehacer">Cambiar respuestas</button></div>
+    <p class="genio-aviso">Sugerencias orientativas según los acordes y votos de uso de cada fragancia, no garantías de rendimiento ni disponibilidad.</p>
+    ${lista.length ? `<div class="genio-lista">${lista.map((p,i) => {
+      const comunes = acordesDeFamilia(p, datos.aroma);
+      const texto = comunes.length ? `Sus acordes ${comunes.join(' y ')} encajan con tu gusto.` : 'Su perfil aromático encaja con tus preferencias.';
+      return `<article class="genio-resultado"><span class="genio-orden">${i+1}</span><span class="genio-foto" style="--c:${p.color}">${imagen(p,0,true)}</span><div class="genio-detalle"><span class="genio-marca">${esc(p.marca)} · ${esc(p.genero)}</span><h4>${esc(p.corto)}</h4><p>${esc(texto)} ${esc(datos.momento === 'Ambos' ? 'Para uso versátil.' : `Pensado para ${datos.momento.toLowerCase()}.`)}</p><button type="button" data-genio-ver="${esc(p.id)}">Ver fragancia →</button></div></article>`;
+    }).join('')}</div>` : '<p>No encontramos coincidencias claras. Probá con otra familia aromática.</p>'}`;
+  salida.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+$('#genio-resultados').addEventListener('click', e => {
+  if (e.target.closest('#genio-rehacer')) { $('#genio-resultados').hidden = true; $('#genio-form').scrollIntoView({behavior:'smooth',block:'nearest'}); return; }
+  const b = e.target.closest('[data-genio-ver]');
+  if (b) { cerrarDialog(genioDialog); abrir(b.dataset.genioVer); }
+});
+
+/* Colecciones definidas una sola vez. Los artículos de cada una se calculan
+   automáticamente a partir de PERFUMES, incluso cuando se agreguen más. */
+const COLECCIONES_DJINN = [
+  { id:'dulces-noche', nombre:'Dulces para la noche', intro:'Vainilla, caramelo y acordes cálidos.', icono:'✦', familia:'dulce', momento:'Noche', estacion:'Invierno', fondo:'#f5e9dc', tinta:'#6a412b' },
+  { id:'verano-fresco', nombre:'Frescura de verano', intro:'Cítricos, acuáticos y aire fresco.', icono:'☀', familia:'fresco', momento:'Día', estacion:'Verano', fondo:'#e1f0e8', tinta:'#286456' },
+  { id:'maderas', nombre:'Maderas con carácter', intro:'Aromas amaderados y envolventes.', icono:'♧', familia:'maderas', momento:'Noche', estacion:'Otoño', fondo:'#e6dfd5', tinta:'#5c493c' },
+  { id:'flores', nombre:'Jardín floral', intro:'Rosas, flores blancas y delicadeza.', icono:'❀', familia:'floral', momento:'Día', estacion:'Primavera', fondo:'#f5e4e8', tinta:'#91536d' },
+  { id:'ambar', nombre:'Ámbar y especias', intro:'Fragancias especiadas con presencia.', icono:'✧', familia:'especias', momento:'Noche', estacion:'Invierno', fondo:'#f1e4cf', tinta:'#805521' },
+  { id:'tropical', nombre:'Escapada tropical', intro:'Frutas jugosas y toques exóticos.', icono:'☼', familia:'frutal', momento:'Día', estacion:'Verano', fondo:'#f4ebd6', tinta:'#9a7026' },
+  { id:'citricos', nombre:'Energía para el día', intro:'Perfiles luminosos y vibrantes.', icono:'✳', familia:'fresco', momento:'Día', estacion:'Primavera', fondo:'#eaf0d8', tinta:'#5d7131' },
+  { id:'otoño', nombre:'Abrigo de otoño', intro:'Dulces y cálidos para días frescos.', icono:'❧', familia:'dulce', momento:'Día', estacion:'Otoño', fondo:'#f0e6df', tinta:'#8c573b' }
+];
+const coleccionesIndex = {};
+let coleccionActiva = null;
+function prepararColecciones() {
+  for (const col of COLECCIONES_DJINN) {
+    const ranked = PERFUMES.filter(p => puntajeFamilia(p, col.familia) >= 36)
+      .sort((a,b) => puntuacionGenio(b, {aroma:col.familia, momento:col.momento, estacion:col.estacion}) - puntuacionGenio(a, {aroma:col.familia,momento:col.momento,estacion:col.estacion}));
+    coleccionesIndex[col.id] = diferentesFrascos(ranked, 18).map(p => p.id);
+  }
+  $('#colecciones-grilla').innerHTML = COLECCIONES_DJINN.map(col => {
+    const ids = coleccionesIndex[col.id];
+    const fotos = ids.slice(0,3).map(id => { const p=porId(id); return `<span class="coleccion-mini" style="--c:${p.color}">${imagen(p,0,true)}</span>`; }).join('');
+    return `<button type="button" class="coleccion-tile" data-coleccion="${col.id}" aria-pressed="false" style="--col-fondo:${col.fondo};--col-tinta:${col.tinta}"><span class="coleccion-icono" aria-hidden="true">${col.icono}</span><span class="coleccion-fotos" aria-hidden="true">${fotos}</span><span class="coleccion-txt"><strong>${esc(col.nombre)}</strong><span>${esc(col.intro)}</span><small>${fraganciasTxt(ids.length)} para explorar <span aria-hidden="true">→</span></small></span></button>`;
+  }).join('');
+}
+function pintarColeccionActiva() {
+  const col=COLECCIONES_DJINN.find(c => c.id === coleccionActiva);
+  $('#coleccion-activa').hidden = !col;
+  if (col) $('#coleccion-activa-txt').textContent = `Colección: ${col.nombre}`;
+  document.querySelectorAll('.coleccion-tile').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.coleccion === coleccionActiva)));
+}
+$('#colecciones-grilla').addEventListener('click', e => {
+  const b=e.target.closest('[data-coleccion]');
+  if (!b) return;
+  const id=b.dataset.coleccion;
+  limpiar();
+  coleccionActiva=id;
+  render();
+  $('#resultados-catalogo').scrollIntoView({behavior:'smooth',block:'start'});
+});
+$('#salir-coleccion').addEventListener('click', () => { coleccionActiva=null; render(); });
+
+/* Comparador de exactamente dos perfumes, no se confunde con Mi selección. */
+let comparando=[];
+function alternarComparacion(id) {
+  if (comparando.includes(id)) comparando = comparando.filter(x => x!==id);
+  else if (comparando.length && sinTamano(porId(comparando[0]).corto) === sinTamano(porId(id).corto)) { aviso('Es la misma fragancia en otro tamaño. Elegí un perfume distinto para comparar.'); return; }
+  else if (comparando.length < 2) comparando.push(id);
+  else { aviso('Ya elegiste dos fragancias. Quitá una para cambiarla.'); return; }
+  pintarComparador();
+}
+function pintarComparador() {
+  document.querySelectorAll('[data-comparar]').forEach(b => {
+    const id=b.closest('.card')?.dataset.id;
+    b.setAttribute('aria-pressed', String(comparando.includes(id)));
+    b.textContent=comparando.includes(id) ? '✓ Seleccionado' : '⚖ Comparar';
+  });
+  if (actual && dlg.open) {
+    $('#f-comparar').setAttribute('aria-pressed', String(comparando.includes(actual.id)));
+    $('#f-comparar').textContent=comparando.includes(actual.id) ? '✓ En comparación' : '⚖ Comparar';
+  }
+  const bandeja=$('#comparar-bandeja');
+  bandeja.hidden = !comparando.length;
+  document.body.classList.toggle('comparando-activo', !!comparando.length);
+  if (!comparando.length) return;
+  bandeja.innerHTML = `<div class="comparar-bandeja-txt"><strong>⚖ Comparar fragancias</strong><span>${comparando.length} de 2 seleccionadas</span></div>
+    <div class="comparar-elegidos">${comparando.map(id=> {const p=porId(id);return `<span>${esc(p.corto)} <button type="button" data-quitar-comparar="${esc(id)}" aria-label="Quitar ${esc(p.corto)}">×</button></span>`;}).join('')}</div>
+    <button type="button" class="comparar-ahora" id="comparar-ahora" ${comparando.length<2?'disabled':''}>${comparando.length<2?'Elegí otra fragancia':'Comparar ahora →'}</button>`;
+}
+$('#comparar-bandeja').addEventListener('click',e => {
+  const quitar=e.target.closest('[data-quitar-comparar]');
+  if (quitar) { alternarComparacion(quitar.dataset.quitarComparar); return; }
+  if (e.target.closest('#comparar-ahora') && comparando.length===2) mostrarComparacion();
+});
+$('#f-comparar').addEventListener('click', () => alternarComparacion(actual.id));
+$('#abrir-comparador').addEventListener('click', () => {
+  if (comparando.length===2) mostrarComparacion();
+  else {
+    aviso('Elegí dos fragancias con el botón «Comparar» de cada tarjeta.');
+    $('#resultados-catalogo').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+});
+compararDialog.querySelector('[data-cerrar-comparar]').addEventListener('click',()=> cerrarDialog(compararDialog));
+function barraComparativa(v,color) {
+  return `<span class="comp-barra"><i style="width:${Math.max(0,Math.min(100,v))}%;background:${color}"></i></span>`;
+}
+function mostrarComparacion() {
+  if (comparando.length!==2) return;
+  const [a,b]=comparando.map(porId);
+  const comun=enComun(a,b);
+  $('#comparar-cuerpo').innerHTML = `<p class="experiencia-sub">Comparación basada en acordes principales y preferencias de uso. No representa duración, precio ni disponibilidad.</p>
+    <div class="comparacion-grid">${[a,b].map(p=>`<article class="comparacion-item"><span class="comp-foto" style="--c:${p.color}">${imagen(p,0,true)}</span><span class="genio-marca">${esc(p.marca)} · ${esc(p.genero)}</span><h3>${esc(p.corto)}</h3><p class="comp-formato">${p.ml} ml</p>
+    <h4>Acordes principales</h4>${[...p.acordes].sort((x,y)=>y[1]-x[1]).slice(0,5).map(([nombre,v])=>`<div class="comp-dato"><span>${esc(nombre)}</span>${barraComparativa(v,COLOR_ACORDE[nombre]||'#809b91')}</div>`).join('')}
+    <h4>Cuándo usarlo</h4>${CUANDO.map(k=>`<div class="comp-dato"><span>${k} <small>${porcentajeCuando(p,k)}%</small></span>${barraComparativa(porcentajeCuando(p,k), COLOR_CUANDO[k])}</div>`).join('')}
+    <button class="cta comp-consulta" type="button" data-comp-agregar="${esc(p.id)}">${cant(p.id)?'✓ En Mi selección':'Añadir a Mi selección'}</button><button class="comp-ver" type="button" data-comp-ver="${esc(p.id)}">Ver ficha →</button>
+    </article>`).join('')}</div>
+    <p class="comparacion-comun">${comun.length?`<strong>En común:</strong> ${esc(comun.join(', '))}.`:'Tienen perfiles aromáticos distintos, según los acordes principales.'}</p>`;
+  mostrarDialog(compararDialog);
+}
+$('#comparar-cuerpo').addEventListener('click',e => {
+  const ag=e.target.closest('[data-comp-agregar]');
+  if (ag) { cambiar(ag.dataset.compAgregar,1); mostrarComparacion(); aviso('Añadido a Mi selección.'); return; }
+  const ver=e.target.closest('[data-comp-ver]');
+  if (ver) { cerrarDialog(compararDialog); abrir(ver.dataset.compVer); }
+});
+prepararColecciones();
 
 armarMarcas();
 render();

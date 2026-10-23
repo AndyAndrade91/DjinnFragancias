@@ -30,7 +30,6 @@
 <section class="hero" aria-label="Djinn Fragancias">
   <h1 class="sr">Djinn Fragancias · Catálogo de fragancias</h1>
   <picture>
-    <source srcset="img/banner.jpg" type="image/webp">
     <img src="img/banner.jpg" width="1672" height="941" fetchpriority="high" alt="Djinn Fragancias: un genio de humo y oro ofreciendo una fragancia">
   </picture>
 </section>
@@ -55,9 +54,9 @@
   </div>
 
   <div class="acciones">
-    <button class="pill-btn" id="btn-carrito" aria-label="Abrir carrito">
+    <button class="pill-btn" id="btn-carrito" aria-label="Abrir mi selección">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
-      <span>Carrito</span>
+      <span class="sel-largo">Mi selección</span><span class="sel-corto">Selección</span>
       <span class="n" id="n-carrito" data-n="0"></span>
     </button>
   </div>
@@ -93,6 +92,39 @@
   </aside>
 
   <section aria-label="Resultados">
+    <div class="consulta-aviso" aria-label="Cómo consultar por tus perfumes">
+      <span class="consulta-aviso-icono" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3z"/><path d="M19 16v5M16.5 18.5h5"/></svg>
+      </span>
+      <div>
+        <h2>Elegí tus fragancias, consultanos sin compromiso</h2>
+        <p>Sumá tus favoritas a <strong>Mi selección</strong> y envianos tu consulta por WhatsApp. Te confirmamos precio y disponibilidad antes de coordinar cualquier pedido.</p>
+      </div>
+    </div>
+    <!-- Descubrimiento: recomendaciones y colecciones, sin precios ni stock -->
+    <section class="descubrir" aria-label="Descubrí perfumes en Djinn">
+      <div class="descubrir-promo">
+        <div class="descubrir-copy">
+          <span class="descubrir-eyebrow">✦ DESCUBRÍ TU AROMA</span>
+          <h2>El Genio te recomienda</h2>
+          <p>Contanos qué te gusta y encontrá fragancias que encajen con vos, usando sus acordes y preferencias de uso.</p>
+          <button type="button" class="descubrir-cta" id="abrir-genio">Descubrir mi perfume <span aria-hidden="true">→</span></button>
+        </div>
+        <span class="descubrir-sello" aria-hidden="true">✧<small>DJINN</small></span>
+      </div>
+      <div class="descubrir-sec">
+        <span>¿No sabés cuál elegir?</span>
+        <button type="button" id="abrir-comparador">⚖ Compará dos perfumes</button>
+      </div>
+    </section>
+
+    <section class="colecciones" aria-labelledby="colecciones-titulo">
+      <div class="colecciones-cab">
+        <div><span class="colecciones-eyebrow">SELECCIONADAS PARA VOS</span><h2 id="colecciones-titulo">Colecciones Djinn</h2>
+        <p>Selecciones creadas a partir de los aromas y ocasiones de uso de nuestro catálogo.</p></div>
+      </div>
+      <div class="colecciones-grilla" id="colecciones-grilla"></div>
+    </section>
     <div class="marcas">
       <h2 class="marcas-tit">Explorá por marca</h2>
       <div class="marcas-cinta" id="marcas-cinta">
@@ -100,7 +132,8 @@
         <button type="button" class="marcas-sig" id="marcas-sig" aria-label="Ver más marcas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
       </div>
     </div>
-    <div class="barra">
+    <div id="coleccion-activa" class="coleccion-activa" hidden role="status"><span id="coleccion-activa-txt"></span><button type="button" id="salir-coleccion">Ver todo el catálogo ×</button></div>
+    <div class="barra" id="resultados-catalogo">
       <button class="pill-btn solo-movil" id="abrir-filtros" aria-expanded="false" aria-controls="filtros">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
         <span>Filtros</span>
@@ -129,7 +162,7 @@
 <footer class="pie">
   <!-- Logo completo: img/logo.png -->
   <img class="pie-logo" src="img/logo.png" width="694" height="775" alt="Djinn Fragancias">
-  Djinn Fragancias · Pedidos y consultas por WhatsApp e Instagram
+  Djinn Fragancias · Consultas de perfumes por WhatsApp e Instagram
   <a href="https://wa.me/59895033403" target="_blank" rel="noopener">+598 95 033 403</a> ·
   <a href="https://www.instagram.com/djinnfragancias/" target="_blank" rel="noopener">@djinnfragancias</a>
 </footer>
@@ -153,6 +186,7 @@
       <h2 id="f-nombre"></h2>
       <p class="formato" id="f-formato"></p>
       <p id="f-desc"></p>
+      <p class="consulta-disponibilidad">Precio y disponibilidad a confirmar por WhatsApp. Agregarlo a tu selección no reserva el perfume.</p>
 
       <section aria-labelledby="t-acordes">
         <h3 class="sub" id="t-acordes">Acordes principales</h3>
@@ -167,6 +201,7 @@
       <div class="botones">
         <div class="accion" id="f-accion"></div>
         <a class="sec-btn" id="f-wa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        <button type="button" class="sec-btn ficha-comparar" id="f-comparar" aria-pressed="false">⚖ Comparar</button>
       </div>
       <section class="parecidos" aria-labelledby="t-parecidos">
         <h3 class="sub" id="t-parecidos">Fragancias parecidas</h3>
@@ -177,18 +212,70 @@
   </div>
 </dialog>
 
-<!-- Carrito (panel lateral) -->
-<dialog id="carrito" class="drawer" aria-label="Carrito">
+<!-- Recomendador del Genio: resultados calculados con el catálogo existente -->
+<dialog id="genio-dialog" class="descubrir-dialog" aria-labelledby="genio-titulo">
+  <div class="experiencia-cab"><div><span class="colecciones-eyebrow">DJINN FRAGANCIAS</span><h2 id="genio-titulo">El Genio te recomienda ✦</h2></div><button type="button" class="experiencia-cerrar" data-cerrar-genio aria-label="Cerrar recomendador">×</button></div>
+  <div class="experiencia-cuerpo">
+    <p class="experiencia-sub">Respondé estas preguntas y descubrí las fragancias de nuestro catálogo que más se acercan a tus gustos.</p>
+    <form id="genio-form">
+      <div class="genio-campos">
+        <label class="genio-campo">¿Qué aromas te atraen?
+          <select name="aroma" required>
+            <option value="dulce">🍦 Dulces y avainillados</option><option value="fresco">🍋 Frescos y cítricos</option>
+            <option value="maderas">🌲 Amaderados</option><option value="floral">🌸 Florales</option>
+            <option value="especias">🌶️ Especiados y ambarados</option><option value="frutal">🍓 Afrutados y tropicales</option>
+          </select>
+        </label>
+        <label class="genio-campo">¿En qué momento lo usarías?
+          <select name="momento"><option value="Día">☀️ Durante el día</option><option value="Noche">🌙 De noche</option><option value="Ambos">✨ Para ambos</option></select>
+        </label>
+        <label class="genio-campo">¿Para qué estación?
+          <select name="estacion"><option value="Verano">☀️ Verano</option><option value="Invierno">❄️ Invierno</option><option value="Primavera">🌷 Primavera</option><option value="Otoño">🍂 Otoño</option><option value="Todas">🌎 Todo el año</option></select>
+        </label>
+        <label class="genio-campo">¿Para quién lo buscás?
+          <select name="genero"><option value="Todos">No tengo preferencia</option><option value="Hombre">Hombre o unisex</option><option value="Mujer">Mujer o unisex</option><option value="Unisex">Solamente unisex</option></select>
+        </label>
+      </div>
+      <button type="submit" class="cta genio-buscar">✦ Encontrar mis perfumes</button>
+    </form>
+    <div id="genio-resultados" hidden aria-live="polite"></div>
+  </div>
+</dialog>
+
+<!-- Comparador: no es un carrito ni confirma disponibilidad -->
+<div class="comparar-bandeja" id="comparar-bandeja" hidden role="region" aria-label="Perfumes elegidos para comparar"></div>
+<dialog id="comparar-dialog" class="descubrir-dialog" aria-labelledby="comparar-titulo">
+  <div class="experiencia-cab"><div><span class="colecciones-eyebrow">ELEGÍ CON CONFIANZA</span><h2 id="comparar-titulo">Compará fragancias</h2></div><button type="button" class="experiencia-cerrar" data-cerrar-comparar aria-label="Cerrar comparador">×</button></div>
+  <div class="experiencia-cuerpo" id="comparar-cuerpo"></div>
+</dialog>
+
+<!-- Selección de fragancias (panel lateral; mantiene los IDs internos del carrito) -->
+<dialog id="carrito" class="drawer" aria-label="Mi selección">
   <div class="dr-cab">
-    <h2>Tu carrito</h2>
-    <button class="cerrar-dr" id="cerrar-carrito" aria-label="Cerrar carrito"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2>Mi selección</h2>
+    <button class="cerrar-dr" id="cerrar-carrito" aria-label="Cerrar mi selección"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="dr-lista" id="dr-lista"></div>
   <div class="dr-pie" id="dr-pie">
-    <p class="nota">Coordinamos envío y forma de pago por mensaje.</p>
-    <a class="cta" id="pedir" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
-    <p class="ayuda-ig">Al tocar, se abre WhatsApp con tu pedido ya escrito. Solo tenés que enviarlo.</p>
-    <button class="limpiar" id="vaciar">Vaciar carrito</button>
+    <p class="nota">Esta es una consulta, no una compra ni una reserva. Te confirmamos precios, disponibilidad y posibles plazos antes de coordinar el pedido.</p>
+    <a class="cta" id="pedir" target="_blank" rel="noopener">Consultar mi selección por WhatsApp</a>
+    <p class="ayuda-ig">Se abre WhatsApp con tus fragancias elegidas. Revisá el mensaje y envialo para consultar.</p>
+    <button class="limpiar" id="vaciar">Vaciar mi selección</button>
+  </div>
+</dialog>
+
+<!-- Confirmación personalizada para vaciar la selección -->
+<dialog id="confirmar-vaciado" class="confirmar-dialog" aria-labelledby="confirmar-vaciado-titulo" aria-describedby="confirmar-vaciado-texto">
+  <div class="confirmar-contenido">
+    <span class="confirmar-icono" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 14h10l1-14M9 7V4h6v3"/></svg>
+    </span>
+    <h2 id="confirmar-vaciado-titulo">¿Vaciar tu selección?</h2>
+    <p id="confirmar-vaciado-texto">Se quitarán todas las fragancias que elegiste. Podés agregarlas de nuevo cuando quieras.</p>
+    <div class="confirmar-acciones">
+      <button type="button" id="cancelar-vaciado" class="confirmar-cancelar" autofocus>Conservar fragancias</button>
+      <button type="button" id="aceptar-vaciado" class="confirmar-aceptar">Sí, vaciar selección</button>
+    </div>
   </div>
 </dialog>
 
