@@ -53,32 +53,6 @@ const PERFUMES = [
     ],
   },
   {
-    id: "mandarin-sky-200ml",
-    nombre: "Odyssey Mandarin Sky 200ml - Armaf",
-    genero: "Hombre",
-    ml: 200,
-    etiqueta: "",
-    color: "#d8d66a",
-    desc: "Una explosión fresca y dulce de mandarina, cítricos brillantes y caramelo, con un fondo amaderado que aporta elegancia y duración.",
-    indicadores: [
-      ["Invierno", "2700"],
-      ["Primavera", "2400"],
-      ["Verano", "1600"],
-      ["Otoño", "2600"],
-      ["Día", "2400"],
-      ["Noche", "2600"],
-    ],
-    acordes: [
-      ["Cítrico", 100],
-      ["Caramelo", 74],
-      ["Dulce", 72],
-      ["Ámbar", 57],
-      ["Aromático", 53],
-      ["Avainillado", 47],
-      ["Amaderado", 46],
-    ],
-  },
-  {
     id: "khamrah-base",
     nombre: "Khamrah - Lattafa",
     genero: "Unisex",
@@ -222,7 +196,7 @@ const PERFUMES = [
     ml: 100,
     etiqueta: "",
     color: "#e08aa3",
-    desc: "La versión femenina de la línea Fakhar, con rosa búlgara y flor de cereus nocturno en el corazón. Floral y elegante.",
+    desc: "Una fragancia floral de salida afrutada, con un corazón de flores blancas, rosa y peonía y un fondo suave de vainilla, almizcle blanco y sándalo.",
     indicadores: [
       ["Invierno", "982"],
       ["Primavera", "1600"],
@@ -270,37 +244,8 @@ const PERFUMES = [
     ],
   },
   {
-    id: "fakhar-extrait",
-    nombre: "Fakhar Extrait - Lattafa",
-    genero: "Unisex",
-    ml: 100,
-    etiqueta: "",
-    color: "#d9a441",
-    desc: "Una fragancia cítrica y especiada con pomelo, pimienta rosa y cardamomo en la salida, artemisa y nardo en el corazón, sobre un fondo cálido de vetiver, cedro, haba tonka y madera de ámbar.",
-    indicadores: [
-      ["Invierno", "843"],
-      ["Primavera", "733"],
-      ["Verano", "371"],
-      ["Otoño", "874"],
-      ["Día", "629"],
-      ["Noche", "863"],
-    ],
-    acordes: [
-      ["Ámbar", 100],
-      ["Nardos", 84],
-      ["Floral blanco", 73],
-      ["Animálico", 66],
-      ["Almizclado", 61],
-      ["Aromático", 57],
-      ["Cítrico", 57],
-      ["Cálido especiado", 56],
-      ["Amaderado", 55],
-      ["Cuero", 53],
-    ],
-  },
-  {
     id: "fakhar-gold",
-    nombre: "Fakhar Gold - Lattafa",
+    nombre: "Fakhar Extrait Gold - Lattafa",
     genero: "Unisex",
     ml: 100,
     etiqueta: "",
@@ -5909,7 +5854,9 @@ const leer = (k) => {
   }
 };
 
-const porId = (id) => PERFUMES.find((p) => p.id === id);
+// El antiguo Extrait es la misma fragancia que Extrait Gold.
+const idVigente = (id) => (id === "fakhar-extrait" ? "fakhar-gold" : id);
+const porId = (id) => PERFUMES.find((p) => p.id === idVigente(id));
 
 const BOLSA = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>`;
 
@@ -6148,9 +6095,29 @@ try {
   carrito = JSON.parse(leer("djinn:carrito") || "{}");
 } catch (e) {}
 
+let carritoActualizado = false;
+if (!carrito || typeof carrito !== "object" || Array.isArray(carrito)) {
+  carrito = {};
+  carritoActualizado = true;
+}
+
+if (Object.hasOwn(carrito, "fakhar-extrait")) {
+  const unidades =
+    (Number(carrito["fakhar-gold"]) || 0) +
+    (Number(carrito["fakhar-extrait"]) || 0);
+  if (Number.isFinite(unidades) && unidades > 0)
+    carrito["fakhar-gold"] = Math.min(20, Math.floor(unidades));
+  delete carrito["fakhar-extrait"];
+  carritoActualizado = true;
+}
+
 Object.keys(carrito).forEach((id) => {
-  if (!porId(id)) delete carrito[id];
+  if (!porId(id)) {
+    delete carrito[id];
+    carritoActualizado = true;
+  }
 });
+if (carritoActualizado) guardar("djinn:carrito", JSON.stringify(carrito));
 
 const estado = {
   q: "",
@@ -7154,7 +7121,7 @@ function idDeLaUrl() {
   const fragmento = window.location.hash.slice(1);
   if (!fragmento.startsWith(PREFIJO_PERFUME)) return null;
   try {
-    return decodeURIComponent(fragmento.slice(PREFIJO_PERFUME.length));
+    return idVigente(decodeURIComponent(fragmento.slice(PREFIJO_PERFUME.length)));
   } catch (_) {
     return null;
   }
