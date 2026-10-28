@@ -41,6 +41,7 @@
 - Al agregar perfumes, entregar por defecto solamente los objetos JavaScript listos para pegar, respetando el orden. No entregar ZIP ni todo el archivo, ni insertarlos directamente sin solicitud expresa.
 - Normalmente las fotos son `img/<id>-1.jpg` (perfume) e `img/<id>-2.jpg` (notas); también se admiten rutas personalizadas. Preservar nombres, rutas y contenido. Optimizar sin pérdidas visibles de calidad.
 - Al mejorar láminas de notas, conservar exactamente cada nota, su nombre, cantidad, orden y grupo (salida, corazón o base), comparando con la imagen original. Nunca agregar, quitar, sustituir ni corregir notas por inferencia. Revisar visualmente los textos que la lectura automática no reconozca; no publicar una edición que cambie el contenido.
+- En las láminas de notas, usar líneas doradas interiores solamente junto a los títulos de sección (salida, corazón y base). No agregar líneas separadoras entre filas de notas del mismo grupo. Conservar el marco exterior del diseño.
 
 ## Funcionalidades que deben conservarse
 
