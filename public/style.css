@@ -523,6 +523,12 @@ details textarea { width: 100%; margin-top: .5rem; padding: .7rem; border-radius
   .filtros-pie { position: sticky; bottom: 0; padding-block: .8rem; padding-bottom: calc(.9rem + env(safe-area-inset-bottom, 0px)); background: var(--card); border-top: 1px solid var(--line); }
   #ver-resultados { display: block; flex: 1; border: 0; font-size: 1rem; }
 
+  /* Mantener el borde de la ficha separado de las barras del navegador móvil. */
+  #ficha {
+    inset: calc(1.25rem + env(safe-area-inset-top, 0px)) 0 calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    max-height: calc(100vh - 2.5rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    max-height: calc(100dvh - 2.5rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+  }
   .ficha { grid-template-columns: 1fr; }
   .datos { padding: 1rem 1.4rem 1.6rem; grid-template-columns: 1fr; }
   .datos > section { grid-column: 1 / -1; }
