@@ -7540,11 +7540,11 @@ indicadores: [
 {
   "id": "alpine-homme-sport",
   "nombre": "Alpine Homme Sport - Maison Alhambra",
-  "genero": null,
-  "ml": null,
+  "genero": "Hombre",
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de aromático, cítrico, amaderado, fresco especiado.",
+  "color": "#aeb5b7",
+  "desc": "Mandarina, menta, ciprés y salvia abren una composición fresca, con cedro y pimienta en el corazón y un fondo de haba tonka, almizcle y sándalo.",
   "indicadores": [
     [
       "Invierno",
@@ -7612,17 +7612,16 @@ indicadores: [
       "Cálido especiado",
       52
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "amber-leather",
   "nombre": "Amber & Leather - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cuero, animálico, cálido especiado, ámbar.",
+  "color": "#57544e",
+  "desc": "El cardamomo da paso a un corazón de cuero y jazmín sambac, sobre un fondo cálido de ámbar, pachulí y musgo.",
   "indicadores": [
     [
       "Invierno",
@@ -7690,8 +7689,7 @@ indicadores: [
       "Ahumado",
       51
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "amberley-ombre-blue",
