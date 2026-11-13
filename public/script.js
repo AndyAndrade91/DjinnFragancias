@@ -7310,6 +7310,233 @@ indicadores: [
 
 
 
+{
+  "id": "05-domino-essence",
+  "nombre": "05 Domino Essence - Maison Alhambra",
+  "genero": "Unisex",
+  "ml": 100,
+  "etiqueta": "",
+  "color": "#c6a43c",
+  "desc": "Notas verdes, frutas y cítricos abren una composición de maderas y flores, sobre un fondo cálido de vainilla, ámbar y almizcle.",
+  "indicadores": [
+    [
+      "Invierno",
+      "108"
+    ],
+    [
+      "Primavera",
+      "60"
+    ],
+    [
+      "Verano",
+      "15"
+    ],
+    [
+      "Otoño",
+      "102"
+    ],
+    [
+      "Día",
+      "61"
+    ],
+    [
+      "Noche",
+      "94"
+    ]
+  ],
+  "acordes": [
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Ámbar",
+      97
+    ],
+    [
+      "Atalcado",
+      83
+    ],
+    [
+      "Almizclado",
+      75
+    ],
+    [
+      "Amaderado",
+      65
+    ],
+    [
+      "Florales",
+      63
+    ],
+    [
+      "Dulce",
+      52
+    ],
+    [
+      "Animálico",
+      50
+    ],
+    [
+      "Verde",
+      47
+    ]
+  ]
+},
+{
+  "id": "afro-leather",
+  "nombre": "Afro Leather - Maison Alhambra",
+  "genero": "Unisex",
+  "ml": 80,
+  "etiqueta": "",
+  "color": "#aa8845",
+  "desc": "Cardamomo, cuero y geranio se mezclan con pachulí, comino y vetiver, sobre un fondo de oud, almizcle, bergamota y geranio.",
+  "indicadores": [
+    [
+      "Invierno",
+      "363"
+    ],
+    [
+      "Primavera",
+      "185"
+    ],
+    [
+      "Verano",
+      "59"
+    ],
+    [
+      "Otoño",
+      "348"
+    ],
+    [
+      "Día",
+      "188"
+    ],
+    [
+      "Noche",
+      "326"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cálido especiado",
+      100
+    ],
+    [
+      "Aromático",
+      99
+    ],
+    [
+      "Fresco especiado",
+      90
+    ],
+    [
+      "Cuero",
+      70
+    ],
+    [
+      "Amaderado",
+      64
+    ],
+    [
+      "Animálico",
+      60
+    ],
+    [
+      "Pachulí",
+      57
+    ],
+    [
+      "Terrosos",
+      55
+    ],
+    [
+      "Oud",
+      47
+    ],
+    [
+      "Rosas",
+      46
+    ]
+  ]
+},
+{
+  "id": "alive-now",
+  "nombre": "Alive Now - Maison Alhambra",
+  "genero": "Mujer",
+  "ml": 100,
+  "etiqueta": "",
+  "color": "#e7358e",
+  "desc": "Frambuesa, lichi y hojas de violeta dan paso a rosa, peonía y jazmín, con un fondo suave de vainilla y almizcle.",
+  "indicadores": [
+    [
+      "Invierno",
+      "17"
+    ],
+    [
+      "Primavera",
+      "65"
+    ],
+    [
+      "Verano",
+      "60"
+    ],
+    [
+      "Otoño",
+      "29"
+    ],
+    [
+      "Día",
+      "60"
+    ],
+    [
+      "Noche",
+      "17"
+    ]
+  ],
+  "acordes": [
+    [
+      "Afrutados",
+      100
+    ],
+    [
+      "Rosas",
+      76
+    ],
+    [
+      "Dulce",
+      66
+    ],
+    [
+      "Fresco",
+      58
+    ],
+    [
+      "Florales",
+      56
+    ],
+    [
+      "Tropical",
+      53
+    ],
+    [
+      "Avainillado",
+      50
+    ],
+    [
+      "Acuático",
+      47
+    ],
+    [
+      "Almizclado",
+      46
+    ],
+    [
+      "Atalcado",
+      44
+    ]
+  ]
+},
 ];
 
 /* Colores de las barras de acordes (los que no estén acá usan un gris) */
