@@ -7697,10 +7697,10 @@ indicadores: [
   "id": "amberley-ombre-blue",
   "nombre": "Amberley Ombre Blue - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de amaderado, cuero, pachulí, cálido especiado.",
+  "color": "#23466f",
+  "desc": "Pimienta rosa, pimienta negra e higo abren una composición de pachulí, cedro y rosa turca, sobre un fondo de cuero y almizcle.",
   "indicadores": [
     [
       "Invierno",
@@ -7768,17 +7768,16 @@ indicadores: [
       "Ahumado",
       47
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "amberley-pur-oud",
   "nombre": "Amberley Pur Oud - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de ámbar, cuero, cálido especiado, ahumado.",
+  "color": "#a78b4d",
+  "desc": "Madera de oud, azafrán y geranio se unen a un corazón de cuero, rosa y ámbar, con un fondo de incienso y almizcle.",
   "indicadores": [
     [
       "Invierno",
@@ -7846,8 +7845,7 @@ indicadores: [
       "Almizclado",
       48
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "amberly-amoroso",
