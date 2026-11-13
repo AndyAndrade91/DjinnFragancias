@@ -7537,6 +7537,7126 @@ indicadores: [
     ]
   ]
 },
+{
+  "id": "alpine-homme-sport",
+  "nombre": "Alpine Homme Sport - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de aromático, cítrico, amaderado, fresco especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "114"
+    ],
+    [
+      "Primavera",
+      "633"
+    ],
+    [
+      "Verano",
+      "700"
+    ],
+    [
+      "Otoño",
+      "303"
+    ],
+    [
+      "Día",
+      "658"
+    ],
+    [
+      "Noche",
+      "185"
+    ]
+  ],
+  "acordes": [
+    [
+      "Aromático",
+      100
+    ],
+    [
+      "Cítrico",
+      89
+    ],
+    [
+      "Amaderado",
+      87
+    ],
+    [
+      "Fresco especiado",
+      78
+    ],
+    [
+      "Verde",
+      77
+    ],
+    [
+      "Almizclado",
+      58
+    ],
+    [
+      "Avainillado",
+      58
+    ],
+    [
+      "Atalcado",
+      55
+    ],
+    [
+      "Dulce",
+      54
+    ],
+    [
+      "Cálido especiado",
+      52
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "amber-leather",
+  "nombre": "Amber & Leather - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cuero, animálico, cálido especiado, ámbar.",
+  "indicadores": [
+    [
+      "Invierno",
+      "629"
+    ],
+    [
+      "Primavera",
+      "217"
+    ],
+    [
+      "Verano",
+      "63"
+    ],
+    [
+      "Otoño",
+      "562"
+    ],
+    [
+      "Día",
+      "227"
+    ],
+    [
+      "Noche",
+      "573"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cuero",
+      100
+    ],
+    [
+      "Animálico",
+      72
+    ],
+    [
+      "Cálido especiado",
+      68
+    ],
+    [
+      "Ámbar",
+      57
+    ],
+    [
+      "Terrosos",
+      57
+    ],
+    [
+      "Floral blanco",
+      56
+    ],
+    [
+      "Pachulí",
+      55
+    ],
+    [
+      "Musgoso",
+      54
+    ],
+    [
+      "Amaderado",
+      52
+    ],
+    [
+      "Ahumado",
+      51
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "amberley-ombre-blue",
+  "nombre": "Amberley Ombre Blue - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, cuero, pachulí, cálido especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "26"
+    ],
+    [
+      "Primavera",
+      "16"
+    ],
+    [
+      "Verano",
+      "1"
+    ],
+    [
+      "Otoño",
+      "29"
+    ],
+    [
+      "Día",
+      "14"
+    ],
+    [
+      "Noche",
+      "29"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Cuero",
+      86
+    ],
+    [
+      "Pachulí",
+      83
+    ],
+    [
+      "Cálido especiado",
+      71
+    ],
+    [
+      "Fresco especiado",
+      66
+    ],
+    [
+      "Especiado suave",
+      59
+    ],
+    [
+      "Animálico",
+      58
+    ],
+    [
+      "Rosas",
+      56
+    ],
+    [
+      "Terrosos",
+      51
+    ],
+    [
+      "Ahumado",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "amberley-pur-oud",
+  "nombre": "Amberley Pur Oud - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, cuero, cálido especiado, ahumado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "37"
+    ],
+    [
+      "Primavera",
+      "10"
+    ],
+    [
+      "Verano",
+      "5"
+    ],
+    [
+      "Otoño",
+      "31"
+    ],
+    [
+      "Día",
+      "11"
+    ],
+    [
+      "Noche",
+      "32"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Cuero",
+      86
+    ],
+    [
+      "Cálido especiado",
+      78
+    ],
+    [
+      "Ahumado",
+      77
+    ],
+    [
+      "Rosas",
+      77
+    ],
+    [
+      "Oud",
+      77
+    ],
+    [
+      "Animálico",
+      60
+    ],
+    [
+      "Fresco especiado",
+      55
+    ],
+    [
+      "Balsámico",
+      52
+    ],
+    [
+      "Almizclado",
+      48
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "amberly-amoroso",
+  "nombre": "Amberly Amoroso - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de almizclado, rosas, cuero, ámbar.",
+  "indicadores": [
+    [
+      "Invierno",
+      "17"
+    ],
+    [
+      "Primavera",
+      "3"
+    ],
+    [
+      "Verano",
+      "3"
+    ],
+    [
+      "Otoño",
+      "10"
+    ],
+    [
+      "Día",
+      "6"
+    ],
+    [
+      "Noche",
+      "13"
+    ]
+  ],
+  "acordes": [
+    [
+      "Almizclado",
+      100
+    ],
+    [
+      "Rosas",
+      81
+    ],
+    [
+      "Cuero",
+      79
+    ],
+    [
+      "Ámbar",
+      74
+    ],
+    [
+      "Atalcado",
+      72
+    ],
+    [
+      "Cálido especiado",
+      70
+    ],
+    [
+      "Amaderado",
+      59
+    ],
+    [
+      "Animálico",
+      58
+    ],
+    [
+      "Metálico",
+      52
+    ],
+    [
+      "Aldehídico",
+      49
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "anarch",
+  "nombre": "Anarch - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, floral blanco, avainillado, dulce.",
+  "indicadores": [
+    [
+      "Invierno",
+      "73"
+    ],
+    [
+      "Primavera",
+      "143"
+    ],
+    [
+      "Verano",
+      "122"
+    ],
+    [
+      "Otoño",
+      "114"
+    ],
+    [
+      "Día",
+      "134"
+    ],
+    [
+      "Noche",
+      "80"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Floral blanco",
+      98
+    ],
+    [
+      "Avainillado",
+      95
+    ],
+    [
+      "Dulce",
+      88
+    ],
+    [
+      "Florales",
+      85
+    ],
+    [
+      "Verde",
+      85
+    ],
+    [
+      "Atalcado",
+      81
+    ],
+    [
+      "Afrutados",
+      78
+    ],
+    [
+      "Cítrico",
+      74
+    ],
+    [
+      "Ámbar",
+      73
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "anchor-black",
+  "nombre": "Anchor Black - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, almizclado, aromático, terrosos.",
+  "indicadores": [
+    [
+      "Invierno",
+      "53"
+    ],
+    [
+      "Primavera",
+      "50"
+    ],
+    [
+      "Verano",
+      "21"
+    ],
+    [
+      "Otoño",
+      "71"
+    ],
+    [
+      "Día",
+      "47"
+    ],
+    [
+      "Noche",
+      "57"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Almizclado",
+      72
+    ],
+    [
+      "Aromático",
+      68
+    ],
+    [
+      "Terrosos",
+      62
+    ],
+    [
+      "Ámbar",
+      46
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "aoud-prestigium",
+  "nombre": "Aoud Prestigium - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, oud, cuero, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "3"
+    ],
+    [
+      "Primavera",
+      "1"
+    ],
+    [
+      "Verano",
+      "0"
+    ],
+    [
+      "Otoño",
+      "2"
+    ],
+    [
+      "Día",
+      "1"
+    ],
+    [
+      "Noche",
+      "1"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Oud",
+      94
+    ],
+    [
+      "Cuero",
+      81
+    ],
+    [
+      "Amaderado",
+      76
+    ],
+    [
+      "Atalcado",
+      76
+    ],
+    [
+      "Animálico",
+      71
+    ],
+    [
+      "Iris",
+      62
+    ],
+    [
+      "Terrosos",
+      50
+    ],
+    [
+      "Rosas",
+      49
+    ],
+    [
+      "Pachulí",
+      49
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "aquilo",
+  "nombre": "Aquilo - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, aromático, marino, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "5"
+    ],
+    [
+      "Primavera",
+      "87"
+    ],
+    [
+      "Verano",
+      "102"
+    ],
+    [
+      "Otoño",
+      "25"
+    ],
+    [
+      "Día",
+      "96"
+    ],
+    [
+      "Noche",
+      "27"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Aromático",
+      77
+    ],
+    [
+      "Marino",
+      75
+    ],
+    [
+      "Amaderado",
+      69
+    ],
+    [
+      "Acuático",
+      61
+    ],
+    [
+      "Atalcado",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "aromatic-rouge",
+  "nombre": "Aromatic Rouge - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, floral blanco, fresco especiado, rosas.",
+  "indicadores": [
+    [
+      "Invierno",
+      "12"
+    ],
+    [
+      "Primavera",
+      "47"
+    ],
+    [
+      "Verano",
+      "50"
+    ],
+    [
+      "Otoño",
+      "19"
+    ],
+    [
+      "Día",
+      "43"
+    ],
+    [
+      "Noche",
+      "11"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Floral blanco",
+      81
+    ],
+    [
+      "Fresco especiado",
+      69
+    ],
+    [
+      "Rosas",
+      64
+    ],
+    [
+      "Amaderado",
+      60
+    ],
+    [
+      "Fresco",
+      59
+    ],
+    [
+      "Cálido especiado",
+      58
+    ],
+    [
+      "Florales",
+      50
+    ],
+    [
+      "Afrutados",
+      49
+    ],
+    [
+      "Musgoso",
+      48
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "athena",
+  "nombre": "Athena - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de avainillado, cítrico, floral blanco, dulce.",
+  "indicadores": [
+    [
+      "Invierno",
+      "389"
+    ],
+    [
+      "Primavera",
+      "448"
+    ],
+    [
+      "Verano",
+      "309"
+    ],
+    [
+      "Otoño",
+      "453"
+    ],
+    [
+      "Día",
+      "452"
+    ],
+    [
+      "Noche",
+      "317"
+    ]
+  ],
+  "acordes": [
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Cítrico",
+      74
+    ],
+    [
+      "Floral blanco",
+      71
+    ],
+    [
+      "Dulce",
+      64
+    ],
+    [
+      "Atalcado",
+      62
+    ],
+    [
+      "Amaderado",
+      62
+    ],
+    [
+      "Especiado suave",
+      49
+    ],
+    [
+      "Balsámico",
+      47
+    ],
+    [
+      "Floral amarillo",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "aura-d-eclat",
+  "nombre": "Aura D'Eclat - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de florales, fresco, verde, almizclado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "11"
+    ],
+    [
+      "Primavera",
+      "47"
+    ],
+    [
+      "Verano",
+      "49"
+    ],
+    [
+      "Otoño",
+      "19"
+    ],
+    [
+      "Día",
+      "47"
+    ],
+    [
+      "Noche",
+      "16"
+    ]
+  ],
+  "acordes": [
+    [
+      "Florales",
+      100
+    ],
+    [
+      "Fresco",
+      94
+    ],
+    [
+      "Verde",
+      89
+    ],
+    [
+      "Almizclado",
+      61
+    ],
+    [
+      "Atalcado",
+      48
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "avant",
+  "nombre": "Avant - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, fresco especiado, aromático, verde.",
+  "indicadores": [
+    [
+      "Invierno",
+      "55"
+    ],
+    [
+      "Primavera",
+      "116"
+    ],
+    [
+      "Verano",
+      "104"
+    ],
+    [
+      "Otoño",
+      "83"
+    ],
+    [
+      "Día",
+      "109"
+    ],
+    [
+      "Noche",
+      "87"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Fresco especiado",
+      78
+    ],
+    [
+      "Aromático",
+      73
+    ],
+    [
+      "Verde",
+      61
+    ],
+    [
+      "Amaderado",
+      58
+    ],
+    [
+      "Terrosos",
+      50
+    ],
+    [
+      "Cálido especiado",
+      46
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "avant-ruby",
+  "nombre": "Avant Ruby - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, rosas, ámbar, almizclado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "23"
+    ],
+    [
+      "Primavera",
+      "35"
+    ],
+    [
+      "Verano",
+      "24"
+    ],
+    [
+      "Otoño",
+      "36"
+    ],
+    [
+      "Día",
+      "29"
+    ],
+    [
+      "Noche",
+      "27"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Rosas",
+      73
+    ],
+    [
+      "Ámbar",
+      58
+    ],
+    [
+      "Almizclado",
+      56
+    ],
+    [
+      "Floral blanco",
+      53
+    ],
+    [
+      "Florales",
+      49
+    ],
+    [
+      "Aromático",
+      49
+    ],
+    [
+      "Atalcado",
+      49
+    ],
+    [
+      "Amaderado",
+      45
+    ],
+    [
+      "Dulce",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "avant-silk",
+  "nombre": "Avant Silk - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, pachulí, ámbar, almizclado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "61"
+    ],
+    [
+      "Primavera",
+      "29"
+    ],
+    [
+      "Verano",
+      "11"
+    ],
+    [
+      "Otoño",
+      "60"
+    ],
+    [
+      "Día",
+      "28"
+    ],
+    [
+      "Noche",
+      "55"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Pachulí",
+      92
+    ],
+    [
+      "Ámbar",
+      82
+    ],
+    [
+      "Almizclado",
+      79
+    ],
+    [
+      "Amaderado",
+      71
+    ],
+    [
+      "Rosas",
+      69
+    ],
+    [
+      "Atalcado",
+      66
+    ],
+    [
+      "Cálido especiado",
+      61
+    ],
+    [
+      "Floral blanco",
+      56
+    ],
+    [
+      "Terrosos",
+      55
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "b-a-d-femme",
+  "nombre": "B.A.D. Femme - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, dulce, amaderado, cálido especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "76"
+    ],
+    [
+      "Primavera",
+      "58"
+    ],
+    [
+      "Verano",
+      "38"
+    ],
+    [
+      "Otoño",
+      "72"
+    ],
+    [
+      "Día",
+      "56"
+    ],
+    [
+      "Noche",
+      "80"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Dulce",
+      90
+    ],
+    [
+      "Amaderado",
+      89
+    ],
+    [
+      "Cálido especiado",
+      84
+    ],
+    [
+      "Cítrico",
+      82
+    ],
+    [
+      "Avainillado",
+      77
+    ],
+    [
+      "Atalcado",
+      75
+    ],
+    [
+      "Ámbar",
+      68
+    ],
+    [
+      "Almizclado",
+      64
+    ],
+    [
+      "Nardos",
+      60
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "b-a-d-homme",
+  "nombre": "B.A.D. Homme - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cacao, cálido especiado, aromático, dulce.",
+  "indicadores": [
+    [
+      "Invierno",
+      "98"
+    ],
+    [
+      "Primavera",
+      "84"
+    ],
+    [
+      "Verano",
+      "34"
+    ],
+    [
+      "Otoño",
+      "101"
+    ],
+    [
+      "Día",
+      "60"
+    ],
+    [
+      "Noche",
+      "99"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cacao",
+      100
+    ],
+    [
+      "Cálido especiado",
+      95
+    ],
+    [
+      "Aromático",
+      94
+    ],
+    [
+      "Dulce",
+      73
+    ],
+    [
+      "Avainillado",
+      69
+    ],
+    [
+      "Cítrico",
+      69
+    ],
+    [
+      "Amaderado",
+      66
+    ],
+    [
+      "Especiado suave",
+      65
+    ],
+    [
+      "Fresco especiado",
+      59
+    ],
+    [
+      "Ámbar",
+      58
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "baroque-rouge-540",
+  "nombre": "Baroque Rouge 540 - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, cálido especiado, almizclado, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "176"
+    ],
+    [
+      "Primavera",
+      "134"
+    ],
+    [
+      "Verano",
+      "74"
+    ],
+    [
+      "Otoño",
+      "173"
+    ],
+    [
+      "Día",
+      "131"
+    ],
+    [
+      "Noche",
+      "157"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Cálido especiado",
+      88
+    ],
+    [
+      "Almizclado",
+      76
+    ],
+    [
+      "Amaderado",
+      69
+    ],
+    [
+      "Floral blanco",
+      68
+    ],
+    [
+      "Metálico",
+      64
+    ],
+    [
+      "Cuero",
+      57
+    ],
+    [
+      "Dulce",
+      52
+    ],
+    [
+      "Atalcado",
+      51
+    ],
+    [
+      "Tabaco",
+      50
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "baroque-rouge-extrait",
+  "nombre": "Baroque Rouge Extrait - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, cálido especiado, almendrado, ámbar.",
+  "indicadores": [
+    [
+      "Invierno",
+      "121"
+    ],
+    [
+      "Primavera",
+      "72"
+    ],
+    [
+      "Verano",
+      "62"
+    ],
+    [
+      "Otoño",
+      "126"
+    ],
+    [
+      "Día",
+      "99"
+    ],
+    [
+      "Noche",
+      "118"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Cálido especiado",
+      87
+    ],
+    [
+      "Almendrado",
+      82
+    ],
+    [
+      "Ámbar",
+      80
+    ],
+    [
+      "Almizclado",
+      67
+    ],
+    [
+      "Animálico",
+      66
+    ],
+    [
+      "Metálico",
+      63
+    ],
+    [
+      "Nueces",
+      61
+    ],
+    [
+      "Cuero",
+      57
+    ],
+    [
+      "Afrutados",
+      56
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "baroque-satin-oud",
+  "nombre": "Baroque Satin Oud - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de rosas, cálido especiado, oud, avainillado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "263"
+    ],
+    [
+      "Primavera",
+      "123"
+    ],
+    [
+      "Verano",
+      "42"
+    ],
+    [
+      "Otoño",
+      "242"
+    ],
+    [
+      "Día",
+      "116"
+    ],
+    [
+      "Noche",
+      "246"
+    ]
+  ],
+  "acordes": [
+    [
+      "Rosas",
+      100
+    ],
+    [
+      "Cálido especiado",
+      93
+    ],
+    [
+      "Oud",
+      78
+    ],
+    [
+      "Avainillado",
+      68
+    ],
+    [
+      "Atalcado",
+      66
+    ],
+    [
+      "Iris",
+      66
+    ],
+    [
+      "Cuero",
+      58
+    ],
+    [
+      "Florales",
+      57
+    ],
+    [
+      "Terrosos",
+      53
+    ],
+    [
+      "Ámbar",
+      51
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "berlinetta",
+  "nombre": "Berlinetta - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de afrutados, cuero, atalcado, dulce.",
+  "indicadores": [
+    [
+      "Invierno",
+      "193"
+    ],
+    [
+      "Primavera",
+      "115"
+    ],
+    [
+      "Verano",
+      "45"
+    ],
+    [
+      "Otoño",
+      "229"
+    ],
+    [
+      "Día",
+      "166"
+    ],
+    [
+      "Noche",
+      "164"
+    ]
+  ],
+  "acordes": [
+    [
+      "Afrutados",
+      100
+    ],
+    [
+      "Cuero",
+      83
+    ],
+    [
+      "Atalcado",
+      74
+    ],
+    [
+      "Dulce",
+      68
+    ],
+    [
+      "Violeta",
+      66
+    ],
+    [
+      "Pachulí",
+      60
+    ],
+    [
+      "Animálico",
+      59
+    ],
+    [
+      "Amaderado",
+      53
+    ],
+    [
+      "Florales",
+      52
+    ],
+    [
+      "Almizclado",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "between-us",
+  "nombre": "Between Us - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de tropical, avainillado, florales, ámbar.",
+  "indicadores": [
+    [
+      "Invierno",
+      "1"
+    ],
+    [
+      "Primavera",
+      "3"
+    ],
+    [
+      "Verano",
+      "5"
+    ],
+    [
+      "Otoño",
+      "1"
+    ],
+    [
+      "Día",
+      "4"
+    ],
+    [
+      "Noche",
+      "0"
+    ]
+  ],
+  "acordes": [
+    [
+      "Tropical",
+      100
+    ],
+    [
+      "Avainillado",
+      93
+    ],
+    [
+      "Florales",
+      80
+    ],
+    [
+      "Ámbar",
+      73
+    ],
+    [
+      "Dulce",
+      62
+    ],
+    [
+      "Afrutados",
+      61
+    ],
+    [
+      "Cítrico",
+      52
+    ],
+    [
+      "Lactónico",
+      50
+    ],
+    [
+      "Fresco",
+      50
+    ],
+    [
+      "Cálido especiado",
+      48
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "black-origami",
+  "nombre": "Black Origami - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cálido especiado, amaderado, terrosos, dulce.",
+  "indicadores": [
+    [
+      "Invierno",
+      "213"
+    ],
+    [
+      "Primavera",
+      "93"
+    ],
+    [
+      "Verano",
+      "38"
+    ],
+    [
+      "Otoño",
+      "204"
+    ],
+    [
+      "Día",
+      "90"
+    ],
+    [
+      "Noche",
+      "208"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cálido especiado",
+      100
+    ],
+    [
+      "Amaderado",
+      91
+    ],
+    [
+      "Terrosos",
+      87
+    ],
+    [
+      "Dulce",
+      84
+    ],
+    [
+      "Ámbar",
+      68
+    ],
+    [
+      "Florales",
+      67
+    ],
+    [
+      "Atalcado",
+      67
+    ],
+    [
+      "Afrutados",
+      61
+    ],
+    [
+      "Floral blanco",
+      61
+    ],
+    [
+      "Pachulí",
+      60
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "blue-de-chance",
+  "nombre": "Blue de Chance - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, amaderado, aromático, fresco especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "19"
+    ],
+    [
+      "Primavera",
+      "81"
+    ],
+    [
+      "Verano",
+      "83"
+    ],
+    [
+      "Otoño",
+      "48"
+    ],
+    [
+      "Día",
+      "82"
+    ],
+    [
+      "Noche",
+      "43"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Amaderado",
+      79
+    ],
+    [
+      "Aromático",
+      70
+    ],
+    [
+      "Fresco especiado",
+      69
+    ],
+    [
+      "Almizclado",
+      63
+    ],
+    [
+      "Ámbar",
+      57
+    ],
+    [
+      "Atalcado",
+      54
+    ],
+    [
+      "Cálido especiado",
+      51
+    ],
+    [
+      "Balsámico",
+      49
+    ],
+    [
+      "Fresco",
+      48
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "bright-peach",
+  "nombre": "Bright Peach - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de afrutados, dulce, amielado, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "336"
+    ],
+    [
+      "Primavera",
+      "784"
+    ],
+    [
+      "Verano",
+      "735"
+    ],
+    [
+      "Otoño",
+      "646"
+    ],
+    [
+      "Día",
+      "779"
+    ],
+    [
+      "Noche",
+      "412"
+    ]
+  ],
+  "acordes": [
+    [
+      "Afrutados",
+      100
+    ],
+    [
+      "Dulce",
+      95
+    ],
+    [
+      "Amielado",
+      83
+    ],
+    [
+      "Amaderado",
+      74
+    ],
+    [
+      "Cítrico",
+      63
+    ],
+    [
+      "Verde",
+      60
+    ],
+    [
+      "Cálido especiado",
+      60
+    ],
+    [
+      "Pachulí",
+      59
+    ],
+    [
+      "Atalcado",
+      51
+    ],
+    [
+      "Florales",
+      46
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "bronze-for-man",
+  "nombre": "Bronzé for Man - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de avainillado, ámbar, ahumado, balsámico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "7"
+    ],
+    [
+      "Primavera",
+      "20"
+    ],
+    [
+      "Verano",
+      "22"
+    ],
+    [
+      "Otoño",
+      "17"
+    ],
+    [
+      "Día",
+      "21"
+    ],
+    [
+      "Noche",
+      "11"
+    ]
+  ],
+  "acordes": [
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Ámbar",
+      93
+    ],
+    [
+      "Ahumado",
+      86
+    ],
+    [
+      "Balsámico",
+      75
+    ],
+    [
+      "Afrutados",
+      71
+    ],
+    [
+      "Fresco especiado",
+      68
+    ],
+    [
+      "Amaderado",
+      64
+    ],
+    [
+      "Dulce",
+      63
+    ],
+    [
+      "Aromático",
+      61
+    ],
+    [
+      "Herbal",
+      59
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "brulant-oud",
+  "nombre": "Brûlant Oud - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de animálico, almizclado, cálido especiado, ámbar.",
+  "indicadores": [
+    [
+      "Invierno",
+      "25"
+    ],
+    [
+      "Primavera",
+      "15"
+    ],
+    [
+      "Verano",
+      "4"
+    ],
+    [
+      "Otoño",
+      "24"
+    ],
+    [
+      "Día",
+      "12"
+    ],
+    [
+      "Noche",
+      "22"
+    ]
+  ],
+  "acordes": [
+    [
+      "Animálico",
+      100
+    ],
+    [
+      "Almizclado",
+      95
+    ],
+    [
+      "Cálido especiado",
+      92
+    ],
+    [
+      "Ámbar",
+      89
+    ],
+    [
+      "Fresco especiado",
+      81
+    ],
+    [
+      "Amaderado",
+      66
+    ],
+    [
+      "Aromático",
+      60
+    ],
+    [
+      "Balsámico",
+      54
+    ],
+    [
+      "Ahumado",
+      53
+    ],
+    [
+      "Cítrico",
+      50
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "by-saffron",
+  "nombre": "By Saffron - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, cuero, aromático, rosas.",
+  "indicadores": [
+    [
+      "Invierno",
+      "49"
+    ],
+    [
+      "Primavera",
+      "54"
+    ],
+    [
+      "Verano",
+      "25"
+    ],
+    [
+      "Otoño",
+      "56"
+    ],
+    [
+      "Día",
+      "51"
+    ],
+    [
+      "Noche",
+      "38"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Cuero",
+      96
+    ],
+    [
+      "Aromático",
+      96
+    ],
+    [
+      "Rosas",
+      82
+    ],
+    [
+      "Violeta",
+      78
+    ],
+    [
+      "Afrutados",
+      71
+    ],
+    [
+      "Cálido especiado",
+      69
+    ],
+    [
+      "Atalcado",
+      63
+    ],
+    [
+      "Dulce",
+      62
+    ],
+    [
+      "Fresco especiado",
+      62
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "camille",
+  "nombre": "Camille - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, rosas, ahumado, balsámico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "5"
+    ],
+    [
+      "Primavera",
+      "3"
+    ],
+    [
+      "Verano",
+      "0"
+    ],
+    [
+      "Otoño",
+      "6"
+    ],
+    [
+      "Día",
+      "5"
+    ],
+    [
+      "Noche",
+      "3"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Rosas",
+      85
+    ],
+    [
+      "Ahumado",
+      62
+    ],
+    [
+      "Balsámico",
+      54
+    ],
+    [
+      "Cálido especiado",
+      53
+    ],
+    [
+      "Florales",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "candid",
+  "nombre": "Candid - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, pachulí, avainillado, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "34"
+    ],
+    [
+      "Primavera",
+      "32"
+    ],
+    [
+      "Verano",
+      "31"
+    ],
+    [
+      "Otoño",
+      "36"
+    ],
+    [
+      "Día",
+      "35"
+    ],
+    [
+      "Noche",
+      "35"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Pachulí",
+      84
+    ],
+    [
+      "Avainillado",
+      81
+    ],
+    [
+      "Amaderado",
+      63
+    ],
+    [
+      "Cálido especiado",
+      62
+    ],
+    [
+      "Dulce",
+      55
+    ],
+    [
+      "Balsámico",
+      54
+    ],
+    [
+      "Cítrico",
+      54
+    ],
+    [
+      "Terrosos",
+      52
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "candid-pour-homme",
+  "nombre": "Candid Pour Homme - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de aromático, caramelo, dulce, cítrico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "52"
+    ],
+    [
+      "Primavera",
+      "52"
+    ],
+    [
+      "Verano",
+      "16"
+    ],
+    [
+      "Otoño",
+      "47"
+    ],
+    [
+      "Día",
+      "34"
+    ],
+    [
+      "Noche",
+      "42"
+    ]
+  ],
+  "acordes": [
+    [
+      "Aromático",
+      100
+    ],
+    [
+      "Caramelo",
+      98
+    ],
+    [
+      "Dulce",
+      78
+    ],
+    [
+      "Cítrico",
+      77
+    ],
+    [
+      "Avainillado",
+      58
+    ],
+    [
+      "Especiado suave",
+      55
+    ],
+    [
+      "Amaderado",
+      50
+    ],
+    [
+      "Ámbar",
+      50
+    ],
+    [
+      "Terrosos",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "candid-tonight",
+  "nombre": "Candid Tonight - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, dulce, avainillado, florales.",
+  "indicadores": [
+    [
+      "Invierno",
+      "61"
+    ],
+    [
+      "Primavera",
+      "47"
+    ],
+    [
+      "Verano",
+      "24"
+    ],
+    [
+      "Otoño",
+      "62"
+    ],
+    [
+      "Día",
+      "44"
+    ],
+    [
+      "Noche",
+      "57"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Dulce",
+      99
+    ],
+    [
+      "Avainillado",
+      83
+    ],
+    [
+      "Florales",
+      69
+    ],
+    [
+      "Amaderado",
+      64
+    ],
+    [
+      "Floral blanco",
+      64
+    ],
+    [
+      "Atalcado",
+      64
+    ],
+    [
+      "Fresco",
+      53
+    ],
+    [
+      "Afrutados",
+      53
+    ],
+    [
+      "Fresco especiado",
+      50
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "cassius",
+  "nombre": "Cassius - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de avainillado, pachulí, fresco especiado, cálido especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "307"
+    ],
+    [
+      "Primavera",
+      "158"
+    ],
+    [
+      "Verano",
+      "33"
+    ],
+    [
+      "Otoño",
+      "294"
+    ],
+    [
+      "Día",
+      "142"
+    ],
+    [
+      "Noche",
+      "281"
+    ]
+  ],
+  "acordes": [
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Pachulí",
+      83
+    ],
+    [
+      "Fresco especiado",
+      80
+    ],
+    [
+      "Cálido especiado",
+      64
+    ],
+    [
+      "Amaderado",
+      62
+    ],
+    [
+      "Afrutados",
+      58
+    ],
+    [
+      "Balsámico",
+      56
+    ],
+    [
+      "Dulce",
+      53
+    ],
+    [
+      "Terrosos",
+      51
+    ],
+    [
+      "Atalcado",
+      48
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "celeste",
+  "nombre": "Céleste - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, floral amarillo, amaderado, dulce.",
+  "indicadores": [
+    [
+      "Invierno",
+      "77"
+    ],
+    [
+      "Primavera",
+      "87"
+    ],
+    [
+      "Verano",
+      "74"
+    ],
+    [
+      "Otoño",
+      "88"
+    ],
+    [
+      "Día",
+      "88"
+    ],
+    [
+      "Noche",
+      "74"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Floral amarillo",
+      91
+    ],
+    [
+      "Amaderado",
+      90
+    ],
+    [
+      "Dulce",
+      63
+    ],
+    [
+      "Atalcado",
+      59
+    ],
+    [
+      "Almizclado",
+      57
+    ],
+    [
+      "Florales",
+      55
+    ],
+    [
+      "Cítrico",
+      53
+    ],
+    [
+      "Fresco",
+      50
+    ],
+    [
+      "Rosas",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "cerulean-blue",
+  "nombre": "Cerulean Blue - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ozónico, acuático, florales, lavanda.",
+  "indicadores": [
+    [
+      "Invierno",
+      "5"
+    ],
+    [
+      "Primavera",
+      "65"
+    ],
+    [
+      "Verano",
+      "73"
+    ],
+    [
+      "Otoño",
+      "17"
+    ],
+    [
+      "Día",
+      "60"
+    ],
+    [
+      "Noche",
+      "15"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ozónico",
+      100
+    ],
+    [
+      "Acuático",
+      100
+    ],
+    [
+      "Florales",
+      85
+    ],
+    [
+      "Lavanda",
+      75
+    ],
+    [
+      "Almizclado",
+      70
+    ],
+    [
+      "Atalcado",
+      70
+    ],
+    [
+      "Floral blanco",
+      67
+    ],
+    [
+      "Cítrico",
+      62
+    ],
+    [
+      "Aromático",
+      60
+    ],
+    [
+      "Amaderado",
+      60
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "chants-tenderina",
+  "nombre": "Chants Tenderina - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, floral blanco, atalcado, almizclado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "43"
+    ],
+    [
+      "Primavera",
+      "240"
+    ],
+    [
+      "Verano",
+      "255"
+    ],
+    [
+      "Otoño",
+      "88"
+    ],
+    [
+      "Día",
+      "252"
+    ],
+    [
+      "Noche",
+      "48"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Floral blanco",
+      90
+    ],
+    [
+      "Atalcado",
+      82
+    ],
+    [
+      "Almizclado",
+      71
+    ],
+    [
+      "Rosas",
+      63
+    ],
+    [
+      "Amaderado",
+      61
+    ],
+    [
+      "Aromático",
+      57
+    ],
+    [
+      "Afrutados",
+      56
+    ],
+    [
+      "Florales",
+      56
+    ],
+    [
+      "Terrosos",
+      56
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "chic-velvet-pink-secret",
+  "nombre": "Chic Velvet Pink Secret - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de aromático, florales, atalcado, fresco especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "2"
+    ],
+    [
+      "Primavera",
+      "18"
+    ],
+    [
+      "Verano",
+      "17"
+    ],
+    [
+      "Otoño",
+      "7"
+    ],
+    [
+      "Día",
+      "17"
+    ],
+    [
+      "Noche",
+      "4"
+    ]
+  ],
+  "acordes": [
+    [
+      "Aromático",
+      100
+    ],
+    [
+      "Florales",
+      94
+    ],
+    [
+      "Atalcado",
+      92
+    ],
+    [
+      "Fresco especiado",
+      86
+    ],
+    [
+      "Afrutados",
+      80
+    ],
+    [
+      "Amaderado",
+      72
+    ],
+    [
+      "Dulce",
+      50
+    ],
+    [
+      "Fresco",
+      50
+    ],
+    [
+      "Lactónico",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "chic-velvet-vert-secret",
+  "nombre": "Chic Velvet Vert Secret - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, ozónico, verde, fresco.",
+  "indicadores": [
+    [
+      "Invierno",
+      "2"
+    ],
+    [
+      "Primavera",
+      "22"
+    ],
+    [
+      "Verano",
+      "22"
+    ],
+    [
+      "Otoño",
+      "8"
+    ],
+    [
+      "Día",
+      "18"
+    ],
+    [
+      "Noche",
+      "5"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Ozónico",
+      76
+    ],
+    [
+      "Verde",
+      73
+    ],
+    [
+      "Fresco",
+      72
+    ],
+    [
+      "Acuático",
+      64
+    ],
+    [
+      "Almizclado",
+      57
+    ],
+    [
+      "Jabonoso",
+      44
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "club-exquisite",
+  "nombre": "Club Exquisite - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de aromático, avainillado, cálido especiado, atalcado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "78"
+    ],
+    [
+      "Primavera",
+      "67"
+    ],
+    [
+      "Verano",
+      "18"
+    ],
+    [
+      "Otoño",
+      "86"
+    ],
+    [
+      "Día",
+      "62"
+    ],
+    [
+      "Noche",
+      "82"
+    ]
+  ],
+  "acordes": [
+    [
+      "Aromático",
+      100
+    ],
+    [
+      "Avainillado",
+      82
+    ],
+    [
+      "Cálido especiado",
+      67
+    ],
+    [
+      "Atalcado",
+      65
+    ],
+    [
+      "Iris",
+      61
+    ],
+    [
+      "Terrosos",
+      61
+    ],
+    [
+      "Amaderado",
+      59
+    ],
+    [
+      "Especiado suave",
+      54
+    ],
+    [
+      "Dulce",
+      50
+    ],
+    [
+      "Verde",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "coastal-pour-femme",
+  "nombre": "Coastal Pour Femme - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de florales, fresco especiado, atalcado, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "16"
+    ],
+    [
+      "Primavera",
+      "53"
+    ],
+    [
+      "Verano",
+      "49"
+    ],
+    [
+      "Otoño",
+      "34"
+    ],
+    [
+      "Día",
+      "55"
+    ],
+    [
+      "Noche",
+      "14"
+    ]
+  ],
+  "acordes": [
+    [
+      "Florales",
+      100
+    ],
+    [
+      "Fresco especiado",
+      62
+    ],
+    [
+      "Atalcado",
+      61
+    ],
+    [
+      "Amaderado",
+      60
+    ],
+    [
+      "Almizclado",
+      50
+    ],
+    [
+      "Avainillado",
+      46
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "como-moiselle",
+  "nombre": "Como Moiselle - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, amaderado, dulce, floral blanco.",
+  "indicadores": [
+    [
+      "Invierno",
+      "57"
+    ],
+    [
+      "Primavera",
+      "115"
+    ],
+    [
+      "Verano",
+      "90"
+    ],
+    [
+      "Otoño",
+      "81"
+    ],
+    [
+      "Día",
+      "115"
+    ],
+    [
+      "Noche",
+      "64"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Amaderado",
+      58
+    ],
+    [
+      "Dulce",
+      55
+    ],
+    [
+      "Floral blanco",
+      55
+    ],
+    [
+      "Pachulí",
+      55
+    ],
+    [
+      "Avainillado",
+      48
+    ],
+    [
+      "Aromático",
+      48
+    ],
+    [
+      "Terrosos",
+      47
+    ],
+    [
+      "Rosas",
+      46
+    ],
+    [
+      "Fresco especiado",
+      46
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "coral-blush",
+  "nombre": "Coral Blush - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, dulce, afrutados, pachulí.",
+  "indicadores": [
+    [
+      "Invierno",
+      "54"
+    ],
+    [
+      "Primavera",
+      "125"
+    ],
+    [
+      "Verano",
+      "119"
+    ],
+    [
+      "Otoño",
+      "119"
+    ],
+    [
+      "Día",
+      "135"
+    ],
+    [
+      "Noche",
+      "62"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Dulce",
+      95
+    ],
+    [
+      "Afrutados",
+      93
+    ],
+    [
+      "Pachulí",
+      87
+    ],
+    [
+      "Amielado",
+      85
+    ],
+    [
+      "Cálido especiado",
+      79
+    ],
+    [
+      "Verde",
+      67
+    ],
+    [
+      "Cítrico",
+      60
+    ],
+    [
+      "Terrosos",
+      53
+    ],
+    [
+      "Atalcado",
+      49
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "daring-blue-for-life",
+  "nombre": "Daring Blue For Life - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, ozónico, aromático, fresco especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "10"
+    ],
+    [
+      "Primavera",
+      "168"
+    ],
+    [
+      "Verano",
+      "231"
+    ],
+    [
+      "Otoño",
+      "42"
+    ],
+    [
+      "Día",
+      "203"
+    ],
+    [
+      "Noche",
+      "35"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Ozónico",
+      85
+    ],
+    [
+      "Aromático",
+      57
+    ],
+    [
+      "Fresco especiado",
+      56
+    ],
+    [
+      "Amaderado",
+      50
+    ],
+    [
+      "Acuático",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "dark-aoud",
+  "nombre": "Dark Aoud - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cálido especiado, amaderado, aromático, fresco especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "191"
+    ],
+    [
+      "Primavera",
+      "122"
+    ],
+    [
+      "Verano",
+      "30"
+    ],
+    [
+      "Otoño",
+      "197"
+    ],
+    [
+      "Día",
+      "125"
+    ],
+    [
+      "Noche",
+      "177"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cálido especiado",
+      100
+    ],
+    [
+      "Amaderado",
+      94
+    ],
+    [
+      "Aromático",
+      75
+    ],
+    [
+      "Fresco especiado",
+      72
+    ],
+    [
+      "Oud",
+      70
+    ],
+    [
+      "Avainillado",
+      61
+    ],
+    [
+      "Balsámico",
+      56
+    ],
+    [
+      "Atalcado",
+      50
+    ],
+    [
+      "Ámbar",
+      50
+    ],
+    [
+      "Dulce",
+      48
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "dark-door-intense",
+  "nombre": "Dark Door Intense - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de iris, atalcado, amaderado, violeta.",
+  "indicadores": [
+    [
+      "Invierno",
+      "393"
+    ],
+    [
+      "Primavera",
+      "256"
+    ],
+    [
+      "Verano",
+      "68"
+    ],
+    [
+      "Otoño",
+      "377"
+    ],
+    [
+      "Día",
+      "232"
+    ],
+    [
+      "Noche",
+      "369"
+    ]
+  ],
+  "acordes": [
+    [
+      "Iris",
+      100
+    ],
+    [
+      "Atalcado",
+      76
+    ],
+    [
+      "Amaderado",
+      73
+    ],
+    [
+      "Violeta",
+      65
+    ],
+    [
+      "Terrosos",
+      65
+    ],
+    [
+      "Lavanda",
+      63
+    ],
+    [
+      "Aromático",
+      59
+    ],
+    [
+      "Florales",
+      57
+    ],
+    [
+      "Almizclado",
+      52
+    ],
+    [
+      "Afrutados",
+      46
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "dark-door-sport",
+  "nombre": "Dark Door Sport - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, aromático, fresco especiado, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "106"
+    ],
+    [
+      "Primavera",
+      "439"
+    ],
+    [
+      "Verano",
+      "438"
+    ],
+    [
+      "Otoño",
+      "286"
+    ],
+    [
+      "Día",
+      "414"
+    ],
+    [
+      "Noche",
+      "161"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Aromático",
+      93
+    ],
+    [
+      "Fresco especiado",
+      78
+    ],
+    [
+      "Amaderado",
+      72
+    ],
+    [
+      "Fresco",
+      44
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "decadent-dream",
+  "nombre": "Decadent Dream - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, amaderado, afrutados, florales.",
+  "indicadores": [
+    [
+      "Invierno",
+      "108"
+    ],
+    [
+      "Primavera",
+      "89"
+    ],
+    [
+      "Verano",
+      "44"
+    ],
+    [
+      "Otoño",
+      "116"
+    ],
+    [
+      "Día",
+      "97"
+    ],
+    [
+      "Noche",
+      "94"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Amaderado",
+      88
+    ],
+    [
+      "Afrutados",
+      71
+    ],
+    [
+      "Florales",
+      61
+    ],
+    [
+      "Cálido especiado",
+      59
+    ],
+    [
+      "Nueces",
+      59
+    ],
+    [
+      "Dulce",
+      56
+    ],
+    [
+      "Balsámico",
+      54
+    ],
+    [
+      "Atalcado",
+      51
+    ],
+    [
+      "Avainillado",
+      50
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "decadent-wonder",
+  "nombre": "Decadent Wonder - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de avainillado, atalcado, cálido especiado, cítrico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "96"
+    ],
+    [
+      "Primavera",
+      "119"
+    ],
+    [
+      "Verano",
+      "62"
+    ],
+    [
+      "Otoño",
+      "135"
+    ],
+    [
+      "Día",
+      "125"
+    ],
+    [
+      "Noche",
+      "77"
+    ]
+  ],
+  "acordes": [
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Atalcado",
+      78
+    ],
+    [
+      "Cálido especiado",
+      74
+    ],
+    [
+      "Cítrico",
+      74
+    ],
+    [
+      "Fresco especiado",
+      65
+    ],
+    [
+      "Floral blanco",
+      61
+    ],
+    [
+      "Canela",
+      59
+    ],
+    [
+      "Cacao",
+      57
+    ],
+    [
+      "Florales",
+      56
+    ],
+    [
+      "Amaderado",
+      56
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "delilah",
+  "nombre": "Delilah - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de rosas, florales, afrutados, almizclado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "339"
+    ],
+    [
+      "Primavera",
+      "807"
+    ],
+    [
+      "Verano",
+      "628"
+    ],
+    [
+      "Otoño",
+      "455"
+    ],
+    [
+      "Día",
+      "761"
+    ],
+    [
+      "Noche",
+      "363"
+    ]
+  ],
+  "acordes": [
+    [
+      "Rosas",
+      100
+    ],
+    [
+      "Florales",
+      75
+    ],
+    [
+      "Afrutados",
+      72
+    ],
+    [
+      "Almizclado",
+      67
+    ],
+    [
+      "Fresco",
+      63
+    ],
+    [
+      "Atalcado",
+      58
+    ],
+    [
+      "Verde",
+      56
+    ],
+    [
+      "Aromático",
+      51
+    ],
+    [
+      "Tropical",
+      49
+    ],
+    [
+      "Cítrico",
+      49
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "delilah-blanc",
+  "nombre": "Delilah Blanc - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, almizclado, atalcado, floral blanco.",
+  "indicadores": [
+    [
+      "Invierno",
+      "75"
+    ],
+    [
+      "Primavera",
+      "371"
+    ],
+    [
+      "Verano",
+      "401"
+    ],
+    [
+      "Otoño",
+      "130"
+    ],
+    [
+      "Día",
+      "394"
+    ],
+    [
+      "Noche",
+      "96"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Almizclado",
+      70
+    ],
+    [
+      "Atalcado",
+      62
+    ],
+    [
+      "Floral blanco",
+      56
+    ],
+    [
+      "Dulce",
+      54
+    ],
+    [
+      "Afrutados",
+      54
+    ],
+    [
+      "Aromático",
+      52
+    ],
+    [
+      "Fresco especiado",
+      48
+    ],
+    [
+      "Amaderado",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "delilah-viola",
+  "nombre": "Delilah Viola - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de florales, fresco, atalcado, violeta.",
+  "indicadores": [
+    [
+      "Invierno",
+      "4"
+    ],
+    [
+      "Primavera",
+      "46"
+    ],
+    [
+      "Verano",
+      "36"
+    ],
+    [
+      "Otoño",
+      "7"
+    ],
+    [
+      "Día",
+      "38"
+    ],
+    [
+      "Noche",
+      "9"
+    ]
+  ],
+  "acordes": [
+    [
+      "Florales",
+      100
+    ],
+    [
+      "Fresco",
+      88
+    ],
+    [
+      "Atalcado",
+      80
+    ],
+    [
+      "Violeta",
+      77
+    ],
+    [
+      "Verde",
+      60
+    ],
+    [
+      "Floral blanco",
+      59
+    ],
+    [
+      "Dulce",
+      58
+    ],
+    [
+      "Almizclado",
+      56
+    ],
+    [
+      "Afrutados",
+      49
+    ],
+    [
+      "Amaderado",
+      49
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "desirable-addiction-114790",
+  "nombre": "Desirable Addiction - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de dulce, avainillado, floral blanco, lactónico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "66"
+    ],
+    [
+      "Primavera",
+      "51"
+    ],
+    [
+      "Verano",
+      "40"
+    ],
+    [
+      "Otoño",
+      "67"
+    ],
+    [
+      "Día",
+      "70"
+    ],
+    [
+      "Noche",
+      "55"
+    ]
+  ],
+  "acordes": [
+    [
+      "Dulce",
+      100
+    ],
+    [
+      "Avainillado",
+      88
+    ],
+    [
+      "Floral blanco",
+      72
+    ],
+    [
+      "Lactónico",
+      57
+    ],
+    [
+      "Ron",
+      56
+    ],
+    [
+      "Cítrico",
+      51
+    ],
+    [
+      "Atalcado",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "desirable-addiction-132385",
+  "nombre": "Desirable Addiction - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de dulce, floral blanco, avainillado, ron.",
+  "indicadores": [
+    [
+      "Invierno",
+      "7"
+    ],
+    [
+      "Primavera",
+      "5"
+    ],
+    [
+      "Verano",
+      "5"
+    ],
+    [
+      "Otoño",
+      "7"
+    ],
+    [
+      "Día",
+      "5"
+    ],
+    [
+      "Noche",
+      "4"
+    ]
+  ],
+  "acordes": [
+    [
+      "Dulce",
+      100
+    ],
+    [
+      "Floral blanco",
+      80
+    ],
+    [
+      "Avainillado",
+      80
+    ],
+    [
+      "Ron",
+      70
+    ],
+    [
+      "Lactónico",
+      55
+    ],
+    [
+      "Cítrico",
+      55
+    ],
+    [
+      "Amaderado",
+      45
+    ],
+    [
+      "Atalcado",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "dublin-leather",
+  "nombre": "Dublin Leather - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de aromático, fresco especiado, cuero, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "42"
+    ],
+    [
+      "Primavera",
+      "42"
+    ],
+    [
+      "Verano",
+      "21"
+    ],
+    [
+      "Otoño",
+      "52"
+    ],
+    [
+      "Día",
+      "43"
+    ],
+    [
+      "Noche",
+      "39"
+    ]
+  ],
+  "acordes": [
+    [
+      "Aromático",
+      100
+    ],
+    [
+      "Fresco especiado",
+      79
+    ],
+    [
+      "Cuero",
+      78
+    ],
+    [
+      "Amaderado",
+      59
+    ],
+    [
+      "Animálico",
+      56
+    ],
+    [
+      "Ahumado",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "ebene",
+  "nombre": "Ébène - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, avainillado, cálido especiado, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "211"
+    ],
+    [
+      "Primavera",
+      "61"
+    ],
+    [
+      "Verano",
+      "20"
+    ],
+    [
+      "Otoño",
+      "176"
+    ],
+    [
+      "Día",
+      "64"
+    ],
+    [
+      "Noche",
+      "183"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Avainillado",
+      74
+    ],
+    [
+      "Cálido especiado",
+      69
+    ],
+    [
+      "Amaderado",
+      57
+    ],
+    [
+      "Balsámico",
+      53
+    ],
+    [
+      "Atalcado",
+      51
+    ],
+    [
+      "Aromático",
+      50
+    ],
+    [
+      "Fresco especiado",
+      48
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "eclat-de-lune",
+  "nombre": "Eclat De Lune - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, nardos, cítrico, animálico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "31"
+    ],
+    [
+      "Primavera",
+      "70"
+    ],
+    [
+      "Verano",
+      "52"
+    ],
+    [
+      "Otoño",
+      "41"
+    ],
+    [
+      "Día",
+      "72"
+    ],
+    [
+      "Noche",
+      "32"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Nardos",
+      72
+    ],
+    [
+      "Cítrico",
+      56
+    ],
+    [
+      "Animálico",
+      51
+    ],
+    [
+      "Amaderado",
+      48
+    ],
+    [
+      "Dulce",
+      47
+    ],
+    [
+      "Pachulí",
+      46
+    ],
+    [
+      "Afrutados",
+      46
+    ],
+    [
+      "Fresco especiado",
+      44
+    ],
+    [
+      "Aromático",
+      44
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "eminent-royal",
+  "nombre": "Eminent Royal - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, cítrico, avainillado, rosas.",
+  "indicadores": [
+    [
+      "Invierno",
+      "0"
+    ],
+    [
+      "Primavera",
+      "1"
+    ],
+    [
+      "Verano",
+      "0"
+    ],
+    [
+      "Otoño",
+      "0"
+    ],
+    [
+      "Día",
+      "0"
+    ],
+    [
+      "Noche",
+      "0"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Cítrico",
+      97
+    ],
+    [
+      "Avainillado",
+      73
+    ],
+    [
+      "Rosas",
+      73
+    ],
+    [
+      "Pachulí",
+      73
+    ],
+    [
+      "Ámbar",
+      73
+    ],
+    [
+      "Atalcado",
+      71
+    ],
+    [
+      "Cálido especiado",
+      69
+    ],
+    [
+      "Balsámico",
+      58
+    ],
+    [
+      "Floral blanco",
+      52
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "encode",
+  "nombre": "Encode - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de aromático, fresco especiado, cítrico, cálido especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "14"
+    ],
+    [
+      "Primavera",
+      "33"
+    ],
+    [
+      "Verano",
+      "31"
+    ],
+    [
+      "Otoño",
+      "24"
+    ],
+    [
+      "Día",
+      "30"
+    ],
+    [
+      "Noche",
+      "16"
+    ]
+  ],
+  "acordes": [
+    [
+      "Aromático",
+      100
+    ],
+    [
+      "Fresco especiado",
+      88
+    ],
+    [
+      "Cítrico",
+      84
+    ],
+    [
+      "Cálido especiado",
+      76
+    ],
+    [
+      "Cacao",
+      70
+    ],
+    [
+      "Ámbar",
+      70
+    ],
+    [
+      "Amaderado",
+      68
+    ],
+    [
+      "Cuero",
+      66
+    ],
+    [
+      "Almizclado",
+      61
+    ],
+    [
+      "Herbal",
+      58
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "encode-blue",
+  "nombre": "Encode Blue - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de marino, cítrico, amaderado, aromático.",
+  "indicadores": [
+    [
+      "Invierno",
+      "12"
+    ],
+    [
+      "Primavera",
+      "17"
+    ],
+    [
+      "Verano",
+      "18"
+    ],
+    [
+      "Otoño",
+      "8"
+    ],
+    [
+      "Día",
+      "15"
+    ],
+    [
+      "Noche",
+      "6"
+    ]
+  ],
+  "acordes": [
+    [
+      "Marino",
+      100
+    ],
+    [
+      "Cítrico",
+      97
+    ],
+    [
+      "Amaderado",
+      91
+    ],
+    [
+      "Aromático",
+      91
+    ],
+    [
+      "Afrutados",
+      84
+    ],
+    [
+      "Ámbar",
+      84
+    ],
+    [
+      "Animálico",
+      83
+    ],
+    [
+      "Cuero",
+      70
+    ],
+    [
+      "Fresco especiado",
+      64
+    ],
+    [
+      "Salado",
+      62
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "eternal-touch",
+  "nombre": "Eternal Touch - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de avainillado, dulce, tabaco, cálido especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "254"
+    ],
+    [
+      "Primavera",
+      "59"
+    ],
+    [
+      "Verano",
+      "15"
+    ],
+    [
+      "Otoño",
+      "228"
+    ],
+    [
+      "Día",
+      "91"
+    ],
+    [
+      "Noche",
+      "204"
+    ]
+  ],
+  "acordes": [
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Dulce",
+      99
+    ],
+    [
+      "Tabaco",
+      93
+    ],
+    [
+      "Cálido especiado",
+      91
+    ],
+    [
+      "Amaderado",
+      60
+    ],
+    [
+      "Afrutados",
+      58
+    ],
+    [
+      "Cacao",
+      53
+    ],
+    [
+      "Floral blanco",
+      49
+    ],
+    [
+      "Atalcado",
+      48
+    ],
+    [
+      "Ámbar",
+      44
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "ethnic-oud",
+  "nombre": "Ethnic Oud - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de fresco especiado, ámbar, oud, cuero.",
+  "indicadores": [
+    [
+      "Invierno",
+      "33"
+    ],
+    [
+      "Primavera",
+      "12"
+    ],
+    [
+      "Verano",
+      "5"
+    ],
+    [
+      "Otoño",
+      "33"
+    ],
+    [
+      "Día",
+      "11"
+    ],
+    [
+      "Noche",
+      "31"
+    ]
+  ],
+  "acordes": [
+    [
+      "Fresco especiado",
+      100
+    ],
+    [
+      "Ámbar",
+      97
+    ],
+    [
+      "Oud",
+      73
+    ],
+    [
+      "Cuero",
+      73
+    ],
+    [
+      "Animálico",
+      57
+    ],
+    [
+      "Amaderado",
+      56
+    ],
+    [
+      "Cálido especiado",
+      54
+    ],
+    [
+      "Aromático",
+      51
+    ],
+    [
+      "Balsámico",
+      50
+    ],
+    [
+      "Cítrico",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "euzonea",
+  "nombre": "Euzonea - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de florales, atalcado, amaderado, violeta.",
+  "indicadores": [
+    [
+      "Invierno",
+      "11"
+    ],
+    [
+      "Primavera",
+      "12"
+    ],
+    [
+      "Verano",
+      "8"
+    ],
+    [
+      "Otoño",
+      "14"
+    ],
+    [
+      "Día",
+      "8"
+    ],
+    [
+      "Noche",
+      "9"
+    ]
+  ],
+  "acordes": [
+    [
+      "Florales",
+      100
+    ],
+    [
+      "Atalcado",
+      85
+    ],
+    [
+      "Amaderado",
+      71
+    ],
+    [
+      "Violeta",
+      66
+    ],
+    [
+      "Ámbar",
+      66
+    ],
+    [
+      "Dulce",
+      65
+    ],
+    [
+      "Almizclado",
+      59
+    ],
+    [
+      "Afrutados",
+      55
+    ],
+    [
+      "Acuático",
+      51
+    ],
+    [
+      "Ozónico",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "exclusif-oud",
+  "nombre": "Exclusif Oud - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cálido especiado, oud, amaderado, fresco especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "53"
+    ],
+    [
+      "Primavera",
+      "26"
+    ],
+    [
+      "Verano",
+      "7"
+    ],
+    [
+      "Otoño",
+      "48"
+    ],
+    [
+      "Día",
+      "29"
+    ],
+    [
+      "Noche",
+      "51"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cálido especiado",
+      100
+    ],
+    [
+      "Oud",
+      85
+    ],
+    [
+      "Amaderado",
+      66
+    ],
+    [
+      "Fresco especiado",
+      65
+    ],
+    [
+      "Cuero",
+      64
+    ],
+    [
+      "Aromático",
+      59
+    ],
+    [
+      "Rosas",
+      55
+    ],
+    [
+      "Ámbar",
+      50
+    ],
+    [
+      "Terrosos",
+      47
+    ],
+    [
+      "Animálico",
+      46
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "exclusif-rose",
+  "nombre": "Exclusif Rose - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, rosas, florales, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "78"
+    ],
+    [
+      "Primavera",
+      "63"
+    ],
+    [
+      "Verano",
+      "27"
+    ],
+    [
+      "Otoño",
+      "86"
+    ],
+    [
+      "Día",
+      "66"
+    ],
+    [
+      "Noche",
+      "72"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Rosas",
+      96
+    ],
+    [
+      "Florales",
+      96
+    ],
+    [
+      "Amaderado",
+      76
+    ],
+    [
+      "Fresco",
+      64
+    ],
+    [
+      "Dulce",
+      59
+    ],
+    [
+      "Afrutados",
+      58
+    ],
+    [
+      "Almizclado",
+      54
+    ],
+    [
+      "Cítrico",
+      53
+    ],
+    [
+      "Atalcado",
+      51
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "exclusif-saffron",
+  "nombre": "Exclusif Saffron - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cálido especiado, cuero, avainillado, afrutados.",
+  "indicadores": [
+    [
+      "Invierno",
+      "124"
+    ],
+    [
+      "Primavera",
+      "56"
+    ],
+    [
+      "Verano",
+      "15"
+    ],
+    [
+      "Otoño",
+      "117"
+    ],
+    [
+      "Día",
+      "69"
+    ],
+    [
+      "Noche",
+      "108"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cálido especiado",
+      100
+    ],
+    [
+      "Cuero",
+      87
+    ],
+    [
+      "Avainillado",
+      85
+    ],
+    [
+      "Afrutados",
+      73
+    ],
+    [
+      "Metálico",
+      67
+    ],
+    [
+      "Amaderado",
+      63
+    ],
+    [
+      "Atalcado",
+      54
+    ],
+    [
+      "Tabaco",
+      52
+    ],
+    [
+      "Rosas",
+      51
+    ],
+    [
+      "Iris",
+      51
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "exclusif-tabac",
+  "nombre": "Exclusif Tabac - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, tabaco, dulce, pachulí.",
+  "indicadores": [
+    [
+      "Invierno",
+      "314"
+    ],
+    [
+      "Primavera",
+      "117"
+    ],
+    [
+      "Verano",
+      "32"
+    ],
+    [
+      "Otoño",
+      "291"
+    ],
+    [
+      "Día",
+      "136"
+    ],
+    [
+      "Noche",
+      "279"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Tabaco",
+      86
+    ],
+    [
+      "Dulce",
+      73
+    ],
+    [
+      "Pachulí",
+      69
+    ],
+    [
+      "Aromático",
+      68
+    ],
+    [
+      "Terrosos",
+      61
+    ],
+    [
+      "Cálido especiado",
+      57
+    ],
+    [
+      "Avainillado",
+      56
+    ],
+    [
+      "Afrutados",
+      50
+    ],
+    [
+      "Ámbar",
+      49
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "expose-blanc",
+  "nombre": "Expose Blanc - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de almizclado, lavanda, aromático, cálido especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "28"
+    ],
+    [
+      "Primavera",
+      "40"
+    ],
+    [
+      "Verano",
+      "30"
+    ],
+    [
+      "Otoño",
+      "40"
+    ],
+    [
+      "Día",
+      "34"
+    ],
+    [
+      "Noche",
+      "30"
+    ]
+  ],
+  "acordes": [
+    [
+      "Almizclado",
+      100
+    ],
+    [
+      "Lavanda",
+      98
+    ],
+    [
+      "Aromático",
+      81
+    ],
+    [
+      "Cálido especiado",
+      80
+    ],
+    [
+      "Amaderado",
+      75
+    ],
+    [
+      "Fresco especiado",
+      62
+    ],
+    [
+      "Especiado suave",
+      58
+    ],
+    [
+      "Cítrico",
+      55
+    ],
+    [
+      "Atalcado",
+      54
+    ],
+    [
+      "Dulce",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "expose-intense",
+  "nombre": "Expose Intense - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, cálido especiado, dulce, afrutados.",
+  "indicadores": [
+    [
+      "Invierno",
+      "59"
+    ],
+    [
+      "Primavera",
+      "62"
+    ],
+    [
+      "Verano",
+      "30"
+    ],
+    [
+      "Otoño",
+      "66"
+    ],
+    [
+      "Día",
+      "52"
+    ],
+    [
+      "Noche",
+      "55"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Cálido especiado",
+      88
+    ],
+    [
+      "Dulce",
+      85
+    ],
+    [
+      "Afrutados",
+      82
+    ],
+    [
+      "Aromático",
+      78
+    ],
+    [
+      "Ahumado",
+      69
+    ],
+    [
+      "Avainillado",
+      65
+    ],
+    [
+      "Amaderado",
+      65
+    ],
+    [
+      "Cítrico",
+      54
+    ],
+    [
+      "Musgoso",
+      51
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "exquisite-prive",
+  "nombre": "Exquisite Privé - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, iris, atalcado, violeta.",
+  "indicadores": [
+    [
+      "Invierno",
+      "127"
+    ],
+    [
+      "Primavera",
+      "39"
+    ],
+    [
+      "Verano",
+      "9"
+    ],
+    [
+      "Otoño",
+      "122"
+    ],
+    [
+      "Día",
+      "59"
+    ],
+    [
+      "Noche",
+      "114"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Iris",
+      94
+    ],
+    [
+      "Atalcado",
+      91
+    ],
+    [
+      "Violeta",
+      71
+    ],
+    [
+      "Terrosos",
+      71
+    ],
+    [
+      "Ron",
+      69
+    ],
+    [
+      "Avainillado",
+      59
+    ],
+    [
+      "Cítrico",
+      49
+    ],
+    [
+      "Musgoso",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "extra-woods",
+  "nombre": "Extra Woods - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, amaderado, almizclado, atalcado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "4"
+    ],
+    [
+      "Primavera",
+      "6"
+    ],
+    [
+      "Verano",
+      "9"
+    ],
+    [
+      "Otoño",
+      "6"
+    ],
+    [
+      "Día",
+      "8"
+    ],
+    [
+      "Noche",
+      "4"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Amaderado",
+      88
+    ],
+    [
+      "Almizclado",
+      75
+    ],
+    [
+      "Atalcado",
+      70
+    ],
+    [
+      "Avainillado",
+      60
+    ],
+    [
+      "Aromático",
+      50
+    ],
+    [
+      "Fresco",
+      45
+    ],
+    [
+      "Fresco especiado",
+      44
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "extravagant-lover",
+  "nombre": "Extravagant Lover - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, cítrico, ámbar, avainillado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "31"
+    ],
+    [
+      "Primavera",
+      "79"
+    ],
+    [
+      "Verano",
+      "76"
+    ],
+    [
+      "Otoño",
+      "55"
+    ],
+    [
+      "Día",
+      "73"
+    ],
+    [
+      "Noche",
+      "47"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Cítrico",
+      93
+    ],
+    [
+      "Ámbar",
+      91
+    ],
+    [
+      "Avainillado",
+      68
+    ],
+    [
+      "Dulce",
+      63
+    ],
+    [
+      "Especiado suave",
+      62
+    ],
+    [
+      "Animálico",
+      52
+    ],
+    [
+      "Atalcado",
+      51
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "fabulo-intense",
+  "nombre": "Fabulo Intense - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, cuero, almendrado, avainillado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "676"
+    ],
+    [
+      "Primavera",
+      "493"
+    ],
+    [
+      "Verano",
+      "181"
+    ],
+    [
+      "Otoño",
+      "682"
+    ],
+    [
+      "Día",
+      "421"
+    ],
+    [
+      "Noche",
+      "648"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Cuero",
+      87
+    ],
+    [
+      "Almendrado",
+      86
+    ],
+    [
+      "Avainillado",
+      81
+    ],
+    [
+      "Ámbar",
+      79
+    ],
+    [
+      "Atalcado",
+      77
+    ],
+    [
+      "Aromático",
+      76
+    ],
+    [
+      "Lavanda",
+      70
+    ],
+    [
+      "Dulce",
+      69
+    ],
+    [
+      "Nueces",
+      64
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "flame-pure-woods",
+  "nombre": "Flame Pure Woods - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de oud, ámbar, almizclado, ahumado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "2"
+    ],
+    [
+      "Primavera",
+      "0"
+    ],
+    [
+      "Verano",
+      "1"
+    ],
+    [
+      "Otoño",
+      "2"
+    ],
+    [
+      "Día",
+      "1"
+    ],
+    [
+      "Noche",
+      "1"
+    ]
+  ],
+  "acordes": [
+    [
+      "Oud",
+      100
+    ],
+    [
+      "Ámbar",
+      95
+    ],
+    [
+      "Almizclado",
+      77
+    ],
+    [
+      "Ahumado",
+      67
+    ],
+    [
+      "Atalcado",
+      57
+    ],
+    [
+      "Balsámico",
+      53
+    ],
+    [
+      "Cálido especiado",
+      49
+    ],
+    [
+      "Fresco especiado",
+      44
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "flaming-elixir",
+  "nombre": "Flaming Elixir - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de ámbar, amaderado, cálido especiado, balsámico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "30"
+    ],
+    [
+      "Primavera",
+      "14"
+    ],
+    [
+      "Verano",
+      "1"
+    ],
+    [
+      "Otoño",
+      "32"
+    ],
+    [
+      "Día",
+      "22"
+    ],
+    [
+      "Noche",
+      "30"
+    ]
+  ],
+  "acordes": [
+    [
+      "Ámbar",
+      100
+    ],
+    [
+      "Amaderado",
+      71
+    ],
+    [
+      "Cálido especiado",
+      50
+    ],
+    [
+      "Balsámico",
+      44
+    ],
+    [
+      "Florales",
+      41
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "flint",
+  "nombre": "Flint - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, amaderado, almizclado, lavanda.",
+  "indicadores": [
+    [
+      "Invierno",
+      "0"
+    ],
+    [
+      "Primavera",
+      "7"
+    ],
+    [
+      "Verano",
+      "6"
+    ],
+    [
+      "Otoño",
+      "0"
+    ],
+    [
+      "Día",
+      "6"
+    ],
+    [
+      "Noche",
+      "3"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Amaderado",
+      83
+    ],
+    [
+      "Almizclado",
+      83
+    ],
+    [
+      "Lavanda",
+      83
+    ],
+    [
+      "Aromático",
+      77
+    ],
+    [
+      "Atalcado",
+      74
+    ],
+    [
+      "Cítrico",
+      65
+    ],
+    [
+      "Verde",
+      58
+    ],
+    [
+      "Fresco",
+      51
+    ],
+    [
+      "Fresco especiado",
+      49
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "floral-ambrosia",
+  "nombre": "Floral Ambrosia - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, nardos, iris, animálico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "12"
+    ],
+    [
+      "Primavera",
+      "26"
+    ],
+    [
+      "Verano",
+      "20"
+    ],
+    [
+      "Otoño",
+      "14"
+    ],
+    [
+      "Día",
+      "21"
+    ],
+    [
+      "Noche",
+      "13"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Nardos",
+      55
+    ],
+    [
+      "Iris",
+      44
+    ],
+    [
+      "Animálico",
+      41
+    ],
+    [
+      "Rosas",
+      41
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "floral-bloom",
+  "nombre": "Floral Bloom - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, nardos, afrutados, animálico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "2"
+    ],
+    [
+      "Primavera",
+      "15"
+    ],
+    [
+      "Verano",
+      "12"
+    ],
+    [
+      "Otoño",
+      "8"
+    ],
+    [
+      "Día",
+      "14"
+    ],
+    [
+      "Noche",
+      "3"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Nardos",
+      54
+    ],
+    [
+      "Afrutados",
+      47
+    ],
+    [
+      "Animálico",
+      43
+    ],
+    [
+      "Almizclado",
+      42
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "floral-profumo",
+  "nombre": "Floral Profumo - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, nardos, florales, floral amarillo.",
+  "indicadores": [
+    [
+      "Invierno",
+      "12"
+    ],
+    [
+      "Primavera",
+      "36"
+    ],
+    [
+      "Verano",
+      "26"
+    ],
+    [
+      "Otoño",
+      "19"
+    ],
+    [
+      "Día",
+      "30"
+    ],
+    [
+      "Noche",
+      "14"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Nardos",
+      66
+    ],
+    [
+      "Florales",
+      66
+    ],
+    [
+      "Floral amarillo",
+      56
+    ],
+    [
+      "Amaderado",
+      53
+    ],
+    [
+      "Atalcado",
+      50
+    ],
+    [
+      "Afrutados",
+      49
+    ],
+    [
+      "Ámbar",
+      48
+    ],
+    [
+      "Animálico",
+      45
+    ],
+    [
+      "Almizclado",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "florence",
+  "nombre": "Florence - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de floral blanco, afrutados, cítrico, avainillado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "23"
+    ],
+    [
+      "Primavera",
+      "70"
+    ],
+    [
+      "Verano",
+      "62"
+    ],
+    [
+      "Otoño",
+      "44"
+    ],
+    [
+      "Día",
+      "60"
+    ],
+    [
+      "Noche",
+      "34"
+    ]
+  ],
+  "acordes": [
+    [
+      "Floral blanco",
+      100
+    ],
+    [
+      "Afrutados",
+      81
+    ],
+    [
+      "Cítrico",
+      79
+    ],
+    [
+      "Avainillado",
+      78
+    ],
+    [
+      "Atalcado",
+      76
+    ],
+    [
+      "Almizclado",
+      63
+    ],
+    [
+      "Dulce",
+      63
+    ],
+    [
+      "Fresco especiado",
+      54
+    ],
+    [
+      "Especiado suave",
+      49
+    ],
+    [
+      "Florales",
+      49
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "florenza",
+  "nombre": "Florenza - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de florales, cítrico, rosas, fresco.",
+  "indicadores": [
+    [
+      "Invierno",
+      "4"
+    ],
+    [
+      "Primavera",
+      "22"
+    ],
+    [
+      "Verano",
+      "19"
+    ],
+    [
+      "Otoño",
+      "9"
+    ],
+    [
+      "Día",
+      "22"
+    ],
+    [
+      "Noche",
+      "4"
+    ]
+  ],
+  "acordes": [
+    [
+      "Florales",
+      100
+    ],
+    [
+      "Cítrico",
+      88
+    ],
+    [
+      "Rosas",
+      79
+    ],
+    [
+      "Fresco",
+      75
+    ],
+    [
+      "Afrutados",
+      62
+    ],
+    [
+      "Especiado suave",
+      60
+    ],
+    [
+      "Amaderado",
+      53
+    ],
+    [
+      "Pachulí",
+      44
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "flower-addiction",
+  "nombre": "Flower Addiction - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cítrico, floral blanco, afrutados, florales.",
+  "indicadores": [
+    [
+      "Invierno",
+      "5"
+    ],
+    [
+      "Primavera",
+      "12"
+    ],
+    [
+      "Verano",
+      "14"
+    ],
+    [
+      "Otoño",
+      "6"
+    ],
+    [
+      "Día",
+      "10"
+    ],
+    [
+      "Noche",
+      "6"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Floral blanco",
+      81
+    ],
+    [
+      "Afrutados",
+      66
+    ],
+    [
+      "Florales",
+      66
+    ],
+    [
+      "Fresco",
+      62
+    ],
+    [
+      "Fresco especiado",
+      55
+    ],
+    [
+      "Atalcado",
+      55
+    ],
+    [
+      "Dulce",
+      50
+    ],
+    [
+      "Amaderado",
+      48
+    ],
+    [
+      "Aromático",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "forbidden-love",
+  "nombre": "Forbidden Love - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de acerezado, dulce, avainillado, almendrado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "71"
+    ],
+    [
+      "Primavera",
+      "44"
+    ],
+    [
+      "Verano",
+      "18"
+    ],
+    [
+      "Otoño",
+      "74"
+    ],
+    [
+      "Día",
+      "63"
+    ],
+    [
+      "Noche",
+      "66"
+    ]
+  ],
+  "acordes": [
+    [
+      "Acerezado",
+      100
+    ],
+    [
+      "Dulce",
+      61
+    ],
+    [
+      "Avainillado",
+      52
+    ],
+    [
+      "Almendrado",
+      51
+    ],
+    [
+      "Afrutados",
+      51
+    ],
+    [
+      "Nueces",
+      48
+    ],
+    [
+      "Cálido especiado",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "fortnight",
+  "nombre": "Fortnight - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cuero, fresco especiado, amaderado, cítrico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "127"
+    ],
+    [
+      "Primavera",
+      "117"
+    ],
+    [
+      "Verano",
+      "52"
+    ],
+    [
+      "Otoño",
+      "139"
+    ],
+    [
+      "Día",
+      "103"
+    ],
+    [
+      "Noche",
+      "123"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cuero",
+      100
+    ],
+    [
+      "Fresco especiado",
+      99
+    ],
+    [
+      "Amaderado",
+      99
+    ],
+    [
+      "Cítrico",
+      96
+    ],
+    [
+      "Ozónico",
+      91
+    ],
+    [
+      "Aromático",
+      84
+    ],
+    [
+      "Animálico",
+      75
+    ],
+    [
+      "Acuático",
+      75
+    ],
+    [
+      "Florales",
+      73
+    ],
+    [
+      "Cálido especiado",
+      65
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "fusion-intense",
+  "nombre": "Fusion Intense - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, aromático, cuero, almendrado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "205"
+    ],
+    [
+      "Primavera",
+      "141"
+    ],
+    [
+      "Verano",
+      "45"
+    ],
+    [
+      "Otoño",
+      "212"
+    ],
+    [
+      "Día",
+      "124"
+    ],
+    [
+      "Noche",
+      "196"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Aromático",
+      94
+    ],
+    [
+      "Cuero",
+      89
+    ],
+    [
+      "Almendrado",
+      86
+    ],
+    [
+      "Avainillado",
+      83
+    ],
+    [
+      "Ámbar",
+      79
+    ],
+    [
+      "Atalcado",
+      76
+    ],
+    [
+      "Lavanda",
+      73
+    ],
+    [
+      "Dulce",
+      71
+    ],
+    [
+      "Nueces",
+      63
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "galactic-men-elixir",
+  "nombre": "Galactic Men Elixir - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, whisky, avainillado, cálido especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "60"
+    ],
+    [
+      "Primavera",
+      "17"
+    ],
+    [
+      "Verano",
+      "2"
+    ],
+    [
+      "Otoño",
+      "56"
+    ],
+    [
+      "Día",
+      "30"
+    ],
+    [
+      "Noche",
+      "50"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Whisky",
+      90
+    ],
+    [
+      "Avainillado",
+      81
+    ],
+    [
+      "Cálido especiado",
+      81
+    ],
+    [
+      "Pachulí",
+      78
+    ],
+    [
+      "Cítrico",
+      62
+    ],
+    [
+      "Ámbar",
+      58
+    ],
+    [
+      "Atalcado",
+      57
+    ],
+    [
+      "Café",
+      55
+    ],
+    [
+      "Balsámico",
+      52
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "galactic-men-intense",
+  "nombre": "Galactic Men Intense - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de dulce, cálido especiado, tabaco, ámbar.",
+  "indicadores": [
+    [
+      "Invierno",
+      "163"
+    ],
+    [
+      "Primavera",
+      "126"
+    ],
+    [
+      "Verano",
+      "25"
+    ],
+    [
+      "Otoño",
+      "173"
+    ],
+    [
+      "Día",
+      "123"
+    ],
+    [
+      "Noche",
+      "153"
+    ]
+  ],
+  "acordes": [
+    [
+      "Dulce",
+      100
+    ],
+    [
+      "Cálido especiado",
+      90
+    ],
+    [
+      "Tabaco",
+      86
+    ],
+    [
+      "Ámbar",
+      85
+    ],
+    [
+      "Amaderado",
+      84
+    ],
+    [
+      "Amielado",
+      79
+    ],
+    [
+      "Cacao",
+      76
+    ],
+    [
+      "Avainillado",
+      72
+    ],
+    [
+      "Pachulí",
+      70
+    ],
+    [
+      "Atalcado",
+      63
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "galatea",
+  "nombre": "Galatea - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cuero, aromático, amaderado, animálico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "254"
+    ],
+    [
+      "Primavera",
+      "162"
+    ],
+    [
+      "Verano",
+      "32"
+    ],
+    [
+      "Otoño",
+      "235"
+    ],
+    [
+      "Día",
+      "143"
+    ],
+    [
+      "Noche",
+      "225"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cuero",
+      100
+    ],
+    [
+      "Aromático",
+      92
+    ],
+    [
+      "Amaderado",
+      90
+    ],
+    [
+      "Animálico",
+      70
+    ],
+    [
+      "Verde",
+      68
+    ],
+    [
+      "Afrutados",
+      66
+    ],
+    [
+      "Fresco especiado",
+      56
+    ],
+    [
+      "Rosas",
+      56
+    ],
+    [
+      "Atalcado",
+      53
+    ],
+    [
+      "Dulce",
+      52
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "glacier-bella",
+  "nombre": "Glacier Bella - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de avainillado, cítrico, atalcado, dulce.",
+  "indicadores": [
+    [
+      "Invierno",
+      "189"
+    ],
+    [
+      "Primavera",
+      "154"
+    ],
+    [
+      "Verano",
+      "105"
+    ],
+    [
+      "Otoño",
+      "193"
+    ],
+    [
+      "Día",
+      "163"
+    ],
+    [
+      "Noche",
+      "170"
+    ]
+  ],
+  "acordes": [
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Cítrico",
+      55
+    ],
+    [
+      "Atalcado",
+      53
+    ],
+    [
+      "Dulce",
+      44
+    ],
+    [
+      "Fresco especiado",
+      42
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "glacier-bold",
+  "nombre": "Glacier Bold - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de coco, avainillado, dulce, cítrico.",
+  "indicadores": [
+    [
+      "Invierno",
+      "126"
+    ],
+    [
+      "Primavera",
+      "406"
+    ],
+    [
+      "Verano",
+      "442"
+    ],
+    [
+      "Otoño",
+      "241"
+    ],
+    [
+      "Día",
+      "391"
+    ],
+    [
+      "Noche",
+      "280"
+    ]
+  ],
+  "acordes": [
+    [
+      "Coco",
+      100
+    ],
+    [
+      "Avainillado",
+      95
+    ],
+    [
+      "Dulce",
+      83
+    ],
+    [
+      "Cítrico",
+      72
+    ],
+    [
+      "Aromático",
+      62
+    ],
+    [
+      "Ámbar",
+      61
+    ],
+    [
+      "Lactónico",
+      55
+    ],
+    [
+      "Fresco especiado",
+      51
+    ],
+    [
+      "Tropical",
+      51
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "glacier-gold",
+  "nombre": "Glacier Gold - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de avainillado, ámbar, cálido especiado, aromático.",
+  "indicadores": [
+    [
+      "Invierno",
+      "59"
+    ],
+    [
+      "Primavera",
+      "31"
+    ],
+    [
+      "Verano",
+      "5"
+    ],
+    [
+      "Otoño",
+      "58"
+    ],
+    [
+      "Día",
+      "24"
+    ],
+    [
+      "Noche",
+      "56"
+    ]
+  ],
+  "acordes": [
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Ámbar",
+      88
+    ],
+    [
+      "Cálido especiado",
+      71
+    ],
+    [
+      "Aromático",
+      68
+    ],
+    [
+      "Fresco especiado",
+      62
+    ],
+    [
+      "Atalcado",
+      62
+    ],
+    [
+      "Dulce",
+      55
+    ],
+    [
+      "Canela",
+      52
+    ],
+    [
+      "Verde",
+      51
+    ],
+    [
+      "Lavanda",
+      47
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "glacier-heaven",
+  "nombre": "Glacier Heaven - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de almizclado, cítrico, cálido especiado, amaderado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "0"
+    ],
+    [
+      "Primavera",
+      "2"
+    ],
+    [
+      "Verano",
+      "4"
+    ],
+    [
+      "Otoño",
+      "0"
+    ],
+    [
+      "Día",
+      "3"
+    ],
+    [
+      "Noche",
+      "1"
+    ]
+  ],
+  "acordes": [
+    [
+      "Almizclado",
+      100
+    ],
+    [
+      "Cítrico",
+      100
+    ],
+    [
+      "Cálido especiado",
+      79
+    ],
+    [
+      "Amaderado",
+      65
+    ],
+    [
+      "Atalcado",
+      65
+    ],
+    [
+      "Fresco",
+      65
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "glacier-le-noir",
+  "nombre": "Glacier Le Noir - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cálido especiado, avainillado, aromático, lavanda.",
+  "indicadores": [
+    [
+      "Invierno",
+      "451"
+    ],
+    [
+      "Primavera",
+      "205"
+    ],
+    [
+      "Verano",
+      "45"
+    ],
+    [
+      "Otoño",
+      "403"
+    ],
+    [
+      "Día",
+      "189"
+    ],
+    [
+      "Noche",
+      "393"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cálido especiado",
+      100
+    ],
+    [
+      "Avainillado",
+      91
+    ],
+    [
+      "Aromático",
+      88
+    ],
+    [
+      "Lavanda",
+      87
+    ],
+    [
+      "Iris",
+      77
+    ],
+    [
+      "Atalcado",
+      77
+    ],
+    [
+      "Violeta",
+      54
+    ],
+    [
+      "Terrosos",
+      49
+    ],
+    [
+      "Fresco especiado",
+      47
+    ],
+    [
+      "Dulce",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "glacier-pour-homme",
+  "nombre": "Glacier Pour Homme - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de aromático, avainillado, lavanda, fresco especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "91"
+    ],
+    [
+      "Primavera",
+      "157"
+    ],
+    [
+      "Verano",
+      "116"
+    ],
+    [
+      "Otoño",
+      "134"
+    ],
+    [
+      "Día",
+      "153"
+    ],
+    [
+      "Noche",
+      "87"
+    ]
+  ],
+  "acordes": [
+    [
+      "Aromático",
+      100
+    ],
+    [
+      "Avainillado",
+      84
+    ],
+    [
+      "Lavanda",
+      84
+    ],
+    [
+      "Fresco especiado",
+      75
+    ],
+    [
+      "Verde",
+      72
+    ],
+    [
+      "Cálido especiado",
+      62
+    ],
+    [
+      "Dulce",
+      55
+    ],
+    [
+      "Ámbar",
+      55
+    ],
+    [
+      "Atalcado",
+      50
+    ],
+    [
+      "Cítrico",
+      50
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "glacier-ultra",
+  "nombre": "Glacier Ultra - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de cálido especiado, avainillado, aromático, fresco especiado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "133"
+    ],
+    [
+      "Primavera",
+      "102"
+    ],
+    [
+      "Verano",
+      "34"
+    ],
+    [
+      "Otoño",
+      "118"
+    ],
+    [
+      "Día",
+      "86"
+    ],
+    [
+      "Noche",
+      "130"
+    ]
+  ],
+  "acordes": [
+    [
+      "Cálido especiado",
+      100
+    ],
+    [
+      "Avainillado",
+      100
+    ],
+    [
+      "Aromático",
+      97
+    ],
+    [
+      "Fresco especiado",
+      88
+    ],
+    [
+      "Lavanda",
+      85
+    ],
+    [
+      "Ámbar",
+      80
+    ],
+    [
+      "Canela",
+      78
+    ],
+    [
+      "Amaderado",
+      71
+    ],
+    [
+      "Cítrico",
+      63
+    ],
+    [
+      "Atalcado",
+      63
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "glossy",
+  "nombre": "Glossy - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de amaderado, almizclado, dulce, atalcado.",
+  "indicadores": [
+    [
+      "Invierno",
+      "20"
+    ],
+    [
+      "Primavera",
+      "30"
+    ],
+    [
+      "Verano",
+      "20"
+    ],
+    [
+      "Otoño",
+      "31"
+    ],
+    [
+      "Día",
+      "33"
+    ],
+    [
+      "Noche",
+      "22"
+    ]
+  ],
+  "acordes": [
+    [
+      "Amaderado",
+      100
+    ],
+    [
+      "Almizclado",
+      93
+    ],
+    [
+      "Dulce",
+      87
+    ],
+    [
+      "Atalcado",
+      81
+    ],
+    [
+      "Avainillado",
+      80
+    ],
+    [
+      "Afrutados",
+      77
+    ],
+    [
+      "Floral blanco",
+      73
+    ],
+    [
+      "Pachulí",
+      70
+    ],
+    [
+      "Especiado suave",
+      65
+    ],
+    [
+      "Cítrico",
+      58
+    ]
+  ],
+  "fotosPendientes": true
+},
+{
+  "id": "jean-lowe-immortal",
+  "nombre": "Jean Lowe Immortal - Maison Alhambra",
+  "genero": null,
+  "ml": null,
+  "etiqueta": "",
+  "color": "#c4aa76",
+  "desc": "Perfil aromático con acordes de fresco especiado, cítrico, aromático, ámbar.",
+  "indicadores": [
+    [
+      "Invierno",
+      "435"
+    ],
+    [
+      "Primavera",
+      "2500"
+    ],
+    [
+      "Verano",
+      "2600"
+    ],
+    [
+      "Otoño",
+      "1500"
+    ],
+    [
+      "Día",
+      "2500"
+    ],
+    [
+      "Noche",
+      "1000"
+    ]
+  ],
+  "acordes": [
+    [
+      "Fresco especiado",
+      100
+    ],
+    [
+      "Cítrico",
+      88
+    ],
+    [
+      "Aromático",
+      75
+    ],
+    [
+      "Ámbar",
+      70
+    ],
+    [
+      "Fresco",
+      55
+    ],
+    [
+      "Almizclado",
+      47
+    ],
+    [
+      "Herbal",
+      45
+    ],
+    [
+      "Acuático",
+      45
+    ]
+  ],
+  "fotosPendientes": true
+},
 ];
 
 /* Colores de las barras de acordes (los que no estén acá usan un gris) */
@@ -7790,7 +14910,9 @@ document.addEventListener(
 /* La imagen principal visible primero tiene prioridad cuando entra en pantalla.
    Las restantes se cargan solo al acercarse; tamaño declarado y decodificación asíncrona. */
 const imagen = (p, i, mini = false, prioritaria = false) =>
-  `<img src="${esc(p._fotos[i] || "")}" alt="${mini ? "" : esc(p.nombre + " · " + TIPOS_FOTO[i])}" width="600" height="400" loading="lazy" decoding="async" fetchpriority="${prioritaria ? "high" : "low"}" data-color="${p.color}" data-i="${i}" ${mini ? "data-mini" : ""}>`;
+  p.fotosPendientes
+    ? (i === 0 ? `<div class="ph" ${mini ? 'style="position:relative;width:100%;height:100%;padding:6% 28%"' : ""} role="img" aria-label="Imagen pendiente">${frasco(p.color)}</div>` : (mini ? `<span aria-label="Imagen de notas pendiente">—</span>` : `<div class="ph ph-txt"><p>Imagen de notas pendiente</p></div>`))
+    : `<img src="${esc(p._fotos[i] || "")}" alt="${mini ? "" : esc(p.nombre + " · " + TIPOS_FOTO[i])}" width="600" height="400" loading="lazy" decoding="async" fetchpriority="${prioritaria ? "high" : "low"}" data-color="${p.color}" data-i="${i}" ${mini ? "data-mini" : ""}>`;
 
 /* =====================================================================
    INSTAGRAM: copiar el mensaje y abrir el chat directo
@@ -7908,7 +15030,7 @@ const COLOR_CUANDO = {
    ESTADO
    ===================================================================== */
 
-const generos = [...new Set(PERFUMES.map((p) => p.genero))];
+const generos = [...new Set(PERFUMES.map((p) => p.genero).filter(Boolean))];
 
 const marcas = [...new Set(PERFUMES.map((p) => p.marca).filter(Boolean))].sort(
   (a, b) => a.localeCompare(b, "es"),
@@ -8269,7 +15391,7 @@ function mostrarSugerencias() {
     resultadosSugeridos
       .map(
         (p, i) =>
-          `<button type="button" role="option" aria-selected="false" id="sug-${i}" class="sugerencia" data-sug-id="${esc(p.id)}"><span class="sugerencia-foto" style="--c:${esc(p.color)}">${imagen(p, 0, true)}</span><span class="sugerencia-datos"><strong>${esc(p.corto)}</strong><small>${esc(p.marca)} · ${p.ml} ml</small></span><span class="sugerencia-flecha" aria-hidden="true">↗</span></button>`,
+          `<button type="button" role="option" aria-selected="false" id="sug-${i}" class="sugerencia" data-sug-id="${esc(p.id)}"><span class="sugerencia-foto" style="--c:${esc(p.color)}">${imagen(p, 0, true)}</span><span class="sugerencia-datos"><strong>${esc(p.corto)}</strong><small>${esc(p.marca)}${p.ml ? ` · ${p.ml} ml` : ""}</small></span><span class="sugerencia-flecha" aria-hidden="true">↗</span></button>`,
       )
       .join("");
   sugerencias.hidden = false;
@@ -8587,7 +15709,7 @@ function renderCarrito() {
 
           return `<div class="fila-c" data-id="${id}">
         <span class="mini" style="--c:${p.color}">${imagen(p, 0)}</span>
-        <div><b>${esc(p.nombre)}</b><small>${p.ml} ML</small>
+        <div><b>${esc(p.nombre)}</b>${p.ml ? `<small>${p.ml} ML</small>` : ""}
           <div class="stepper" role="group" aria-label="Cantidad de ${esc(p.nombre)}"><button data-menos aria-label="Quitar uno">−</button><span>${n}</span><button data-mas aria-label="Agregar uno">+</button></div></div>
         <div class="der"><button class="quitar" data-quitar>Eliminar</button></div>
       </div>`;
@@ -8696,7 +15818,7 @@ function afinHTML(p) {
 
 /* "Armaf | Hombre" */
 const tipoInterno = (p) =>
-  `${p.marca ? `<b>${esc(p.marca)}</b>` : ""}<span>${esc(p.genero)}</span>`;
+  `${p.marca ? `<b>${esc(p.marca)}</b>` : ""}${p.genero ? `<span>${esc(p.genero)}</span>` : ""}`;
 
 const tipoHTML = (p) => `<span class="tipo">${tipoInterno(p)}</span>`;
 
@@ -8710,7 +15832,7 @@ function tarjeta(p, posicion = 99) {
     <button class="info" data-abrir>
       ${tipoHTML(p)}
       <h3>${esc(p.corto)}</h3>
-      <span class="fila"><span class="ml">${p.ml} ML</span></span>
+      ${p.ml ? `<span class="fila"><span class="ml">${p.ml} ML</span></span>` : ""}
       ${afinHTML(p)}
     </button>
     <div class="accion">${accionHTML(p)}</div>
@@ -9025,7 +16147,7 @@ function abrir(id, desdeEnlace = false) {
 
   $("#f-nombre").textContent = p.corto;
 
-  $("#f-formato").textContent = `Eau de parfum · ${p.ml} ml`;
+  $("#f-formato").textContent = p.ml ? `Eau de parfum · ${p.ml} ml` : "";
 
   $("#f-desc").textContent = p.desc;
 
@@ -9439,7 +16561,7 @@ $("#genio-form").addEventListener("submit", (e) => {
               const texto = comunes.length
                 ? `Sus acordes ${comunes.join(" y ")} encajan con tu gusto.`
                 : "Su perfil aromático encaja con tus preferencias.";
-              return `<article class="genio-resultado"><span class="genio-orden">${i + 1}</span><span class="genio-foto" style="--c:${p.color}">${imagen(p, 0, true)}</span><div class="genio-detalle"><span class="genio-marca">${esc(p.marca)} · ${esc(p.genero)}</span><h4>${esc(p.corto)}</h4><p>${esc(texto)} ${esc(datos.momento === "Ambos" ? "Para uso versátil." : `Pensado para ${datos.momento.toLowerCase()}.`)}</p><button type="button" data-genio-ver="${esc(p.id)}">Ver fragancia →</button></div></article>`;
+              return `<article class="genio-resultado"><span class="genio-orden">${i + 1}</span><span class="genio-foto" style="--c:${p.color}">${imagen(p, 0, true)}</span><div class="genio-detalle"><span class="genio-marca">${esc(p.marca)}${p.genero ? ` · ${esc(p.genero)}` : ""}</span><h4>${esc(p.corto)}</h4><p>${esc(texto)} ${esc(datos.momento === "Ambos" ? "Para uso versátil." : `Pensado para ${datos.momento.toLowerCase()}.`)}</p><button type="button" data-genio-ver="${esc(p.id)}">Ver fragancia →</button></div></article>`;
             })
             .join("")}</div>`
         : "<p>No encontramos coincidencias claras. Probá con otra familia aromática.</p>"
@@ -9702,7 +16824,7 @@ function mostrarComparacion() {
       .map(
         (
           p,
-        ) => `<article class="comparacion-item"><span class="comp-foto" style="--c:${p.color}">${imagen(p, 0, true)}</span><span class="genio-marca">${esc(p.marca)} · ${esc(p.genero)}</span><h3>${esc(nombreComparacion(p))}</h3>
+        ) => `<article class="comparacion-item"><span class="comp-foto" style="--c:${p.color}">${imagen(p, 0, true)}</span><span class="genio-marca">${esc(p.marca)}${p.genero ? ` · ${esc(p.genero)}` : ""}</span><h3>${esc(nombreComparacion(p))}</h3>
     <h4>Acordes principales</h4>${[...p.acordes]
       .sort((x, y) => y[1] - x[1])
       .slice(0, 5)
