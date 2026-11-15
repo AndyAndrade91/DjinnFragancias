@@ -8932,10 +8932,10 @@ indicadores: [
   "id": "baroque-satin-oud",
   "nombre": "Baroque Satin Oud - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de rosas, cálido especiado, oud, avainillado.",
+  "color": "#4c293e",
+  "desc": "Azafrán, canela, cardamomo y naranja tangerina abren un corazón de rosa, madera de oud, iris y jazmín. El fondo combina vainilla, ámbar, cuero y pachulí.",
   "indicadores": [
     [
       "Invierno",
@@ -9003,17 +9003,16 @@ indicadores: [
       "Ámbar",
       51
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "berlinetta",
   "nombre": "Berlinetta - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de afrutados, cuero, atalcado, dulce.",
+  "color": "#d2b969",
+  "desc": "Ciruela y durazno dan paso a un corazón de violeta y peonía. El fondo reúne cuero, pachulí, almizcle y vainilla.",
   "indicadores": [
     [
       "Invierno",
@@ -9081,8 +9080,7 @@ indicadores: [
       "Almizclado",
       47
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "between-us",
