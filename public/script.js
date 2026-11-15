@@ -8405,10 +8405,10 @@ indicadores: [
   "id": "avant",
   "nombre": "Avant - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, fresco especiado, aromático, verde.",
+  "color": "#353535",
+  "desc": "Bergamota, limón y notas verdes abren una composición de pimienta negra, lavanda y jazmín. Vetiver, pachulí y almizcle completan el fondo.",
   "indicadores": [
     [
       "Invierno",
@@ -8464,17 +8464,16 @@ indicadores: [
       "Cálido especiado",
       46
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "avant-ruby",
   "nombre": "Avant Ruby - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, rosas, ámbar, almizclado.",
+  "color": "#a3153c",
+  "desc": "Naranja tangerina, bergamota y limón siciliano dan paso a un corazón de rosa, jazmín, naranja y canela. El fondo combina ámbar, almizcle, vetiver y pachulí.",
   "indicadores": [
     [
       "Invierno",
@@ -8542,8 +8541,7 @@ indicadores: [
       "Dulce",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "avant-silk",
