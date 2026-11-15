@@ -8060,10 +8060,10 @@ indicadores: [
   "id": "aoud-prestigium",
   "nombre": "Aoud Prestigium - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de ámbar, oud, cuero, amaderado.",
+  "color": "#302820",
+  "desc": "Raíz de lirio, pachulí y bergamota abren una composición de oud y maderas, acompañada por rosa y violeta. El fondo reúne ámbar, cuero y almizcle blanco.",
   "indicadores": [
     [
       "Invierno",
@@ -8131,17 +8131,16 @@ indicadores: [
       "Pachulí",
       49
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "aquilo",
   "nombre": "Aquilo - Maison Alhambra",
-  "genero": null,
-  "ml": null,
+  "genero": "Hombre",
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, aromático, marino, amaderado.",
+  "color": "#234d5a",
+  "desc": "Mandarina, naranja y petit grain dan paso a un corazón de algas marinas, flor del algodonero y lavanda. Las notas amaderadas, la esclarea y el cedro de Virginia se unen al ámbar y al pachulí en el fondo.",
   "indicadores": [
     [
       "Invierno",
@@ -8193,17 +8192,16 @@ indicadores: [
       "Atalcado",
       47
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "aromatic-rouge",
   "nombre": "Aromatic Rouge - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, floral blanco, fresco especiado, rosas.",
+  "color": "#b43e3e",
+  "desc": "Una salida de mandarina, jengibre y cardamomo acompaña un corazón de jazmín y rosa. Las notas amaderadas y el musgo completan el fondo.",
   "indicadores": [
     [
       "Invierno",
@@ -8271,8 +8269,7 @@ indicadores: [
       "Musgoso",
       48
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "athena",
