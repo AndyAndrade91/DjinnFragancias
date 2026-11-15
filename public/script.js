@@ -8778,10 +8778,10 @@ indicadores: [
   "id": "baroque-rouge-540",
   "nombre": "Baroque Rouge 540 - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de ámbar, cálido especiado, almizclado, amaderado.",
+  "color": "#bb3034",
+  "desc": "Azafrán, pera y mandarina abren un corazón de jazmín, ylang-ylang y azucena. El fondo combina ámbar, madera de cachemira y almizcle.",
   "indicadores": [
     [
       "Invierno",
@@ -8849,17 +8849,16 @@ indicadores: [
       "Tabaco",
       50
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "baroque-rouge-extrait",
   "nombre": "Baroque Rouge Extrait - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de amaderado, cálido especiado, almendrado, ámbar.",
+  "color": "#bd2926",
+  "desc": "Azafrán y almendra dan paso a un corazón de notas amaderadas, cedro y jazmín egipcio. El fondo reúne ámbar gris, notas amaderadas y almizcle.",
   "indicadores": [
     [
       "Invierno",
@@ -8927,8 +8926,7 @@ indicadores: [
       "Afrutados",
       56
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "baroque-satin-oud",
