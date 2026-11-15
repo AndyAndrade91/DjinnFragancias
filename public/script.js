@@ -9086,10 +9086,10 @@ indicadores: [
   "id": "black-origami",
   "nombre": "Black Origami - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cálido especiado, amaderado, terrosos, dulce.",
+  "color": "#b59035",
+  "desc": "Trufa, ylang-ylang, gardenia, jazmín, casis y cítricos abren una composición de orquídea, especias, frutas y flor de loto. El fondo combina chocolate, pachulí, vainilla, sándalo, incienso, ámbar, almizcle blanco y vetiver.",
   "indicadores": [
     [
       "Invierno",
@@ -9157,17 +9157,16 @@ indicadores: [
       "Pachulí",
       60
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "bright-peach",
   "nombre": "Bright Peach - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de afrutados, dulce, amielado, amaderado.",
+  "color": "#f47a31",
+  "desc": "Durazno, naranja sanguina y hojas verdes abren un corazón de pachulí. El fondo combina miel y coñac.",
   "indicadores": [
     [
       "Invierno",
@@ -9235,8 +9234,7 @@ indicadores: [
       "Florales",
       46
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "cassius",

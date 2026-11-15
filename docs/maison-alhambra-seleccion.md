@@ -3,8 +3,8 @@
 Lista de 100 perfumes indicada por el usuario. Se incorporan los 61 del archivo `maison_alhambra_61_nuevos_populares.txt`, Hercules y Jean Lowe Fantasme (con sus datos enviados por separado). Los 37 restantes ya tenían tarjeta.
 
 - **114 Maison Alhambra**: los 100 seleccionados y 14 extras con fotos hechas.
-- **24** tienen foto de producto y lámina de notas listas: 10 de los 100 y los 14 extras.
-- **90** seleccionados esperan fotos: 28 de los 38 nombres iniciales y los 62 restantes.
+- **26** tienen foto de producto y lámina de notas listas: 12 de los 100 y los 14 extras.
+- **88** seleccionados esperan fotos: 26 de los 38 nombres iniciales y los 62 restantes.
 - **48** tarjetas anteriores sin foto y fuera de la selección se retiran.
 - Las tarjetas conservadas, sus IDs y todas las fotos existentes se mantienen.
 
@@ -24,7 +24,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 5 | Tobacco Touch | Pendientes |
 | 6 | Kismet Magic | Pendientes |
 | 7 | Lovely Chèrie | Pendientes |
-| 8 | Bright Peach | Pendientes |
+| 8 | Bright Peach | Listas |
 | 9 | Delilah | Pendientes |
 | 10 | The Tux | Pendientes |
 | 11 | Jean Lowe Vibe | Pendientes |
@@ -75,7 +75,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 56 | Sensual Vanilla | Pendientes |
 | 57 | Ébène | Pendientes |
 | 58 | Victorioso Victory | Pendientes |
-| 59 | Black Origami | Pendientes |
+| 59 | Black Origami | Listas |
 | 60 | Anarch | Listas |
 | 61 | Yeah! Parfum | Pendientes |
 | 62 | Fusion Intense | Pendientes |
