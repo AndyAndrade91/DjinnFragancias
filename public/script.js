@@ -9240,10 +9240,10 @@ indicadores: [
   "id": "cassius",
   "nombre": "Cassius - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de avainillado, pachulí, fresco especiado, cálido especiado.",
+  "color": "#333134",
+  "desc": "Nuez moscada y manzana verde abren un corazón de haba tonka y rosa. El fondo combina pachulí y vainilla.",
   "indicadores": [
     [
       "Invierno",
@@ -9311,17 +9311,16 @@ indicadores: [
       "Atalcado",
       48
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "celeste",
   "nombre": "Céleste - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de floral blanco, floral amarillo, amaderado, dulce.",
+  "color": "#c5a64a",
+  "desc": "Limón y bergamota dan paso a un corazón de jazmín, lirio de los valles y rosa. El fondo reúne ylang-ylang, sándalo, almizcle y musgo.",
   "indicadores": [
     [
       "Invierno",
@@ -9389,8 +9388,7 @@ indicadores: [
       "Rosas",
       47
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "chants-tenderina",

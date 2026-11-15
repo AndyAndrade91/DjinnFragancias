@@ -3,8 +3,8 @@
 Lista de 100 perfumes indicada por el usuario. Se incorporan los 61 del archivo `maison_alhambra_61_nuevos_populares.txt`, Hercules y Jean Lowe Fantasme (con sus datos enviados por separado). Los 37 restantes ya tenían tarjeta.
 
 - **114 Maison Alhambra**: los 100 seleccionados y 14 extras con fotos hechas.
-- **26** tienen foto de producto y lámina de notas listas: 12 de los 100 y los 14 extras.
-- **88** seleccionados esperan fotos: 26 de los 38 nombres iniciales y los 62 restantes.
+- **28** tienen foto de producto y lámina de notas listas: 14 de los 100 y los 14 extras.
+- **86** seleccionados esperan fotos: 24 de los 38 nombres iniciales y los 62 restantes.
 - **48** tarjetas anteriores sin foto y fuera de la selección se retiran.
 - Las tarjetas conservadas, sus IDs y todas las fotos existentes se mantienen.
 
@@ -62,7 +62,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 43 | Jean Lowe Ombre | Pendientes |
 | 44 | Afro Leather | Listas |
 | 45 | Philos Pura | Pendientes |
-| 46 | Cassius | Pendientes |
+| 46 | Cassius | Listas |
 | 47 | Chants Tenderina | Pendientes |
 | 48 | Berlinetta | Listas |
 | 49 | Montaigne Coco | Pendientes |
@@ -112,7 +112,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 93 | La Voie | Pendientes |
 | 94 | Philos Centro | Pendientes |
 | 95 | Zaffiro Collection Crafted Oud | Pendientes |
-| 96 | Céleste | Pendientes |
+| 96 | Céleste | Listas |
 | 97 | Baroque Rouge Extrait | Listas |
 | 98 | So Candid | Pendientes |
 | 99 | Como Moiselle | Pendientes |
