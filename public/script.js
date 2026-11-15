@@ -8277,8 +8277,8 @@ indicadores: [
   "genero": null,
   "ml": null,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de avainillado, cítrico, floral blanco, dulce.",
+  "color": "#c8a35c",
+  "desc": "Naranja tangerina, pimienta rosa y bergamota abren un corazón de jazmín sambac, ylang-ylang y lirio de los valles. La vainilla se combina con sándalo y pachulí en el fondo.",
   "indicadores": [
     [
       "Invierno",
@@ -8342,17 +8342,16 @@ indicadores: [
       "Floral amarillo",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "aura-d-eclat",
   "nombre": "Aura D'Eclat - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de florales, fresco, verde, almizclado.",
+  "color": "#a394bf",
+  "desc": "Lila verde, hojas de té y peonía dan paso a un corazón de almizcle, hierba y flor del duraznero. Petit grain, cedro y osmanto chino completan el fondo floral y verde.",
   "indicadores": [
     [
       "Invierno",
@@ -8400,8 +8399,7 @@ indicadores: [
       "Atalcado",
       48
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "avant",
