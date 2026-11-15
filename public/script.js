@@ -8700,11 +8700,11 @@ indicadores: [
 {
   "id": "b-a-d-homme",
   "nombre": "B.A.D. Homme - Maison Alhambra",
-  "genero": null,
-  "ml": null,
+  "genero": "Hombre",
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cacao, cálido especiado, aromático, dulce.",
+  "color": "#584125",
+  "desc": "Limón, pimienta blanca y pimienta rosa abren un corazón de cedro y salvia. El fondo combina cacao y haba tonka.",
   "indicadores": [
     [
       "Invierno",
@@ -8772,8 +8772,7 @@ indicadores: [
       "Ámbar",
       58
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "baroque-rouge-540",
