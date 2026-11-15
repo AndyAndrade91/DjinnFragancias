@@ -8547,10 +8547,10 @@ indicadores: [
   "id": "avant-silk",
   "nombre": "Avant Silk - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, pachulí, ámbar, almizclado.",
+  "color": "#382043",
+  "desc": "Bergamota y limón abren un corazón de rosa y jazmín. El fondo combina pachulí, ámbar y almizcle.",
   "indicadores": [
     [
       "Invierno",
@@ -8618,17 +8618,16 @@ indicadores: [
       "Terrosos",
       55
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "b-a-d-femme",
   "nombre": "B.A.D. Femme - Maison Alhambra",
-  "genero": null,
-  "ml": null,
+  "genero": "Mujer",
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de floral blanco, dulce, amaderado, cálido especiado.",
+  "color": "#b4974e",
+  "desc": "Bergamota, almendra, café y limón abren un corazón de nardos, azahar, jazmín sambac, rosa de Bulgaria y raíz de lirio. El fondo reúne haba tonka, vainilla, almizcle, cacao, praliné, sándalo y madera de cachemira, junto a ámbar, pachulí, cedro y canela.",
   "indicadores": [
     [
       "Invierno",
@@ -8696,8 +8695,7 @@ indicadores: [
       "Nardos",
       60
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "b-a-d-homme",
