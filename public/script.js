@@ -9394,10 +9394,10 @@ indicadores: [
   "id": "chants-tenderina",
   "nombre": "Chants Tenderina - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, floral blanco, atalcado, almizclado.",
+  "color": "#d890b1",
+  "desc": "Bergamota, flor del pomelo y durazno abren un corazón de rosa, jazmín e iris. El fondo combina almizcle blanco, vainilla, vetiver y pachulí.",
   "indicadores": [
     [
       "Invierno",
@@ -9465,17 +9465,16 @@ indicadores: [
       "Terrosos",
       56
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "como-moiselle",
   "nombre": "Como Moiselle - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, amaderado, dulce, floral blanco.",
+  "color": "#d0ae65",
+  "desc": "Bergamota, naranja, flor de azahar del naranjo y mandarina dan paso a rosa turca, jazmín, mimosa y ylang-ylang. El fondo reúne pachulí, vetiver, vainilla, almizcle blanco, haba tonka y opopónaco.",
   "indicadores": [
     [
       "Invierno",
@@ -9543,8 +9542,7 @@ indicadores: [
       "Fresco especiado",
       46
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "coral-blush",
