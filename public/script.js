@@ -10128,10 +10128,10 @@ indicadores: [
   "id": "delilah-blanc",
   "nombre": "Delilah Blanc - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, almizclado, atalcado, floral blanco.",
+  "color": "#c5c6c1",
+  "desc": "Bergamota, durazno blanco y mandarina abren un corazón de flor de azahar del naranjo y vetiver. El fondo combina almizcle y vainilla.",
   "indicadores": [
     [
       "Invierno",
@@ -10195,8 +10195,7 @@ indicadores: [
       "Amaderado",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "ebene",
@@ -10204,8 +10203,8 @@ indicadores: [
   "genero": null,
   "ml": null,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de ámbar, avainillado, cálido especiado, amaderado.",
+  "color": "#b97835",
+  "desc": "Clavos de olor, elemí y abrótano dan paso a un corazón de incienso de olíbano y madera de gaiac. El fondo reúne vainilla, benjuí, ámbar y almizcle.",
   "indicadores": [
     [
       "Invierno",
@@ -10265,8 +10264,7 @@ indicadores: [
       "Fresco especiado",
       48
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "eternal-touch",
