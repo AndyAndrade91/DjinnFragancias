@@ -9974,10 +9974,10 @@ indicadores: [
   "id": "decadent-wonder",
   "nombre": "Decadent Wonder - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de avainillado, atalcado, cálido especiado, cítrico.",
+  "color": "#eba65e",
+  "desc": "Jengibre, mandarina, canela y agua de rosas abren un corazón de heliotropo, jazmín y rosa. El fondo combina vainilla, cacao, ron y cipriol (nagarmota).",
   "indicadores": [
     [
       "Invierno",
@@ -10045,17 +10045,16 @@ indicadores: [
       "Amaderado",
       56
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "delilah",
   "nombre": "Delilah - Maison Alhambra",
-  "genero": null,
-  "ml": null,
+  "genero": "Mujer",
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de rosas, florales, afrutados, almizclado.",
+  "color": "#d5a4b4",
+  "desc": "Lichi, ruibarbo y bergamota dan paso a un corazón de rosa turca, peonía y azucena. El fondo reúne almizcle blanco, cachemira y vainilla.",
   "indicadores": [
     [
       "Invierno",
@@ -10123,8 +10122,7 @@ indicadores: [
       "Cítrico",
       49
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "delilah-blanc",
