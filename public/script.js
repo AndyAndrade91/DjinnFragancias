@@ -9686,10 +9686,10 @@ indicadores: [
   "id": "dark-aoud",
   "nombre": "Dark Aoud - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cálido especiado, amaderado, aromático, fresco especiado.",
+  "color": "#39302e",
+  "desc": "Cardamomo, pimienta y palo de rosa de Brasil abren un corazón de madera de oud, sándalo y vetiver. El fondo combina vainilla, haba tonka y ámbar gris.",
   "indicadores": [
     [
       "Invierno",
@@ -9757,8 +9757,7 @@ indicadores: [
       "Dulce",
       48
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "dark-door-intense",
@@ -9766,8 +9765,8 @@ indicadores: [
   "genero": null,
   "ml": null,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de iris, atalcado, amaderado, violeta.",
+  "color": "#333333",
+  "desc": "Lavanda en la salida, seguida por un corazón de iris, almizcle ambreta y pera. El fondo reúne cedro de Virginia y vetiver.",
   "indicadores": [
     [
       "Invierno",
@@ -9835,8 +9834,7 @@ indicadores: [
       "Afrutados",
       46
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "dark-door-sport",
@@ -9844,8 +9842,8 @@ indicadores: [
   "genero": null,
   "ml": null,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, aromático, fresco especiado, amaderado.",
+  "color": "#afb5b6",
+  "desc": "Limón, toronja, resina de elemí y bergamota abren un corazón de jengibre, cedro y vetiver. El fondo combina romero, lavanda y sándalo.",
   "indicadores": [
     [
       "Invierno",
@@ -9893,17 +9891,16 @@ indicadores: [
       "Fresco",
       44
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "decadent-dream",
   "nombre": "Decadent Dream - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de ámbar, amaderado, afrutados, florales.",
+  "color": "#e8b59e",
+  "desc": "Avellana, incienso de olíbano y pera dan paso a osmanto, jazmín sambac, rosa y azafrán. El fondo reúne sándalo, ámbar gris, ládano y vainilla.",
   "indicadores": [
     [
       "Invierno",
@@ -9971,8 +9968,7 @@ indicadores: [
       "Avainillado",
       50
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "decadent-wonder",

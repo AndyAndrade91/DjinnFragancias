@@ -3,8 +3,8 @@
 Lista de 100 perfumes indicada por el usuario. Se incorporan los 61 del archivo `maison_alhambra_61_nuevos_populares.txt`, Hercules y Jean Lowe Fantasme (con sus datos enviados por separado). Los 37 restantes ya tenían tarjeta.
 
 - **114 Maison Alhambra**: los 100 seleccionados y 14 extras con fotos hechas.
-- **32** tienen foto de producto y lámina de notas listas: 18 de los 100 y los 14 extras.
-- **82** seleccionados esperan fotos: 20 de los 38 nombres iniciales y los 62 restantes.
+- **36** tienen foto de producto y lámina de notas listas: 22 de los 100 y los 14 extras.
+- **78** seleccionados esperan fotos: 16 de los 38 nombres iniciales y los 62 restantes.
 - **48** tarjetas anteriores sin foto y fuera de la selección se retiran.
 - Las tarjetas conservadas, sus IDs y todas las fotos existentes se mantienen.
 
@@ -42,7 +42,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 23 | Athena | Listas |
 | 24 | Kismet for Men | Pendientes |
 | 25 | Kismet for Women | Pendientes |
-| 26 | Dark Door Intense | Pendientes |
+| 26 | Dark Door Intense | Listas |
 | 27 | Amber & Leather | Listas |
 | 28 | Jean Lowe Noir | Pendientes |
 | 29 | Perseus | Pendientes |
@@ -53,7 +53,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 34 | Toro Pour Homme | Pendientes |
 | 35 | Glacier Le Noir | Pendientes |
 | 36 | Salvo Intense | Pendientes |
-| 37 | Dark Door Sport | Pendientes |
+| 37 | Dark Door Sport | Listas |
 | 38 | Rose Petals | Pendientes |
 | 39 | Narcotic Flower | Pendientes |
 | 40 | Baroque Satin Oud | Listas |
@@ -84,12 +84,12 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 65 | Sugar Me Carrot Cake | Pendientes |
 | 66 | Pink Eclipse | Pendientes |
 | 67 | Your Touch | Pendientes |
-| 68 | Decadent Dream | Pendientes |
+| 68 | Decadent Dream | Listas |
 | 69 | Galatea | Pendientes |
 | 70 | Jean Lowe Fantasme | Pendientes |
 | 71 | Daring Blue For Life | Listas |
 | 72 | Sceptre Oceana | Pendientes |
-| 73 | Dark Aoud | Pendientes |
+| 73 | Dark Aoud | Listas |
 | 74 | La Charmante Eclatant | Pendientes |
 | 75 | Jorge di Profondo | Pendientes |
 | 76 | Galactic Men Intense | Pendientes |
