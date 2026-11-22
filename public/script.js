@@ -9548,10 +9548,10 @@ indicadores: [
   "id": "coral-blush",
   "nombre": "Coral Blush - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de amaderado, dulce, afrutados, pachulí.",
+  "color": "#ea773b",
+  "desc": "Durazno, hojas verdes y naranja sanguina abren un corazón de pachulí. El fondo combina coñac y miel.",
   "indicadores": [
     [
       "Invierno",
@@ -9619,17 +9619,16 @@ indicadores: [
       "Atalcado",
       49
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "daring-blue-for-life",
   "nombre": "Daring Blue For Life - Maison Alhambra",
-  "genero": null,
-  "ml": null,
+  "genero": "Hombre",
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, ozónico, aromático, fresco especiado.",
+  "color": "#356484",
+  "desc": "Toronja y bergamota dan paso a un corazón de notas ozónicas y hojas de violeta. El fondo reúne aceite de vetiver de Java, almizcle blanco y pachulí.",
   "indicadores": [
     [
       "Invierno",
@@ -9681,8 +9680,7 @@ indicadores: [
       "Acuático",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "dark-aoud",

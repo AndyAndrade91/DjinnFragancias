@@ -3,8 +3,8 @@
 Lista de 100 perfumes indicada por el usuario. Se incorporan los 61 del archivo `maison_alhambra_61_nuevos_populares.txt`, Hercules y Jean Lowe Fantasme (con sus datos enviados por separado). Los 37 restantes ya tenían tarjeta.
 
 - **114 Maison Alhambra**: los 100 seleccionados y 14 extras con fotos hechas.
-- **30** tienen foto de producto y lámina de notas listas: 16 de los 100 y los 14 extras.
-- **84** seleccionados esperan fotos: 22 de los 38 nombres iniciales y los 62 restantes.
+- **32** tienen foto de producto y lámina de notas listas: 18 de los 100 y los 14 extras.
+- **82** seleccionados esperan fotos: 20 de los 38 nombres iniciales y los 62 restantes.
 - **48** tarjetas anteriores sin foto y fuera de la selección se retiran.
 - Las tarjetas conservadas, sus IDs y todas las fotos existentes se mantienen.
 
@@ -87,7 +87,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 68 | Decadent Dream | Pendientes |
 | 69 | Galatea | Pendientes |
 | 70 | Jean Lowe Fantasme | Pendientes |
-| 71 | Daring Blue For Life | Pendientes |
+| 71 | Daring Blue For Life | Listas |
 | 72 | Sceptre Oceana | Pendientes |
 | 73 | Dark Aoud | Pendientes |
 | 74 | La Charmante Eclatant | Pendientes |
@@ -105,7 +105,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 86 | Philos Messenger | Pendientes |
 | 87 | Monocline 01 | Pendientes |
 | 88 | Glacier Pour Homme | Pendientes |
-| 89 | Coral Blush | Pendientes |
+| 89 | Coral Blush | Listas |
 | 90 | 05 Domino Essence | Listas |
 | 91 | Opera Noir | Pendientes |
 | 92 | Renee Carmine | Pendientes |
