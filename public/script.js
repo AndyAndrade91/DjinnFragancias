@@ -11296,10 +11296,10 @@ indicadores: [
   "id": "tobacco-touch",
   "nombre": "Tobacco Touch - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de avainillado, dulce, cálido especiado, tabaco.",
+  "color": "#3b2d25",
+  "desc": "Tabaco y notas especiadas en la salida; tabaco, vainilla, haba tonka y cacao en el corazón; frutas secas y notas amaderadas en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11359,17 +11359,16 @@ indicadores: [
       "Atalcado",
       49
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "kismet-magic",
   "nombre": "Kismet Magic - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cálido especiado, amaderado, dulce, canela.",
+  "color": "#c19c42",
+  "desc": "Coñac en la salida; canela, haba tonka y roble en el corazón; vainilla, praliné y sándalo en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11425,8 +11424,7 @@ indicadores: [
       "Atalcado",
       47
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "lovely-cherie",
