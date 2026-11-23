@@ -11491,10 +11491,10 @@ indicadores: [
   "id": "the-tux",
   "nombre": "The Tux - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 90,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de pachulí, cálido especiado, amaderado, avainillado.",
+  "color": "#bca56f",
+  "desc": "Una composición de pachulí, notas especiadas, vainilla, ámbar y notas florales.",
   "indicadores": [
     [
       "Invierno",
@@ -11558,17 +11558,16 @@ indicadores: [
       "Atalcado",
       48
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "jean-lowe-vibe",
   "nombre": "Jean Lowe Vibe - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, aromático, verde, afrutados.",
+  "color": "#4fc095",
+  "desc": "Menta, cidra, limón (lima ácida), naranja, grosellas negras y cilantro en la salida; chabacano, albahaca, rosa de mayo y semillas de zanahoria en el corazón; higo, almizcle ambreta y dátiles en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11620,8 +11619,7 @@ indicadores: [
       "Dulce",
       55
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "jean-lowe-azure",
