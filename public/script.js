@@ -11739,10 +11739,10 @@ indicadores: [
   "id": "salvo",
   "nombre": "Salvo - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de fresco especiado, cítrico, ámbar, lavanda.",
+  "color": "#39463f",
+  "desc": "Bergamota en la salida; lavanda, pimienta de Sichuan, anís estrellado y nuez moscada en el corazón; ambroxan y vainilla en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11810,17 +11810,16 @@ indicadores: [
       "Especiado suave",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "toscano-leather",
   "nombre": "Toscano Leather - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de animálico, cuero, ámbar, ahumado.",
+  "color": "#48332b",
+  "desc": "Notas de animal, azafrán y tomillo en la salida; cuero, frambuesa, incienso, notas amaderadas y jazmín en el corazón; cuero y ámbar en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11888,8 +11887,7 @@ indicadores: [
       "Balsámico",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "yeah",
