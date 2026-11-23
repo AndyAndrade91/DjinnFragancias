@@ -10577,11 +10577,11 @@ indicadores: [
 {
   "id": "galactic-men-intense",
   "nombre": "Galactic Men Intense - Maison Alhambra",
-  "genero": null,
-  "ml": null,
+  "genero": "Hombre",
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de dulce, cálido especiado, tabaco, ámbar.",
+  "color": "#945132",
+  "desc": "Tabaco y miel abren un corazón de cacao, vainilla y pachulí. El fondo combina ámbar, sándalo y styrax.",
   "indicadores": [
     [
       "Invierno",
@@ -10649,17 +10649,16 @@ indicadores: [
       "Atalcado",
       63
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "galatea",
   "nombre": "Galatea - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cuero, aromático, amaderado, animálico.",
+  "color": "#c2a44b",
+  "desc": "Frutas, yerba mate, notas verdes, ciprés y tomillo dan paso a un corazón de rosa, raíz de lirio y jazmín. El fondo reúne cuero, vetiver, cedro de Virginia, vainilla y ámbar.",
   "indicadores": [
     [
       "Invierno",
@@ -10727,8 +10726,7 @@ indicadores: [
       "Dulce",
       52
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "glacier-bella",
