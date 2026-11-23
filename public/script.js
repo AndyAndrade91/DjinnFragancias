@@ -10862,10 +10862,10 @@ indicadores: [
   "id": "glacier-le-noir",
   "nombre": "Glacier Le Noir - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cálido especiado, avainillado, aromático, lavanda.",
+  "color": "#272625",
+  "desc": "Una composición de cardamomo, vainilla, lavanda e iris.",
   "indicadores": [
     [
       "Invierno",
@@ -10933,17 +10933,16 @@ indicadores: [
       "Dulce",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "glacier-pour-homme",
   "nombre": "Glacier Pour Homme - Maison Alhambra",
-  "genero": null,
+  "genero": "Hombre",
   "ml": null,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de aromático, avainillado, lavanda, fresco especiado.",
+  "color": "#176968",
+  "desc": "Lavanda, menta, cardamomo y bergamota en la salida; flor de azahar del naranjo, canela y alcaravea en el corazón; vainilla, haba tonka, ámbar y sándalo en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11011,8 +11010,7 @@ indicadores: [
       "Cítrico",
       50
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "jean-lowe-immortal",
