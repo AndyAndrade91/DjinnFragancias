@@ -11016,10 +11016,10 @@ indicadores: [
   "id": "jean-lowe-immortal",
   "nombre": "Jean Lowe Immortal - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de fresco especiado, cítrico, aromático, ámbar.",
+  "color": "#d6bd69",
+  "desc": "Jengibre, toronja (pomelo) y bergamota en la salida; romero, notas acuáticas, salvia y geranio en el corazón; ambroxan, ámbar y ládano en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11079,17 +11079,16 @@ indicadores: [
       "Acuático",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "kismet-angel",
   "nombre": "Kismet Angel - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cálido especiado, dulce, avainillado, canela.",
+  "color": "#bb802f",
+  "desc": "Vainilla, panal de miel y ámbar en la salida; coñac, canela, caramelo y haba tonka en el corazón; chocolate oscuro en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11157,8 +11156,7 @@ indicadores: [
       "Chocolate",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "sceptre-malachite",
