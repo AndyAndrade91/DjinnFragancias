@@ -10424,10 +10424,10 @@ indicadores: [
   "id": "fabulo-intense",
   "nombre": "Fabulo Intense - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de amaderado, cuero, almendrado, avainillado.",
+  "color": "#303033",
+  "desc": "Lavanda y esclarea abren un corazón de almendra amarga, vainilla y raíz de lirio. El fondo combina cuero, maderas blancas, cachemira, haba tonka y ámbar.",
   "indicadores": [
     [
       "Invierno",
@@ -10495,17 +10495,16 @@ indicadores: [
       "Nueces",
       64
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "fusion-intense",
   "nombre": "Fusion Intense - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de amaderado, aromático, cuero, almendrado.",
+  "color": "#7e7c66",
+  "desc": "Lavanda y esclarea dan paso a un corazón de cuero, almendra amarga, vainilla e iris. El cuero continúa en el fondo junto a maderas blancas, haba tonka, cachemira y ámbar.",
   "indicadores": [
     [
       "Invierno",
@@ -10573,8 +10572,7 @@ indicadores: [
       "Nueces",
       63
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "galactic-men-intense",
