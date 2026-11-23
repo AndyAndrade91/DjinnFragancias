@@ -11430,10 +11430,10 @@ indicadores: [
   "id": "lovely-cherie",
   "nombre": "Lovely Chèrie - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de acerezado, dulce, almendrado, ámbar.",
+  "color": "#782d3c",
+  "desc": "Almendra amarga y rosa en la salida; cereza, cereza negra y ámbar en el corazón; haba tonka, tófe y bálsamo del Perú en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11485,8 +11485,7 @@ indicadores: [
       "Afrutados",
       51
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "the-tux",
