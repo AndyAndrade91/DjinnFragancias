@@ -11162,10 +11162,10 @@ indicadores: [
   "id": "sceptre-malachite",
   "nombre": "Sceptre Malachite - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, aromático, amaderado, fresco especiado.",
+  "color": "#164b3c",
+  "desc": "Mandarina verde, bergamota y grosellas negras en la salida; notas aromáticas, notas especiadas, lavanda, pimienta rosa y jazmín en el corazón; ámbar, almizcle, notas amaderadas y vetiver en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11233,17 +11233,16 @@ indicadores: [
       "Lavanda",
       45
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "porto-neroli",
   "nombre": "Porto Neroli - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, floral blanco, verde, fresco.",
+  "color": "#0b8d9f",
+  "desc": "Neroli, limón (lima ácida), mandarina, naranja amarga y jazmín en la salida; flor de azahar del naranjo, lavanda y sal de mar en el corazón; notas herbales, ajenjo (absenta) y ámbar en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11291,8 +11290,7 @@ indicadores: [
       "Aromático",
       46
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "tobacco-touch",
