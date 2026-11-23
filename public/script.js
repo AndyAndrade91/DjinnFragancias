@@ -10270,10 +10270,10 @@ indicadores: [
   "id": "eternal-touch",
   "nombre": "Eternal Touch - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de avainillado, dulce, tabaco, cálido especiado.",
+  "color": "#8e542c",
+  "desc": "Hojas de tabaco y notas especiadas abren un corazón de vainilla, haba tonka, cacao y flor del tabaco. El fondo combina frutas secas y notas amaderadas.",
   "indicadores": [
     [
       "Invierno",
@@ -10341,17 +10341,16 @@ indicadores: [
       "Ámbar",
       44
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "exclusif-tabac",
   "nombre": "Exclusif Tabac - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de amaderado, tabaco, dulce, pachulí.",
+  "color": "#9b783f",
+  "desc": "Osmanto, cítricos, abrótano y jengibre dan paso a un corazón de tabaco, pachulí, madera de gaiac y vetiver. El fondo se apoya en haba tonka.",
   "indicadores": [
     [
       "Invierno",
@@ -10419,8 +10418,7 @@ indicadores: [
       "Ámbar",
       49
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "fabulo-intense",

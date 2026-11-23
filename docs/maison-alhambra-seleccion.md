@@ -3,8 +3,8 @@
 Lista de 100 perfumes indicada por el usuario. Se incorporan los 61 del archivo `maison_alhambra_61_nuevos_populares.txt`, Hercules y Jean Lowe Fantasme (con sus datos enviados por separado). Los 37 restantes ya tenían tarjeta.
 
 - **114 Maison Alhambra**: los 100 seleccionados y 14 extras con fotos hechas.
-- **40** tienen foto de producto y lámina de notas listas: 26 de los 100 y los 14 extras.
-- **74** seleccionados esperan fotos: 12 de los 38 nombres iniciales y los 62 restantes.
+- **42** tienen foto de producto y lámina de notas listas: 28 de los 100 y los 14 extras.
+- **72** seleccionados esperan fotos: 10 de los 38 nombres iniciales y los 62 restantes.
 - **48** tarjetas anteriores sin foto y fuera de la selección se retiran.
 - Las tarjetas conservadas, sus IDs y todas las fotos existentes se mantienen.
 
@@ -57,7 +57,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 38 | Rose Petals | Pendientes |
 | 39 | Narcotic Flower | Pendientes |
 | 40 | Baroque Satin Oud | Listas |
-| 41 | Exclusif Tabac | Pendientes |
+| 41 | Exclusif Tabac | Listas |
 | 42 | Megara | Pendientes |
 | 43 | Jean Lowe Ombre | Pendientes |
 | 44 | Afro Leather | Listas |
@@ -67,7 +67,7 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 48 | Berlinetta | Listas |
 | 49 | Montaigne Coco | Pendientes |
 | 50 | Salvo Elixir | Pendientes |
-| 51 | Eternal Touch | Pendientes |
+| 51 | Eternal Touch | Listas |
 | 52 | Glacier Bella | Pendientes |
 | 53 | Infini Musk | Pendientes |
 | 54 | Léonie | Pendientes |
