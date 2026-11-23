@@ -10734,8 +10734,8 @@ indicadores: [
   "genero": null,
   "ml": null,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de avainillado, cítrico, atalcado, dulce.",
+  "color": "#b8cfa2",
+  "desc": "Una composición de pera verde, vaina de vainilla y bergamota.",
   "indicadores": [
     [
       "Invierno",
@@ -10783,17 +10783,16 @@ indicadores: [
       "Fresco especiado",
       42
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "glacier-bold",
   "nombre": "Glacier Bold - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de coco, avainillado, dulce, cítrico.",
+  "color": "#315b57",
+  "desc": "Una composición de coco, haba tonka y bergamota.",
   "indicadores": [
     [
       "Invierno",
@@ -10857,8 +10856,7 @@ indicadores: [
       "Tropical",
       51
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "glacier-le-noir",
