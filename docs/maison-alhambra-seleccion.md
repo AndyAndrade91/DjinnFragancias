@@ -3,8 +3,8 @@
 Lista de 100 perfumes indicada por el usuario. Se incorporan los 61 del archivo `maison_alhambra_61_nuevos_populares.txt`, Hercules y Jean Lowe Fantasme (con sus datos enviados por separado). Los 37 restantes ya tenían tarjeta.
 
 - **114 Maison Alhambra**: los 100 seleccionados y 14 extras con fotos hechas.
-- **59** tienen foto de producto y lámina de notas listas: 45 de los 100 y los 14 extras.
-- **55** seleccionados esperan fotos.
+- **61** tienen foto de producto y lámina de notas listas: 47 de los 100 y los 14 extras.
+- **53** seleccionados esperan fotos.
 - **48** tarjetas anteriores sin foto y fuera de la selección se retiran.
 - Las tarjetas conservadas, sus IDs y todas las fotos existentes se mantienen.
 
@@ -28,8 +28,8 @@ La comparación y la deduplicación de recomendaciones distinguen la marca para 
 | 9 | Delilah | Listas |
 | 10 | The Tux | Listas |
 | 11 | Jean Lowe Vibe | Listas |
-| 12 | Jean Lowe Azure | Pendientes |
-| 13 | Woody Oud | Pendientes |
+| 12 | Jean Lowe Azure | Listas |
+| 13 | Woody Oud | Listas |
 | 14 | Fabulo Intense | Listas |
 | 15 | Hercules | Pendientes |
 | 16 | Salvo | Pendientes |

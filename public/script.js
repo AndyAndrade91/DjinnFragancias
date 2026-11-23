@@ -11625,10 +11625,10 @@ indicadores: [
   "id": "jean-lowe-azure",
   "nombre": "Jean Lowe Azure - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 100,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de cítrico, fresco especiado, dulce, ámbar.",
+  "color": "#168fd0",
+  "desc": "Mandarina y bergamota en la salida; naranja en el corazón; jengibre y ámbar gris en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11676,17 +11676,16 @@ indicadores: [
       "Fresco",
       37
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "woody-oud",
   "nombre": "Woody Oud - Maison Alhambra",
   "genero": null,
-  "ml": null,
+  "ml": 80,
   "etiqueta": "",
-  "color": "#c4aa76",
-  "desc": "Perfil aromático con acordes de amaderado, oud, cálido especiado, ámbar.",
+  "color": "#40362e",
+  "desc": "Madera de oud en la salida; sándalo en el corazón; madera de oud, Oud camboyano y Amberwood en la base.",
   "indicadores": [
     [
       "Invierno",
@@ -11734,8 +11733,7 @@ indicadores: [
       "Animálico",
       48
     ]
-  ],
-  "fotosPendientes": true
+  ]
 },
 {
   "id": "salvo",
